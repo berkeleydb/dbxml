@@ -1,0 +1,100 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp0">
+          <StepQP axis="parent-of-child" name="e" nodeType="element">
+            <StepQP axis="parent-of-child" name="hwg" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="hw" value="his"/>
+            </StepQP>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="dictionary" nodeType="element">
+              <VariableQP name="#tmp0"/>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="hw" nodeType="element">
+              <StepQP axis="child" name="hwg" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="pr" nodeType="element">
+              <StepQP axis="child" name="hwg" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="pos" nodeType="element">
+              <StepQP axis="child" name="hwg" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <Map>
+            <QueryPlanToAST>
+              <StepQP axis="child" name="etymology" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </QueryPlanToAST>
+            <QueryPlanToAST>
+              <NumericPredicateFilterQP>
+                <StepQP axis="child" name="cr" nodeType="element">
+                  <ContextNodeQP/>
+                </StepQP>
+                <Sequence>
+                  <NumericTypeConstructor value="1.0E0" typeuri="http://www.w3.org/2001/XMLSchema" typename="integer"/>
+                </Sequence>
+              </NumericPredicateFilterQP>
+            </QueryPlanToAST>
+          </Map>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="def" nodeType="element">
+              <ASTToQueryPlan>
+                <Map>
+                  <QueryPlanToAST>
+                    <StepQP axis="child" name="ss" nodeType="element">
+                      <VariableQP name=":a"/>
+                    </StepQP>
+                  </QueryPlanToAST>
+                  <QueryPlanToAST>
+                    <NumericPredicateFilterQP>
+                      <StepQP axis="child" name="s" nodeType="element">
+                        <ContextNodeQP/>
+                      </StepQP>
+                      <Sequence>
+                        <NumericTypeConstructor value="1.0E0" typeuri="http://www.w3.org/2001/XMLSchema" typename="integer"/>
+                      </Sequence>
+                    </NumericPredicateFilterQP>
+                  </QueryPlanToAST>
+                </Map>
+              </ASTToQueryPlan>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

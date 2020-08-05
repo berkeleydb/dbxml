@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cookies, Peanut Butter</item>
+	<inventory>
+		<sku>CookdessG0hkuf</sku>
+		<price>11.83</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

@@ -1,0 +1,70 @@
+TODO.txt
+bsddb3.db v3.0
+http://pybsddb.sourceforge.net/
+March 23, 2001
+--------------------------------------
+
+Here's the stuff still on my TODO list:
+
+       1. Make a test case for DB.join()
+
+       Done - [ 2. Port dbtables.py and make a set of test cases ]
+       (thanks Greg!)
+
+       3. Double check all Reference Counting and malloc/free's
+	  (ongoing...)
+
+       4. Make concise doc-strings for all methods in the extension
+          module that simply show method name and parameters.
+
+       5. Switch all methods in the extension module to use keyword
+          argument conventions for consistency.
+
+       Done (#@!@#$) [6. Find out what's wrong with DBEnv.lock_put]
+
+       Done - [ 7. Changes needed for BerkeleyDB 3.2 ]
+
+       8. Implement lock_vec
+
+
+Possible Future Enhancements:
+
+    DBEnv Methods
+
+        set_errcall(function) --
+                Set function to be called when errors happen in the
+                library.
+
+        set_feedback(function) --
+                Set callback function to be called periodically during
+                long running operations.
+
+        set_paniccall(function) --
+                Set callback function to be called when DB_RUNRECOVERY
+                is about to be returned from a Berkeley DB method.
+
+    DB Methods
+
+        set_bt_compare(function) --
+                Set a key comparison function to be used for BTrees
+
+        set_bt_prefix(function) --
+                Set a prefix comparison function to be used for BTrees
+
+        set_dup_compare(function) --
+                Set the duplicate data item comparison function
+
+        set_errcall(function) --
+                Set function to be called when errors happen in the
+                library.
+
+        set_feedback(function) --
+                Set callback function to be called periodically during
+                long running operations.
+
+        set_h_hash(function) --
+                Set a user defined hash method
+
+        set_paniccall(function) --
+                Set callback function to be called when DB_RUNRECOVERY
+                is about to be returned from a Berkeley DB method.

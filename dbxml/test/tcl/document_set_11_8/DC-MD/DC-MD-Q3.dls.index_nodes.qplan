@@ -1,0 +1,93 @@
+<XQuery>
+  <FLWOR>
+    <LetBinding name="item">
+      <QueryPlanToAST>
+        <ChildJoinQP>
+          <LevelFilterQP>
+            <PresenceQP index="edge-element-presence-none" operation="eq" parent="root:http://www.sleepycat.com/2002/dbxml" child="items"/>
+          </LevelFilterQP>
+          <StepQP axis="parent-of-attribute" name="item" nodeType="element">
+            <ValueQP index="edge-attribute-equality-string" operation="eq" parent="item" child="id" value="8"/>
+          </StepQP>
+        </ChildJoinQP>
+      </QueryPlanToAST>
+    </LetBinding>
+    <ForBinding name="prevItem">
+      <Map>
+        <QueryPlanToAST>
+          <LevelFilterQP>
+            <PresenceQP index="edge-element-presence-none" operation="eq" parent="root:http://www.sleepycat.com/2002/dbxml" child="items"/>
+          </LevelFilterQP>
+        </QueryPlanToAST>
+        <QueryPlanToAST>
+          <NumericPredicateFilterQP>
+            <PredicateFilterQP>
+              <StepQP axis="child" name="item" nodeType="element">
+                <ContextNodeQP/>
+              </StepQP>
+              <Operator name="node-order">
+                <TreatAs>
+                  <QueryPlanToAST>
+                    <ContextNodeQP/>
+                  </QueryPlanToAST>
+                  <SequenceType occurrence="zero_or_one" testType="node"/>
+                </TreatAs>
+                <TreatAs>
+                  <QueryPlanToAST>
+                    <VariableQP name=":item"/>
+                  </QueryPlanToAST>
+                  <SequenceType occurrence="zero_or_one" testType="node"/>
+                </TreatAs>
+              </Operator>
+            </PredicateFilterQP>
+            <Operator name="equal">
+              <Function name="{http://www.w3.org/2005/xpath-functions}:position"/>
+              <Function name="{http://www.w3.org/2005/xpath-functions}:last"/>
+            </Operator>
+          </NumericPredicateFilterQP>
+        </QueryPlanToAST>
+      </Map>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <DOMConstructor type="element">
+          <Name>
+            <Sequence>
+              <ATQNameConstructor uri="" prefix="" localname="CurrentItem" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+            </Sequence>
+          </Name>
+          <Children>
+            <ContentSequence>
+              <QueryPlanToAST>
+                <StepQP axis="attribute" name="id" nodeType="attribute">
+                  <VariableQP name=":item"/>
+                </StepQP>
+              </QueryPlanToAST>
+            </ContentSequence>
+          </Children>
+        </DOMConstructor>
+        <DOMConstructor type="element">
+          <Name>
+            <Sequence>
+              <ATQNameConstructor uri="" prefix="" localname="PreviousItem" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+            </Sequence>
+          </Name>
+          <Children>
+            <ContentSequence>
+              <QueryPlanToAST>
+                <StepQP axis="attribute" name="id" nodeType="attribute">
+                  <VariableQP name=":prevItem"/>
+                </StepQP>
+              </QueryPlanToAST>
+            </ContentSequence>
+          </Children>
+        </DOMConstructor>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

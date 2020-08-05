@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Trifle, Strawberry</item>
+	<inventory>
+		<sku>TrifdessqOTRk2</sku>
+		<price>1.62</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

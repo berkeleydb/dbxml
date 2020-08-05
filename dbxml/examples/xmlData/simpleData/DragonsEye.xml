@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Dragon's Eye</item>
+	<inventory>
+		<sku>DragfruiLGbUeL</sku>
+		<price>0.85</price>
+		<inventory>683</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

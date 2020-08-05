@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Monkey Pot</item>
+	<inventory>
+		<sku>MonkfruiAAyxHC</sku>
+		<price>0.43</price>
+		<inventory>530</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

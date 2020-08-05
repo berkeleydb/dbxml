@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<desserts:item xmlns:desserts="http://groceryItem.dbxml/desserts">
+	<product>Cake, Angel Food</product>
+	<inventory>
+		<sku>CakedessuBvJaW</sku>
+		<price>6.70</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</desserts:item>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Kabute</item>
+	<inventory>
+		<sku>KabuvegegAU65H</sku>
+		<price>0.70</price>
+		<inventory>564</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

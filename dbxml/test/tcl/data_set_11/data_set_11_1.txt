@@ -1,0 +1,111 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# QP tests
+# Comparisons and logical operators
+
+TEST 11.1
+TITLE   Comparisons and logical operators    
+
+11.1.1
+//foo[bar=baz]
+Root(RA(SS()))
+
+# commented lines can appear anywhere
+11.1.2
+//foo[bar!=baz]
+Root(RA(SS()))
+
+11.1.3
+//foo[bar>baz]
+Root(RA(SS()))
+
+11.1.4
+//foo[bar>=baz]
+Root(RA(SS()))
+
+11.1.5
+//foo[bar<baz]
+Root(RA(SS()))
+
+11.1.6
+//foo[bar<=baz]
+Root(RA(SS()))
+
+11.1.7
+//foo[bar or baz]
+Root(RA(SS()))
+
+11.1.8
+//foo[bar and baz]
+Root(RA(SS()))
+
+11.1.9
+//foo[bar=1+baz]
+Root(RS,RA(RS,SS(RS,)))
+
+11.1.10
+//foo[1+bar and 1+baz]
+Root(RS,RA(RS,SS(RS,)))
+
+11.1.11
+//foo[1-bar and 1-baz]
+Root(RS,RA(RS,SS(RS,)))
+
+11.1.12
+//foo[bar=baz and bar=baz]
+Root(RA(SS()))
+
+11.1.13
+//foo[bar!=baz and bar!=baz]
+Root(RA(SS()))
+
+11.1.14
+//foo[bar>baz and bar>baz]
+Root(RA(SS()))
+
+11.1.15
+//foo[bar>=baz and bar>=baz]
+Root(RA(SS()))
+
+11.1.16
+//foo[bar<baz and bar<baz]
+Root(RA(SS()))
+
+11.1.17
+//foo[bar<=baz and bar<=baz]
+Root(RA(SS()))
+
+11.1.18
+//foo[1+bar or 1+baz]
+Root(RS,RA(RS,SS(RS,)))
+
+11.1.19
+//foo[1-bar or 1-baz]
+Root(RS,RA(RS,SS(RS,)))
+
+11.1.20
+//foo[bar=baz or bar=baz]
+Root(RA(SS()))
+
+11.1.21
+//foo[bar!=baz or bar!=baz]
+Root(RA(SS()))
+
+11.1.22
+//foo[bar>baz or bar>baz]
+Root(RA(SS()))
+
+11.1.23
+//foo[bar>=baz or bar>=baz]
+Root(RA(SS()))
+
+11.1.24
+//foo[bar<baz or bar<baz]
+Root(RA(SS()))
+
+11.1.25
+//foo[bar<=baz or bar<=baz]
+Root(RA(SS()))

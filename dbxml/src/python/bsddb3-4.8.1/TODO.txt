@@ -1,0 +1,147 @@
+* 20080327: Add a parameter to DBEnv.log_flush().
+
+* 20080402: If a prepared/recovered transaction is garbaged collected,
+  we leak transactions. Can we call "discard" in a safe way?.
+
+* 20080403: If an exception is raised in a thread in the TestSuite, we
+  pass the test. Bad!.
+
+* 20080403: Write a test for MVCC.
+
+* 20080403: We should recreate the test data directory in every
+  execution, and delete it when finished.
+
+* 20080403: "txn_stat" provides a list of active transactions. Export it
+  to Python.
+
+* 20080426: Verify that "DB_ENV->set_event_notify" follows the API.
+
+* 20080521: Write a test for "DB_ENV->set_rpc_server". This test would be
+  called if there is a concrete environment variable defined, for example.
+
+* 20080522: Think about changing the library name to "berkeleydb". See
+  http://mailman.jcea.es/pipermail/pybsddb/2008-March/000019.html
+
+* 20080522: Update the "README.txt" document.
+
+* 20080531: "DB_ENV->rep_set_limit" and "DB_ENV->rep_get_limit", support
+  for long values.
+
+* 20080629: The testsuite implements a "test_support" module, used when
+  the underlying python version doesn't have it. Because a bug in the
+  test code, this version is used always, even if this python version
+  has "test_support". This is actually useful, because current test
+  code uses features in "test_support" that are not available in
+  previous python versions.
+
+* 20080720: The test for crash documented in http://bugs.python.org/issue3307
+  is disabled because it prints a error message to screen. Solve this and
+  reenable the test. This would require "set_errfile" implementation.
+
+* 20080721: When we drop Python 2.3 support, we should use "PyTuple_Pack".
+
+* 20080807: The EGG for 4.7.2 was installed as a directory, not a
+  ZIP file. Why?.
+
+* 20080811: "DB.has_key()" must be retained in python3.0, since it allows
+  a transaction parameter.
+
+* 20080812: "DBEnv.db_home", under python3.0, is automatically converted
+  to bytes. What charset is used?.
+
+* 20080812: Since Python 3.0 dropped the "cmp" function in "sort()"
+  methods, we need to handcode some "Insertion sort" functions, in
+  the testsuite and in the production code. This is ugly and slow.
+
+* 20080812: "test_all.do_proxy_db_py3k()" is a very ugly hack. For
+  example, if a test fails, it can leave the testsuite in an
+  inconsistent state, causing spurious failures.
+
+* 20080812: We use "getattr()" to avoid "obj.next()" automatic
+  conversion via "2to3" tool. Improve this.
+
+* 20080812: Python 3.0 idioms available in 2.6 and up should be
+  used also in this versions.
+
+* 20080813: Create a "__contains__" routine in DB, etc, to use
+  when 2to3 tools translate "has_key" to "in".
+
+* 20080813: We use "getattr()" to avoid "obj.has_key()" automatic
+  conversion via "2to3" tool. Improve this, specially in
+  "dbtables.py".
+
+* 20080813: We can store "None" values in a database. How can we
+  differenciate between stored "None" and NotFound?. We can
+  use exceptions or the "default" parameter, but... this is ugly.
+
+* 20080813: TO INVESTIGATE (posible bug in Berkeley DB): if you
+  duplicate a duplicated cursor, crash.
+
+* 20080813: The put_bytes/get_bytes technique in "dbtables" is
+  nice, but the "getattr" method is not. The problem is that
+  DB objects can't grow new attributes. Solve this.
+
+* 20080814: If pybsddb classes would be subclassed, we could
+  implement conversion methods for keys and values in
+  a very elegant way. This is specially relevant in Python 3.0.
+
+  When done, delete "StringValues" and "StringKeys" in
+  Python native "test_bsddb.py".
+
+* 20080814: If we could subclass the bsddb objects, we could
+  drop "dbobj.py" (a bit outdated by now).
+
+* 20080918: If "DB_close_internal()" fails in "DB_verify()", we
+  should close the DB handle.
+
+* 20080929: Support "master leases". Beware bug
+  http://forums.oracle.com/forums/thread.jspa?forumID=272&threadID=708324
+
+* 20081011: Evaluate support of "with" statement for things like
+  transactions.
+
+* 20081013: Evaluate convenience of returning named tuples in some places.
+
+* 20081013: Evaluate convenience of supporting "sys.getsizeof()".
+
+* 20081013: Port "PyModule_AddStringMacro" and "PyModule_AddIntMacro"
+  when compiling for old versions of Python.
+
+* 20090121: In the "associate()" callback, there are mallocs to
+  contain the "data" portion of DBT's. Test that they are correctly
+  freed by Berkeley DB.
+
+* 20090121: If somethings goes wrong in the "associate()" callback,
+  we are going to leak memory and coredump. Solve it.
+
+* 20090121: If the "associate()" callback returns an empty list, crash.
+
+* 20090121: "DB->compact()" should return more data to the caller.
+
+* 20090204: "txn->stat()" returns also a list of active transactions.
+  Evaluate if we must export that data to python.
+
+* 20090204: A lot of binding functions allow optional parameters, but
+  not keyword ones. Normalize this.
+
+* 20090204: "rep_set_limit()" and "rep_get_limit()" only manages "bytes",
+  not gigabytes.
+
+* 20090423: Evaluate convenience of supporting DTrace.
+
+* 20090427: Split base replication and replication manager
+  documentation in documents separated of DBENV docs.
+
+* 20090427: "__contains__()" is not transactionally protected. This is
+  a problem. Maybe we should raise an exception to avoid the usage
+  of patterns like "if key in DB", not transactionally protected.
+  Think about this.
+
+* 20090428: Support DB_MULTIPLE and DB_MULTIPLE_KEY.
+
+* 20090630: "README.txt" needs some love.
+
+* 20090723: Add encryption tests.
+
+* 20091105: Check if the "from unittest.runner import _TextTestResult"
+  trick in Python 2.7 and 3.2 development versions are still necessary.

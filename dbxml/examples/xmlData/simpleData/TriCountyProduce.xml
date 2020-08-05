@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<vendor type="wholesale">
+	<name>TriCounty Produce</name>
+	<address>309 S. Main Street</address>
+	<city>Middle Town</city>
+	<state>MN</state>
+	<zipcode>55432</zipcode>
+	<phonenumber>763 555 5761</phonenumber>
+	<salesrep>
+		<name>Mort Dufresne</name>
+		<phonenumber>763 555 5765</phonenumber>
+	</salesrep>
+</vendor>
+

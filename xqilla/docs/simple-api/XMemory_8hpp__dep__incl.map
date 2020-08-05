@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" href="$XQilla_8hpp.html" title="XQilla.hpp" alt="" coords="349,83,429,112"/>
+<area shape="rect" href="$XQillaConfiguration_8hpp.html" title="XQillaConfiguration.hpp" alt="" coords="319,160,473,189"/>
+<area shape="rect" href="$StaticContext_8hpp.html" title="StaticContext.hpp" alt="" coords="555,160,680,189"/>
+<area shape="rect" href="$XQQuery_8hpp.html" title="XQQuery.hpp" alt="" coords="581,237,680,267"/>
+<area shape="rect" href="$ItemFactory_8hpp.html" title="ItemFactory.hpp" alt="" coords="5,237,120,267"/>
+<area shape="rect" href="$Scope_8hpp.html" title="Scope.hpp" alt="" coords="1003,160,1085,189"/>
+<area shape="rect" href="$UpdateFactory_8hpp.html" title="UpdateFactory.hpp" alt="" coords="704,160,835,189"/>
+<area shape="rect" href="$URIResolver_8hpp.html" title="URIResolver.hpp" alt="" coords="859,160,979,189"/>
+<area shape="rect" href="$VarHashEntry_8hpp.html" title="VarHashEntry.hpp" alt="" coords="923,83,1048,112"/>
+<area shape="rect" href="$VariableTypeStore_8hpp.html" title="VariableTypeStore.hpp" alt="" coords="1072,83,1224,112"/>
+<area shape="rect" href="$SequenceBuilder_8hpp.html" title="SequenceBuilder.hpp" alt="" coords="1248,83,1392,112"/>
+<area shape="rect" href="$Sequence_8hpp.html" title="Sequence.hpp" alt="" coords="1416,83,1520,112"/>
+<area shape="rect" href="$StaticType_8hpp.html" title="StaticType.hpp" alt="" coords="1544,83,1653,112"/>
+<area shape="rect" href="$DocumentCache_8hpp.html" title="DocumentCache.hpp" alt="" coords="605,83,747,112"/>
+<area shape="rect" href="$XMLEntityResolver_8hpp.html" title="XMLEntityResolver.hpp" alt="" coords="1677,83,1835,112"/>
+<area shape="rect" href="$xqilla-simple_8hpp.html" title="xqilla&#45;simple.hpp" alt="" coords="417,315,535,344"/>
+<area shape="rect" href="$FastXDMConfiguration_8hpp.html" title="FastXDMConfiguration.hpp" alt="" coords="195,237,371,267"/>
+<area shape="rect" href="$XercesConfiguration_8hpp.html" title="XercesConfiguration.hpp" alt="" coords="395,237,557,267"/>
+<area shape="rect" href="$DynamicContext_8hpp.html" title="DynamicContext.hpp" alt="" coords="704,237,845,267"/>
+<area shape="rect" href="$ContextHelpers_8hpp.html" title="ContextHelpers.hpp" alt="" coords="707,315,843,344"/>
+<area shape="rect" href="$StaticAnalysis_8hpp.html" title="StaticAnalysis.hpp" alt="" coords="1533,160,1664,189"/>
+</map>

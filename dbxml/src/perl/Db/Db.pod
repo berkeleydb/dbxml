@@ -1,0 +1,55 @@
+=head1 NAME
+
+Db - A Perl interface to the Berkeley DB Db Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::Db;
+
+    my $db = new Db($env, $flags);
+
+    $db->close([$flags]);
+    $db->del([$txnid,] $key [, $flags]);
+
+    $db->get([$txnid,] $key, $data [, $flags]);
+    $db->pget([$txnid,] $key, $pkey, $data [, $flags]);
+
+    $db->open([$txnid, ] $file, $database, $type, $flags, $mode);
+
+    $db->put([$txnid,] $key, $data [, $flags]);
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to Dbt is identical to the C++ API, apart from
+the following
+
+=over 5
+
+=item 1.
+
+=back
+
+
+=head1 Constructor
+
+
+=head1 Methods
+
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

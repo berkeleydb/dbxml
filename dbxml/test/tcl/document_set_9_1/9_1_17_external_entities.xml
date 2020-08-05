@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hello [
+<!ELEMENT hello (#PCDATA) >
+<!ENTITY open-hatch
+         SYSTEM "http://www.textuality.com/boilerplate/OpenHatch.xml">
+<!ENTITY open-hatch
+         PUBLIC "-//Textuality//TEXT Standard open-hatch boilerplate//EN"
+         "http://www.textuality.com/boilerplate/OpenHatch.xml">
+<!ENTITY hatch-pic
+         SYSTEM "../grafix/OpenHatch.gif"
+         NDATA gif >
+]>
+<hello>&open-hatch;&hatch-pic;</hello>

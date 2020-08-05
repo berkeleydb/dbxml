@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Sherbet, Cantaloupe</item>
+	<inventory>
+		<sku>Sherdess1QNGwS</sku>
+		<price>12.90</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

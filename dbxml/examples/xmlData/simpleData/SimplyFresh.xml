@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<vendor type="retail">
+	<name>Simply Fresh</name>
+	<address>15612 Bogart Lane</address>
+	<city>Harrigan</city>
+	<state>WI</state>
+	<zipcode>53704</zipcode>
+	<phonenumber>420 333 3912</phonenumber>
+	<salesrep>
+		<name>Cheryl Swedberg</name>
+		<phonenumber>420 333 3952</phonenumber>
+	</salesrep>
+</vendor>
+

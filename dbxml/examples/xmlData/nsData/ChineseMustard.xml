@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Chinese Mustard</product>
+	<inventory>
+		<sku>ChinvegeqTvDVr</sku>
+		<price>0.54</price>
+		<inventory>617</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

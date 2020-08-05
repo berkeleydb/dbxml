@@ -1,0 +1,50 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="ent">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="e" nodeType="element">
+            <StepQP axis="child" name="dictionary" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="qd" value="1900"/>
+            </StepQP>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp3">
+            <StepQP axis="child" name="ss" nodeType="element">
+              <VariableQP name="#tmp2"/>
+            </StepQP>
+            <NodePredicateFilterQP uri="" name="#tmp4">
+              <StepQP axis="child" name="s" nodeType="element">
+                <VariableQP name="#tmp3"/>
+              </StepQP>
+              <NodePredicateFilterQP uri="" name="#tmp5">
+                <StepQP axis="child" name="qp" nodeType="element">
+                  <VariableQP name="#tmp4"/>
+                </StepQP>
+                <NodePredicateFilterQP uri="" name="#tmp6">
+                  <StepQP axis="child" name="q" nodeType="element">
+                    <VariableQP name="#tmp5"/>
+                  </StepQP>
+                  <ValueFilterQP comparison="eq" general="true">
+                    <StepQP axis="child" name="qd" nodeType="element">
+                      <VariableQP name="#tmp6"/>
+                    </StepQP>
+                    <Sequence>
+                      <AnyAtomicTypeConstructor value="1900" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                    </Sequence>
+                  </ValueFilterQP>
+                </NodePredicateFilterQP>
+              </NodePredicateFilterQP>
+            </NodePredicateFilterQP>
+          </NodePredicateFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="hw" nodeType="element">
+        <StepQP axis="child" name="hwg" nodeType="element">
+          <VariableQP name=":ent"/>
+        </StepQP>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

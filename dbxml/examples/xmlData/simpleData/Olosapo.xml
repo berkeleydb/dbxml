@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Olosapo</item>
+	<inventory>
+		<sku>OlosfruiUTnwwQ</sku>
+		<price>0.96</price>
+		<inventory>258</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Carrot</product>
+	<inventory>
+		<sku>CarrvegexSGh7E</sku>
+		<price>0.35</price>
+		<inventory>73</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

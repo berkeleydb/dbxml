@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Gabi</item>
+	<inventory>
+		<sku>GabivegeLQnqIU</sku>
+		<price>0.43</price>
+		<inventory>737</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

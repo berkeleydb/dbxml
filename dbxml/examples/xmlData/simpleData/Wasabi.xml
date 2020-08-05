@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Wasabi</item>
+	<inventory>
+		<sku>WasavegeWSRW4v</sku>
+		<price>0.14</price>
+		<inventory>178</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

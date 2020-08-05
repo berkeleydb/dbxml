@@ -1,0 +1,246 @@
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="dbxml_shell" ProjectGUID="{DF725DAC-C6F3-4BC1-A1D3-C4745232B05D}">
+  <Platforms>
+    <Platform Name="Win32"/>
+    <Platform Name="x64"/>
+    <Platform Name="IA64"/>
+  </Platforms>
+  <Configurations>
+    <Configuration Name="Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25d.lib libdb48d.lib xqilla22d.lib xerces-c_3d.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win32/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml prog $(OutDir) debug" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Static Debug" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeLibrary="1" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25sd.lib libdb48sd.lib xqilla22sd.lib xerces-c_static_3d.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win32/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/></Configuration>
+    <Configuration Name="Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25.lib libdb48.lib xqilla22.lib xerces-c_3.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win32/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml prog $(OutDir) release" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Static Release" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeLibrary="0" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25s.lib libdb48s.lib xqilla22s.lib xerces-c_static_3.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win32/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/></Configuration>
+    <Configuration Name="Debug|x64" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="libdbxml25d.lib libdb48d.lib xqilla22d.lib xerces-c_3d.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win64/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml prog $(OutDir) debug" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Debug|x64" OutputDirectory="..\build_windows\$(PlatformName)\Static Debug" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeLibrary="1" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="libdbxml25sd.lib libdb48sd.lib xqilla22sd.lib xerces-c_static_3d.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win64/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/></Configuration>
+    <Configuration Name="Release|x64" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="libdbxml25.lib libdb48.lib xqilla22.lib xerces-c_3.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win64/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml prog $(OutDir) release" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Release|x64" OutputDirectory="..\build_windows\$(PlatformName)\Static Release" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeLibrary="0" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="libdbxml25s.lib libdb48s.lib xqilla22s.lib xerces-c_static_3.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win64/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/></Configuration>
+    <Configuration Name="Debug|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="libdbxml25d.lib libdb48d.lib xqilla22d.lib xerces-c_3d.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml prog $(OutDir) debug" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Debug|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Static Debug" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeLibrary="1" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="libdbxml25sd.lib libdb48sd.lib xqilla22sd.lib xerces-c_static_3d.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/></Configuration>
+    <Configuration Name="Release|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="libdbxml25.lib libdb48.lib xqilla22.lib xerces-c_3.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml prog $(OutDir) release" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Release|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Static Release" IntermediateDirectory="./$(OutDir)/dbxml_shell" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../src/common" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeLibrary="0" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_shell.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="libdbxml25s.lib libdb48s.lib xqilla22s.lib xerces-c_static_3.lib ws2_32.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml.exe" ProgramDatabaseFile="$(OutDir)/dbxml_shell.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/></Configuration>
+  </Configurations>
+  <References/>
+  <Files>
+    <File RelativePath="..\src\clib\getopt.c"/>
+    <File RelativePath="..\src\common\SigBlock.cpp"/>
+    <File RelativePath="..\src\common\Timer.cpp"/>
+    <File RelativePath="..\src\common\dbxml_util_sig.c"/>
+    <File RelativePath="..\src\utils\shell\AbortCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\AbortCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\AddAliasCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\AddAliasCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\AddDocumentCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\AddDocumentCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\AddIndexCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\AddIndexCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\CommentCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\CommentCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\CommitCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\CommitCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\CompactCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\CompactCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\ContainerQueryCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\ContainerQueryCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\ContextItemQueryCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\ContextItemQueryCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\CreateContainerCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\CreateContainerCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\DebugCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\DebugCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\DebugOptimizationCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\DebugOptimizationCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\DefaultShell.cpp"/>
+    <File RelativePath="..\src\utils\shell\DefaultShell.hpp"/>
+    <File RelativePath="..\src\utils\shell\DeleteDocumentCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\DeleteDocumentCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\DeleteIndexCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\DeleteIndexCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\EchoCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\EchoCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\EdgeIndexLookupCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\EdgeIndexLookupCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\Environment.cpp"/>
+    <File RelativePath="..\src\utils\shell\Environment.hpp"/>
+    <File RelativePath="..\src\utils\shell\GetDocumentsCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\GetDocumentsCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\GetMetaDataCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\GetMetaDataCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\HelpCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\HelpCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\IncludeCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\IncludeCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\IndexLookupCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\IndexLookupCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\InfoCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\InfoCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\LazyCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\LazyCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\ListIndexesCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\ListIndexesCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\OpenContainerCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\OpenContainerCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\PreLoadCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\PreLoadCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\PrepareCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\PrepareCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\PrintCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\PrintCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\ProjectionCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\ProjectionCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\QueryCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\QueryCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\QueryPlanCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\QueryPlanCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\QuitCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\QuitCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\ReindexCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\ReindexCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\RemoveAliasCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\RemoveAliasCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\RemoveContainerCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\RemoveContainerCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\ReturnTypeCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\ReturnTypeCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\SetAutoIndexingCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\SetAutoIndexingCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\SetBaseURICommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\SetBaseURICommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\SetIgnoreCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\SetIgnoreCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\SetMetaDataCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\SetMetaDataCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\SetNamespaceCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\SetNamespaceCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\SetQueryTimeoutCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\SetQueryTimeoutCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\SetTypedVariableCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\SetTypedVariableCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\SetVariableCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\SetVariableCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\SetVerboseCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\SetVerboseCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\Shell.cpp"/>
+    <File RelativePath="..\src\utils\shell\Shell.hpp"/>
+    <File RelativePath="..\src\utils\shell\ShellCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\ShellCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\StartTransactionCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\StartTransactionCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\StatsLookupCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\StatsLookupCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\SyncCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\SyncCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\TimeCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\TimeCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\UpgradeCommand.cpp"/>
+    <File RelativePath="..\src\utils\shell\UpgradeCommand.hpp"/>
+    <File RelativePath="..\src\utils\shell\dbxmlsh.cpp"/>
+  </Files>
+  <Globals/>
+</VisualStudioProject>

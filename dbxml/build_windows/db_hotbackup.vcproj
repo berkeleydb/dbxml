@@ -1,0 +1,37 @@
+<VisualStudioProject ProjectType="Visual C++" Version="7.10" Name="db_hotbackup" ProjectGUID="{2F020B18-5352-486E-A85E-2A59E5B31AC5}">
+  <Platforms>
+    <Platform Name="Win32"/>
+    <Platform Name="x64"/>
+    <Platform Name="IA64"/>
+  </Platforms>
+  <Configurations>
+    <Configuration Name="Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/db_hotbackup" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db_hotbackup.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" Detect64BitPortabilityProblems="TRUE" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdb48d.lib" AdditionalLibraryDirectories="$(OutDir)" OutputFile="$(OutDir)/db_hotbackup.exe" ProgramDatabaseFile="$(OutDir)/db_hotbackup.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat db_hotbackup prog $(OutDir) debug" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/db_hotbackup" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db_hotbackup.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" Detect64BitPortabilityProblems="TRUE" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdb48.lib" AdditionalLibraryDirectories="$(OutDir)" OutputFile="$(OutDir)/db_hotbackup.exe" ProgramDatabaseFile="$(OutDir)/db_hotbackup.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat db_hotbackup prog $(OutDir) release" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+  </Configurations>
+  <References/>
+  <Files>
+    <File RelativePath="..\..\db-4.8.26\db_hotbackup\db_hotbackup.c"/>
+    <File RelativePath="..\..\db-4.8.26\clib\getopt.c"/>
+  </Files>
+  <Globals/>
+</VisualStudioProject>

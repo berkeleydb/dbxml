@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Celeriac</item>
+	<inventory>
+		<sku>CelevegexfLdDj</sku>
+		<price>0.69</price>
+		<inventory>500</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

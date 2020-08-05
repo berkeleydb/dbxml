@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Daikon Radish</product>
+	<inventory>
+		<sku>DaikvegeRUg0ge</sku>
+		<price>0.09</price>
+		<inventory>437</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

@@ -1,0 +1,20 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="ord">
+      <QueryPlanToAST>
+        <LevelFilterQP>
+          <StepQP axis="parent-of-child" name="order" nodeType="element">
+            <StepQP axis="parent-of-child" name="order_lines" nodeType="element">
+              <StepQP axis="parent-of-child" name="order_line" nodeType="element">
+                <ValueQP index="node-element-equality-double" operation="gt" child="discount_rate" value="0.02"/>
+              </StepQP>
+            </StepQP>
+          </StepQP>
+        </LevelFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":ord"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

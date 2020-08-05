@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Breadnut</item>
+	<inventory>
+		<sku>Breafrui3dyy35</sku>
+		<price>0.66</price>
+		<inventory>441</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

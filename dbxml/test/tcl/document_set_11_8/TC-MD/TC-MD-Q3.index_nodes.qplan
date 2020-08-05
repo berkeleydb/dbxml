@@ -1,0 +1,77 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <Function name="{http://www.w3.org/2005/xpath-functions}:distinct-values">
+        <Atomize>
+          <QueryPlanToAST>
+            <ChildJoinQP>
+              <StepQP axis="child" name="dateline" nodeType="element">
+                <StepQP axis="child" name="prolog" nodeType="element">
+                  <StepQP axis="child" name="article" nodeType="element">
+                    <SequentialScanQP nodeType="document"/>
+                  </StepQP>
+                </StepQP>
+              </StepQP>
+              <PresenceQP index="node-element-equality-string" operation="prefix" child="date"/>
+            </ChildJoinQP>
+          </QueryPlanToAST>
+        </Atomize>
+      </Function>
+    </ForBinding>
+    <LetBinding name="b">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp0">
+          <StepQP axis="parent-of-child" name="dateline" nodeType="element">
+            <ValueQP index="node-element-equality-string" operation="eq" child="date">
+              <Variable name="a"/>
+            </ValueQP>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="article" nodeType="element">
+              <StepQP axis="parent-of-child" name="prolog" nodeType="element">
+                <VariableQP name="#tmp0"/>
+              </StepQP>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </LetBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <DOMConstructor type="element">
+          <Name>
+            <Sequence>
+              <ATQNameConstructor uri="" prefix="" localname="Date" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+            </Sequence>
+          </Name>
+          <Children>
+            <ContentSequence>
+              <Variable name="a"/>
+            </ContentSequence>
+          </Children>
+        </DOMConstructor>
+        <DOMConstructor type="element">
+          <Name>
+            <Sequence>
+              <ATQNameConstructor uri="" prefix="" localname="NumberOfArticles" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+            </Sequence>
+          </Name>
+          <Children>
+            <ContentSequence>
+              <Function name="{http://www.w3.org/2005/xpath-functions}:count">
+                <QueryPlanToAST>
+                  <VariableQP name=":b"/>
+                </QueryPlanToAST>
+              </Function>
+            </ContentSequence>
+          </Children>
+        </DOMConstructor>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

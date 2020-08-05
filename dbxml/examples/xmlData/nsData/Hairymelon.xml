@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Hairy melon</product>
+	<inventory>
+		<sku>HairvegeAkkbn2</sku>
+		<price>0.39</price>
+		<inventory>51</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

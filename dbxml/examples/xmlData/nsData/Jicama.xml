@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Jicama</product>
+	<inventory>
+		<sku>JicavegeBuufWy</sku>
+		<price>0.82</price>
+		<inventory>791</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

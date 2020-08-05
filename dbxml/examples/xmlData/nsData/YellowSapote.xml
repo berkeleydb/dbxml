@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Yellow Sapote</product>
+	<inventory>
+		<sku>Yellfruij1PKvI</sku>
+		<price>0.34</price>
+		<inventory>355</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</fruits:item>
+

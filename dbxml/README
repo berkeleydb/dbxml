@@ -1,0 +1,27 @@
+Oracle: Berkeley DB XML 2.5.16: (December 22, 2009)
+
+This is version 2.5.16 of Berkeley DB XML from Oracle.  To view the 
+release documentation, see:
+    dbxml/docs/index.html
+
+For build instructions, see:
+    dbxml/docs/ref_xml/xml_unix/intro.html for UNIX-like platforms
+or:
+    dbxml/docs/ref_xml/xml_win/intro.html for Microsoft Windows
+
+If this is a Windows binary installation, see:
+    dbxml/docs/ref_xml/xml_win/bin.html
+
+To see a summary of changes in this release, see:
+    dbxml/docs/ref_xml/changelog/2.5.html
+
+The documentation is available online here:
+   http://www.oracle.com/technology/documentation/berkeley-db/xml/index.html
+
+To see product information as well as the latest
+patches and known issues for Berkeley DB XML, see:
+   http://www.oracle.com/technology/products/berkeley-db/xml/index.html
+
+Visit the Berkeley DB XML forum on the Oracle Technology Network
+for additional information and support:
+  http://forums.oracle.com/forums/forum.jspa?forumID=274

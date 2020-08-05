@@ -1,0 +1,60 @@
+=head1 NAME
+
+XmlEventWriter - A Perl interface to the DbXml XmlEventWriter Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $mgr = new XmlManager(...);
+
+    my $c = $mgr->createContainer(...);
+    my $doc = $mgr->createDocument();
+
+    $writer = $c->putDocumentAsEventWriter($doc, $context);
+
+    $writer->close();
+
+	$writer->writeAttribute($localName, $prefix, $uri, $value, $isSpecified);
+
+	$writer->writeText($XmlEventType, $text, $length);
+
+	$writer->writeProcessingInstruction($target, $data);
+
+	$writer->writeStartElement($localName, $prefix, $uri, $numAttributes, $isEmpty);
+
+	$writer->writeEndElement($localName, $prefix, $uri);
+	
+	$writer->writeDTD($dtd);
+
+	$writer->writeStartDocument($version, $encoding, $standalone);
+
+	$writer->writeEndDocument();
+
+	$writer->writeStartEntity($name, $expandedInfoFollows);
+
+	$writer->writeEndEntity($name);
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+=head1 Constructor
+
+=head1 Methods
+
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

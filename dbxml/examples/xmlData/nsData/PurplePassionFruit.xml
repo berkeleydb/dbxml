@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Purple Passion Fruit</product>
+	<inventory>
+		<sku>PurpfruiYalfC4</sku>
+		<price>0.67</price>
+		<inventory>406</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</fruits:item>
+

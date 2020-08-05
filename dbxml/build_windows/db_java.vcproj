@@ -1,0 +1,36 @@
+<VisualStudioProject ProjectType="Visual C++" Version="7.10" Name="db_java" ProjectGUID="{81225AA0-44C5-4E17-9F76-512EC70A47CE}">
+  <Platforms>
+    <Platform Name="Win32"/>
+    <Platform Name="x64"/>
+    <Platform Name="IA64"/>
+  </Platforms>
+  <Configurations>
+    <Configuration Name="Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/db_java" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_UNICODE;UNICODE" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db_java.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdb48d.lib" AdditionalLibraryDirectories="$(OutDir)" OutputFile="$(OutDir)/libdb_java48d.dll" ProgramDatabaseFile="$(OutDir)/libdb_java48d.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/libdb_java48d.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="xcopy *.jar ..\..\jar /F/Y &#xA;installProj.bat libdb_java48 dll $(OutDir) debug" Description="Copying .jar and library files to install directory"/>
+      <Tool Name="VCCustomBuildTool" CommandLine="&#xA;mkdir &quot;./$(OutDir)/classes.db/dummy&quot; &quot;./../build_windows/dummy.db&quot;&#xA;echo compiling Berkeley DB Java classes &#xA;javac -source 1.5 -target 1.5 -g -d $(OutDir)/classes.db -classpath $(OutDir)/classes.db ../../db-4.8.26/java/src/com/sleepycat/db/*.java ../../db-4.8.26/java/src/com/sleepycat/db/internal/*.java ../../db-4.8.26/java/src/com/sleepycat/bind/*.java ../../db-4.8.26/java/src/com/sleepycat/bind/serial/*.java ../../db-4.8.26/java/src/com/sleepycat/bind/tuple/*.java ../../db-4.8.26/java/src/com/sleepycat/collections/*.java ../../db-4.8.26/java/src/com/sleepycat/compat/*.java ../../db-4.8.26/java/src/com/sleepycat/util/*.java ../../db-4.8.26/java/src/com/sleepycat/util/keyrange/*.java&#xA;echo creating db jar file &#xA;jar cf ../build_windows/db.jar -C $(OutDir)/classes.db .&#xA;rmdir &quot;$(OutDir)/classes.db/dummy&quot; &quot;./../build_windows/dummy.db&quot;&#xA;echo Java build finished" Outputs="force_compilation.txt"/></Configuration>
+    <Configuration Name="Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/db_java" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_UNICODE;UNICODE" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db_java.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdb48.lib" AdditionalLibraryDirectories="$(OutDir)" OutputFile="$(OutDir)/libdb_java48.dll" ProgramDatabaseFile="$(OutDir)/libdb_java48.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/libdb_java48.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="xcopy *.jar ..\..\jar /F/Y &#xA;installProj.bat libdb_java48 dll $(OutDir) release" Description="Copying .jar and library files to install directory"/>
+      <Tool Name="VCCustomBuildTool" CommandLine="&#xA;mkdir &quot;./$(OutDir)/classes.db/dummy&quot; &quot;./../build_windows/dummy.db&quot;&#xA;echo compiling Berkeley DB Java classes &#xA;javac -source 1.5 -target 1.5 -g -d $(OutDir)/classes.db -classpath $(OutDir)/classes.db ../../db-4.8.26/java/src/com/sleepycat/db/*.java ../../db-4.8.26/java/src/com/sleepycat/db/internal/*.java ../../db-4.8.26/java/src/com/sleepycat/bind/*.java ../../db-4.8.26/java/src/com/sleepycat/bind/serial/*.java ../../db-4.8.26/java/src/com/sleepycat/bind/tuple/*.java ../../db-4.8.26/java/src/com/sleepycat/collections/*.java ../../db-4.8.26/java/src/com/sleepycat/compat/*.java ../../db-4.8.26/java/src/com/sleepycat/util/*.java ../../db-4.8.26/java/src/com/sleepycat/util/keyrange/*.java&#xA;echo creating db jar file &#xA;jar cf ../build_windows/db.jar -C $(OutDir)/classes.db .&#xA;rmdir &quot;$(OutDir)/classes.db/dummy&quot; &quot;./../build_windows/dummy.db&quot;&#xA;echo Java build finished" Outputs="force_compilation.txt"/></Configuration>
+  </Configurations>
+  <References/>
+  <Files>
+    <File RelativePath="..\..\db-4.8.26\libdb_java\db_java_wrap.c"/>
+  </Files>
+  <Globals/>
+</VisualStudioProject>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<vendor type="retail">
+	<name>The Baking Pan</name>
+	<address>1415 53rd Ave.</address>
+	<city>Dutchin</city>
+	<state>MN</state>
+	<zipcode>56304</zipcode>
+	<phonenumber>320 442 2277</phonenumber>
+	<salesrep>
+		<name>Mike Roan</name>
+		<phonenumber>320 442 6879</phonenumber>
+	</salesrep>
+</vendor>
+

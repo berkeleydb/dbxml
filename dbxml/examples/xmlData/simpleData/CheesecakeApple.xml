@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cheesecake, Apple</item>
+	<inventory>
+		<sku>CheedessE093On</sku>
+		<price>9.31</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

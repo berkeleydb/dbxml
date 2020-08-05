@@ -1,0 +1,53 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <ExceptQP>
+          <ChildJoinQP>
+            <StepQP axis="child" name="authors" nodeType="element">
+              <StepQP axis="child" name="prolog" nodeType="element">
+                <StepQP axis="child" name="article" nodeType="element">
+                  <SequentialScanQP nodeType="document"/>
+                </StepQP>
+              </StepQP>
+            </StepQP>
+            <PresenceQP index="node-element-presence-none" operation="eq" child="author"/>
+          </ChildJoinQP>
+          <NodePredicateFilterQP uri="" name="#tmp8">
+            <ChildJoinQP>
+              <StepQP axis="child" name="authors" nodeType="element">
+                <StepQP axis="child" name="prolog" nodeType="element">
+                  <StepQP axis="child" name="article" nodeType="element">
+                    <SequentialScanQP nodeType="document"/>
+                  </StepQP>
+                </StepQP>
+              </StepQP>
+              <PresenceQP index="node-element-presence-none" operation="eq" child="author"/>
+            </ChildJoinQP>
+            <StepQP axis="child" uri="*" name="*" nodeType="text">
+              <StepQP axis="child" name="contact" nodeType="element">
+                <VariableQP name="#tmp8"/>
+              </StepQP>
+            </StepQP>
+          </NodePredicateFilterQP>
+        </ExceptQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="NoContact" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="name" nodeType="element">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

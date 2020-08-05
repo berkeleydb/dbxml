@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Love-in-a-mist</item>
+	<inventory>
+		<sku>LovefruilcsBNu</sku>
+		<price>0.71</price>
+		<inventory>811</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

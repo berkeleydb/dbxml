@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Sugar Snap Peas</item>
+	<inventory>
+		<sku>SugavegeLXWV5f</sku>
+		<price>0.63</price>
+		<inventory>271</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

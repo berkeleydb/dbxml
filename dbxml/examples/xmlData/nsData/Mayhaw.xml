@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Mayhaw</product>
+	<inventory>
+		<sku>Mayhfrui7dpAIk</sku>
+		<price>0.96</price>
+		<inventory>956</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</fruits:item>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Tart, Almond</item>
+	<inventory>
+		<sku>Tartdess68Asbi</sku>
+		<price>8.07</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

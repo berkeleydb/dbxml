@@ -1,0 +1,43 @@
+#!/bin/sh -
+
+d=..
+echo 'Updating Berkeley DB XML source tree permissions...'
+
+run()
+{
+	echo "	$1 ($2)"
+	if [ -f "$d/$1" ]; then
+		chmod "$2" "$d/$1"
+	else
+		echo "$d/$1: no such file or directory"
+		exit 1
+	fi
+}
+
+run build_windows/include.tcl 664
+run dist/config.guess 555
+run dist/config.sub 555
+run dist/install-sh 555
+run dist/s_all 755
+run dist/s_config 755
+run dist/s_java 755
+run dist/s_perm 755
+run dist/s_readme 755
+run dist/s_swig 755
+run dist/s_test 755
+run dist/s_win32 755
+run dist/s_win32_dsp 755
+run dist/s_winmsi 755
+run dist/s_projects 755
+run src/perl/Db/const-c.inc 664
+run src/perl/Db/const-xs.inc 664
+run src/perl/DbXml/const-c.inc 664
+run src/perl/DbXml/const-xs.inc 664
+run build_windows/BDBXML_all.sln 664
+run build_windows/BDBXML_all_vs8.sln 664
+run build_windows/BDBXML_all.dsw 664
+run examples/cxx/gettingStarted/loadExamplesData.sh 555
+run examples/cxx/gettingStarted/loadExamplesData.cmd 555
+run configure 755
+
+

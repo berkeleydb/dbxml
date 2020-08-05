@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" href="$XMemory_8hpp.html" title="xercesc/util/XMemory.hpp" alt="" coords="1968,237,2141,267"/>
+<area shape="rect" href="$InputSource_8hpp.html" title="xercesc/sax/InputSource.hpp" alt="" coords="696,160,888,189"/>
+<area shape="rect" href="$ResultImpl_8hpp.html" title="xqilla/runtime/ResultImpl.hpp" alt="" coords="45,392,235,421"/>
+<area shape="rect" href="$StaticContext_8hpp.html" title="xqilla/context/StaticContext.hpp" alt="" coords="1371,83,1576,112"/>
+<area shape="rect" href="$PlatformUtils_8hpp.html" title="xercesc/util/PlatformUtils.hpp" alt="" coords="611,237,803,267"/>
+<area shape="rect" href="$Item_8hpp.html" title="xqilla/items/Item.hpp" alt="" coords="1171,469,1312,499"/>
+<area shape="rect" href="$LocationInfo_8hpp.html" title="xqilla/ast/LocationInfo.hpp" alt="" coords="61,547,235,576"/>
+<area shape="rect" href="$ReferenceCounted_8hpp.html" title="xqilla/framework/ReferenceCounted.hpp" alt="" coords="1272,547,1523,576"/>
+<area shape="rect" href="$MemoryManager_8hpp.html" title="xercesc/framework/MemoryManager.hpp" alt="" coords="1800,624,2056,653"/>
+<area shape="rect" href="$XQilla_8hpp.html" title="xqilla/simple&#45;api/XQilla.hpp" alt="" coords="1273,160,1449,189"/>
+<area shape="rect" href="$DocumentCache_8hpp.html" title="xqilla/schema/DocumentCache.hpp" alt="" coords="1473,160,1700,189"/>
+<area shape="rect" href="$XPath2MemoryManager_8hpp.html" title="xqilla/framework/XPath2MemoryManager.hpp" alt="" coords="2019,547,2301,576"/>
+<area shape="rect" href="$Node_8hpp.html" title="xqilla/items/Node.hpp" alt="" coords="1472,237,1619,267"/>
+<area shape="rect" href="$ATQNameOrDerived_8hpp.html" title="xqilla/items/ATQNameOrDerived.hpp" alt="" coords="1389,315,1621,344"/>
+<area shape="rect" href="$ATBooleanOrDerived_8hpp.html" title="xqilla/items/ATBooleanOrDerived.hpp" alt="" coords="1128,315,1365,344"/>
+<area shape="rect" href="$AnyAtomicType_8hpp.html" title="xqilla/items/AnyAtomicType.hpp" alt="" coords="1365,392,1573,421"/>
+</map>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Crabapple</item>
+	<inventory>
+		<sku>CrabfruicNFnrD</sku>
+		<price>1.14</price>
+		<inventory>756</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

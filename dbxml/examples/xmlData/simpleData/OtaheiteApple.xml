@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Otaheite Apple</item>
+	<inventory>
+		<sku>Otahfrui3zBVS8</sku>
+		<price>1.03</price>
+		<inventory>409</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

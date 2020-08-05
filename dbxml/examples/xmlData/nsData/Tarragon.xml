@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Tarragon</product>
+	<inventory>
+		<sku>TarrvegeP2T08v</sku>
+		<price>0.09</price>
+		<inventory>702</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

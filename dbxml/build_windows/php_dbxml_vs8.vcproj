@@ -1,0 +1,100 @@
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="php_dbxml" ProjectGUID="{69F331FD-7645-494C-96FE-BA6A51E5E9C6}">
+  <Platforms>
+    <Platform Name="Win32"/>
+    <Platform Name="x64"/>
+    <Platform Name="IA64"/>
+  </Platforms>
+  <Configurations>
+    <Configuration Name="Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/php_dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../../db-4.8.26/php_db4,f:/php/php-5.2.5/main,f:/php/php-5.2.5/TSRM,f:/php/php-5.2.5/Zend,f:/php/php-5.2.5/regex,f:/php/php-5.2.5" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;COMPILE_DL_DBXML;DBXML_EXPORTS;HAVE_DB_H=1;ZEND_WIN32=1;PHP_WIN32=1;ZEND_WIN32_FORCE_INLINE;ZTS=1;ZEND_DEBUG=1" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/php_dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25d.lib libdb48d.lib php5ts_debug.lib php_db4d.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);f:/php/php-5.2.5/Debug_TS;$(OutDir)" OutputFile="$(OutDir)/php_dbxmld.dll" ProgramDatabaseFile="$(OutDir)/php_dbxmld.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/php_dbxmld.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat php_dbxml dll $(OutDir) debug" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/php_dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../../db-4.8.26/php_db4,f:/php/php-5.2.5/main,f:/php/php-5.2.5/TSRM,f:/php/php-5.2.5/Zend,f:/php/php-5.2.5/regex,f:/php/php-5.2.5" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;COMPILE_DL_DBXML;DBXML_EXPORTS;HAVE_DB_H=1;ZEND_WIN32=1;PHP_WIN32=1;ZEND_WIN32_FORCE_INLINE;ZTS=1;NDebug;ZEND_DEBUG=0" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/php_dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25.lib libdb48.lib php5ts.lib php_db4.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);f:/php/php-5.2.5/Release_TS;$(OutDir)" OutputFile="$(OutDir)/php_dbxml.dll" ProgramDatabaseFile="$(OutDir)/php_dbxml.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/php_dbxml.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat php_dbxml dll $(OutDir) release" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Debug|x64" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/php_dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../../db-4.8.26/php_db4,f:/php/php-5.2.5/main,f:/php/php-5.2.5/TSRM,f:/php/php-5.2.5/Zend,f:/php/php-5.2.5/regex,f:/php/php-5.2.5" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;COMPILE_DL_DBXML;DBXML_EXPORTS;HAVE_DB_H=1;ZEND_WIN32=1;PHP_WIN32=1;ZEND_WIN32_FORCE_INLINE;ZTS=1;ZEND_DEBUG=1" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/php_dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="libdbxml25d.lib libdb48d.lib php5ts_debug.lib php_db4d.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir)" OutputFile="$(OutDir)/php_dbxmld.dll" ProgramDatabaseFile="$(OutDir)/php_dbxmld.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/php_dbxmld.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat php_dbxml dll $(OutDir) debug" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Release|x64" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/php_dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../../db-4.8.26/php_db4,f:/php/php-5.2.5/main,f:/php/php-5.2.5/TSRM,f:/php/php-5.2.5/Zend,f:/php/php-5.2.5/regex,f:/php/php-5.2.5" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;COMPILE_DL_DBXML;DBXML_EXPORTS;HAVE_DB_H=1;ZEND_WIN32=1;PHP_WIN32=1;ZEND_WIN32_FORCE_INLINE;ZTS=1;NDebug;ZEND_DEBUG=0" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/php_dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="libdbxml25.lib libdb48.lib php5ts.lib php_db4.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir)" OutputFile="$(OutDir)/php_dbxml.dll" ProgramDatabaseFile="$(OutDir)/php_dbxml.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/php_dbxml.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat php_dbxml dll $(OutDir) release" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Debug|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/php_dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../../db-4.8.26/php_db4,f:/php/php-5.2.5/main,f:/php/php-5.2.5/TSRM,f:/php/php-5.2.5/Zend,f:/php/php-5.2.5/regex,f:/php/php-5.2.5" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;COMPILE_DL_DBXML;DBXML_EXPORTS;HAVE_DB_H=1;ZEND_WIN32=1;PHP_WIN32=1;ZEND_WIN32_FORCE_INLINE;ZTS=1;ZEND_DEBUG=1" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/php_dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="libdbxml25d.lib libdb48d.lib php5ts_debug.lib php_db4d.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir)" OutputFile="$(OutDir)/php_dbxmld.dll" ProgramDatabaseFile="$(OutDir)/php_dbxmld.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/php_dbxmld.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat php_dbxml dll $(OutDir) debug" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Release|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/php_dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include,../../db-4.8.26/php_db4,f:/php/php-5.2.5/main,f:/php/php-5.2.5/TSRM,f:/php/php-5.2.5/Zend,f:/php/php-5.2.5/regex,f:/php/php-5.2.5" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;COMPILE_DL_DBXML;DBXML_EXPORTS;HAVE_DB_H=1;ZEND_WIN32=1;PHP_WIN32=1;ZEND_WIN32_FORCE_INLINE;ZTS=1;NDebug;ZEND_DEBUG=0" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/php_dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="libdbxml25.lib libdb48.lib php5ts.lib php_db4.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir)" OutputFile="$(OutDir)/php_dbxml.dll" ProgramDatabaseFile="$(OutDir)/php_dbxml.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/php_dbxml.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat php_dbxml dll $(OutDir) release" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+  </Configurations>
+  <References/>
+  <Files>
+    <File RelativePath="..\src\php\php_dbxml.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_container.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_containerconfig.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_data.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_document.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_eventreader.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_eventreadertowriter.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_eventwriter.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_exception.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_indexlookup.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_indexspecification.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_inputstream.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_manager.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_querycontext.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_queryexpression.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_resolver.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_results.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_statistics.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_transaction.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_updatecontext.cpp"/>
+    <File RelativePath="..\src\php\php_dbxml_value.cpp"/>
+  </Files>
+  <Globals/>
+</VisualStudioProject>

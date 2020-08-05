@@ -1,0 +1,50 @@
+=head1 NAME
+
+DbTxn - A Perl interface to the Berkeley DB DbTxn Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::Db;
+
+    my $txn = $env->txn_begin([$parent] [, $flags]);
+
+    $txn->abort;
+    $txn->commit([$flags]);
+    $txn->discard([$flags]);
+    $int = $txn->id;
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to DbTxn is identical to the C++ API, apart from
+the following
+
+=over 5
+
+=item 1.
+
+=back
+
+
+=head1 Constructor
+
+
+=head1 Methods
+
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

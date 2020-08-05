@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Lettuce</item>
+	<inventory>
+		<sku>LettvegeNZMCsr</sku>
+		<price>0.25</price>
+		<inventory>222</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

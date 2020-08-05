@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Ampalaya</item>
+	<inventory>
+		<sku>AmpavegeRJcUWR</sku>
+		<price>0.27</price>
+		<inventory>520</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

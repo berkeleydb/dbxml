@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Brownies, Chocolate Chip</item>
+	<inventory>
+		<sku>BrowdessdcI0wC</sku>
+		<price>10.78</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

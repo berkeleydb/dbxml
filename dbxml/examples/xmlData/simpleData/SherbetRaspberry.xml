@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Sherbet, Raspberry</item>
+	<inventory>
+		<sku>SherdessZujJiX</sku>
+		<price>9.64</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

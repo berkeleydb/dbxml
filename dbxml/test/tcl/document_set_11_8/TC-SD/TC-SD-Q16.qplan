@@ -1,0 +1,31 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <ValueFilterQP comparison="substring">
+          <NodePredicateFilterQP uri="" name="#tmp4">
+            <StepQP axis="child" name="e" nodeType="element">
+              <StepQP axis="child" name="dictionary" nodeType="element">
+                <SequentialScanQP nodeType="document"/>
+              </StepQP>
+            </StepQP>
+            <AncestorOrSelfJoinQP>
+              <VariableQP name="#tmp4"/>
+              <ValueQP index="node-element-substring-string" operation="substring" child="e" value="the hockey"/>
+            </AncestorOrSelfJoinQP>
+          </NodePredicateFilterQP>
+          <Sequence>
+            <AnyAtomicTypeConstructor value="the hockey" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+          </Sequence>
+        </ValueFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="hw" nodeType="element">
+        <StepQP axis="child" name="hwg" nodeType="element">
+          <VariableQP name=":a"/>
+        </StepQP>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

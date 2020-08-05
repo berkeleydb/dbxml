@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Brownies, Fudge</item>
+	<inventory>
+		<sku>BrowdessLIsx3U</sku>
+		<price>10.05</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

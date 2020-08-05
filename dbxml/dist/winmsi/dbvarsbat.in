@@ -1,0 +1,12 @@
+@echo off
+
+:: This file sets the environment variables needed to run Berkeley DB XML.
+
+set DBROOTDIR=
+for /F "tokens=3 delims=	" %%A in ('REG QUERY "HKLM\SOFTWARE\Oracle\Berkeley DB XML\@DBXML_WIX_VERSION@" /v RootDirectory') do set DBROOTDIR=%%A
+
+echo Setting environment variables for Berkeley DB XML, installed in %DBROOTDIR%
+
+:: set PATH=%DBROOTDIR%\bin;%DBROOTDIR%\bin\debug;%PATH%
+set PATH=%DBROOTDIR%\bin;%PATH%
+set CLASSPATH=%CLASSPATH%;%DBROOTDIR%\jar\dbxml.jar;%DBROOTDIR%\jar\db.jar;%DBROOTDIR%\jar\dbxmlexamples.jar;%DBROOTDIR%\jar\dbexamples.jar

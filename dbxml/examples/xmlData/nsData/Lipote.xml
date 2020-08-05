@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Lipote</product>
+	<inventory>
+		<sku>LipofruiI31iS6</sku>
+		<price>0.59</price>
+		<inventory>751</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</fruits:item>
+

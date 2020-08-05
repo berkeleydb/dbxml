@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="14.4">
+  <category>updateDocument</category>
+  <description>Updating a document using DOM methods</description>
+  <program name='dbxml_test_driver' />
+
+  <!-- stuff that applies to the entire test -->
+
+  <!-- document(s) that are to be queried for each test -->
+  <document>book.xml</document>
+
+  <!-- individual tests -->
+  <!-- the "method" needs an entry in UpdateDocumentTest::updateMethods_ -->
+
+
+  <base>
+    <method>setTextContent</method>
+    <query>//author</query>
+  </base>
+
+  <base>
+    <method>setTextContent</method>
+    <query>/book/section</query>
+  </base>
+
+  <base>
+    <method>setTextContent</method>
+    <query>//@id</query>
+  </base>
+
+  <base>
+    <method>setTextContent2</method>
+    <query>//author</query>
+  </base>
+
+  <base>
+    <method>setTextContent2</method>
+    <query>/book/section/section</query>
+  </base>
+
+  <base>
+    <method>setTextContent2</method>
+    <query>//@difficulty</query>
+  </base>
+
+  <base>
+    <method>setAttribute</method>
+    <query>//figure[@width="400"]</query>
+  </base>
+
+  <base>
+    <method>setAttribute</method>
+    <query>//node()</query>
+  </base>
+
+  <base>
+    <method>setAttributeNS</method>
+    <query>//node()</query>
+  </base>
+
+</test>
+

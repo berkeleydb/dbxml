@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Dahon ng sili</product>
+	<inventory>
+		<sku>Dahovegebj7IyW</sku>
+		<price>0.60</price>
+		<inventory>243</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

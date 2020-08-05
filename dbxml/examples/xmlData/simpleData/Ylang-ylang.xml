@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Ylang-ylang</item>
+	<inventory>
+		<sku>Ylanfruiz8GCDc</sku>
+		<price>0.45</price>
+		<inventory>648</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

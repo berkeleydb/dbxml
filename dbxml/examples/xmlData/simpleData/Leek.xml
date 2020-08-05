@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Leek</item>
+	<inventory>
+		<sku>LeekvegeQiXMR1</sku>
+		<price>0.43</price>
+		<inventory>731</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

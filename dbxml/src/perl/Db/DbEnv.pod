@@ -1,0 +1,47 @@
+=head1 NAME
+
+DbEnv - A Perl interface to the Berkeley DB DbEnv Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::Db;
+
+    my $env = new DbEnv([$flags]);
+
+    $env->close([$flags]);
+    $env->open($home, $flags, $mode);
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to DbEnv is identical to the C++ API, apart from
+the following
+
+=over 5
+
+=item 1.
+
+=back
+
+
+=head1 Constructor
+
+
+=head1 Methods
+
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

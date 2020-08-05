@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" href="$ATDecimalOrDerived_8hpp.html" title="ATDecimalOrDerived.hpp" alt="" coords="1495,83,1663,112"/>
+<area shape="rect" href="$ATDoubleOrDerived_8hpp.html" title="ATDoubleOrDerived.hpp" alt="" coords="1795,160,1955,189"/>
+<area shape="rect" href="$ATFloatOrDerived_8hpp.html" title="ATFloatOrDerived.hpp" alt="" coords="1867,237,2016,267"/>
+<area shape="rect" href="$ATStringOrDerived_8hpp.html" title="ATStringOrDerived.hpp" alt="" coords="2029,83,2181,112"/>
+<area shape="rect" href="$ItemFactory_8hpp.html" title="ItemFactory.hpp" alt="" coords="1279,392,1393,421"/>
+<area shape="rect" href="$ATDateOrDerived_8hpp.html" title="ATDateOrDerived.hpp" alt="" coords="1573,315,1720,344"/>
+<area shape="rect" href="$ATDateTimeOrDerived_8hpp.html" title="ATDateTimeOrDerived.hpp" alt="" coords="181,315,357,344"/>
+<area shape="rect" href="$ATDurationOrDerived_8hpp.html" title="ATDurationOrDerived.hpp" alt="" coords="1292,160,1460,189"/>
+<area shape="rect" href="$ATTimeOrDerived_8hpp.html" title="ATTimeOrDerived.hpp" alt="" coords="1349,315,1499,344"/>
+<area shape="rect" href="$Sequence_8hpp.html" title="Sequence.hpp" alt="" coords="1616,160,1720,189"/>
+<area shape="rect" href="$xqilla-simple_8hpp.html" title="xqilla&#45;simple.hpp" alt="" coords="601,469,719,499"/>
+<area shape="rect" href="$DynamicContext_8hpp.html" title="DynamicContext.hpp" alt="" coords="19,237,160,267"/>
+<area shape="rect" href="$Timezone_8hpp.html" title="Timezone.hpp" alt="" coords="1020,237,1124,267"/>
+<area shape="rect" href="$ContextHelpers_8hpp.html" title="ContextHelpers.hpp" alt="" coords="21,315,157,344"/>
+<area shape="rect" href="$ATGDayOrDerived_8hpp.html" title="ATGDayOrDerived.hpp" alt="" coords="1173,315,1325,344"/>
+<area shape="rect" href="$ATGMonthDayOrDerived_8hpp.html" title="ATGMonthDayOrDerived.hpp" alt="" coords="381,315,568,344"/>
+<area shape="rect" href="$ATGMonthOrDerived_8hpp.html" title="ATGMonthOrDerived.hpp" alt="" coords="592,315,757,344"/>
+<area shape="rect" href="$ATGYearMonthOrDerived_8hpp.html" title="ATGYearMonthOrDerived.hpp" alt="" coords="781,315,971,344"/>
+<area shape="rect" href="$ATGYearOrDerived_8hpp.html" title="ATGYearOrDerived.hpp" alt="" coords="995,315,1149,344"/>
+</map>

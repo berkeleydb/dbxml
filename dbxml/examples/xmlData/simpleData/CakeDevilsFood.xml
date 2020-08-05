@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cake, Devil's Food</item>
+	<inventory>
+		<sku>CakedessUA1rca</sku>
+		<price>5.04</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

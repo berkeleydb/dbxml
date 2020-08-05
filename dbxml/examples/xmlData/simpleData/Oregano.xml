@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Oregano</item>
+	<inventory>
+		<sku>OregvegeZigmRn</sku>
+		<price>0.55</price>
+		<inventory>653</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

@@ -1,0 +1,15 @@
+#!/bin/sh -
+#
+# Build Windows-specific include, project, workspace and solution files
+
+# Build .rc file
+. ./s_process
+process ../build_windows/libdbxmlrc.src ../build_windows/libdbxml.rc
+
+sh s_paths
+sh s_win32_inc    # Win32 include files.
+# s_projects requires xqilla (command line program) in your PATH
+# s_projects needs to run before s_win32_dsp, since it generates srcfiles.in for it
+sh s_projects     # Win32 project files (VC7).  
+sh s_win32_dsp    # Win32 project files (VC6).
+sh s_win32_sln    # Windows .sln and batch files

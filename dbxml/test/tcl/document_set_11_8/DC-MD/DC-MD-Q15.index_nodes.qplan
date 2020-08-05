@@ -1,0 +1,79 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="order">
+      <QueryPlanToAST>
+        <LevelFilterQP>
+          <StepQP axis="parent-of-attribute" name="order" nodeType="element">
+            <ValueQP index="edge-attribute-equality-string" operation="eq" parent="order" child="id" value="7"/>
+          </StepQP>
+        </LevelFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <ForBinding name="cust">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp1">
+          <StepQP axis="parent-of-attribute" name="customer" nodeType="element">
+            <ValueQP index="edge-attribute-equality-string" operation="eq" parent="customer" child="id">
+              <Atomize>
+                <QueryPlanToAST>
+                  <StepQP axis="child" name="customer_id" nodeType="element">
+                    <VariableQP name=":order"/>
+                  </StepQP>
+                </QueryPlanToAST>
+              </Atomize>
+            </ValueQP>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="customers" nodeType="element">
+              <VariableQP name="#tmp1"/>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="attribute" name="id" nodeType="attribute">
+              <VariableQP name=":order"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="order_status" nodeType="element">
+              <VariableQP name=":order"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="first_name" nodeType="element">
+              <VariableQP name=":cust"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="last_name" nodeType="element">
+              <VariableQP name=":cust"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="phone_number" nodeType="element">
+              <VariableQP name=":cust"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

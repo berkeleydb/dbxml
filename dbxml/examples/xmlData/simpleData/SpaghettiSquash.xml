@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Spaghetti Squash</item>
+	<inventory>
+		<sku>SpagvegerWT2PX</sku>
+		<price>0.77</price>
+		<inventory>131</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

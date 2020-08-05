@@ -1,0 +1,264 @@
+# Process this file with autoconf to produce a configure script.
+
+m4_include([dist/version.m4])
+
+m4_include([dist/aclocal/tcl.ac])
+m4_include([dist/aclocal/sosuffix.ac])
+m4_include([dist/aclocal/options.ac])
+
+m4_include([dist/aclocal_java/ac_check_class.ac])
+m4_include([dist/aclocal_java/ac_check_classpath.ac])
+m4_include([dist/aclocal_java/ac_check_junit.ac])
+m4_include([dist/aclocal_java/ac_check_rqrd_class.ac])
+m4_include([dist/aclocal_java/ac_java_options.ac])
+m4_include([dist/aclocal_java/ac_jni_include_dirs.ac])
+m4_include([dist/aclocal_java/ac_prog_jar.ac])
+m4_include([dist/aclocal_java/ac_prog_java.ac])
+m4_include([dist/aclocal_java/ac_prog_javac.ac])
+m4_include([dist/aclocal_java/ac_prog_javac_works.ac])
+m4_include([dist/aclocal_java/ac_prog_javadoc.ac])
+m4_include([dist/aclocal_java/ac_prog_javah.ac])
+m4_include([dist/aclocal_java/ac_prog_java_works.ac])
+m4_include([dist/aclocal_java/ac_try_compile_java.ac])
+m4_include([dist/aclocal_java/ac_try_run_javac.ac])
+
+
+AC_PREREQ(2.61)
+AC_INIT([Berkeley DB XML], M_DBXML_VERSION,
+	[Oracle Technology Network Berkeley DB XML forum], 
+	dbxml-M_DBXML_VERSION)
+AC_CONFIG_AUX_DIR(dist)
+AM_INIT_AUTOMAKE
+AC_CONFIG_SRCDIR([src/dbxml/Buffer.cpp])
+AC_CONFIG_HEADER(dbxml_config.h:dist/config.hin)
+
+# Host info
+AC_CANONICAL_HOST()
+
+# Set the default installation location.
+AC_PREFIX_DEFAULT(/usr/local/BerkeleyDBXML.M_DBXML_VERSION_MAJOR.M_DBXML_VERSION_MINOR)
+
+# Configure the version information.
+AC_SUBST(DBXML_VERSION_MAJOR)
+DBXML_VERSION_MAJOR="M_DBXML_VERSION_MAJOR"
+AC_SUBST(DBXML_VERSION_MINOR)
+DBXML_VERSION_MINOR="M_DBXML_VERSION_MINOR"
+AC_SUBST(DBXML_VERSION_PATCH)
+DBXML_VERSION_PATCH="M_DBXML_VERSION_PATCH"
+AC_SUBST(DBXML_VERSION_STRING)
+DBXML_VERSION_STRING='"M_DBXML_VERSION_STRING"'
+
+# Process all options before using them.
+AM_OPTIONS_SET
+
+# This is where we handle stuff that autoconf can't handle: compiler,
+# preprocessor and load flags, libraries that the standard tests don't
+# look for.  The default optimization is -O.  We would like to set the
+# default optimization for systems using gcc to -O2, but we can't.  By
+# the time we know we're using gcc, it's too late to set optimization
+# flags.
+#
+# There are additional libraries we need for some compiler/architecture
+# combinations.
+#
+# Some architectures require DB to be compiled with special flags and/or
+# libraries for threaded applications
+#
+# The makefile CC may be different than the CC used in config testing,
+# because the makefile CC may be set to use $(LIBTOOL).
+#
+# XXX
+# Don't override anything if it's already set from the environment.
+optimize_def="-O"
+optimize_debug="-g"
+case "$host_os" in
+aix4.3.*|aix5*)
+	optimize_def="-O2"
+	CC=${CC-"xlc_r"}
+	CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE"
+	LDFLAGS="$LDFLAGS -Wl,-brtl";;
+bsdi3*)	optimize_def="-O2"
+	CC=${CC-"shlicc2"}
+	LIBS="$LIBS -lipc";;
+bsdi*)	optimize_def="-O2";;
+freebsd*)
+	optimize_def="-O2"
+	CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE"
+	LDFLAGS="$LDFLAGS -pthread";;
+hpux*)	CPPFLAGS="$CPPFLAGS -D_REENTRANT";;
+irix*)	optimize_def="-O2"
+	CPPFLAGS="$CPPFLAGS -D_SGI_MP_SOURCE";;
+linux*)	optimize_def="-O2"
+	CPPFLAGS="$CPPFLAGS -D_ISOC99_SOURCE -D_GNU_SOURCE -D_REENTRANT";;
+mpeix*)	CPPFLAGS="$CPPFLAGS -D_POSIX_SOURCE -D_SOCKET_SOURCE"
+	LIBS="$LIBS -lsocket -lsvipc";;
+osf*)	CPPFLAGS="$CPPFLAGS -pthread";;
+solaris*)
+	CPPFLAGS="$CPPFLAGS -D_REENTRANT";;
+darwin*)
+	optimize_debug="-g -gdwarf-2"
+	optimize_def="-O2";;
+esac
+
+if test "$db_cv_debug" = "yes"; then
+	AC_DEFINE(DEBUG)
+	AH_TEMPLATE(DEBUG, [Define to 1 if you want a debugging version.])
+	AC_DEFINE(ENABLE_ASSERTS)
+	AH_TEMPLATE(ENABLE_ASSERTS, [Define to 1 if you want asserts compiled in.])
+	optimize_def=$optimize_debug
+fi
+
+AC_DEFINE(DBXML_COMPRESSION)
+AH_TEMPLATE(DBXML_COMPRESSION, [Define to 1 if you want default compression.])
+
+# Set CFLAGS/CXXFLAGS.  We MUST set the flags before we call autoconf
+# compiler configuration macros, because if we don't, they set CFLAGS
+# to no optimization and -g, which isn't what we want.
+CFLAGS=${CFLAGS-$optimize_def}
+CXXFLAGS=${CXXFLAGS-"$CFLAGS"}
+
+# Checks for programs.
+AC_PROG_CC
+AC_PROG_CXX
+AC_LIBTOOL_DLOPEN
+AC_PROG_LIBTOOL
+AC_PROG_INSTALL
+AC_PROG_MAKE_SET
+AC_PROG_RANLIB
+
+# Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS([float.h limits.h stdlib.h string.h sys/time.h unistd.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_HEADER_STDBOOL
+AC_C_CONST
+AC_C_INLINE
+AC_TYPE_INT32_T
+AC_TYPE_INT64_T
+AC_TYPE_SIZE_T
+AC_HEADER_TIME
+AC_STRUCT_TM
+AC_TYPE_UINT32_T
+AC_TYPE_UINT64_T
+AC_TYPE_UINT8_T
+AC_CHECK_TYPES([ptrdiff_t])
+
+# Checks for library functions.
+AC_FUNC_ERROR_AT_LINE
+AC_FUNC_MALLOC
+AC_FUNC_MEMCMP
+AC_FUNC_REALLOC
+AC_TYPE_SIGNAL
+AC_FUNC_STAT
+AC_FUNC_STRFTIME
+AC_FUNC_STRTOD
+AC_CHECK_FUNCS([floor gettimeofday localtime_r memset pow sqrt strcasecmp strchr strdup strerror strstr strtoul])
+
+#
+# Can now check and add compiler-specific state
+#
+if test "$db_cv_debug" = "yes"; then
+  # Add -Wall to a debug build with GCC
+  if test "$ac_compiler_gnu" = "yes"; then
+    CFLAGS="$CFLAGS -Wall"
+    CXXFLAGS="$CXXFLAGS -Wall"
+  fi
+fi
+
+# Some of the following macros need LIBTOOL_PROG defined
+LIBTOOL_PROG="${SHELL} ./libtool"
+
+# Optional Java API.
+if test "$db_cv_java" = "yes"; then
+	# Java requires shared libraries.
+	if test `$LIBTOOL_PROG --config | grep build_libtool_libs | grep no` 2>/dev/null; then
+		AC_MSG_ERROR([Java requires shared libraries])
+	fi
+
+	AC_PROG_JAVAC
+	AC_PROG_JAR
+	AC_JNI_INCLUDE_DIR
+
+  AC_SUBST(JAVACFLAGS)
+
+  # Because of the code that SWIG generates to cast between pointers and
+  # integers, we need to add the flag "-fno-strict-aliasing" to the gcc
+  # command line when compiling the JNI code.  This is documented in
+  # [#14953] and at http://www.swig.org/Doc1.3/Java.html
+  if test ${GCC} = "yes"; then
+    SWIGCPPFLAGS="-fno-strict-aliasing"
+    AC_SUBST(SWIGCPPFLAGS)
+  fi
+
+	for JNI_INCLUDE_DIR in $JNI_INCLUDE_DIRS
+	do
+		JAVA_INCLUDE_SPEC="$JAVA_INCLUDE_SPEC -I$JNI_INCLUDE_DIR"
+	done
+  AC_SUBST(JAVA_INCLUDE_SPEC)
+
+else
+	JAVAC=nojavac
+fi
+
+# Set SOSUFFIX and friends
+MODSUFFIX_CONFIG
+
+# Check for OS X, which has shared library extensions of ".dylib",
+# and requires the Java library to have an extension of ".jnilib"
+case "$host_os" in
+darwin*)
+	LIBTSO_MODSUFFIX=".dylib"
+	JAVA_LIBRARY_EXTENSION="-shrext .jnilib"
+	TCL_LIBRARY_EXTENSION="-shrext .dylib"
+        ;;
+*)
+	LIBTSO_MODSUFFIX=".so"
+	;;
+esac
+AC_SUBST(JAVA_LIBRARY_EXTENSION)
+AC_SUBST(LIBJSO_LIBS)
+AC_SUBST(LIBTSO_MODSUFFIX)
+AC_SUBST(LIBTSO_LIBS)
+AC_SUBST(TCL_LIBRARY_EXTENSION)
+
+
+AM_TCL_LOAD
+
+# Test that zlib actually runs
+if test "$db_cv_compression" != "no"; then
+  AC_MSG_CHECKING(if a zlib test program runs)
+  OLD_CFLAGS="$CFLAGS"
+  CFLAGS="$zlib_include"
+  OLD_LIBS="$LIBS"
+  LIBS="$zlib_lib $zlib_library"
+  AC_TRY_RUN([#include "zlib.h"
+  int main() 
+  {
+    uLongf destLen = 15;
+    Bytef dest[15];
+    Bytef *src = "te";
+    uLongf srcLen = 3;
+    return compress(dest, &destLen, src, srcLen);
+  }], 
+	[AC_MSG_RESULT(yes)], 
+	[AC_MSG_RESULT(no)
+	zlib_lib=""
+        zlib_library=""
+        zlib_include=""
+	db_cv_compression="no"], [])
+  CFLAGS="$OLD_CFLAGS"
+  LIBS="$OLD_LIBS"
+fi
+
+# Patch libtool to not use rpath if required
+if test "$db_cv_rpath" = "no"; then
+ AC_MSG_RESULT([Patching libtool to not use rpath.])
+ sed < libtool > libtool-2 \
+   's/^hardcode_libdir_flag_spec.*$'/'hardcode_libdir_flag_spec=" -D__LIBTOOL_NO_RPATH__ "/'
+ mv libtool-2 libtool
+ chmod 755 libtool
+fi
+
+AC_CONFIG_FILES([Makefile include.tcl:$srcdir/test/tcl/include.tcl $srcdir/src/python/setup.py:$srcdir/src/python/setup.py.in $srcdir/src/perl/config:$srcdir/src/perl/config.in])
+AC_OUTPUT

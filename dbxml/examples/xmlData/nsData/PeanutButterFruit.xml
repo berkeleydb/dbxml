@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Peanut Butter Fruit</product>
+	<inventory>
+		<sku>PeanfruiyYMI1S</sku>
+		<price>0.95</price>
+		<inventory>748</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</fruits:item>
+

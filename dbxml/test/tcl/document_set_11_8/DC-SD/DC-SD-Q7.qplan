@@ -1,0 +1,51 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="item">
+      <QueryPlanToAST>
+        <ChildJoinQP>
+          <StepQP axis="child" name="catalog" nodeType="element">
+            <ValueQP index="node-element-equality-string" operation="eq" child="name_of_country" value="Canada"/>
+          </StepQP>
+          <StepQP axis="parent-of-child" name="item" nodeType="element">
+            <ExceptQP>
+              <StepQP axis="parent-of-child" name="authors" nodeType="element">
+                <StepQP axis="parent-of-child" name="author" nodeType="element">
+                  <StepQP axis="parent-of-child" name="contact_information" nodeType="element">
+                    <StepQP axis="parent-of-child" name="mailing_address" nodeType="element">
+                      <ValueFilterQP comparison="eq" general="true">
+                        <SequentialScanQP nodeType="element" name="name_of_country"/>
+                        <Sequence>
+                          <AnyAtomicTypeConstructor value="Canada" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                        </Sequence>
+                      </ValueFilterQP>
+                    </StepQP>
+                  </StepQP>
+                </StepQP>
+              </StepQP>
+              <StepQP axis="parent-of-child" name="authors" nodeType="element">
+                <StepQP axis="parent-of-child" name="author" nodeType="element">
+                  <StepQP axis="parent-of-child" name="contact_information" nodeType="element">
+                    <ExceptQP>
+                      <SequentialScanQP nodeType="element" name="mailing_address"/>
+                      <StepQP axis="parent-of-child" name="mailing_address" nodeType="element">
+                        <ValueFilterQP comparison="eq" general="true">
+                          <SequentialScanQP nodeType="element" name="name_of_country"/>
+                          <Sequence>
+                            <AnyAtomicTypeConstructor value="Canada" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                          </Sequence>
+                        </ValueFilterQP>
+                      </StepQP>
+                    </ExceptQP>
+                  </StepQP>
+                </StepQP>
+              </StepQP>
+            </ExceptQP>
+          </StepQP>
+        </ChildJoinQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":item"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

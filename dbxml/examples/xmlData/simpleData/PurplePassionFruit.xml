@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Purple Passion Fruit</item>
+	<inventory>
+		<sku>PurpfruiYalfC4</sku>
+		<price>0.67</price>
+		<inventory>406</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

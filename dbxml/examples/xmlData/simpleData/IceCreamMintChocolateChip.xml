@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Ice Cream, Mint Chocolate Chip</item>
+	<inventory>
+		<sku>Ice desswW5iia</sku>
+		<price>10.90</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

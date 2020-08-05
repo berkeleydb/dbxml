@@ -1,0 +1,57 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp1">
+          <StepQP axis="child" name="article" nodeType="element">
+            <SequentialScanQP nodeType="document"/>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp2">
+            <StepQP axis="child" name="body" nodeType="element">
+              <VariableQP name="#tmp1"/>
+            </StepQP>
+            <NodePredicateFilterQP uri="" name="#tmp3">
+              <StepQP axis="child" name="abstract" nodeType="element">
+                <VariableQP name="#tmp2"/>
+              </StepQP>
+              <PredicateFilterQP uri="" name="b">
+                <StepQP axis="child" name="p" nodeType="element">
+                  <VariableQP name="#tmp3"/>
+                </StepQP>
+                <Operator name="and">
+                  <QueryPlanToAST>
+                    <ValueFilterQP comparison="substring">
+                      <StepQP axis="self" name="p" nodeType="element">
+                        <VariableQP name=":b"/>
+                      </StepQP>
+                      <Sequence>
+                        <AnyAtomicTypeConstructor value="the" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                      </Sequence>
+                    </ValueFilterQP>
+                  </QueryPlanToAST>
+                  <QueryPlanToAST>
+                    <ValueFilterQP comparison="substring">
+                      <StepQP axis="self" name="p" nodeType="element">
+                        <VariableQP name=":b"/>
+                      </StepQP>
+                      <Sequence>
+                        <AnyAtomicTypeConstructor value="hockey" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                      </Sequence>
+                    </ValueFilterQP>
+                  </QueryPlanToAST>
+                </Operator>
+              </PredicateFilterQP>
+            </NodePredicateFilterQP>
+          </NodePredicateFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="title" nodeType="element">
+        <StepQP axis="child" name="prolog" nodeType="element">
+          <VariableQP name=":a"/>
+        </StepQP>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

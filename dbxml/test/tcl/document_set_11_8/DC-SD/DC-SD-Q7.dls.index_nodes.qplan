@@ -1,0 +1,42 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="item">
+      <QueryPlanToAST>
+        <ChildJoinQP>
+          <StepQP axis="child" name="catalog" nodeType="element">
+            <SequentialScanQP nodeType="document"/>
+          </StepQP>
+          <StepQP axis="parent-of-child" name="item" nodeType="element">
+            <NegativeNodePredicateFilterQP uri="" name="#tmp16">
+              <StepQP axis="parent-of-child" name="authors" nodeType="element">
+                <StepQP axis="parent-of-child" name="author" nodeType="element">
+                  <StepQP axis="parent-of-child" name="contact_information" nodeType="element">
+                    <StepQP axis="parent-of-child" name="mailing_address" nodeType="element">
+                      <ValueQP index="node-element-equality-string" operation="eq" child="name_of_country" value="Canada"/>
+                    </StepQP>
+                  </StepQP>
+                </StepQP>
+              </StepQP>
+              <NegativeNodePredicateFilterQP uri="" name="#tmp0">
+                <StepQP axis="child" name="mailing_address" nodeType="element">
+                  <StepQP axis="child" name="contact_information" nodeType="element">
+                    <StepQP axis="child" name="author" nodeType="element">
+                      <VariableQP name="#tmp16"/>
+                    </StepQP>
+                  </StepQP>
+                </StepQP>
+                <ParentOfChildJoinQP>
+                  <ValueQP index="node-element-equality-string" operation="eq" child="name_of_country" value="Canada"/>
+                  <VariableQP name="#tmp0"/>
+                </ParentOfChildJoinQP>
+              </NegativeNodePredicateFilterQP>
+            </NegativeNodePredicateFilterQP>
+          </StepQP>
+        </ChildJoinQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":item"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

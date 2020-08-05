@@ -1,0 +1,121 @@
+=head1 NAME
+
+XmlDocument - A Perl interface to the DbXml XmlDocument Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $mgr = new XmlManager()
+    my $doc = $mgr->createDocument()
+
+    $doc->fetchAllData();
+
+    my $xmlvalue = new XmlValue(...);
+    $doc->getMetaData($uri, $name, $value);
+    my $string ;
+    $doc->getMetaData($uri, $name, $string);
+
+    my $string = $doc->getContent;
+    my $stream = $doc->getContentAsXmlInputStream;
+
+    my $string = $doc->getName;
+
+    $doc->removeMetaData($uri, $name);
+
+    $doc->setMetaData($uri, $name, $xmlvalue);
+    $doc->setMetaData($uri, $name, $scalar);
+
+    $doc->setContent($string);
+    $doc->setContentAsXmlInputStream($stream);
+    $doc->setContentAsEventReader($eventReader);
+ 	my $XmlEventReader  = $doc->getContentAsEventReader();
+ 	$doc->getContentAsEventWriter($xmlEventWriter);
+
+
+    $doc->setname($string);
+
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlValue is identical to the C++ API, apart from
+the following
+
+=over 5
+
+=item 1.
+
+getContentAsDOM and setContentAsDOM are not supported.
+
+=back
+
+
+=head1 Constructor
+
+The constructor for XmlDocument can takes the following form:
+
+    my $mgr = new XmlManager;
+    my $doc = $mgr->createXmlDocument() ;
+
+In addition an XmlDocument object is returned from XmlContainer::getDocument.
+
+=head1 Methods
+
+=head2 $doc->fetchAllData();
+
+=head2 $doc->getMetaData($uri, $name, $value);
+
+The getMetaData method can take two forms. The first two parameters,
+$uri and $name, are identical for all three variants. Where they differ
+is in the final parameter, $value.
+
+If the $value parameter is an XmlValue object the meta data will be
+written to the XmlValue object.
+
+Otherwise the metadata will be written as a perl string into the
+$value parameter.
+
+=head2 my $dbt = $doc->getContent;
+
+Returns the content of the document as a Perl string.
+
+=head2 my $stream = $doc->getContentAsXmlInputStream;
+
+=head2 my $string = $doc->getName;
+
+=head2 $doc->removeMetaData($uri, $name);
+
+=head2 $doc->setMetaData($uri, $name, $value);
+
+
+The setMetaData method can take two forms. The first two parameters,
+$uri and $name, are identical for all three variants. Where
+they differ is in the final parameter, $value.
+
+The third parameter, $value can be an XmlValue object
+or a simple Perl string.
+
+
+=head2 $doc->setContent($string);
+
+=head2 $doc->setContentAsXmlInputStream($stream);
+
+=head2 $doc->setname($string);
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

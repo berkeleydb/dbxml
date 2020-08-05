@@ -1,0 +1,17 @@
+<map id="G" name="G">
+<area shape="rect" href="$ItemFactory_8hpp.html" title="ItemFactory.hpp" alt="" coords="956,315,1071,344"/>
+<area shape="rect" href="$ATDateOrDerived_8hpp.html" title="ATDateOrDerived.hpp" alt="" coords="181,237,328,267"/>
+<area shape="rect" href="$ATDateTimeOrDerived_8hpp.html" title="ATDateTimeOrDerived.hpp" alt="" coords="1320,237,1496,267"/>
+<area shape="rect" href="$ATDurationOrDerived_8hpp.html" title="ATDurationOrDerived.hpp" alt="" coords="1277,83,1445,112"/>
+<area shape="rect" href="$ATTimeOrDerived_8hpp.html" title="ATTimeOrDerived.hpp" alt="" coords="1571,237,1720,267"/>
+<area shape="rect" href="$Sequence_8hpp.html" title="Sequence.hpp" alt="" coords="1795,83,1899,112"/>
+<area shape="rect" href="$xqilla-simple_8hpp.html" title="xqilla&#45;simple.hpp" alt="" coords="440,392,557,421"/>
+<area shape="rect" href="$DynamicContext_8hpp.html" title="DynamicContext.hpp" alt="" coords="19,160,160,189"/>
+<area shape="rect" href="$Timezone_8hpp.html" title="Timezone.hpp" alt="" coords="961,160,1065,189"/>
+<area shape="rect" href="$ContextHelpers_8hpp.html" title="ContextHelpers.hpp" alt="" coords="21,237,157,267"/>
+<area shape="rect" href="$ATGDayOrDerived_8hpp.html" title="ATGDayOrDerived.hpp" alt="" coords="744,237,896,267"/>
+<area shape="rect" href="$ATGMonthDayOrDerived_8hpp.html" title="ATGMonthDayOrDerived.hpp" alt="" coords="920,237,1107,267"/>
+<area shape="rect" href="$ATGMonthOrDerived_8hpp.html" title="ATGMonthOrDerived.hpp" alt="" coords="1131,237,1296,267"/>
+<area shape="rect" href="$ATGYearMonthOrDerived_8hpp.html" title="ATGYearMonthOrDerived.hpp" alt="" coords="352,237,541,267"/>
+<area shape="rect" href="$ATGYearOrDerived_8hpp.html" title="ATGYearOrDerived.hpp" alt="" coords="565,237,720,267"/>
+</map>

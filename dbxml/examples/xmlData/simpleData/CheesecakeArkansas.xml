@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cheesecake, Arkansas</item>
+	<inventory>
+		<sku>Cheedess4TzJwt</sku>
+		<price>7.62</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

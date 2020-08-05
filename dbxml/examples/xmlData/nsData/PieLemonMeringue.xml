@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<desserts:item xmlns:desserts="http://groceryItem.dbxml/desserts">
+	<product>Pie, Lemon Meringue</product>
+	<inventory>
+		<sku>Pie,dessOAcqgG</sku>
+		<price>6.87</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</desserts:item>
+

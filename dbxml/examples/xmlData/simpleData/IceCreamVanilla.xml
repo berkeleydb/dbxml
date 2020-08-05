@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Ice Cream, Vanilla</item>
+	<inventory>
+		<sku>Ice dessHIGLnv</sku>
+		<price>2.44</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Lettuce</product>
+	<inventory>
+		<sku>LettvegeNZMCsr</sku>
+		<price>0.25</price>
+		<inventory>222</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

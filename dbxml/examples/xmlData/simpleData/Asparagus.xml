@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Asparagus</item>
+	<inventory>
+		<sku>AspavegeF7vz10</sku>
+		<price>0.78</price>
+		<inventory>542</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

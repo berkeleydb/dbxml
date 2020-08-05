@@ -1,0 +1,198 @@
+=head1 NAME
+
+XmlContainer - A Perl interface to the DbXml XmlContainer Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $mgr = new XmlManager;
+
+    my $c = $mgr->createContainer([$txn,] $name [, $flags, $containerType, $mode]);
+
+    my $bool = $c->addAlias($alias);
+    my $bool = $c->removeAlias($alias);
+
+    $c->addIndex([$txn,] $uri, $name, $index [$context])
+    $c->addDefaultIndex([$txn,] $index [$context])
+
+    $c->deleteDocument([$txn,] $name [, $context]);
+    $c->deleteDocument([$txn,] $xmldoc [, $context]);
+
+    $c->deleteIndex([$txn,] $uri, $name, $index [$context])
+    $c->deleteDefaultIndex([$txn,] $index [$context])
+
+    my $config = $c->getContainerConfig();
+    my $type = $c->getContainerType();
+    my $xmldoc = $c->getDocument([$txn,] $name [, $flags]);
+
+    my $bool = $c->getIndexNodes();
+    my $ixSpec = $c->getIndexSpecification([$txn, [$flags]])
+
+    my $mgr1 = $c->getManager()
+    my $name = $c->getName()
+    my $flags = $c->getFlags()
+
+    my $results = $c->lookupIndex([$txn,] $context, $uri, $name, $index, 
+                                  $xmlValue, $flags);
+    my $results = $c->lookupIndex([$txn,] $context, $uri, $name, $parent_uri, 
+                                  $parent_name, $index, $xmlValue, $flags);
+
+    my $statistics = $c->lookupStatistics([$txn,] $uri, $name, $index [,$xmlValue]);
+    my $statistics = $c->lookupStatistics([$txn,] $uri, $name, $parent_uri, 
+                                  $parent_name, $index [,$xmlValue]);
+
+
+    $c->putDocument([$txnid,] $xmldoc                [, $context [, $flags]]);
+    $c->putDocument([$txnid,] $name, $xmlstream      [, $context [, $flags]]);
+    $c->putDocument([$txnid,] $name, $xmleventreader [, $context [, $flags]]);
+    $c->putDocument([$txnid,] $name, $text           [, $context [, $flags]]);
+
+    my $xmlWriter = $c->putDocumentAsEventWriter($xmlDocument, $context [, $flags]]);
+
+    $c->replaceIndex([$txn, ] $uri, $name, $index [, $context]);
+    $c->setIndexSpecification([$txn, ] $index [, $context]);
+
+    $c->sync();
+    $c->updateDocument([$txn, ] $xmldoc [, $context]);
+
+    my $results = $c->getAllDocuments([$txn,] $flags);
+    my $count = $c->getNumDocuments([$txn]);
+
+=head1 DESCRIPTION
+
+
+This module 
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlContainer is identical to the C++ API, apart
+from the following
+
+=over 5
+
+=item 1.
+
+The use of the TxnId parameter is optional.
+
+=back
+
+
+=head1 Constructor
+
+The constructor for this class can take any of the following forms
+
+    my $mgr = new XmlManager;
+
+    my $c = $mgr->createContainer([$txn,] $name [, $flags, $containerType, $mode]);
+
+=head1 Methods
+
+=head2 $c->putDocument([$txnid,] $xmldoc                [, $context [, $flags]]);
+=head2 $c->putDocument([$txnid,] $name, $xmlstream      [, $context [, $flags]]);
+=head2 $c->putDocument([$txnid,] $name, $xmleventreader [, $context [, $flags]]);
+=head2 $c->putDocument([$txnid,] $name, $text           [, $context [, $flags]]);
+
+Puts a document into a container. The input can take one of four forms
+
+=over 5
+
+=item $xmldoc -- an XmlDocument object
+
+=item $name => $xmlstream -- a name and XmlStream object pair.
+
+=item $name => $xmleventreader -- a name and XmlEventReader object pair.
+
+=item $name => $text -- a name and text pair.
+
+=back 
+
+If present, the $context parameter must be an XmlUpdateContext object.
+
+If present, the $flags parameter must be 
+
+
+=head1 my $xmlWriter = $c->putDocumentAsEventWriter($xmlDocument, $context [, $flags]]);
+
+
+=head2 my $doc = $c->getDocument([$txnid,] $name [, $flags]);
+
+Returns an XmlDocument object from the container with name $name.
+ID, $id.
+
+Valid values for the flags parameter are:
+
+=over 5
+
+=item Db::DB_DIRTY_READ
+
+=item Db::DB_RMW
+=item DbXml::DBXML_LAZY_LOCKS
+
+=back
+
+=head2 my $bool = $c->getIndexNodes();
+
+Returns true if the container C<$c> is configured to create indexes at node
+granularity.
+
+=head2 $c->deleteDocument([$txnid,] $name [, $context]);
+
+Removes the document with name, $name, from the container, $c.
+
+If present, the $context parameter must be an XmlUpdateContext object.
+
+The $flags parameter is currently unused.
+
+=head2 $c->deleteDocument([$txnid,] $doc [, $context]);
+
+Removes the document that matches the one in the XmlDocument object,
+$doc, from the container, $c.
+
+If present, the $context parameter must be an XmlUpdateContext object.
+
+The $flags parameter is currently unused.
+
+=head2 $c->updateDocument([$txnid,] $doc [, $context]);
+
+Updates document $doc in container $c.
+
+If present, the $context parameter must be an XmlUpdateContext object.
+
+=head2 my $string = $c->getName;
+
+Returns the name of the XmlContainer, $c.
+
+=head2 my $flags = $c->getFlags;
+
+Returns the flags used when openeing the XmlContainer, $c.
+
+=head2 my $bool = $c->addAlias($alias);
+
+Creates an alias for the container.
+
+=head2 my $bool = $c->removeAlias($alias);
+
+Removes the alias C<$alias> from the container.
+
+=head2 my $results = $c->getAllDocuments([$txn,] $flags);
+
+Returns an XmlResults object that can will iterate over all the documents
+stored in the container, $c.
+
+=head2 my $count = $c->getNumDocuments([$txn]);
+
+Returns a count of the number of documents in the container, $c.
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

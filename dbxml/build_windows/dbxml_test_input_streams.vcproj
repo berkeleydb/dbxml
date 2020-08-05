@@ -1,0 +1,39 @@
+<VisualStudioProject ProjectType="Visual C++" Version="7.10" Name="dbxml_test_input_streams" ProjectGUID="{A446328F-7BDE-4943-ACF5-2EEA11A534D9}">
+  <Platforms>
+    <Platform Name="Win32"/>
+    <Platform Name="x64"/>
+    <Platform Name="IA64"/>
+  </Platforms>
+  <Configurations>
+    <Configuration Name="Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml_test_input_streams" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_test_input_streams.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" Detect64BitPortabilityProblems="TRUE" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25d.lib libdb48d.lib xqilla22d.lib xerces-c_3d.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/vc7.1/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win32/VC7.1/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml_test_input_streams.exe" ProgramDatabaseFile="$(OutDir)/dbxml_test_input_streams.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml_test_input_streams prog $(OutDir) debug" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml_test_input_streams" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_test_input_streams.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" Detect64BitPortabilityProblems="TRUE" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25.lib libdb48.lib xqilla22.lib xerces-c_3.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/vc7.1/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win32/VC7.1/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml_test_input_streams.exe" ProgramDatabaseFile="$(OutDir)/dbxml_test_input_streams.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml_test_input_streams prog $(OutDir) release" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+  </Configurations>
+  <References/>
+  <Files>
+    <File RelativePath="..\test\cpp\inputStreams\inputStreams.cpp"/>
+    <File RelativePath="..\test\cpp\util\TestLogging.cpp"/>
+    <File RelativePath="..\test\cpp\util\TestResolver.cpp"/>
+    <File RelativePath="..\test\cpp\util\Transcoding.cpp"/>
+  </Files>
+  <Globals/>
+</VisualStudioProject>

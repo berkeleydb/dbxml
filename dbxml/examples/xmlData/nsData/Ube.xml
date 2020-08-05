@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Ube</product>
+	<inventory>
+		<sku>UbevegeD3tbJx</sku>
+		<price>0.30</price>
+		<inventory>269</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

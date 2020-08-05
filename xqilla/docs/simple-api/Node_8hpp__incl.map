@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$ATQNameOrDerived_8hpp.html" title="xqilla/items/ATQNameOrDerived.hpp" alt="" coords="103,83,335,112"/>
+<area shape="rect" href="$ATBooleanOrDerived_8hpp.html" title="xqilla/items/ATBooleanOrDerived.hpp" alt="" coords="425,83,663,112"/>
+<area shape="rect" href="$AnyAtomicType_8hpp.html" title="xqilla/items/AnyAtomicType.hpp" alt="" coords="311,160,519,189"/>
+<area shape="rect" href="$Item_8hpp.html" title="xqilla/items/Item.hpp" alt="" coords="344,237,485,267"/>
+<area shape="rect" href="$ReferenceCounted_8hpp.html" title="xqilla/framework/ReferenceCounted.hpp" alt="" coords="289,315,540,344"/>
+<area shape="rect" href="$MemoryManager_8hpp.html" title="xercesc/framework/MemoryManager.hpp" alt="" coords="285,392,541,421"/>
+</map>

@@ -1,0 +1,1786 @@
+<!-- 
+  * This file drives construction of Windows Visual Studio project files for BDB XML
+  * This file is not used directly by the XQuery script that creates projects.
+  * It is pre-processed first to perform variable substitution for variable names
+  * surrounded by '@' characters.  These variables names change from release to
+  * release, and this substitution makes it possible to keep the XQuery script more
+  * static.  The variables are replaced using lib_paths.sed
+  * It'd be simple enough to perform the variable substitutions using XQuery as well,
+  * but the lib_paths.sed mechanism already exists and works.
+  *
+  * TBD: describe format in more detail
+  -->
+<projects>
+  <variable name="sourcePath">../</variable>
+  <variable name="outputBase.7.10">../build_windows/</variable>
+  <variable name="outputBase.8.00">../build_windows/</variable>
+  <preprocessor config="all">WIN32;_WINDOWS</preprocessor>
+  <preprocessor config="Debug">_DEBUG</preprocessor>
+  <preprocessor config="Release">NDEBUG</preprocessor>
+  <preprocessor config="dll">_USRDLL</preprocessor>
+  <preprocessor config="app">_CONSOLE</preprocessor>
+  <preprocessor config="static_lib">_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY</preprocessor>
+  <preprocessor config="static_app">DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY</preprocessor>
+  <library name="zlib">
+    <libname config="Debug">zdll</libname>
+    <libname config="Release">zdll</libname>
+    <libname config="Debug" platform="x64">zlibwapi</libname>
+    <libname config="Release" platform="x64">zlibwapi</libname>
+  </library>
+  <library name="winsock">
+    <libname config="Debug">ws2_32</libname>
+    <libname config="Release">ws2_32</libname>
+    <libname config="Static Debug">ws2_32</libname>
+    <libname config="Static Release">ws2_32</libname>
+  </library>
+  <library name="winmm">
+    <libname config="Debug">Winmm</libname>
+    <libname config="Release">Winmm</libname>
+  </library>
+  <library name="php5ts">
+    <libbase vsver="7.10">@PHP_HOME@</libbase>
+    <libbase vsver="8.00">@PHP_HOME@</libbase>
+    <libname config="Debug">php5ts_debug</libname>
+    <libname config="Release">php5ts</libname>
+    <platform name="Win32" vsver="7.10 8.00">
+      <config type="Release">
+	<libdir>Release_TS</libdir>
+      </config>
+      <config type="Debug">
+	<libdir>Debug_TS</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="php_db4">
+    <libname config="Debug">php_db4d</libname>
+    <libname config="Release">php_db4</libname>
+    <platform name="Win32" vsver="7.10 8.00">
+      <config type="Debug">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>$(OutDir)</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="php_dbxml">
+    <libname config="Debug">php_dbxmld</libname>
+    <libname config="Release">php_dbxml</libname>
+    <platform name="Win32" vsver="7.10 8.00">
+      <config type="Debug">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>$(OutDir)</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="xqilla">
+    <libbase vsver="7.10">@XQILLA_LIBHOME7@</libbase>
+    <libbase vsver="8.00">@XQILLA_LIBHOME8@</libbase>
+    <libname config='Debug'>@XQILLA_LIB@d</libname>
+    <libname config='Release'>@XQILLA_LIB@</libname>
+    <libname config='Static Debug'>@XQILLA_STATIC_LIB@d</libname>
+    <libname config='Static Release'>@XQILLA_STATIC_LIB@</libname>
+    <platform name="Win32 x64 IA64" vsver="7.10 8.00">
+      <config type="Debug">
+	<libdir>$(PlatformName)/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>$(PlatformName)/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Static Debug">
+	<libdir>$(PlatformName)/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Static Release">
+	<libdir>$(PlatformName)/$(ConfigurationName)</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="xerces">
+    <libname config="Debug">@XERCES_LIB@d</libname>
+    <libname config="Release">@XERCES_LIB@</libname>
+    <libname config="Static Debug">@XERCES_STATIC_LIB@d</libname>
+    <libname config="Static Release">@XERCES_STATIC_LIB@</libname>
+    <platform name="Win32" vsver="7.10">
+      <config type="Debug">
+	<libdir>@XERCES_LIBHOME7@/Win32/VC7.1/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>@XERCES_LIBHOME7@/Win32/VC7.1/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Static Debug">
+	<libdir>@XERCES_LIBHOME7@/Win32/VC7.1/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Static Release">
+	<libdir>@XERCES_LIBHOME7@/Win32/VC7.1/$(ConfigurationName)</libdir>
+      </config>
+    </platform>
+    <platform name="Win32" vsver="8.00">
+      <config type="Debug">
+	<libdir>@XERCES_LIBHOME8@/Win32/VC8/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>@XERCES_LIBHOME8@/Win32/VC8/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Static Debug">
+	<libdir>@XERCES_LIBHOME8@/Win32/VC8/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Static Release">
+	<libdir>@XERCES_LIBHOME8@/Win32/VC8/$(ConfigurationName)</libdir>
+      </config>
+    </platform>
+    <platform name="x64" vsver="8.00">
+      <config type="Debug">
+	<libdir>@XERCES_LIBHOME8@/Win64/VC8/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>@XERCES_LIBHOME8@/Win64/VC8/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Static Debug">
+	<libdir>@XERCES_LIBHOME8@/Win64/VC8/$(ConfigurationName)</libdir>
+      </config>
+      <config type="Static Release">
+	<libdir>@XERCES_LIBHOME8@/Win64/VC8/$(ConfigurationName)</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="db">
+    <libname config="Debug">@DB_LIB@d</libname>
+    <libname config="Release">@DB_LIB@</libname>
+    <libname config="Static Debug">@DB_STATIC_LIB@d</libname>
+    <libname config="Static Release">@DB_STATIC_LIB@</libname>
+    <platform name="Win32 x64 IA64" vsver="7.10 8.00">
+      <config type="Debug">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Static Debug">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Static Release">
+	<libdir>$(OutDir)</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="dbxml">
+    <libname config="Debug">@DBXML_LIBNAME@d</libname>
+    <libname config="Release">@DBXML_LIBNAME@</libname>
+    <libname config="Static Debug">@DBXML_STATIC_LIBNAME@d</libname>
+    <libname config="Static Release">@DBXML_STATIC_LIBNAME@</libname>
+    <platform name="Win32 x64 IA64" vsver="7.10 8.00">
+      <config type="Debug">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Static Debug">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Static Release">
+	<libdir>$(OutDir)</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="dbxml_static">
+    <libname config="Debug">@DBXML_STATIC_LIBNAME@d</libname>
+    <libname config="Release">@DBXML_STATIC_LIBNAME@</libname>
+    <platform name="Win32 x64 IA64" vsver="7.10 8.00">
+      <config type="Debug">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>$(OutDir)</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="dbxml_java">
+    <libname config="Debug">@DBXML_JAVA_LIBNAME@d</libname>
+    <libname config="Release">@DBXML_JAVA_LIBNAME@</libname>
+    <platform name="Win32 x64 IA64" vsver="7.10 8.00">
+      <config type="Debug">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>$(OutDir)</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="db_java">
+    <libname config="Debug">@DB_JAVALIB@d</libname>
+    <libname config="Release">@DB_JAVALIB@</libname>
+  </library>
+  <library name="dbxml_tcl">
+    <libname config="Debug">@DBXML_TCL_LIBNAME@d</libname>
+    <libname config="Release">@DBXML_TCL_LIBNAME@</libname>
+    <platform name="Win32 x64 IA64" vsver="7.10 8.00">
+      <config type="Debug">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>$(OutDir)</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="db_tcl">
+    <libname config="Debug">@DB_TCL_LIB@d</libname>
+    <libname config="Release">@DB_TCL_LIB@</libname>
+    <platform name="Win32 x64 IA64" vsver="7.10 8.00">
+      <config type="Debug">
+	<libdir>$(OutDir)</libdir>
+      </config>
+      <config type="Release">
+	<libdir>$(OutDir)</libdir>
+      </config>
+    </platform>
+  </library>
+  <library name="tcl">
+    <libname config="Debug">tcl84g</libname>
+    <libname config="Release">tcl84</libname>
+    <platform name="Win32 x64 IA64" vsver="7.10 8.00">
+      <config type="Debug">
+	<libdir>C:/tcl/lib</libdir>
+      </config>
+      <config type="Release">
+	<libdir>C:/tcl/lib</libdir>
+      </config>
+    </platform>
+  </library>
+  <include name="all">.,../include,../src/dbxml,@DB_HOME@/build_windows,@DB_HOME@/include,@DB_HOME@/dbinc,@XERCES_WINHOME@/include,@XERCES_WINHOME@/src,@XQILLA_HOME@/include</include>
+  <include name="db">@DB_HOME@,@DB_HOME@/build_windows,@DB_HOME@/include,@DB_HOME@/dbinc</include>
+  <event name="postbuild" type="app">
+    <command config="Debug">installProj.bat @pname@ prog $(OutDir) debug</command>
+    <command config="Release">installProj.bat @pname@ prog $(OutDir) release</command>
+    <description>Copying program files to install directory</description>
+  </event>
+  <project name="dbxml" guid="0047EDFC-C26D-49D0-9559-029FA38B3839">
+    <type>library</type>
+    <configuration></configuration>
+    <configuration>Static </configuration>
+    <depends>db</depends>
+    <depends>xqilla</depends>
+    <depends>xerces</depends>
+    <depends>zlib</depends>
+    <options>
+      <rtti/>
+    </options>
+    <include type="ref">all</include>
+    <preprocessor config="dll">DBXML_CREATE_DLL;_DBXML_COMPRESSION</preprocessor>
+    <event name="postbuild">
+      <command config="Debug">copyFiles7.bat $(PlatformName)
+installProj.bat @DBXML_LIBNAME@ dll $(OutDir) debug copyLib</command>
+      <command config="Release">copyFiles7.bat $(PlatformName)
+installProj.bat @DBXML_LIBNAME@ dll $(OutDir) release copyLib</command>
+      <description>Copying libraries to install directory</description>
+    </event>
+    <files>
+      <filter name="build_windows">
+	<file name="build_windows/libdbxml.rc"/>
+      </filter>
+      <filter name="include">
+        <file name="include/dbxml/DbXml.hpp"/>
+        <file name="include/dbxml/DbXmlFwd.hpp"/>
+	<file name="include/dbxml/XmlCompression.hpp"/>
+        <file name="include/dbxml/XmlContainer.hpp"/>
+	<file name="include/dbxml/XmlContainerConfig.hpp"/>
+        <file name="include/dbxml/XmlData.hpp"/>
+        <file name="include/dbxml/XmlDocument.hpp"/>
+        <file name="include/dbxml/XmlEventReader.hpp"/>
+        <file name="include/dbxml/XmlEventReaderToWriter.hpp"/>
+        <file name="include/dbxml/XmlEventWriter.hpp"/>
+        <file name="include/dbxml/XmlException.hpp"/>
+        <file name="include/dbxml/XmlIndexLookup.hpp"/>
+        <file name="include/dbxml/XmlIndexSpecification.hpp"/>
+        <file name="include/dbxml/XmlInputStream.hpp"/>
+        <file name="include/dbxml/XmlManager.hpp"/>
+        <file name="include/dbxml/XmlMetaDataIterator.hpp"/>
+        <file name="include/dbxml/XmlNamespace.hpp"/>
+        <file name="include/dbxml/XmlPortability.hpp"/>
+        <file name="include/dbxml/XmlQueryContext.hpp"/>
+        <file name="include/dbxml/XmlQueryExpression.hpp"/>
+        <file name="include/dbxml/XmlResolver.hpp"/>
+        <file name="include/dbxml/XmlExternalFunction.hpp"/>
+        <file name="include/dbxml/XmlDebugListener.hpp"/>
+        <file name="include/dbxml/XmlResults.hpp"/>
+        <file name="include/dbxml/XmlStatistics.hpp"/>
+        <file name="include/dbxml/XmlTransaction.hpp"/>
+        <file name="include/dbxml/XmlUpdateContext.hpp"/>
+        <file name="include/dbxml/XmlValue.hpp"/>
+      </filter>
+      <filter name="dbxml">
+        <file name="src/dbxml/AtomicNodeValue.cpp"/>
+        <file name="src/dbxml/AtomicNodeValue.hpp"/>
+        <file name="src/dbxml/BaseInputStream.cpp"/>
+        <file name="src/dbxml/BaseInputStream.hpp"/>
+        <file name="src/dbxml/Buffer.cpp"/>
+        <file name="src/dbxml/Buffer.hpp"/>
+        <file name="src/dbxml/BulkPut.cpp"/>
+        <file name="src/dbxml/BulkPut.hpp"/>
+        <file name="src/dbxml/CacheDatabase.cpp"/>
+        <file name="src/dbxml/CacheDatabase.hpp"/>
+        <file name="src/dbxml/CacheDatabaseMinder.cpp"/>
+        <file name="src/dbxml/CacheDatabaseMinder.hpp"/>
+        <file name="src/dbxml/CompressionZlib.cpp"/>
+        <file name="src/dbxml/CompressionZlib.hpp"/>
+        <file name="src/dbxml/ConfigurationDatabase.cpp"/>
+        <file name="src/dbxml/ConfigurationDatabase.hpp"/>
+        <file name="src/dbxml/Container.cpp"/>
+        <file name="src/dbxml/Container.hpp"/>
+	<file name="src/dbxml/ContainerConfig.cpp"/>
+        <file name="src/dbxml/ContainerConfig.hpp"/>
+        <file name="src/dbxml/ContainerBase.cpp"/>
+        <file name="src/dbxml/ContainerBase.hpp"/>
+        <file name="src/dbxml/Counters.cpp"/>
+        <file name="src/dbxml/Counters.hpp"/>
+        <file name="src/dbxml/Cursor.cpp"/>
+        <file name="src/dbxml/Cursor.hpp"/>
+        <file name="src/dbxml/DatabaseNodeValue.cpp"/>
+        <file name="src/dbxml/DatabaseNodeValue.hpp"/>
+        <file name="src/dbxml/DbWrapper.cpp"/>
+        <file name="src/dbxml/DbWrapper.hpp"/>
+        <file name="src/dbxml/DbXmlInternal.cpp"/>
+        <file name="src/dbxml/DbXmlInternal.hpp"/>
+        <file name="src/dbxml/DictionaryCache.cpp"/>
+        <file name="src/dbxml/DictionaryCache.hpp"/>
+        <file name="src/dbxml/DictionaryDatabase.cpp"/>
+        <file name="src/dbxml/DictionaryDatabase.hpp"/>
+        <file name="src/dbxml/DocID.cpp"/>
+        <file name="src/dbxml/DocID.hpp"/>
+        <file name="src/dbxml/Document.cpp"/>
+        <file name="src/dbxml/Document.hpp"/>
+        <file name="src/dbxml/DocumentDatabase.cpp"/>
+        <file name="src/dbxml/DocumentDatabase.hpp"/>
+        <file name="src/dbxml/Globals.cpp"/>
+        <file name="src/dbxml/Globals.hpp"/>
+        <file name="src/dbxml/HighResTimer.cpp"/>
+        <file name="src/dbxml/HighResTimer.hpp"/>
+        <file name="src/dbxml/IndexEntry.cpp"/>
+        <file name="src/dbxml/IndexEntry.hpp"/>
+        <file name="src/dbxml/IndexLookup.cpp"/>
+        <file name="src/dbxml/IndexLookup.hpp"/>
+        <file name="src/dbxml/IndexSpecification.cpp"/>
+        <file name="src/dbxml/IndexSpecification.hpp"/>
+        <file name="src/dbxml/Indexer.cpp"/>
+        <file name="src/dbxml/Indexer.hpp"/>
+        <file name="src/dbxml/Key.cpp"/>
+        <file name="src/dbxml/Key.hpp"/>
+        <file name="src/dbxml/KeyGenerator.cpp"/>
+        <file name="src/dbxml/KeyGenerator.hpp"/>
+        <file name="src/dbxml/KeyStash.cpp"/>
+        <file name="src/dbxml/KeyStash.hpp"/>
+        <file name="src/dbxml/KeyStatistics.cpp"/>
+        <file name="src/dbxml/KeyStatistics.hpp"/>
+        <file name="src/dbxml/LocalFileInputStream.cpp"/>
+        <file name="src/dbxml/LocalFileInputStream.hpp"/>
+        <file name="src/dbxml/LogDbXml.cpp"/>
+        <file name="src/dbxml/Log.hpp"/>
+        <file name="src/dbxml/Manager.cpp"/>
+        <file name="src/dbxml/Manager.hpp"/>
+        <file name="src/dbxml/MemBufInputStream.cpp"/>
+        <file name="src/dbxml/MemBufInputStream.hpp"/>
+        <file name="src/dbxml/MetaDatum.cpp"/>
+        <file name="src/dbxml/MetaDatum.hpp"/>
+        <file name="src/dbxml/MutexLock.cpp"/>
+        <file name="src/dbxml/MutexLock.hpp"/>
+        <file name="src/dbxml/Name.cpp"/>
+        <file name="src/dbxml/Name.hpp"/>
+        <file name="src/dbxml/NameID.cpp"/>
+        <file name="src/dbxml/NameID.hpp"/>
+        <file name="src/dbxml/NamespaceMap.hpp"/>
+        <file name="src/dbxml/OperationContext.hpp"/>
+        <file name="src/dbxml/QueryContext.cpp"/>
+        <file name="src/dbxml/QueryContext.hpp"/>
+        <file name="src/dbxml/QueryExpression.cpp"/>
+        <file name="src/dbxml/QueryExpression.hpp"/>
+        <file name="src/dbxml/RawNodeValue.cpp"/>
+        <file name="src/dbxml/RawNodeValue.hpp"/>
+        <file name="src/dbxml/ReferenceCounted.cpp"/>
+        <file name="src/dbxml/ReferenceCounted.hpp"/>
+        <file name="src/dbxml/ReferenceMinder.cpp"/>
+        <file name="src/dbxml/ReferenceMinder.hpp"/>
+        <file name="src/dbxml/Results.cpp"/>
+        <file name="src/dbxml/Results.hpp"/>
+        <file name="src/dbxml/ResultsEventWriter.cpp"/>
+        <file name="src/dbxml/ResultsEventWriter.hpp"/>
+        <file name="src/dbxml/ScopedDbt.hpp"/>
+        <file name="src/dbxml/ScopedPtr.hpp"/>
+        <file name="src/dbxml/SharedPtr.hpp"/>
+        <file name="src/dbxml/Statistics.cpp"/>
+        <file name="src/dbxml/Statistics.hpp"/>
+        <file name="src/dbxml/StdInInputStream.cpp"/>
+        <file name="src/dbxml/StdInInputStream.hpp"/>
+        <file name="src/dbxml/StructuralStatsDatabase.cpp"/>
+        <file name="src/dbxml/StructuralStatsDatabase.hpp"/>
+        <file name="src/dbxml/Syntax.cpp"/>
+        <file name="src/dbxml/Syntax.hpp"/>
+        <file name="src/dbxml/SyntaxDatabase.cpp"/>
+        <file name="src/dbxml/SyntaxDatabase.hpp"/>
+        <file name="src/dbxml/SyntaxManager.cpp"/>
+        <file name="src/dbxml/SyntaxManager.hpp"/>
+        <file name="src/dbxml/Transaction.cpp"/>
+        <file name="src/dbxml/Transaction.hpp"/>
+        <file name="src/dbxml/TypeConversions.hpp"/>
+        <file name="src/dbxml/URLInputStream.cpp"/>
+        <file name="src/dbxml/URLInputStream.hpp"/>
+        <file name="src/dbxml/UTF8.cpp"/>
+        <file name="src/dbxml/UTF8.hpp"/>
+        <file name="src/dbxml/UpdateContext.cpp"/>
+        <file name="src/dbxml/UpdateContext.hpp"/>
+        <file name="src/dbxml/Value.cpp"/>
+        <file name="src/dbxml/Value.hpp"/>
+        <file name="src/dbxml/VariableBindings.cpp"/>
+        <file name="src/dbxml/VariableBindings.hpp"/>
+	<file name="src/dbxml/XmlCompression.cpp"/>
+        <file name="src/dbxml/XmlContainer.cpp"/>
+	<file name="src/dbxml/XmlContainerConfig.cpp"/>
+        <file name="src/dbxml/XmlData.cpp"/>
+        <file name="src/dbxml/XmlDocument.cpp"/>
+        <file name="src/dbxml/XmlEventReader.cpp"/>
+        <file name="src/dbxml/XmlEventReaderToWriter.cpp"/>
+        <file name="src/dbxml/XmlEventWriter.cpp"/>
+        <file name="src/dbxml/XmlException.cpp"/>
+        <file name="src/dbxml/XmlIndexLookup.cpp"/>
+        <file name="src/dbxml/XmlIndexSpecification.cpp"/>
+        <file name="src/dbxml/XmlInputStream.cpp"/>
+        <file name="src/dbxml/XmlInputStreamWrapper.hpp"/>
+        <file name="src/dbxml/XmlManager.cpp"/>
+        <file name="src/dbxml/XmlMetaDataIterator.cpp"/>
+        <file name="src/dbxml/XmlNamespace.cpp"/>
+        <file name="src/dbxml/XmlQueryContext.cpp"/>
+        <file name="src/dbxml/XmlQueryExpression.cpp"/>
+        <file name="src/dbxml/XmlResolver.cpp"/>
+        <file name="src/dbxml/XmlResults.cpp"/>
+        <file name="src/dbxml/XmlStatistics.cpp"/>
+        <file name="src/dbxml/XmlTransaction.cpp"/>
+        <file name="src/dbxml/XmlUpdateContext.cpp"/>
+        <file name="src/dbxml/XmlValue.cpp"/>
+        <file name="src/dbxml/db_rdbt.c"/>
+        <file name="src/dbxml/db_rdbt.h"/>
+        <file name="src/dbxml/db_utils.h"/>
+        <file name="src/dbxml/tokenizer.hpp"/>
+      </filter>
+      <filter name="dataItem">
+        <file name="src/dbxml/dataItem/DbXmlConfiguration.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlConfiguration.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlContains.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlContains.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlDocAvailable.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlDocAvailable.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlDocumentCacheImpl.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlDocumentCacheImpl.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlFactoryImpl.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlFactoryImpl.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlFunction.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlFunction.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlNodeImpl.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlNodeImpl.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlNodeTest.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlNodeTest.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlSequenceBuilder.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlSequenceBuilder.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlUpdateFactory.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlUpdateFactory.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlURIResolver.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlURIResolver.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlUri.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlUri.hpp"/>
+        <file name="src/dbxml/dataItem/Join.hpp"/>
+        <file name="src/dbxml/dataItem/Join.cpp"/>
+        <file name="src/dbxml/dataItem/LookupIndexFunction.cpp"/>
+        <file name="src/dbxml/dataItem/LookupIndexFunction.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlPredicate.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlPredicate.hpp"/>
+        <file name="src/dbxml/dataItem/MetaDataFunction.cpp"/>
+        <file name="src/dbxml/dataItem/MetaDataFunction.hpp"/>
+        <file name="src/dbxml/dataItem/NodeHandleFunction.cpp"/>
+        <file name="src/dbxml/dataItem/NodeHandleFunction.hpp"/>
+        <file name="src/dbxml/dataItem/DbXmlPrintAST.cpp"/>
+        <file name="src/dbxml/dataItem/DbXmlPrintAST.hpp"/>
+      </filter>
+      <filter name="nodeStore">
+        <file name="src/dbxml/nodeStore/EventReader.cpp"/>
+        <file name="src/dbxml/nodeStore/EventReader.hpp"/>
+        <file name="src/dbxml/nodeStore/EventReaderToWriter.cpp"/>
+        <file name="src/dbxml/nodeStore/EventReaderToWriter.hpp"/>
+        <file name="src/dbxml/nodeStore/EventWriter.hpp"/>
+        <file name="src/dbxml/nodeStore/NsConstants.hpp"/>
+        <file name="src/dbxml/nodeStore/NsDoc.cpp"/>
+        <file name="src/dbxml/nodeStore/NsDoc.hpp"/>
+        <file name="src/dbxml/nodeStore/NsDocument.cpp"/>
+        <file name="src/dbxml/nodeStore/NsDocument.hpp"/>
+        <file name="src/dbxml/nodeStore/NsDocumentDatabase.cpp"/>
+        <file name="src/dbxml/nodeStore/NsDocumentDatabase.hpp"/>
+        <file name="src/dbxml/nodeStore/NsDom.cpp"/>
+        <file name="src/dbxml/nodeStore/NsDom.hpp"/>
+        <file name="src/dbxml/nodeStore/NsEvent.cpp"/>
+        <file name="src/dbxml/nodeStore/NsEvent.hpp"/>
+        <file name="src/dbxml/nodeStore/NsEventReader.cpp"/>
+        <file name="src/dbxml/nodeStore/NsEventReader.hpp"/>
+        <file name="src/dbxml/nodeStore/NsEventWriter.cpp"/>
+        <file name="src/dbxml/nodeStore/NsEventWriter.hpp"/>
+        <file name="src/dbxml/nodeStore/NsFormat.cpp"/>
+        <file name="src/dbxml/nodeStore/NsFormat.hpp"/>
+        <file name="src/dbxml/nodeStore/NsHandlerBase.cpp"/>
+        <file name="src/dbxml/nodeStore/NsHandlerBase.hpp"/>
+        <file name="src/dbxml/nodeStore/NsImpliedSchemaFilter.cpp"/>
+        <file name="src/dbxml/nodeStore/NsImpliedSchemaFilter.hpp"/>
+        <file name="src/dbxml/nodeStore/NsNid.cpp"/>
+        <file name="src/dbxml/nodeStore/NsNid.hpp"/>
+        <file name="src/dbxml/nodeStore/NsNode.cpp"/>
+        <file name="src/dbxml/nodeStore/NsNode.hpp"/>
+        <file name="src/dbxml/nodeStore/NsRawNode.cpp"/>
+        <file name="src/dbxml/nodeStore/NsRawNode.hpp"/>
+        <file name="src/dbxml/nodeStore/NsReindexer.cpp"/>
+        <file name="src/dbxml/nodeStore/NsReindexer.hpp"/>
+        <file name="src/dbxml/nodeStore/NsSAX2Reader.cpp"/>
+        <file name="src/dbxml/nodeStore/NsSAX2Reader.hpp"/>
+        <file name="src/dbxml/nodeStore/NsTypes.hpp"/>
+        <file name="src/dbxml/nodeStore/NsUpdate.cpp"/>
+        <file name="src/dbxml/nodeStore/NsUpdate.hpp"/>
+        <file name="src/dbxml/nodeStore/NsUpgrade.cpp"/>
+        <file name="src/dbxml/nodeStore/NsUpgrade.hpp"/>
+        <file name="src/dbxml/nodeStore/NsUtil.cpp"/>
+        <file name="src/dbxml/nodeStore/NsUtil.hpp"/>
+        <file name="src/dbxml/nodeStore/NsWriter.cpp"/>
+        <file name="src/dbxml/nodeStore/NsWriter.hpp"/>
+        <file name="src/dbxml/nodeStore/NsXercesIndexer.cpp"/>
+        <file name="src/dbxml/nodeStore/NsXercesIndexer.hpp"/>
+        <file name="src/dbxml/nodeStore/NsXercesTranscoder.cpp"/>
+        <file name="src/dbxml/nodeStore/NsXercesTranscoder.hpp"/>
+        <file name="src/dbxml/nodeStore/PullEventInputStream.cpp"/>
+        <file name="src/dbxml/nodeStore/PullEventInputStream.hpp"/>
+      </filter>
+      <filter name="optimizer">
+        <file name="src/dbxml/optimizer/ASTReplaceOptimizer.cpp"/>
+        <file name="src/dbxml/optimizer/ASTReplaceOptimizer.hpp"/>
+        <file name="src/dbxml/optimizer/ImpliedSchemaGenerator.cpp"/>
+        <file name="src/dbxml/optimizer/ImpliedSchemaGenerator.hpp"/>
+        <file name="src/dbxml/optimizer/DbXmlStaticTyper.cpp"/>
+        <file name="src/dbxml/optimizer/DbXmlStaticTyper.hpp"/>
+        <file name="src/dbxml/optimizer/NodeVisitingOptimizer.hpp"/>
+        <file name="src/dbxml/optimizer/QueryPlanGenerator.cpp"/>
+        <file name="src/dbxml/optimizer/QueryPlanGenerator.hpp"/>
+        <file name="src/dbxml/optimizer/QueryPlanOptimizer.cpp"/>
+        <file name="src/dbxml/optimizer/QueryPlanOptimizer.hpp"/>
+      </filter>
+      <filter name="query">
+        <file name="src/dbxml/query/AncestorJoinQP.cpp"/>
+        <file name="src/dbxml/query/AncestorJoinQP.hpp"/>
+        <file name="src/dbxml/query/ASTToQueryPlan.cpp"/>
+        <file name="src/dbxml/query/ASTToQueryPlan.hpp"/>
+        <file name="src/dbxml/query/AttributeJoinQP.cpp"/>
+        <file name="src/dbxml/query/AttributeJoinQP.hpp"/>
+        <file name="src/dbxml/query/AttributeOrChildJoinQP.cpp"/>
+        <file name="src/dbxml/query/AttributeOrChildJoinQP.hpp"/>
+        <file name="src/dbxml/query/BufferQP.cpp"/>
+        <file name="src/dbxml/query/BufferQP.hpp"/>
+        <file name="src/dbxml/query/ChildJoinQP.cpp"/>
+        <file name="src/dbxml/query/ChildJoinQP.hpp"/>
+        <file name="src/dbxml/query/CollectionQP.cpp"/>
+        <file name="src/dbxml/query/CollectionQP.hpp"/>
+        <file name="src/dbxml/query/ContextNodeQP.cpp"/>
+        <file name="src/dbxml/query/ContextNodeQP.hpp"/>
+        <file name="src/dbxml/query/DecisionPointQP.cpp"/>
+        <file name="src/dbxml/query/DecisionPointQP.hpp"/>
+        <file name="src/dbxml/query/DescendantJoinQP.cpp"/>
+        <file name="src/dbxml/query/DescendantJoinQP.hpp"/>
+        <file name="src/dbxml/query/DocQP.cpp"/>
+        <file name="src/dbxml/query/DocQP.hpp"/>
+        <file name="src/dbxml/query/EmptyQP.cpp"/>
+        <file name="src/dbxml/query/EmptyQP.hpp"/>
+        <file name="src/dbxml/query/ExceptQP.cpp"/>
+        <file name="src/dbxml/query/ExceptQP.hpp"/>
+        <file name="src/dbxml/query/FilterQP.cpp"/>
+        <file name="src/dbxml/query/FilterQP.hpp"/>
+        <file name="src/dbxml/query/ImpliedSchemaNode.cpp"/>
+        <file name="src/dbxml/query/ImpliedSchemaNode.hpp"/>
+        <file name="src/dbxml/query/IntersectQP.cpp"/>
+        <file name="src/dbxml/query/IntersectQP.hpp"/>
+        <file name="src/dbxml/query/LevelFilterQP.cpp"/>
+        <file name="src/dbxml/query/LevelFilterQP.hpp"/>
+        <file name="src/dbxml/query/NodeInfo.cpp"/>
+        <file name="src/dbxml/query/NodeInfo.hpp"/>
+        <file name="src/dbxml/query/NodeIterator.cpp"/>
+        <file name="src/dbxml/query/NodeIterator.hpp"/>
+        <file name="src/dbxml/query/NodePredicateFilterQP.cpp"/>
+        <file name="src/dbxml/query/NodePredicateFilterQP.hpp"/>
+        <file name="src/dbxml/query/ParentJoinQP.cpp"/>
+        <file name="src/dbxml/query/ParentJoinQP.hpp"/>
+        <file name="src/dbxml/query/ParentOfAttributeJoinQP.cpp"/>
+        <file name="src/dbxml/query/ParentOfAttributeJoinQP.hpp"/>
+        <file name="src/dbxml/query/ParentOfChildJoinQP.cpp"/>
+        <file name="src/dbxml/query/ParentOfChildJoinQP.hpp"/>
+        <file name="src/dbxml/query/PredicateFilterQP.cpp"/>
+        <file name="src/dbxml/query/PredicateFilterQP.hpp"/>
+        <file name="src/dbxml/query/QueryExecutionContext.cpp"/>
+        <file name="src/dbxml/query/QueryExecutionContext.hpp"/>
+        <file name="src/dbxml/query/QueryPlan.cpp"/>
+        <file name="src/dbxml/query/QueryPlan.hpp"/>
+        <file name="src/dbxml/query/QueryPlanHolder.cpp"/>
+        <file name="src/dbxml/query/QueryPlanHolder.hpp"/>
+        <file name="src/dbxml/query/QueryPlanToAST.cpp"/>
+        <file name="src/dbxml/query/QueryPlanToAST.hpp"/>
+        <file name="src/dbxml/query/SequentialScanQP.cpp"/>
+        <file name="src/dbxml/query/SequentialScanQP.hpp"/>
+        <file name="src/dbxml/query/StepQP.cpp"/>
+        <file name="src/dbxml/query/StepQP.hpp"/>
+        <file name="src/dbxml/query/StructuralJoinQP.cpp"/>
+        <file name="src/dbxml/query/StructuralJoinQP.hpp"/>
+        <file name="src/dbxml/query/UnionQP.cpp"/>
+        <file name="src/dbxml/query/UnionQP.hpp"/>
+        <file name="src/dbxml/query/ValueFilterQP.cpp"/>
+        <file name="src/dbxml/query/ValueFilterQP.hpp"/>
+        <file name="src/dbxml/query/VariableQP.cpp"/>
+        <file name="src/dbxml/query/VariableQP.hpp"/>
+      </filter>
+      <filter name="debug">
+        <file name="src/dbxml/debug/QPDebugHook.cpp"/>
+        <file name="src/dbxml/debug/QPDebugHook.hpp"/>
+        <file name="src/dbxml/debug/DbXmlASTDebugHook.cpp"/>
+        <file name="src/dbxml/debug/DbXmlASTDebugHook.hpp"/>
+        <file name="src/dbxml/debug/DbXmlTupleDebugHook.cpp"/>
+        <file name="src/dbxml/debug/DbXmlTupleDebugHook.hpp"/>
+        <file name="src/dbxml/debug/DbXmlDebugHookDecorator.cpp"/>
+        <file name="src/dbxml/debug/DbXmlDebugHookDecorator.hpp"/>
+      </filter>
+    </files>
+  </project>
+  <project name="dbxml_java" guid="5F4D3079-5C22-41A4-833E-4110296973F8">
+    <type>library</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <options>
+      <rtti/>
+      <nowp64/>
+    </options>
+    <include type="ref">all</include>
+    <event name="custom">
+      <command config="ReleaseDebug">
+mkdir "./$(OutDir)/classes/dummy" "./../build_windows/dummy"
+echo compiling Berkeley DB XML Java classes 
+javac -source 1.5 -target 1.5 -g -d $(OutDir)/classes -classpath $(OutDir)/classes;$(OutDir)/classes.db;../build_windows/db.jar ../src/java/com/sleepycat/dbxml/*.java ../src/java/com/sleepycat/db/*.java 
+echo creating dbxml jar file 
+cd "$(OutDir)/classes" 
+jar cf ../../../../build_windows/dbxml.jar com/sleepycat/dbxml/*.class com/sleepycat/db/*.class 
+echo compiling Berkeley DB XML Java examples 
+cd ../../.. 
+javac -source 1.5 -target 1.5 -g -d $(OutDir)/classes -classpath ../build_windows/dbxml.jar;$(OutDir)/dbxml.jar;$(OutDir)/classes;$(OutDir)/classes.db;../build_windows/db.jar ../examples/java/gettingStarted/*.java ../examples/java/basic/*.java ../examples/java/event/*.java ../examples/java/misc/*.java 
+echo creating example jar file 
+cd "$(OutDir)/classes" 
+jar cf ../../../../build_windows/dbxmlexamples.jar dbxml/gettingStarted/*.class basic/*.class event/*.class misc/*.class 
+cd ../../.. 
+rmdir "$(OutDir)/classes/dummy" "./../build_windows/dummy"  
+echo Java build finished</command>
+      <output>force_compilation.txt</output>
+    </event>
+    <event name="postbuild">
+      <command config="Release">xcopy *.jar ..\..\jar /F/Y 
+installProj.bat @DBXML_JAVA_LIBNAME@ dll $(OutDir) release</command>
+      <command config="Debug">xcopy *.jar ..\..\jar /F/Y 
+installProj.bat @DBXML_JAVA_LIBNAME@ dll $(OutDir) debug</command>
+      <description>Copying .jar and library files to install directory</description>
+    </event>
+    <files>
+      <file name="src/java/dbxml_java_wrap.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_tcl" guid="D4B63DAA-B936-470F-8FCA-FF9B32E883F3">
+    <type>library</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <depends>db_tcl</depends>
+    <depends>tcl</depends>
+    <include type="ref">all</include>
+    <options><nowp64/></options>
+    <event name="postbuild">
+      <command config="Release">installProj.bat @DBXML_TCL_LIBNAME@ dll $(OutDir) release</command>
+      <command config="Debug">installProj.bat @DBXML_TCL_LIBNAME@ dll $(OutDir) debug</command>
+      <description>Copying library files to install directory</description>
+    </event>
+    <files>
+      <file name="src/tcl/dbxml_tcl_wrap.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_shell" outputpdb="dbxml_shell" output="dbxml" guid="DF725DAC-C6F3-4BC1-A1D3-C4745232B05D">
+    <type>app</type>
+    <configuration></configuration>
+    <configuration>Static </configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <depends>xqilla</depends>
+    <depends>xerces</depends>
+    <depends>winsock</depends>
+    <include type="ref">all</include>
+    <include type="rel">../src/common</include>
+    <files>
+      <file name="src/clib/getopt.c"/>
+      <file name="src/common/SigBlock.cpp"/>
+      <file name="src/common/Timer.cpp"/>
+      <file name="src/common/dbxml_util_sig.c"/>
+      <file name="src/utils/shell/AbortCommand.cpp"/>
+      <file name="src/utils/shell/AbortCommand.hpp"/>
+      <file name="src/utils/shell/AddAliasCommand.cpp"/>
+      <file name="src/utils/shell/AddAliasCommand.hpp"/>
+      <file name="src/utils/shell/AddDocumentCommand.cpp"/>
+      <file name="src/utils/shell/AddDocumentCommand.hpp"/>
+      <file name="src/utils/shell/AddIndexCommand.cpp"/>
+      <file name="src/utils/shell/AddIndexCommand.hpp"/>
+      <file name="src/utils/shell/CommentCommand.cpp"/>
+      <file name="src/utils/shell/CommentCommand.hpp"/>
+      <file name="src/utils/shell/CommitCommand.cpp"/>
+      <file name="src/utils/shell/CommitCommand.hpp"/>
+      <file name="src/utils/shell/CompactCommand.cpp"/>
+      <file name="src/utils/shell/CompactCommand.hpp"/>
+      <file name="src/utils/shell/ContainerQueryCommand.cpp"/>
+      <file name="src/utils/shell/ContainerQueryCommand.hpp"/>
+      <file name="src/utils/shell/ContextItemQueryCommand.cpp"/>
+      <file name="src/utils/shell/ContextItemQueryCommand.hpp"/>
+      <file name="src/utils/shell/CreateContainerCommand.cpp"/>
+      <file name="src/utils/shell/CreateContainerCommand.hpp"/>
+      <file name="src/utils/shell/DebugCommand.hpp"/>
+      <file name="src/utils/shell/DebugCommand.cpp"/>
+      <file name="src/utils/shell/DebugOptimizationCommand.hpp"/>
+      <file name="src/utils/shell/DebugOptimizationCommand.cpp"/>
+      <file name="src/utils/shell/DefaultShell.cpp"/>
+      <file name="src/utils/shell/DefaultShell.hpp"/>
+      <file name="src/utils/shell/DeleteDocumentCommand.cpp"/>
+      <file name="src/utils/shell/DeleteDocumentCommand.hpp"/>
+      <file name="src/utils/shell/DeleteIndexCommand.cpp"/>
+      <file name="src/utils/shell/DeleteIndexCommand.hpp"/>
+      <file name="src/utils/shell/EchoCommand.cpp"/>
+      <file name="src/utils/shell/EchoCommand.hpp"/>
+      <file name="src/utils/shell/EdgeIndexLookupCommand.cpp"/>
+      <file name="src/utils/shell/EdgeIndexLookupCommand.hpp"/>
+      <file name="src/utils/shell/Environment.cpp"/>
+      <file name="src/utils/shell/Environment.hpp"/>
+      <file name="src/utils/shell/GetDocumentsCommand.cpp"/>
+      <file name="src/utils/shell/GetDocumentsCommand.hpp"/>
+      <file name="src/utils/shell/GetMetaDataCommand.cpp"/>
+      <file name="src/utils/shell/GetMetaDataCommand.hpp"/>
+      <file name="src/utils/shell/HelpCommand.cpp"/>
+      <file name="src/utils/shell/HelpCommand.hpp"/>
+      <file name="src/utils/shell/IncludeCommand.cpp"/>
+      <file name="src/utils/shell/IncludeCommand.hpp"/>
+      <file name="src/utils/shell/IndexLookupCommand.cpp"/>
+      <file name="src/utils/shell/IndexLookupCommand.hpp"/>
+      <file name="src/utils/shell/InfoCommand.cpp"/>
+      <file name="src/utils/shell/InfoCommand.hpp"/>
+      <file name="src/utils/shell/LazyCommand.cpp"/>
+      <file name="src/utils/shell/LazyCommand.hpp"/>
+      <file name="src/utils/shell/ListIndexesCommand.cpp"/>
+      <file name="src/utils/shell/ListIndexesCommand.hpp"/>
+      <file name="src/utils/shell/OpenContainerCommand.cpp"/>
+      <file name="src/utils/shell/OpenContainerCommand.hpp"/>
+      <file name="src/utils/shell/PreLoadCommand.cpp"/>
+      <file name="src/utils/shell/PreLoadCommand.hpp"/>
+      <file name="src/utils/shell/PrepareCommand.cpp"/>
+      <file name="src/utils/shell/PrepareCommand.hpp"/>
+      <file name="src/utils/shell/PrintCommand.cpp"/>
+      <file name="src/utils/shell/PrintCommand.hpp"/>
+      <file name="src/utils/shell/ProjectionCommand.cpp"/>
+      <file name="src/utils/shell/ProjectionCommand.hpp"/>
+      <file name="src/utils/shell/QueryCommand.cpp"/>
+      <file name="src/utils/shell/QueryCommand.hpp"/>
+      <file name="src/utils/shell/QueryPlanCommand.cpp"/>
+      <file name="src/utils/shell/QueryPlanCommand.hpp"/>
+      <file name="src/utils/shell/QuitCommand.cpp"/>
+      <file name="src/utils/shell/QuitCommand.hpp"/>
+      <file name="src/utils/shell/ReindexCommand.cpp"/>
+      <file name="src/utils/shell/ReindexCommand.hpp"/>
+      <file name="src/utils/shell/RemoveAliasCommand.cpp"/>
+      <file name="src/utils/shell/RemoveAliasCommand.hpp"/>
+      <file name="src/utils/shell/RemoveContainerCommand.cpp"/>
+      <file name="src/utils/shell/RemoveContainerCommand.hpp"/>
+      <file name="src/utils/shell/ReturnTypeCommand.cpp"/>
+      <file name="src/utils/shell/ReturnTypeCommand.hpp"/>
+      <file name="src/utils/shell/SetAutoIndexingCommand.cpp"/>
+      <file name="src/utils/shell/SetAutoIndexingCommand.hpp"/>
+      <file name="src/utils/shell/SetBaseURICommand.cpp"/>
+      <file name="src/utils/shell/SetBaseURICommand.hpp"/>
+      <file name="src/utils/shell/SetIgnoreCommand.cpp"/>
+      <file name="src/utils/shell/SetIgnoreCommand.hpp"/>
+      <file name="src/utils/shell/SetMetaDataCommand.cpp"/>
+      <file name="src/utils/shell/SetMetaDataCommand.hpp"/>
+      <file name="src/utils/shell/SetNamespaceCommand.cpp"/>
+      <file name="src/utils/shell/SetNamespaceCommand.hpp"/>
+      <file name="src/utils/shell/SetQueryTimeoutCommand.cpp"/>
+      <file name="src/utils/shell/SetQueryTimeoutCommand.hpp"/>
+      <file name="src/utils/shell/SetTypedVariableCommand.cpp"/>
+      <file name="src/utils/shell/SetTypedVariableCommand.hpp"/>
+      <file name="src/utils/shell/SetVariableCommand.cpp"/>
+      <file name="src/utils/shell/SetVariableCommand.hpp"/>
+      <file name="src/utils/shell/SetVerboseCommand.cpp"/>
+      <file name="src/utils/shell/SetVerboseCommand.hpp"/>
+      <file name="src/utils/shell/Shell.cpp"/>
+      <file name="src/utils/shell/Shell.hpp"/>
+      <file name="src/utils/shell/ShellCommand.cpp"/>
+      <file name="src/utils/shell/ShellCommand.hpp"/>
+      <file name="src/utils/shell/StartTransactionCommand.cpp"/>
+      <file name="src/utils/shell/StartTransactionCommand.hpp"/>
+      <file name="src/utils/shell/StatsLookupCommand.cpp"/>
+      <file name="src/utils/shell/StatsLookupCommand.hpp"/>
+      <file name="src/utils/shell/SyncCommand.cpp"/>
+      <file name="src/utils/shell/SyncCommand.hpp"/>
+      <file name="src/utils/shell/TimeCommand.cpp"/>
+      <file name="src/utils/shell/TimeCommand.hpp"/>
+      <file name="src/utils/shell/UpgradeCommand.cpp"/>
+      <file name="src/utils/shell/UpgradeCommand.hpp"/>
+      <file name="src/utils/shell/dbxmlsh.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_dump" guid="3D50C9C1-88B9-4323-B656-97E1F9C1376B">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="rel">../src/common</include>
+    <include type="ref">all</include>
+    <files>
+      <file name="src/clib/getopt.c"/>
+      <file name="src/common/SigBlock.cpp"/>
+      <file name="src/common/dbxml_util_sig.c"/>
+      <file name="src/dbxml_dump/dbxml_dump.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_load" guid="63F00D08-A8E1-4506-BFB9-3149AAA90C13">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="rel">../src/common</include>
+    <include type="ref">all</include>
+    <files>
+      <file name="src/clib/getopt.c"/>
+      <file name="src/common/SigBlock.cpp"/>
+      <file name="src/common/dbxml_util_sig.c"/>
+      <file name="src/dbxml_load/dbxml_load.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_load_container" guid="0E79C069-6DC1-43CA-982E-037EF51EEE6D">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="rel">../src/common</include>
+    <include type="ref">all</include>
+    <files>
+      <file name="src/clib/getopt.c"/>
+      <file name="src/common/SigBlock.cpp"/>
+      <file name="src/common/dbxml_util_sig.c"/>
+      <file name="src/utils/load_container/LoadContainer.cpp"/>
+      <file name="src/utils/load_container/LoadContainer.hpp"/>
+    </files>
+  </project>
+  <project name="dbxml_benchmark" guid="327A994D-7CE0-468C-9A41-BB0B53DAE26F">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="src/clib/getopt.c"/>
+      <file name="src/common/Timer.cpp"/>
+      <file name="test/benchmark/src/Benchmark.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_perf" guid="CA6EC61D-6013-42C5-95FF-FB7DC73E01E0">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <depends>winmm</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="src/clib/getopt.c"/>
+      <file name="test/perf/perf_test.cpp"/>
+      <file name="test/perf/perf_workload.cpp"/>
+      <file name="test/perf/perf_workload.hpp"/>
+      <file name="test/perf/perf_work.c"/>
+      <file name="test/perf/perf_work.h"/>
+      <file name="test/perf/perf_os.c"/>
+      <file name="test/perf/perf_os.h"/>
+      <file name="test/perf/PutAndQueriesWorkload.cpp"/>
+      <file name="test/perf/PutAndQueriesWorkload.hpp"/>
+      <file name="test/perf/PutWorkload.cpp"/>
+      <file name="test/perf/PutWorkload.hpp"/>
+      <file name="test/perf/DbXmlWorkload.cpp"/>
+      <file name="test/perf/DbXmlWorkload.hpp"/>
+      <file name="test/perf/QueryWorkload.cpp"/>
+      <file name="test/perf/QueryWorkload.hpp"/>
+      <file name="test/perf/testcases/PutDocumentWorkload.hpp"/>
+      <file name="test/perf/testcases/PutDocumentWorkload.cpp"/>
+      <file name="test/perf/testcases/GetDocumentWorkload.hpp"/>
+      <file name="test/perf/testcases/GetDocumentWorkload.cpp"/>
+      <file name="test/perf/testcases/DeleteDocumentWorkload.hpp"/>
+      <file name="test/perf/testcases/DeleteDocumentWorkload.cpp"/>
+      <file name="test/perf/testcases/QueryPresenceWorkload.cpp"/>
+      <file name="test/perf/testcases/QueryPresenceWorkload.hpp"/>
+      <file name="test/perf/testcases/QueryEqualityWorkload.cpp"/>
+      <file name="test/perf/testcases/QueryEqualityWorkload.hpp"/>
+      <file name="test/perf/testcases/QueryPrepareWorkload.cpp"/>
+      <file name="test/perf/testcases/QueryPrepareWorkload.hpp"/>
+      <file name="test/perf/testcases/UpdateDocumentWorkload.cpp"/>
+      <file name="test/perf/testcases/UpdateDocumentWorkload.hpp"/>
+      <file name="test/perf/testcases/EventReaderWorkload.cpp"/>
+      <file name="test/perf/testcases/EventReaderWorkload.hpp"/>
+      <file name="test/perf/testcases/EventWriterWorkload.cpp"/>
+      <file name="test/perf/testcases/EventWriterWorkload.hpp"/>
+      <file name="test/perf/testcases/IterateNodeWorkload.cpp"/>
+      <file name="test/perf/testcases/IterateNodeWorkload.hpp"/>
+      <file name="test/perf/testcases/ReplaceNodeWorkload.cpp"/>
+      <file name="test/perf/testcases/ReplaceNodeWorkload.hpp"/>
+      <file name="test/perf/testcases/InsertNodeWorkload.cpp"/>
+      <file name="test/perf/testcases/InsertNodeWorkload.hpp"/>
+      <file name="test/perf/testcases/DeleteNodeWorkload.cpp"/>
+      <file name="test/perf/testcases/DeleteNodeWorkload.hpp"/>
+      <file name="test/perf/testcases/RenameNodeWorkload.cpp"/>
+      <file name="test/perf/testcases/RenameNodeWorkload.hpp"/>
+      <file name="test/perf/testcases/ConfigIndexWorkload.cpp"/>
+      <file name="test/perf/testcases/ConfigIndexWorkload.hpp"/>
+      <file name="test/perf/testcases/IndexLookupWorkload.cpp"/>
+      <file name="test/perf/testcases/IndexLookupWorkload.hpp"/>
+      <file name="test/perf/testcases/MetaDataWorkload.cpp"/>
+      <file name="test/perf/testcases/MetaDataWorkload.hpp"/>
+      <file name="test/perf/testcases/DictionaryDatabaseWorkload.cpp"/>
+      <file name="test/perf/testcases/DictionaryDatabaseWorkload.hpp"/>
+    </files>
+  </project>
+  <project name="dbxml_xqts_runner" guid="8BE60C40-70B7-48DE-BCA3-C929A5405F65">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <depends>xqilla</depends>
+    <depends>xerces</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="src/clib/getopt.c"/>
+      <file name="test/cpp/xqts/xqts_runner.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_unit_runner" guid="63dd066a-d5bc-11dd-8c51-001f5bf474b8">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <include type="ref">all</include>
+    <include type="rel">../test/cpp/xmlUnit</include>
+    <files>
+      <file name="test/cpp/xmlUnit/XmlUnit.cpp"/>
+      <file name="test/cpp/xmlUnit/XmlUnit.hpp"/>
+      <file name="test/cpp/xmlUnit/XmlUnitRunner.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_test_input_streams" guid="A446328F-7BDE-4943-ACF5-2EEA11A534D9">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <depends>xqilla</depends>
+    <depends>xerces</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="test/cpp/inputStreams/inputStreams.cpp"/>
+      <file name="test/cpp/util/TestLogging.cpp"/>
+      <file name="test/cpp/util/TestResolver.cpp"/>
+      <file name="test/cpp/util/Transcoding.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_test_query_processor_api" guid="DC795FEC-06D2-4E45-A7EB-68153797EF91">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <depends>xqilla</depends>
+    <depends>xerces</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="test/cpp/queryProcessorAPI/queryProcessorAPI.cpp"/>
+      <file name="test/cpp/util/TestLogging.cpp"/>
+      <file name="test/cpp/util/TestResolver.cpp"/>
+      <file name="test/cpp/util/Transcoding.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_test_databases" guid="4E9281FA-D418-488D-B78D-44ED53E66DE8">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <depends>xqilla</depends>
+    <depends>xerces</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="test/cpp/databaseManagement/databaseManagement.cpp"/>
+      <file name="test/cpp/util/TestLogging.cpp"/>
+      <file name="test/cpp/util/TestResolver.cpp"/>
+      <file name="test/cpp/util/Transcoding.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_test_driver" guid="B4061339-04EF-4490-B13B-F75D46AB18E6">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <depends>xqilla</depends>
+    <depends>xerces</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="test/cpp/unitTests/QueryPlanTest.cpp"/>
+      <file name="test/cpp/unitTests/ResolverUnitTest.cpp"/>
+      <file name="test/cpp/unitTests/TestEnvironment.cpp"/>
+      <file name="test/cpp/unitTests/UnitTest.cpp"/>
+      <file name="test/cpp/unitTests/XQueryTest.cpp"/>
+      <file name="test/cpp/unitTests/unit_test_driver.cpp"/>
+      <file name="test/cpp/util/TestLogging.cpp"/>
+      <file name="test/cpp/util/TestResolver.cpp"/>
+      <file name="test/cpp/util/Transcoding.cpp"/>
+    </files>
+  </project>
+  <project name="helloWorld" guid="4FAC8809-00F3-4DF2-ACE8-958CD2AC86BA">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/basic/helloWorld.cpp"/>
+    </files>
+  </project>
+  <project name="helloWorldTxn" guid="D323FC37-D0FA-4F6C-99A3-171E934BFBE9">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/basic/helloWorldTxn.cpp"/>
+    </files>
+  </project>
+  <project name="query" guid="38A27773-867D-4EE8-AE20-B9176E9FD218">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/basic/query.cpp"/>
+    </files>
+  </project>
+  <project name="queryTxn" guid="E54F54CB-866A-4DE1-9074-B76889C27469">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/basic/queryTxn.cpp"/>
+    </files>
+  </project>
+  <project name="externalFunction" guid="F44C32B8-E217-11DD-ACFF-00188BDB4362">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/misc/externalFunction.cpp"/>
+    </files>
+  </project>
+  <project name="compression" guid="3A848786-E834-11DD-8E41-00188BDB4362">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/misc/compression.cpp"/>
+    </files>
+  </project> 
+  <project name="debug" guid="EADB0232-F3FA-11DD-8EA4-00188BDB4362">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/misc/debug.cpp"/>
+    </files>
+  </project> 
+  <project name="dbxml_example_updateDocument" guid="2D33A4B6-86AA-472F-9B97-39CE80B386E5">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/updateDocument.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_simpleQuery" guid="2ADD56CD-D271-4ED1-9718-40D99580E4D5">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/simpleQuery.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_simpleContainerInEnv" guid="97828A41-23E8-42EE-A3B8-E1E2009C6615">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/simpleContainerInEnv.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_simpleContainer" guid="8FECBB62-1230-4E92-8AD7-2A04BDABE057">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/simpleContainer.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_simpleAdd" guid="3622BD54-C972-4789-9C3E-FAB19D133BAD">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/simpleAdd.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_retrieveDB" guid="E6BE5B19-BC4B-4F36-A9B8-FB912D9F80C4">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/retrieveDB.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_replaceIndex" guid="198929D8-6D37-424F-8140-AA4DEFB49127">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/replaceIndex.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_queryWithDocumentNames" guid="79139C14-C58B-482B-9342-78B1C1B8006E">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/queryWithDocumentNames.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_queryWithContext" guid="5F446399-B615-448F-A0EB-45D21A9C849D">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/queryWithContext.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_queryForMetaData" guid="8830DDBE-8200-49A4-8441-3D4D04C29A06">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/queryForMetaData.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_queryForDocumentValue" guid="390C85B3-6995-4190-A093-E080704C791C">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/queryForDocumentValue.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_exampleLoadContainer" guid="561C3B3D-BA19-4B2D-8610-61670C9EF7E8">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/exampleLoadContainer.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_deleteDocument" guid="52E051B1-268C-4F21-A38F-562F886445D2">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/deleteDocument.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_deleteIndex" guid="8FD2F6AE-1EAB-43F7-BDE0-4BCF087FC48B">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/deleteIndex.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_buildDB" guid="2EEBF821-F1A5-4F80-846A-159917DD839A">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/buildDB.cpp"/>
+    </files>
+  </project>
+  <project name="dbxml_example_addIndex" guid="02C56105-0960-4F6E-9ACD-47EFA2D14DE4">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <include type="ref">all</include>
+    <files>
+      <file name="examples/cxx/gettingStarted/addIndex.cpp"/>
+    </files>
+  </project>
+  <project name="php_db4" guid="44AFD8B5-687F-4B9D-B163-1F381CC11794">
+    <type>library</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <depends>php5ts</depends>
+    <include type="ref">all</include>
+    <include type="rel">@DB_HOME@/php_db4,@PHP_HOME@/main,@PHP_HOME@/TSRM,@PHP_HOME@/Zend,@PHP_HOME@/regex,@PHP_HOME@</include>
+    <preprocessor config="all">COMPILE_DL_DB4;DB4_EXPORTS;HAVE_DB_H=1;ZEND_WIN32=1;PHP_WIN32=1;ZEND_WIN32_FORCE_INLINE;ZTS=1</preprocessor>
+    <preprocessor config="Release">NDebug;ZEND_DEBUG=0</preprocessor>
+    <preprocessor config="Debug">ZEND_DEBUG=1</preprocessor>
+    <event name="postbuild">
+      <command config="Release">installProj.bat php_db4 dll $(OutDir) release</command>
+      <command config="Debug">installProj.bat php_db4 dll $(OutDir) debug</command>
+      <description>Copying library files to install directory</description>
+    </event>
+
+    <files>
+      <file name="../@DB_NAME@/php_db4/db4.cpp"/>
+    </files>
+  </project>
+  <project name="php_dbxml" guid="69F331FD-7645-494C-96FE-BA6A51E5E9C6">
+    <type>library</type>
+    <configuration></configuration>
+    <depends>dbxml</depends>
+    <depends>db</depends>
+    <depends>php5ts</depends>
+    <depends>php_db4</depends>
+    <include type="ref">all</include>
+    <include type="rel">@DB_HOME@/php_db4,@PHP_HOME@/main,@PHP_HOME@/TSRM,@PHP_HOME@/Zend,@PHP_HOME@/regex,@PHP_HOME@</include>
+    <preprocessor config="all">COMPILE_DL_DBXML;DBXML_EXPORTS;HAVE_DB_H=1;ZEND_WIN32=1;PHP_WIN32=1;ZEND_WIN32_FORCE_INLINE;ZTS=1</preprocessor>
+    <preprocessor config="Release">NDebug;ZEND_DEBUG=0</preprocessor>
+    <preprocessor config="Debug">ZEND_DEBUG=1</preprocessor>
+    <event name="postbuild">
+      <command config="Release">installProj.bat php_dbxml dll $(OutDir) release</command>
+      <command config="Debug">installProj.bat php_dbxml dll $(OutDir) debug</command>
+      <description>Copying library files to install directory</description>
+    </event>
+    <files>
+      <file name="src/php/php_dbxml.cpp"/>
+      <file name="src/php/php_dbxml_container.cpp"/>
+      <file name="src/php/php_dbxml_containerconfig.cpp"/>
+      <file name="src/php/php_dbxml_data.cpp"/>
+      <file name="src/php/php_dbxml_document.cpp"/>
+      <file name="src/php/php_dbxml_eventreader.cpp"/>
+      <file name="src/php/php_dbxml_eventreadertowriter.cpp"/>
+      <file name="src/php/php_dbxml_eventwriter.cpp"/>
+      <file name="src/php/php_dbxml_exception.cpp"/>
+      <file name="src/php/php_dbxml_indexlookup.cpp"/>
+      <file name="src/php/php_dbxml_indexspecification.cpp"/>
+      <file name="src/php/php_dbxml_inputstream.cpp"/>
+      <file name="src/php/php_dbxml_manager.cpp"/>
+      <file name="src/php/php_dbxml_querycontext.cpp"/>
+      <file name="src/php/php_dbxml_queryexpression.cpp"/>
+      <file name="src/php/php_dbxml_resolver.cpp"/>
+      <file name="src/php/php_dbxml_results.cpp"/>
+      <file name="src/php/php_dbxml_statistics.cpp"/>
+      <file name="src/php/php_dbxml_transaction.cpp"/>
+      <file name="src/php/php_dbxml_updatecontext.cpp"/>
+      <file name="src/php/php_dbxml_value.cpp"/>
+    </files>
+  </project>
+  <project name="db" guid="20E83A5C-A325-4962-8F3A-CDD367AE6D33">
+    <type>library</type>
+    <configuration></configuration>
+    <configuration>Static </configuration>
+    <depends>winsock</depends>
+    <include type="ref">db</include>
+    <moddef file="../@DB_NAME@/build_windows/libdb.def"/>
+    <options>
+      <nowp64/>
+      <link config="Debug">/FIXED:NO /export:__db_assert</link>
+    </options>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE</preprocessor>
+    <preprocessor config="dll">DB_CREATE_DLL</preprocessor>
+    <preprocessor config="Debug">DIAGNOSTIC;CONFIG_TEST</preprocessor>
+    <event name="postbuild">
+      <command config="Release">installProj.bat @DB_LIB@ dll $(OutDir) release</command>
+      <command config="Debug">installProj.bat @DB_LIB@ dll $(OutDir) debug</command>
+      <description>Copying library files to install directory</description>
+    </event>
+    <files>
+      <file name="../@DB_NAME@/crypto/aes_method.c"/>
+      <file name="../@DB_NAME@/btree/bt_compact.c"/>
+      <file name="../@DB_NAME@/btree/bt_compare.c"/>
+      <file name="../@DB_NAME@/btree/bt_compress.c"/>
+      <file name="../@DB_NAME@/btree/bt_conv.c"/>
+      <file name="../@DB_NAME@/btree/bt_curadj.c"/>
+      <file name="../@DB_NAME@/btree/bt_cursor.c"/>
+      <file name="../@DB_NAME@/btree/bt_delete.c"/>
+      <file name="../@DB_NAME@/btree/bt_method.c"/>
+      <file name="../@DB_NAME@/btree/bt_open.c"/>
+      <file name="../@DB_NAME@/btree/bt_put.c"/>
+      <file name="../@DB_NAME@/btree/bt_rec.c"/>
+      <file name="../@DB_NAME@/btree/bt_reclaim.c"/>
+      <file name="../@DB_NAME@/btree/bt_recno.c"/>
+      <file name="../@DB_NAME@/btree/bt_rsearch.c"/>
+      <file name="../@DB_NAME@/btree/bt_search.c"/>
+      <file name="../@DB_NAME@/btree/bt_split.c"/>
+      <file name="../@DB_NAME@/btree/bt_stat.c"/>
+      <file name="../@DB_NAME@/btree/bt_upgrade.c"/>
+      <file name="../@DB_NAME@/btree/bt_verify.c"/>
+      <file name="../@DB_NAME@/btree/btree_auto.c"/>
+      <file name="../@DB_NAME@/db/crdel_auto.c"/>
+      <file name="../@DB_NAME@/db/crdel_rec.c"/>
+      <file name="../@DB_NAME@/crypto/crypto.c"/>
+      <file name="../@DB_NAME@/cxx/cxx_db.cpp"/>
+      <file name="../@DB_NAME@/cxx/cxx_dbc.cpp"/>
+      <file name="../@DB_NAME@/cxx/cxx_dbt.cpp"/>
+      <file name="../@DB_NAME@/cxx/cxx_env.cpp"/>
+      <file name="../@DB_NAME@/cxx/cxx_except.cpp"/>
+      <file name="../@DB_NAME@/cxx/cxx_lock.cpp"/>
+      <file name="../@DB_NAME@/cxx/cxx_logc.cpp"/>
+      <file name="../@DB_NAME@/cxx/cxx_mpool.cpp"/>
+      <file name="../@DB_NAME@/cxx/cxx_multi.cpp"/>
+      <file name="../@DB_NAME@/cxx/cxx_seq.cpp"/>
+      <file name="../@DB_NAME@/cxx/cxx_txn.cpp"/>
+      <file name="../@DB_NAME@/db/db.c"/>
+      <file name="../@DB_NAME@/db/db_am.c"/>
+      <file name="../@DB_NAME@/db/db_auto.c"/>
+      <file name="../@DB_NAME@/common/db_byteorder.c"/>
+      <file name="../@DB_NAME@/db/db_cam.c"/>
+      <file name="../@DB_NAME@/db/db_cds.c"/>
+      <file name="../@DB_NAME@/db/db_conv.c"/>
+      <file name="../@DB_NAME@/db/db_dispatch.c"/>
+      <file name="../@DB_NAME@/db/db_dup.c"/>
+      <file name="../@DB_NAME@/common/db_err.c"/>
+      <file name="../@DB_NAME@/common/db_getlong.c"/>
+      <file name="../@DB_NAME@/common/db_idspace.c"/>
+      <file name="../@DB_NAME@/common/db_compint.c"/>
+      <file name="../@DB_NAME@/db/db_iface.c"/>
+      <file name="../@DB_NAME@/db/db_join.c"/>
+      <file name="../@DB_NAME@/common/db_log2.c"/>
+      <file name="../@DB_NAME@/db/db_meta.c"/>
+      <file name="../@DB_NAME@/db/db_method.c"/>
+      <file name="../@DB_NAME@/db/db_open.c"/>
+      <file name="../@DB_NAME@/db/db_overflow.c"/>
+      <file name="../@DB_NAME@/db/db_ovfl_vrfy.c"/>
+      <file name="../@DB_NAME@/db/db_pr.c"/>
+      <file name="../@DB_NAME@/db/db_rec.c"/>
+      <file name="../@DB_NAME@/db/db_reclaim.c"/>
+      <file name="../@DB_NAME@/db/db_remove.c"/>
+      <file name="../@DB_NAME@/db/db_rename.c"/>
+      <file name="../@DB_NAME@/db/db_ret.c"/>
+      <file name="../@DB_NAME@/db/db_setid.c"/>
+      <file name="../@DB_NAME@/db/db_setlsn.c"/>
+      <file name="../@DB_NAME@/common/db_shash.c"/>
+      <file name="../@DB_NAME@/db/db_sort_multiple.c"/>
+      <file name="../@DB_NAME@/db/db_stati.c"/>
+      <file name="../@DB_NAME@/db/db_truncate.c"/>
+      <file name="../@DB_NAME@/db/db_upg.c"/>
+      <file name="../@DB_NAME@/db/db_upg_opd.c"/>
+      <file name="../@DB_NAME@/db/db_vrfy.c"/>
+      <file name="../@DB_NAME@/db/db_vrfyutil.c"/>
+      <file name="../@DB_NAME@/db/partition.c"/>
+      <file name="../@DB_NAME@/dbm/dbm.c"/>
+      <file name="../@DB_NAME@/dbreg/dbreg.c"/>
+      <file name="../@DB_NAME@/dbreg/dbreg_auto.c"/>
+      <file name="../@DB_NAME@/dbreg/dbreg_rec.c"/>
+      <file name="../@DB_NAME@/dbreg/dbreg_stat.c"/>
+      <file name="../@DB_NAME@/dbreg/dbreg_util.c"/>
+      <file name="../@DB_NAME@/common/dbt.c"/>
+      <file name="../@DB_NAME@/env/env_alloc.c"/>
+      <file name="../@DB_NAME@/env/env_config.c"/>
+      <file name="../@DB_NAME@/env/env_failchk.c"/>
+      <file name="../@DB_NAME@/env/env_file.c"/>
+      <file name="../@DB_NAME@/env/env_globals.c"/>
+      <file name="../@DB_NAME@/env/env_method.c"/>
+      <file name="../@DB_NAME@/env/env_name.c"/>
+      <file name="../@DB_NAME@/env/env_open.c"/>
+      <file name="../@DB_NAME@/env/env_recover.c"/>
+      <file name="../@DB_NAME@/env/env_region.c"/>
+      <file name="../@DB_NAME@/env/env_register.c"/>
+      <file name="../@DB_NAME@/env/env_sig.c"/>
+      <file name="../@DB_NAME@/env/env_stat.c"/>
+      <file name="../@DB_NAME@/fileops/fileops_auto.c"/>
+      <file name="../@DB_NAME@/fileops/fop_basic.c"/>
+      <file name="../@DB_NAME@/fileops/fop_rec.c"/>
+      <file name="../@DB_NAME@/fileops/fop_util.c"/>
+      <file name="../@DB_NAME@/hash/hash.c"/>
+      <file name="../@DB_NAME@/hash/hash_auto.c"/>
+      <file name="../@DB_NAME@/hash/hash_conv.c"/>
+      <file name="../@DB_NAME@/hash/hash_dup.c"/>
+      <file name="../@DB_NAME@/hash/hash_func.c"/>
+      <file name="../@DB_NAME@/hash/hash_meta.c"/>
+      <file name="../@DB_NAME@/hash/hash_method.c"/>
+      <file name="../@DB_NAME@/hash/hash_open.c"/>
+      <file name="../@DB_NAME@/hash/hash_page.c"/>
+      <file name="../@DB_NAME@/hash/hash_rec.c"/>
+      <file name="../@DB_NAME@/hash/hash_reclaim.c"/>
+      <file name="../@DB_NAME@/hash/hash_stat.c"/>
+      <file name="../@DB_NAME@/hash/hash_upgrade.c"/>
+      <file name="../@DB_NAME@/hash/hash_verify.c"/>
+      <file name="../@DB_NAME@/hmac/hmac.c"/>
+      <file name="../@DB_NAME@/hsearch/hsearch.c"/>
+      <file name="../@DB_NAME@/lock/lock.c"/>
+      <file name="../@DB_NAME@/lock/lock_deadlock.c"/>
+      <file name="../@DB_NAME@/lock/lock_failchk.c"/>
+      <file name="../@DB_NAME@/lock/lock_id.c"/>
+      <file name="../@DB_NAME@/lock/lock_list.c"/>
+      <file name="../@DB_NAME@/lock/lock_method.c"/>
+      <file name="../@DB_NAME@/lock/lock_region.c"/>
+      <file name="../@DB_NAME@/lock/lock_stat.c"/>
+      <file name="../@DB_NAME@/lock/lock_timer.c"/>
+      <file name="../@DB_NAME@/lock/lock_util.c"/>
+      <file name="../@DB_NAME@/log/log.c"/>
+      <file name="../@DB_NAME@/log/log_archive.c"/>
+      <file name="../@DB_NAME@/log/log_compare.c"/>
+      <file name="../@DB_NAME@/log/log_debug.c"/>
+      <file name="../@DB_NAME@/log/log_get.c"/>
+      <file name="../@DB_NAME@/log/log_method.c"/>
+      <file name="../@DB_NAME@/log/log_put.c"/>
+      <file name="../@DB_NAME@/log/log_stat.c"/>
+      <file name="../@DB_NAME@/common/mkpath.c"/>
+      <file name="../@DB_NAME@/mp/mp_alloc.c"/>
+      <file name="../@DB_NAME@/mp/mp_bh.c"/>
+      <file name="../@DB_NAME@/mp/mp_fget.c"/>
+      <file name="../@DB_NAME@/mp/mp_fmethod.c"/>
+      <file name="../@DB_NAME@/mp/mp_fopen.c"/>
+      <file name="../@DB_NAME@/mp/mp_fput.c"/>
+      <file name="../@DB_NAME@/mp/mp_fset.c"/>
+      <file name="../@DB_NAME@/mp/mp_method.c"/>
+      <file name="../@DB_NAME@/mp/mp_mvcc.c"/>
+      <file name="../@DB_NAME@/mp/mp_region.c"/>
+      <file name="../@DB_NAME@/mp/mp_register.c"/>
+      <file name="../@DB_NAME@/mp/mp_resize.c"/>
+      <file name="../@DB_NAME@/mp/mp_stat.c"/>
+      <file name="../@DB_NAME@/mp/mp_sync.c"/>
+      <file name="../@DB_NAME@/mp/mp_trickle.c"/>
+      <file name="../@DB_NAME@/crypto/mersenne/mt19937db.c"/>
+      <file name="../@DB_NAME@/mutex/mut_alloc.c"/>
+      <file name="../@DB_NAME@/mutex/mut_failchk.c"/>
+      <file name="../@DB_NAME@/mutex/mut_method.c"/>
+      <file name="../@DB_NAME@/mutex/mut_region.c"/>
+      <file name="../@DB_NAME@/mutex/mut_stat.c"/>
+      <file name="../@DB_NAME@/mutex/mut_win32.c"/>
+      <file name="../@DB_NAME@/common/openflags.c"/>
+      <file name="../@DB_NAME@/os/os_abort.c"/>
+      <file name="../@DB_NAME@/os/os_addrinfo.c"/>
+      <file name="../@DB_NAME@/os_windows/os_abs.c"/>
+      <file name="../@DB_NAME@/os/os_alloc.c"/>
+      <file name="../@DB_NAME@/os_windows/os_clock.c"/>
+      <file name="../@DB_NAME@/os_windows/os_config.c"/>
+      <file name="../@DB_NAME@/os_windows/os_cpu.c"/>
+      <file name="../@DB_NAME@/os/os_ctime.c"/>
+      <file name="../@DB_NAME@/os_windows/os_dir.c"/>
+      <file name="../@DB_NAME@/os_windows/os_errno.c"/>
+      <file name="../@DB_NAME@/os_windows/os_fid.c"/>
+      <file name="../@DB_NAME@/os_windows/os_flock.c"/>
+      <file name="../@DB_NAME@/os_windows/os_fsync.c"/>
+      <file name="../@DB_NAME@/os_windows/os_getenv.c"/>
+      <file name="../@DB_NAME@/os_windows/os_handle.c"/>
+      <file name="../@DB_NAME@/os_windows/os_map.c"/>
+      <file name="../@DB_NAME@/os_windows/os_mkdir.c"/>
+      <file name="../@DB_NAME@/os_windows/os_open.c"/>
+      <file name="../@DB_NAME@/os/os_pid.c"/>
+      <file name="../@DB_NAME@/os_windows/os_rename.c"/>
+      <file name="../@DB_NAME@/os/os_root.c"/>
+      <file name="../@DB_NAME@/os/os_rpath.c"/>
+      <file name="../@DB_NAME@/os_windows/os_rw.c"/>
+      <file name="../@DB_NAME@/os_windows/os_seek.c"/>
+      <file name="../@DB_NAME@/os/os_stack.c"/>
+      <file name="../@DB_NAME@/os_windows/os_stat.c"/>
+      <file name="../@DB_NAME@/os/os_tmpdir.c"/>
+      <file name="../@DB_NAME@/os_windows/os_truncate.c"/>
+      <file name="../@DB_NAME@/os/os_uid.c"/>
+      <file name="../@DB_NAME@/os_windows/os_unlink.c"/>
+      <file name="../@DB_NAME@/os_windows/os_yield.c"/>
+      <file name="../@DB_NAME@/qam/qam.c"/>
+      <file name="../@DB_NAME@/qam/qam_auto.c"/>
+      <file name="../@DB_NAME@/qam/qam_conv.c"/>
+      <file name="../@DB_NAME@/qam/qam_files.c"/>
+      <file name="../@DB_NAME@/qam/qam_method.c"/>
+      <file name="../@DB_NAME@/qam/qam_open.c"/>
+      <file name="../@DB_NAME@/qam/qam_rec.c"/>
+      <file name="../@DB_NAME@/qam/qam_stat.c"/>
+      <file name="../@DB_NAME@/qam/qam_upgrade.c"/>
+      <file name="../@DB_NAME@/qam/qam_verify.c"/>
+      <file name="../@DB_NAME@/rep/rep_auto.c"/>
+      <file name="../@DB_NAME@/rep/rep_backup.c"/>
+      <file name="../@DB_NAME@/rep/rep_elect.c"/>
+      <file name="../@DB_NAME@/rep/rep_lease.c"/>
+      <file name="../@DB_NAME@/rep/rep_log.c"/>
+      <file name="../@DB_NAME@/rep/rep_method.c"/>
+      <file name="../@DB_NAME@/rep/rep_record.c"/>
+      <file name="../@DB_NAME@/rep/rep_region.c"/>
+      <file name="../@DB_NAME@/rep/rep_stat.c"/>
+      <file name="../@DB_NAME@/rep/rep_util.c"/>
+      <file name="../@DB_NAME@/rep/rep_verify.c"/>
+      <file name="../@DB_NAME@/repmgr/repmgr_auto.c"/>
+      <file name="../@DB_NAME@/repmgr/repmgr_elect.c"/>
+      <file name="../@DB_NAME@/repmgr/repmgr_method.c"/>
+      <file name="../@DB_NAME@/repmgr/repmgr_msg.c"/>
+      <file name="../@DB_NAME@/repmgr/repmgr_net.c"/>
+      <file name="../@DB_NAME@/repmgr/repmgr_queue.c"/>
+      <file name="../@DB_NAME@/repmgr/repmgr_sel.c"/>
+      <file name="../@DB_NAME@/repmgr/repmgr_stat.c"/>
+      <file name="../@DB_NAME@/repmgr/repmgr_util.c"/>
+      <file name="../@DB_NAME@/repmgr/repmgr_windows.c"/>
+      <file name="../@DB_NAME@/crypto/rijndael/rijndael-alg-fst.c"/>
+      <file name="../@DB_NAME@/crypto/rijndael/rijndael-api-fst.c"/>
+      <file name="../@DB_NAME@/sequence/seq_stat.c"/>
+      <file name="../@DB_NAME@/sequence/sequence.c"/>
+      <file name="../@DB_NAME@/hmac/sha1.c"/>
+      <file name="../@DB_NAME@/clib/strsep.c"/>
+      <file name="../@DB_NAME@/txn/txn.c"/>
+      <file name="../@DB_NAME@/txn/txn_auto.c"/>
+      <file name="../@DB_NAME@/txn/txn_chkpt.c"/>
+      <file name="../@DB_NAME@/txn/txn_failchk.c"/>
+      <file name="../@DB_NAME@/txn/txn_method.c"/>
+      <file name="../@DB_NAME@/txn/txn_rec.c"/>
+      <file name="../@DB_NAME@/txn/txn_recover.c"/>
+      <file name="../@DB_NAME@/txn/txn_region.c"/>
+      <file name="../@DB_NAME@/txn/txn_stat.c"/>
+      <file name="../@DB_NAME@/txn/txn_util.c"/>
+      <file name="../@DB_NAME@/common/os_method.c"/>
+      <file name="../@DB_NAME@/common/util_cache.c"/>
+      <file name="../@DB_NAME@/common/util_log.c"/>
+      <file name="../@DB_NAME@/common/util_sig.c"/>
+      <file name="../@DB_NAME@/common/zerofill.c"/>
+    </files>
+  </project>
+  <project name="db_tcl" guid="70EA3C84-40F8-48F8-A643-6A6B6E13D8F7">
+    <type>library</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <depends>tcl</depends>
+    <include type="ref">db</include>
+    <moddef file="../@DB_NAME@/build_windows/libdb_tcl.def"/>
+    <options><nowp64/></options>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS;_UNICODE;DB_TCL_SUPPORT</preprocessor>
+    <preprocessor config="dll">DB_CREATE_DLL</preprocessor>
+    <preprocessor config="Debug">DIAGNOSTIC;CONFIG_TEST</preprocessor>
+    <event name="postbuild">
+      <command config="Release">installProj.bat @DB_TCL_LIB@ dll $(OutDir) release</command>
+      <command config="Debug">installProj.bat @DB_TCL_LIB@ dll $(OutDir) debug</command>
+      <description>Copying library files to install directory</description>
+    </event>
+    <files>
+      <file name="../@DB_NAME@/os/os_abort.c"/>
+      <file name="../@DB_NAME@/os/os_stack.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_compat.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_db.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_db_pkg.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_dbcursor.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_env.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_internal.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_lock.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_log.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_mp.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_mutex.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_rep.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_seq.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_txn.c"/>
+      <file name="../@DB_NAME@/tcl/tcl_util.c"/>
+      <file name="../@DB_NAME@/build_windows/libdb_tcl.def"/>
+    </files>
+  </project>
+  <project name="db_java" guid="81225AA0-44C5-4E17-9F76-512EC70A47CE">
+    <type>library</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <options><nowp64/></options>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS;_UNICODE;UNICODE</preprocessor>
+    <event name="custom">
+      <command config="ReleaseDebug">
+mkdir "./$(OutDir)/classes.db/dummy" "./../build_windows/dummy.db"
+echo compiling Berkeley DB Java classes 
+javac -source 1.5 -target 1.5 -g -d $(OutDir)/classes.db -classpath $(OutDir)/classes.db ../../@DB_NAME@/java/src/com/sleepycat/db/*.java ../../@DB_NAME@/java/src/com/sleepycat/db/internal/*.java ../../@DB_NAME@/java/src/com/sleepycat/bind/*.java ../../@DB_NAME@/java/src/com/sleepycat/bind/serial/*.java ../../@DB_NAME@/java/src/com/sleepycat/bind/tuple/*.java ../../@DB_NAME@/java/src/com/sleepycat/collections/*.java ../../@DB_NAME@/java/src/com/sleepycat/compat/*.java ../../@DB_NAME@/java/src/com/sleepycat/util/*.java ../../@DB_NAME@/java/src/com/sleepycat/util/keyrange/*.java
+echo creating db jar file 
+jar cf ../build_windows/db.jar -C $(OutDir)/classes.db .
+rmdir "$(OutDir)/classes.db/dummy" "./../build_windows/dummy.db"
+echo Java build finished</command>
+      <output>force_compilation.txt</output>
+    </event>
+    <event name="postbuild">
+      <command config="Release">xcopy *.jar ..\..\jar /F/Y 
+installProj.bat @DB_JAVALIB@ dll $(OutDir) release</command>
+      <command config="Debug">xcopy *.jar ..\..\jar /F/Y 
+installProj.bat @DB_JAVALIB@ dll $(OutDir) debug</command>
+      <description>Copying .jar and library files to install directory</description>
+    </event>
+    <files>
+      <file name="../@DB_NAME@/libdb_java/db_java_wrap.c"/>
+    </files>
+  </project>
+  <project name="db_archive" guid="5B1129D6-AEEF-4C1A-8D39-7D21072588D6">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_archive/db_archive.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+  <project name="db_checkpoint" guid="24AF5CAF-232A-4CEC-9BFB-B037F69DF622">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_checkpoint/db_checkpoint.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+  <project name="db_deadlock" guid="CB7A898B-5C7A-49AD-AFA3-4BB7AD44BD76">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_deadlock/db_deadlock.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+  <project name="db_dump" guid="0754D429-448F-469D-9600-000000000000">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_dump/db_dump.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+  <project name="db_hotbackup" guid="2F020B18-5352-486E-A85E-2A59E5B31AC5">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_hotbackup/db_hotbackup.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+  <project name="db_load" guid="6AEDB8EE-5D57-4B21-B005-C0F9437B026E">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_load/db_load.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+  <project name="db_printlog" guid="46C41ED5-C950-4CE8-A139-9C9E68FE3D5F">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_printlog/db_printlog.c"/>
+      <file name="../@DB_NAME@/btree/btree_autop.c"/>
+      <file name="../@DB_NAME@/db/crdel_autop.c"/>
+      <file name="../@DB_NAME@/db/db_autop.c"/>
+      <file name="../@DB_NAME@/dbreg/dbreg_autop.c"/>
+      <file name="../@DB_NAME@/fileops/fileops_autop.c"/>
+      <file name="../@DB_NAME@/hash/hash_autop.c"/>
+      <file name="../@DB_NAME@/qam/qam_autop.c"/>
+      <file name="../@DB_NAME@/txn/txn_autop.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+  <project name="db_recover" guid="A0391EF7-FF00-4B14-A720-39DEC9C6FFA9">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_recover/db_recover.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+  <project name="db_stat" guid="E92D9F9D-C041-4EF9-8574-3B88C7DFDFA4">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_stat/db_stat.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+  <project name="db_upgrade" guid="415CFDF8-C7A5-4FF2-8BC0-F0B6D6963295">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_upgrade/db_upgrade.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+  <project name="db_verify" guid="BE071AEA-0A28-4EB2-88A8-C88AEE07CA39">
+    <type>app</type>
+    <configuration></configuration>
+    <depends>db</depends>
+    <include type="ref">db</include>
+    <preprocessor config="all">_CRT_SECURE_NO_WARNINGS</preprocessor>
+    <files>
+      <file name="../@DB_NAME@/db_verify/db_verify.c"/>
+      <file name="../@DB_NAME@/clib/getopt.c"/>
+    </files>
+  </project>
+</projects>

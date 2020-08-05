@@ -1,0 +1,22 @@
+#!/bin/sh -
+#
+# Build the automatically generated function prototype files.
+
+msgc="/* DO NOT EDIT: automatically built by dist/s_include. */"
+
+. ./RELEASE
+
+t=/tmp/DbXmlFwd.hpp.tmp
+f=../include/dbxml/DbXmlFwd.hpp
+rm -f $t
+
+sed '/BEGIN-DBXML-VERSION/q' < $f > $t
+echo "$msgc" >> $t
+echo "#define DBXML_VERSION_MAJOR $DBXML_VERSION_MAJOR" >> $t
+echo "#define DBXML_VERSION_MINOR $DBXML_VERSION_MINOR" >> $t
+echo "#define DBXML_VERSION_PATCH $DBXML_VERSION_PATCH" >> $t
+echo "#define DBXML_VERSION_STRING \"$DBXML_VERSION_STRING\"" >> $t
+sed -n '/END-DBXML-VERSION/,$p' < $f >> $t
+
+cmp $t $f > /dev/null 2>&1 ||
+    (echo "Building $f" && rm -f $f && cp $t $f && chmod 444 $f)

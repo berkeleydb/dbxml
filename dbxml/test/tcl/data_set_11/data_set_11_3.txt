@@ -1,0 +1,116 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# QP tests
+# Basic operations on result documents
+
+TEST 11.3
+TITLE Operations |, intersect, or, and, !=; Functions name() on result documents
+
+INDEX "" "foo" "node-element-equality-string"
+INDEX "" "bar" "node-element-presence-none"
+INDEX "" "baz" "edge-element-equality-string"
+
+VARIABLE "foo" "la"
+
+11.3.1
+/foo | /bar
+Root(RA(u(RI(node-element-equality-string,prefix,foo),RI(node-element-presence-none,=,bar))))
+
+11.3.2
+//foo intersect //bar
+Root(RS,RA(RS,n(RS,RI(RS,node-element-equality-string,prefix,foo),RI(RS,node-element-presence-none,=,bar))))
+
+11.3.3
+/*[foo or bar]
+Root(RA(u(RI(node-element-equality-string,prefix,foo),RI(node-element-presence-none,=,bar))))
+
+11.3.4
+/*[foo and bar]
+Root(RA(n(RI(node-element-equality-string,prefix,foo),RI(node-element-presence-none,=,bar))))
+
+11.3.5
+/*[foo!='123']
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+11.3.6
+//foo!='123'
+Root(RS,RA(RS,\(RS,RI(RS,node-element-equality-string,prefix,foo),RI(RS,node-element-equality-string,=,foo,123))))
+
+11.3.7
+/foo[name()='foo']
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+11.3.8
+/*[name()='foo']
+Root(RA(SS()))
+
+# no mechanism for passing variables set on the context to the unit test app
+SKIP BEGIN
+11.3.9
+$foo='foo'
+Root(RA(SS()))
+SKIP END
+
+11.3.10
+/*[foo][bar]
+Root(RA(n(RI(node-element-equality-string,prefix,foo),RI(node-element-presence-none,=,bar))))
+
+11.3.11
+/foo[.='123']
+Root(RA(RI(node-element-equality-string,=,foo,123)))
+
+11.3.12
+/*[.='123']
+Root(RA(SS()))
+
+11.3.13
+/a | /b
+Root(RA(SS()))
+
+11.3.14
+/a | /b | /c
+Root(RA(SS()))
+
+11.3.15
+/a | /b | /c | /d
+Root(RA(SS()))
+
+11.3.16
+/foo/baz
+Root(RA(RI(edge-element-equality-string,prefix,foo.baz)))
+
+11.3.17
+/foo/baz[.='abc']
+Root(RA(RI(edge-element-equality-string,=,foo.baz,abc)))
+
+11.3.18
+/foo/baz[.='abc' or .='123']
+Root(RA(u(RI(edge-element-equality-string,=,foo.baz,abc),RI(edge-element-equality-string,=,foo.baz,123))))
+
+11.3.19
+/foo/@lala/baz
+Root(RS,RA(RS,E(RS,)))
+
+11.3.20
+/..
+Root(RS,RA(RS,E(RS,)))
+
+11.3.21
+/foo/self::charlie
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+11.3.22
+/following-sibling::fred
+Root(RS,RA(RS,E(RS,)))
+
+11.3.23
+/foo/@lala/preceding-sibling::fred
+Root(RS,RA(RS,E(RS,)))
+
+11.3.24
+/@lala
+Root(RS,RA(RS,E(RS,)))
+

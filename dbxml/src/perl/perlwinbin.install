@@ -1,0 +1,34 @@
+		Installing and Using Perl Binaries
+
+Requirements
+------------
+
+1.  ActivePerl 5.8.8 or other compatible Perl release must be properly 
+    installed on your system, including PPM support.  ppm must be in your PATH.
+    The binaries are compiled against ActivePerl 5.8.8 so other versions
+    may not install or work.
+
+    NOTE: ActivePerl may have 2 versions of ppm -- one that is
+    invoked as a .bat file and one that may be invoked from a
+    Cygwin shell and begins "#!/usr/bin/perl"  That one may
+    require editing to point to the actual location of your ActivePerl
+    "perl" executable.  If you get an error message like
+    	   "Can't open perl script "/cygdrive/c/Perl/bin/ppm": No such
+	   	  file or directory
+    then that is your problem.
+
+Install
+-------
+
+In this directory, type:
+   ppm install dbxml_perl.ppd
+
+This will install the Berkeley DB XML Perl binary files in the 
+appropriate location for your system.  It is still necessary for
+you to have <InstallDir>/bin in your PATH to run programs.  The installer
+should have done that for you.
+
+Perl example programs, if installed, can be found in 
+<InstallDir>/dbxml/examples/perl/gettingStarted. When using these 
+examples, always start with loadExamplesData.pl. There is a Readme.txt 
+file for the gettingStarted examples in this directory.

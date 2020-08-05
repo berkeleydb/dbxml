@@ -1,0 +1,131 @@
+=head1 NAME
+
+XmlResults - A Perl interface to the DbXml XmlResults Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $manager = new XmlManager();
+
+    my $results = $manager->query(...);
+    my $results = $manager->createResults(...);
+    my $results = $manager->lookupIndex(...);
+
+    my $size = $results->size() ;
+    $results->reset();
+    my $bool = $results->hasPrevious()
+    my $bool = $results->hasNext()
+
+
+    my $xmlvalue = new XmlValue ;
+    while ($results->next($xmlvalue))
+    {
+    }
+
+    my $document = new XmlDocument ;
+    while ($results->next($document))
+    {
+    }
+
+    my $scalar ;
+    while ($results->next($scalar))
+    {
+    }
+
+    my $bool = $results->peek($xmlvalue);
+    my $bool = $results->peek($document);
+    my $bool = $results->peek($scalar);
+
+    my $bool = $results->previous($xmlvalue);
+    my $bool = $results->previous($document);
+    my $bool = $results->previous($scalar);
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlValue is identical to the C++ API.
+
+=head1 Constructor
+
+There is no constructor provided for this class. An XmlResults
+object is returned from a number of objects within this module,
+including XmlManager::query, XmlManager::createResults,
+XmlContainer::lookupIndex, XmlValue::getAttributes and
+XmlQueryExpression::execute.
+
+=head1 Methods
+
+=head2 my $size = $results->size() ;
+
+Returns the number of results in the result set.
+
+=head2 my $bool = $results->hasPrevious()
+
+=head2 my $bool = $results->hasNext()
+
+=head2 $results->reset();
+
+=head2 $results->add($value);
+
+Adds $value to the result set. The $value parameter can be either a
+plain perl scalar or an XmlValue object.
+
+=head2 $results->next($xmlvalue);
+=head2 $results->next($document);
+=head2 $results->next($scalar);
+
+Retrieves the next result from the result set and stores it in the $v
+parameter. 
+
+Returns true when another result is available, and false otherwise. 
+
+How the result is stored is dependant on the type of the $v parameter. If
+it is either an XmlValue or XmlDocument object the result will be stored
+directly in the object. If it is neither an XmlValue object or an
+XmlDocument object, the contents os the $v parameter will be overwritten
+with a Perl string.
+
+=head2 $results->peek($xmlvalue);
+=head2 $results->peek($document);
+=head2 $results->peek($scalar);
+
+Retrieves the current result from the result set, without advancing to
+the next element in the set, and stores it in the $v parameter.
+
+Returns true when a result is available, and false otherwise. 
+
+How the result is stored is dependant on the type of the $v parameter. If
+it is either an XmlValue or XmlDocument object the result will be stored
+directly in the object. If it is neither an XmlValue object or an
+XmlDocument object, the contents os the $v parameter will be overwritten
+with a Perl string.
+
+=head2 $results->previous($xmlvalue);
+=head2 $results->previous($document);
+=head2 $results->previous($scalar);
+
+Retrieves the previous result from the result set
+and stores it in the $v parameter.
+
+Returns true when a result is available, and false otherwise. 
+
+How the result is stored is dependant on the type of the $v parameter. If
+it is either an XmlValue or XmlDocument object the result will be stored
+directly in the object. If it is neither an XmlValue object or an
+XmlDocument object, the contents os the $v parameter will be overwritten
+with a Perl string.
+
+
+=head1 EXAMPLES
+
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

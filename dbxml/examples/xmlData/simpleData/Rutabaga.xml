@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Rutabaga</item>
+	<inventory>
+		<sku>Rutavege1iTmT3</sku>
+		<price>0.78</price>
+		<inventory>670</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

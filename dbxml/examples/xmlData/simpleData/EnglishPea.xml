@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>English Pea</item>
+	<inventory>
+		<sku>EnglvegeA6VhzP</sku>
+		<price>0.10</price>
+		<inventory>553</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

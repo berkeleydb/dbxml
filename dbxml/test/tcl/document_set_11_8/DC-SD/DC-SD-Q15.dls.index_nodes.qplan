@@ -1,0 +1,60 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="item">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp0">
+          <StepQP axis="parent-of-attribute" name="item" nodeType="element">
+            <ValueQP index="node-attribute-equality-string" operation="eq" child="id" value="I7"/>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="catalog" nodeType="element">
+              <VariableQP name="#tmp0"/>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <ForBinding name="related">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp3">
+          <StepQP axis="parent-of-attribute" name="item" nodeType="element">
+            <ValueQP index="node-attribute-equality-string" operation="eq" child="id">
+              <Atomize>
+                <QueryPlanToAST>
+                  <StepQP axis="child" name="item_id" nodeType="element">
+                    <StepQP axis="child" name="related_item" nodeType="element">
+                      <StepQP axis="child" name="related_items" nodeType="element">
+                        <VariableQP name=":item"/>
+                      </StepQP>
+                    </StepQP>
+                  </StepQP>
+                </QueryPlanToAST>
+              </Atomize>
+            </ValueQP>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="catalog" nodeType="element">
+              <VariableQP name="#tmp3"/>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="title" nodeType="element">
+              <VariableQP name=":related"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

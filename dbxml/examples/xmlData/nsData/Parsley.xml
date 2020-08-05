@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Parsley</product>
+	<inventory>
+		<sku>ParsvegeWZ95MH</sku>
+		<price>0.33</price>
+		<inventory>406</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

@@ -1,0 +1,68 @@
+=head1 NAME
+
+XmlMetaDataIterator - A Perl interface to the DbXml XmlMetaDataIterator Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $manager = new XmlManager();
+    my $doc = $mgr->createDocument();
+    ...
+
+    my $iterator = $doc->getMetaDataIterator();
+
+    $manager->reset();
+
+
+    my $xmlvalue = new XmlValue ;
+    while ($iterator->next($uri, $name, $xmlvalue))
+    {
+    }
+
+    my $scalar ;
+    while ($iterator->next($uri, $name, $scalar))
+    {
+    }
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XmlMetaDataIterator is identical to the C++ API.
+
+=head1 Constructor
+
+There is no constructor provided for this class. An XmlMetaDataIterator object
+is returned from the XmlDocument::getMetaDataIterator method.
+
+=head1 Methods
+
+=head2 $results->reset();
+
+=head2 $results->next($v);
+=head2 $results->next($scalar);
+
+Retrieves the next result from the result set and stores it in the $v
+parameter. 
+
+Returns true when another result is available, and false otherwise. 
+
+How the result is stored is dependant on the type of the $v parameter. If
+it is an XmlValue object the result will be stored directly in the
+object. Otherwise the contents of the $v parameter will be overwritten
+with a Perl string.
+
+
+=head1 EXAMPLES
+
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Sugar Snap Peas</product>
+	<inventory>
+		<sku>SugavegeLXWV5f</sku>
+		<price>0.63</price>
+		<inventory>271</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Chicory</item>
+	<inventory>
+		<sku>ChicvegeIIPxZy</sku>
+		<price>0.57</price>
+		<inventory>67</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="11.8.3">
+  <category>xquery</category>
+  <description>TC-MD Benchmark Tests</description>
+  <program name='dbxml_test_driver' />
+
+  <!-- stuff that applies to the entire test -->
+  <indexSpecification>
+    <node>id</node>
+    <index>node-attribute-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>name</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>date</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>country</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>a_id</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>author</node>
+    <index>node-element-presence</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>p</node>
+    <index>node-element-substring-string</index>
+  </indexSpecification>
+
+  <document>article1.xml</document>
+  <document>article18.xml</document>
+  <document>article11.xml</document>
+  <document>article15.xml</document>
+  <document>article17.xml</document>
+  <document>article25.xml</document>
+  <document>article13.xml</document>
+  <document>article24.xml</document>
+  <document>article9.xml</document>
+  <document>article8.xml</document>
+
+  <!-- individual tests -->
+  <base>
+    <query>TC-MD-Q1.xquery</query>
+    <query>TC-MD-Q2.xquery</query>
+    <query>TC-MD-Q3.xquery</query>
+    <query>TC-MD-Q4.xquery</query>
+    <query>TC-MD-Q5.xquery</query>
+    <query>TC-MD-Q6.xquery</query>
+    <query>TC-MD-Q7.xquery</query>
+    <query>TC-MD-Q8.xquery</query>
+    <query>TC-MD-Q9.xquery</query>
+    <query>TC-MD-Q10.xquery</query>
+    <query>TC-MD-Q11.xquery</query>
+    <query>TC-MD-Q12.xquery</query>
+    <query>TC-MD-Q13.xquery</query>
+    <query>TC-MD-Q14.xquery</query>
+    <query>TC-MD-Q15.xquery</query>
+    <query>TC-MD-Q16.xquery</query>
+    <query>TC-MD-Q17.xquery</query>
+    <query>TC-MD-Q18.xquery</query>
+    <query>TC-MD-Q19.xquery</query>
+  </base>
+</test>

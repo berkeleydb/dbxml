@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Ugli Fruit</item>
+	<inventory>
+		<sku>UglifruiH1u9dx</sku>
+		<price>0.72</price>
+		<inventory>840</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

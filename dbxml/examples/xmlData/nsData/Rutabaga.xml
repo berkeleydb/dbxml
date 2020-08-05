@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Rutabaga</product>
+	<inventory>
+		<sku>Rutavege1iTmT3</sku>
+		<price>0.78</price>
+		<inventory>670</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

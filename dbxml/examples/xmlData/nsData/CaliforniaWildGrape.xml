@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>California Wild Grape</product>
+	<inventory>
+		<sku>CalifruixCG8zJ</sku>
+		<price>0.68</price>
+		<inventory>988</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</fruits:item>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Damson Plum</item>
+	<inventory>
+		<sku>Damsfrui4N0fGo</sku>
+		<price>0.85</price>
+		<inventory>220</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

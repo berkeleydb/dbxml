@@ -1,0 +1,75 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <StepQP axis="child" name="q" nodeType="element">
+          <StepQP axis="child" name="qp" nodeType="element">
+            <StepQP axis="child" name="s" nodeType="element">
+              <StepQP axis="child" name="ss" nodeType="element">
+                <NodePredicateFilterQP uri="" name="#tmp2">
+                  <StepQP axis="child" name="e" nodeType="element">
+                    <StepQP axis="child" name="dictionary" nodeType="element">
+                      <ValueQP index="node-element-equality-string" operation="eq" child="hw" value="the"/>
+                    </StepQP>
+                  </StepQP>
+                  <NodePredicateFilterQP uri="" name="#tmp3">
+                    <StepQP axis="child" name="hwg" nodeType="element">
+                      <VariableQP name="#tmp2"/>
+                    </StepQP>
+                    <ValueFilterQP comparison="eq" general="true">
+                      <StepQP axis="child" name="hw" nodeType="element">
+                        <VariableQP name="#tmp3"/>
+                      </StepQP>
+                      <Sequence>
+                        <AnyAtomicTypeConstructor value="the" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                      </Sequence>
+                    </ValueFilterQP>
+                  </NodePredicateFilterQP>
+                </NodePredicateFilterQP>
+              </StepQP>
+            </StepQP>
+          </StepQP>
+        </StepQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <Sort>
+      <Specification modifier="ascending|empty_least">
+        <TreatAs>
+          <PromoteUntyped uri="http://www.w3.org/2001/XMLSchema" name="string">
+            <Atomize>
+              <QueryPlanToAST>
+                <StepQP axis="child" name="qd" nodeType="element">
+                  <VariableQP name=":a"/>
+                </StepQP>
+              </QueryPlanToAST>
+            </Atomize>
+          </PromoteUntyped>
+          <SequenceType occurrence="zero_or_one" testType="anything"/>
+        </TreatAs>
+      </Specification>
+    </Sort>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="a" nodeType="element">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="qd" nodeType="element">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

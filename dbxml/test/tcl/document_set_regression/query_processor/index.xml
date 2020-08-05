@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="11.X">
+  <!-- not much information in this index file - the file exists only to allow the unit test framework to be used for this task -->
+  <category>queryPlan</category>
+  <description>Conversion of the query processor regression tests (11.1-11.12)</description>
+  <program name='dbxml_test_driver'/>
+</test>
+

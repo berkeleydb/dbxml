@@ -1,0 +1,148 @@
+
+Building and Installing Berkeley DB and Berkeley DB XML support for PHP on 
+Windows
+
+See the README file for *nix build and installation information as well as a 
+rudimentary description of the API.  Whenever you see <dbxml-2.4.x> in 
+this document it means the path to the BDB XML source installation.  
+E.g. C:/work/dbxml-2.4.x
+
+Before you start:
+       BDB XML WIndows Binaries (dbxml-2.4.x.msi) now include 
+       PHP extension module DLLs for Berkeley DB (php_db4.dll)
+       and BDB XML (php_dbxml.dll) built using Visual Studio .NET
+       2003 and a recent PHP release.  This may be satisfactory
+       for your needs and if so should be used.
+
+Keep reading if you really need to build from source
+
+Requirements:
+	o A C++ Compiler (Visual Studio .NET 2003 or newer is best)
+	o A PHP *source* distribution (both PHP4 and PHP5 will work, 
+	but PHP5 is recommended	and what has been tested), along with 
+	requirements for building PHP from source
+	o The entire DBXML build
+
+Build BDB XML
+      If you own a supported version of Visual Studio, use that.
+      If not, you'll need to download and install the (free) Visual C++
+      Express Edition from Microsoft as well as its dependent components.
+      	      http://www.microsoft.com/express/vc/
+      This is a bit of a chore and you need a lot of disk space.
+      If you do need to use that compiler, you will benefit from the
+      information here:
+      		  http://elizabethmariesmith.com/2006/11/15/
+
+      Build the Release configuration.  Debug will not work with PHP.
+
+If you want to build your modules as shared libraries (DLLs)
+      This is simpler than building DB and BDB XML extension modules
+      into PHP itself.  In this case you can use the project files
+      included with BDB XML:
+      If using Visual Studio .NET 2003:
+            <dbxml-2.4.x>/build_windows/php_db4.vcproj
+	    <dbxml-2.4.x>/build_windows/php_dbxml.vcproj
+      or if using Visual Studio 2005 or later
+            <dbxml-2.4.x>/build_windows/php_db4_vs8.vcproj
+	    <dbxml-2.4.x>/build_windows/php_dbxml_vs8.vcproj
+
+      In those projects modify the AdditionalIncludeDirectories
+      to point to the correct directories in your PHP source 
+      distribution (either by hand-editing or using Visual
+      Studio).  The existing projects assume the source is in 
+      F:/php/php-5.2.5.  Once that is done you can build the
+      projects (build php_db4 first).  The .dll files will
+      be installed as <dbxml-2.4.x>/bin/php_*.dll.
+      
+      At this point you can follow the instructions in
+      the documentation on this page regarding using
+      PHP binaries:
+            <dbxml-2.4.x>/dbxml/docs/ref_xml/xml_win/bin.html
+
+If you want to build your modules directly into the PHP binary
+keep reading.  It gets a bit more complicated from here.
+
+Build PHP from Source to verify your compilation environment:
+      First, make sure that you can build the PHP source.
+      Instructions are here:
+      		  http://us2.php.net/install.windows.building
+
+      Choose the Release configurations for building.
+
+      Note: this may take a bit of trial and error, not to mention
+      time, especially if you have to download and install the (free) Visual
+      Studio Express Edition compiler and its dependent software.
+      You should build the Release configuration (vs Debug) because Debug
+      will fail to build 
+
+Build Berkeley DB and BDB XML PHP extensions
+      At this point you've built both PHP from source and BDB XML, which
+      includes Berkeley DB.  If you have not done both successfully, return
+      to the top of this file for instructions.
+
+      Decide whether to build the extensions directly into the PHP executable
+      or as loadable modules (.dll).  Remember that choice for a minute.
+
+      1.  Edit the DB and BDB XML config.w32 files to point to the proper 
+      installation.
+            <dbxml-2.4.x>/db-4.6.21/php_db4/config.w32
+	    <dbxml-2.4.x>/dbxml/src/php/config.w32
+	  Each file has instructions about which paths to fix.  Essentially 
+	  you are pointing these files at your specific BDB XML installation.
+
+      2.  Change directory to your PHP installation root and re-run 
+      buildconf.js in your PHP source directory.  At some point in your 
+      building of PHP, you were asked to run this command from the root 
+      of your PHP source tree:
+      	 cscript /nologo win32/build/buildconf.js
+      Run it again, but add some flags:
+      	 cscript /nologo win32/build/buildconf.js --add-modules-dir=<dbxml-2.4.x>/db-4.6.21 --add-modules-dir=<dbxml-2.4.x>/dbxml/src
+      3.  Verify that db4 and dbxml now appear as options to 
+      configure.js (also run earlier when building PHP):
+         cscript /nologo configure.js --help
+      4.  Configure db4 and dbxml modules in your PHP build.
+      Remember your choice about about built-in vs loadable modules.  
+      Recall that.
+      For built-in:
+ 	 cscript /nologo configure.js --enable-db4=yes --enable-dbxml=yes <other options>
+      For loadable:
+ 	 cscript /nologo configure.js --enable-db4=shared --enable-dbxml=shared <other options>
+
+      5.  Rebuild PHP using nmake (you did this above, building PHP the 
+      first time)
+      	  nmake
+      NOTE: there's a good chance this will fail, complaining about 
+      "-" somewhere.  If so, edit Makefile and replace all occurrences of 
+      "DB-" with "DB_" and run nmake again. If nmake fails for any other 
+      reason or you fail to see db4.cpp and the various BDB XML files 
+      (php_dbxml_*) compile, re-check your work and paths above.
+
+      6.  If you build loadable modules, they will be placed in the 
+      same directory as the php.exe executable and be named "php_db4.dll" 
+      and "php_dbxml.dll." They can now be loaded into your scripts.  
+      You can test this by copying those .dll files to <dbxml-2.4.x>/bin, 
+      and creating a php.ini file that looks like this in 
+      <dbxml-2.4.x>/dbxml/src/php/examples:
+          extension_dir="<dbxml-2.4.x>/bin"
+	  extension=php_db4.dll
+	  extension=php_dbxml.dll
+      Then, make sure you have <dbxml-2.4.x>/bin in your PATH, as well 
+      as php.exe, and from the directory <dbxml-2.4.x>/dbxml/src/php/examples 
+      run
+          php.exe -c . 01.php
+
+      If you built the extensions directly into PHP, the php.ini file is not
+      required.
+
+NOTES:
+
+o When building PHP from source, without adding extra software into the 
+system, you may need to explicitly disable some default configuration, e.g.:
+    --without-libxml --disable-zlib --disable-com-dotnet
+
+o It *should* be possible to build the extension .dlls using these instructions
+and have them run against a binary installation of PHP, but unless the 
+compilers used were the same, not to mention the PHP version, many things 
+could go wrong.
+
+

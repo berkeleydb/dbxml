@@ -1,0 +1,82 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp5">
+          <StepQP axis="child" name="section" nodeType="element">
+            <StepQP axis="child" name="body" nodeType="element">
+              <LevelFilterQP>
+                <StepQP axis="parent-of-attribute" name="article" nodeType="element">
+                  <ValueQP index="node-attribute-equality-string" operation="eq" child="id" value="8"/>
+                </StepQP>
+              </LevelFilterQP>
+            </StepQP>
+          </StepQP>
+          <ValueFilterQP comparison="eq" general="true">
+            <StepQP axis="attribute" name="heading" nodeType="attribute">
+              <VariableQP name="#tmp5"/>
+            </StepQP>
+            <Sequence>
+              <AnyAtomicTypeConstructor value="introduction" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+            </Sequence>
+          </ValueFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <ForBinding name="p">
+      <Map>
+        <QueryPlanToAST>
+          <StepQP axis="child" name="body" nodeType="element">
+            <LevelFilterQP>
+              <StepQP axis="parent-of-attribute" name="article" nodeType="element">
+                <ValueQP index="node-attribute-equality-string" operation="eq" child="id" value="8"/>
+              </StepQP>
+            </LevelFilterQP>
+          </StepQP>
+        </QueryPlanToAST>
+        <QueryPlanToAST>
+          <NumericPredicateFilterQP>
+            <PredicateFilterQP>
+              <StepQP axis="child" name="section" nodeType="element">
+                <ContextNodeQP/>
+              </StepQP>
+              <Operator name="node-order">
+                <TreatAs>
+                  <QueryPlanToAST>
+                    <ContextNodeQP/>
+                  </QueryPlanToAST>
+                  <SequenceType occurrence="zero_or_one" testType="node"/>
+                </TreatAs>
+                <TreatAs>
+                  <QueryPlanToAST>
+                    <VariableQP name=":a"/>
+                  </QueryPlanToAST>
+                  <SequenceType occurrence="zero_or_one" testType="node"/>
+                </TreatAs>
+              </Operator>
+            </PredicateFilterQP>
+            <Sequence>
+              <NumericTypeConstructor value="1.0E0" typeuri="http://www.w3.org/2001/XMLSchema" typename="integer"/>
+            </Sequence>
+          </NumericPredicateFilterQP>
+        </QueryPlanToAST>
+      </Map>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="HeadingOfSection" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="attribute" name="heading" nodeType="attribute">
+              <VariableQP name=":p"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

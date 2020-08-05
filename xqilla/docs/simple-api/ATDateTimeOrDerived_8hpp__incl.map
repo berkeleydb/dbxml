@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" href="$DateOrTimeType_8hpp.html" title="xqilla/items/DateOrTimeType.hpp" alt="" coords="132,83,348,112"/>
+<area shape="rect" href="$ATDecimalOrDerived_8hpp.html" title="xqilla/items/ATDecimalOrDerived.hpp" alt="" coords="183,237,420,267"/>
+<area shape="rect" href="$ATDurationOrDerived_8hpp.html" title="xqilla/items/ATDurationOrDerived.hpp" alt="" coords="459,160,696,189"/>
+<area shape="rect" href="$Timezone_8hpp.html" title="xqilla/items/Timezone.hpp" alt="" coords="703,83,876,112"/>
+<area shape="rect" href="$AnyAtomicType_8hpp.html" title="xqilla/items/AnyAtomicType.hpp" alt="" coords="313,392,521,421"/>
+<area shape="rect" href="$Item_8hpp.html" title="xqilla/items/Item.hpp" alt="" coords="476,469,617,499"/>
+<area shape="rect" href="$ReferenceCounted_8hpp.html" title="xqilla/framework/ReferenceCounted.hpp" alt="" coords="448,547,699,576"/>
+<area shape="rect" href="$MemoryManager_8hpp.html" title="xercesc/framework/MemoryManager.hpp" alt="" coords="443,624,699,653"/>
+<area shape="rect" href="$Numeric_8hpp.html" title="xqilla/items/Numeric.hpp" alt="" coords="245,315,408,344"/>
+</map>

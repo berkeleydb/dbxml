@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Sigarilyas</item>
+	<inventory>
+		<sku>Sigavegey1Z0Ao</sku>
+		<price>0.86</price>
+		<inventory>239</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

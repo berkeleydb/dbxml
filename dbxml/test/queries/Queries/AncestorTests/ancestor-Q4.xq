@@ -1,0 +1,1 @@
+collection()//lhs/@value

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cheesecake, Turtle</item>
+	<inventory>
+		<sku>CheedessRUTSZJ</sku>
+		<price>1.91</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

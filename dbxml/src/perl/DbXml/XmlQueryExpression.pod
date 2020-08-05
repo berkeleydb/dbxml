@@ -1,0 +1,47 @@
+=head1 NAME
+
+XmlQueryExpression - A Perl interface to the DbXml XmlQueryExpression Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $mgr = new XmlManager;
+    my $txn = $mgr->createTransaction();
+    my $exp = $mgr->prepare();
+
+    my $query = $exp->getQuery();
+
+    my $contextitem = new XmlValue(...);
+    my $context = $mgr->createQueryContext;
+
+    $exp->execute([$txn,] $contextitem, $context [, $flags]);
+    $exp->execute([$txn,] $context [, $flags]);
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlValue is identical to the C++ API.
+
+=head1 Constructor
+
+This class does not have a public constructor. XmlQueryExpression objects
+are only returned from XmlManager::prepare.
+
+=head1 Methods
+
+=head2 getXPathQuery
+
+=head1 EXAMPLES
+
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

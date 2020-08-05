@@ -1,0 +1,41 @@
+#!/bin/sh -
+#
+# Build Windows .sln files
+
+. ./RELEASE
+BUILDDIR="../build_windows"
+# generate BDBXML_all.sln
+sed -f lib_paths.sed < $BUILDDIR/BDBXML_all.sln.template > $BUILDDIR/BDBXML_all.sln.new
+cmp $BUILDDIR/BDBXML_all.sln.new $BUILDDIR/BDBXML_all.sln > /dev/null 2>&1 ||
+	(echo "Building BDBXML_all.sln" && rm -f $BUILDDIR/BDBXML_all.sln &&
+	    cp $BUILDDIR/BDBXML_all.sln.new $BUILDDIR/BDBXML_all.sln && chmod 664 $BUILDDIR/BDBXML_all.sln)
+rm -f $BUILDDIR/BDBXML_all.sln.new
+
+# generate BDBXML_all_vs8.sln
+sed -f lib_paths.sed < $BUILDDIR/BDBXML_all_vs8.sln.template > $BUILDDIR/BDBXML_all_vs8.sln.new
+cmp $BUILDDIR/BDBXML_all_vs8.sln.new $BUILDDIR/BDBXML_all_vs8.sln > /dev/null 2>&1 ||
+	(echo "Building BDBXML_all_vs8.sln" && rm -f $BUILDDIR/BDBXML_all_vs8.sln &&
+	    cp $BUILDDIR/BDBXML_all_vs8.sln.new $BUILDDIR/BDBXML_all_vs8.sln && chmod 664 $BUILDDIR/BDBXML_all_vs8.sln)
+rm -f $BUILDDIR/BDBXML_all_vs8.sln.new
+
+# generate copyHeaders.bat script
+sed -f lib_paths.sed < $BUILDDIR/copyHeaders.bat.template > $BUILDDIR/copyHeaders.bat.new
+cmp $BUILDDIR/copyHeaders.bat.new $BUILDDIR/copyHeaders.bat > /dev/null 2>&1 ||
+	(echo "Building copyHeaders.bat" && rm -f $BUILDDIR/copyHeaders.bat &&
+	    cp $BUILDDIR/copyHeaders.bat.new $BUILDDIR/copyHeaders.bat && chmod 664 $BUILDDIR/copyHeaders.bat)
+rm -f $BUILDDIR/copyHeaders.bat.new
+
+# generate copyHeaders.bat script
+sed -f lib_paths.sed < $BUILDDIR/copyFiles7.bat.template > $BUILDDIR/copyFiles7.bat.new
+cmp $BUILDDIR/copyFiles7.bat.new $BUILDDIR/copyFiles7.bat > /dev/null 2>&1 ||
+	(echo "Building copyFiles7.bat" && rm -f $BUILDDIR/copyFiles7.bat &&
+	    cp $BUILDDIR/copyFiles7.bat.new $BUILDDIR/copyFiles7.bat && chmod 664 $BUILDDIR/copyFiles7.bat)
+rm -f $BUILDDIR/copyFiles7.bat.new
+
+# generate installProj.bat script
+sed -f lib_paths.sed < $BUILDDIR/installProj.bat.template > $BUILDDIR/installProj.bat.new
+cmp $BUILDDIR/installProj.bat.new $BUILDDIR/installProj.bat > /dev/null 2>&1 ||
+	(echo "Building installProj.bat" && rm -f $BUILDDIR/installProj.bat &&
+	    cp $BUILDDIR/installProj.bat.new $BUILDDIR/installProj.bat && chmod 664 $BUILDDIR/installProj.bat)
+rm -f $BUILDDIR/installProj.bat.new
+

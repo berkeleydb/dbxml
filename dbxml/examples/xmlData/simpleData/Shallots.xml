@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Shallots</item>
+	<inventory>
+		<sku>ShalvegeR4wXM8</sku>
+		<price>0.75</price>
+		<inventory>422</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

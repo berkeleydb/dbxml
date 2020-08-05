@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Almonds</item>
+	<inventory>
+		<sku>AlmofruiIV75Lm</sku>
+		<price>0.88</price>
+		<inventory>915</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

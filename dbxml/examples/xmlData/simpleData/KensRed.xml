@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Ken's Red</item>
+	<inventory>
+		<sku>Ken'fruii8KBW7</sku>
+		<price>0.67</price>
+		<inventory>963</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

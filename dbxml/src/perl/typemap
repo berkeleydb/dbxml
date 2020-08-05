@@ -1,0 +1,519 @@
+
+void *			T_PV
+bool			T_U_INT_t
+u_int			T_U_INT
+u_int32_t		T_U_INT
+db_recno_t		T_U_INT
+db_timeout_t		T_U_INT
+DBTYPE			T_U_INT
+char* 			T_PV_NULL
+const char* 		T_PV_NULL
+const unsigned char* 		T_PV_NULL
+const std::string 		T_STD_STRING
+std::string 		T_STD_STRING
+string 			T_STD_STRING
+const string 			T_STD_STRING
+XmlData 			T_XMLDATA
+PV_or_NULL		T_PV_NULL
+IO_or_NULL		T_IO_NULL
+
+
+AV *			T_AV
+
+DbXml			T_PTROBJ
+
+#DbXml::XmlContainer	T_PTROBJ
+#XmlContainer	T_PTROBJ
+
+#DbXml::XmlContainer*	    MY_OBJECT
+#DbXml::XmlContainerConfig*	    MY_OBJECT
+#DbXml::XmlDocument*	    MY_OBJECT
+#DbXml::XmlQueryContext*	MY_OBJECT
+#DbXml::XPathExpression*	MY_OBJECT
+#DbXml::XmlResults*	        MY_OBJECT
+#DbXml::XmlValue*	        MY_OBJECT
+#DbXml::XmlException*	    MY_OBJECT
+
+MyXmlContainer*	            MY_OBJECT
+XmlContainer*	            MY_OBJECT
+XmlContainerConfig*	            MY_OBJECT
+const XmlContainerConfig*	            MY_OBJECT
+XmlDocument*	            MY_OBJECT
+XmlQueryContext*	        MY_OBJECT
+XPathExpression*	        MY_OBJECT
+XmlResults*	                MY_OBJECT
+#XmlValueOrScalar	        T_XML_SCALAR
+XmlValueOrScalar*	        XMLVALUE_1
+XmlValue*	                MY_OBJECT
+XmlValue**	                O_OBJECT_ADDRESS
+XmlIndexSpecification*	    MY_OBJECT
+XmlQueryExpression*	        MY_OBJECT
+XmlUpdateContext*	        MY_OBJECT
+XmlIndexLookup*	            MY_OBJECT
+
+DbException*	            MY_STD_OBJECT
+std::exception*	            MY_STD_OBJECT
+MyXmlException*	            MY_STD_OBJECT
+MyDbException*	            MY_STD_OBJECT
+MyBaseException*	        MY_STD_OBJECT
+XmlException*	            MY_STD_OBJECT
+
+XmlManager*	                MY_OBJECT
+XmlResolver*	            MY_OBJECT
+XmlTransaction*	            MY_OBJECT_OR_NULL
+XmlInputStream*	            MY_OBJECT
+XmlStatistics*	            MY_OBJECT
+XmlInputStream*	            MY_OBJECT
+XmlMetaDataIterator*	    MY_OBJECT
+
+XmlEventReaderToWriter*	    MY_OBJECT
+XmlEventReader*	    MY_OBJECT
+XmlEventReader&	    MY_OBJECT
+XmlEventWriter*	    MY_OBJECT
+
+IndexStrategy   IXS
+
+DbEnv*	MY_OBJECT_OR_NULL
+DbTxn*	MY_OBJECT_OR_NULL
+
+Db*	MY_OBJECT
+Dbc*	MY_OBJECT
+const Dbt*	MY_OBJECT
+Dbt*	MY_OBJECT
+DbtPtr*	MY_OBJECT
+const DbtPtr*	MY_OBJECT
+Dbt_or_pv*	O_OBJECT_PV
+
+XmlQueryContext::ReturnType	T_U_INT_t
+XmlQueryContext::EvaluationType	T_U_INT_t
+LogLevel	T_U_INT_t
+LogCategory	T_U_INT_t
+XmlEventReader::XmlEventType	T_U_INT_t
+XmlDocument::Encoding	T_U_INT_t
+XmlException::ExceptionCode	T_U_INT_t
+XmlValue::Type	T_U_INT_t
+XmlContainer::ContainerType 	T_U_INT_t
+XmlContainerConfig::ConfigState 	T_U_INT_t
+XmlIndexLookup::Operation 	T_U_INT_t
+
+BerkeleyDB		T_PTROBJ
+BerkeleyDB::Common	T_PTROBJ_AV
+BerkeleyDB::Hash	T_PTROBJ_AV
+BerkeleyDB::Btree	T_PTROBJ_AV
+BerkeleyDB::Recno	T_PTROBJ_AV
+BerkeleyDB::Queue	T_PTROBJ_AV
+BerkeleyDB::Cursor	T_PTROBJ_AV
+BerkeleyDB::TxnMgr	T_PTROBJ_AV
+BerkeleyDB::Txn		T_PTROBJ_AV
+BerkeleyDB::Log		T_PTROBJ_AV
+BerkeleyDB::Lock	T_PTROBJ_AV
+BerkeleyDB::Env		T_PTROBJ_AV
+
+BerkeleyDB::Raw		T_RAW
+BerkeleyDB::Common::Raw	T_RAW
+BerkeleyDB::Hash::Raw	T_RAW
+BerkeleyDB::Btree::Raw	T_RAW
+BerkeleyDB::Recno::Raw	T_RAW
+BerkeleyDB::Queue::Raw	T_RAW
+BerkeleyDB::Cursor::Raw	T_RAW
+BerkeleyDB::TxnMgr::Raw	T_RAW
+BerkeleyDB::Txn::Raw	T_RAW
+BerkeleyDB::Log::Raw	T_RAW
+BerkeleyDB::Lock::Raw	T_RAW
+BerkeleyDB::Env::Raw	T_RAW
+
+BerkeleyDB::Env::Inner	T_INNER
+BerkeleyDB::Common::Inner	T_INNER
+BerkeleyDB::Txn::Inner	T_INNER
+BerkeleyDB::TxnMgr::Inner	T_INNER
+# BerkeleyDB__Env 	T_PTR
+#Dbt*			T_Dbt
+DBT			T_dbtdatum
+DBT_OPT			T_dbtdatum_opt
+DBT_B			T_dbtdatum_btree
+DBTKEY			T_dbtkeydatum
+DBTKEY_B		T_dbtkeydatum_btree
+DBTYPE			T_U_INT
+DualType		T_DUAL
+BerkeleyDB_type *	T_IV
+BerkeleyDB_ENV_type *	T_IV
+BerkeleyDB_TxnMgr_type * T_IV
+BerkeleyDB_Txn_type *	T_IV
+BerkeleyDB__Cursor_type * T_IV
+DB *			T_IV
+
+INPUT
+
+XMLVALUE_1
+    LexPointer<XmlValue> p_$var ;
+    if ($arg == NULL || ! SvOK($arg))
+    {
+        $var = new XmlValue();
+        p_$var.setPtr($var) ;
+    }
+    else if (! sv_isobject($arg) )
+    {
+        string s(SvPV_nolen($arg), SvCUR($arg));
+        $var = new XmlValue(s);
+        p_$var.setPtr($var) ;
+    }
+    else if (sv_derived_from($arg, \"XmlValue\"))
+    {
+        $var = GetObjPointer($arg, XmlValue);
+    }
+    else
+        croak(\"$arg option is not an XmlValue object or a scalar\");
+    
+XMLVALUE_2
+    LexPointer<XmlValue> p_$var ;
+    if ($arg == NULL || ! SvOK($arg))
+    {
+        $var = NULL;
+    }
+    else if (! sv_isobject($arg) )
+    {
+        string s(SvPV_nolen($arg), SvCUR($arg));
+        $var = new XmlValue(s);
+        p_$var.setPtr($var) ;
+    }
+    else if (sv_derived_from($arg, \"XmlValue\"))
+        $var = GetObjPointer($arg, XmlValue);
+    else
+        croak(\"$arg option is not an XmlValue object or a scalar\");
+    
+
+T_STD_STRING
+	{
+	    STRLEN len ;
+	    const char * ptr = SvPV($arg, len);
+	    $var.assign(ptr, len);
+	}
+
+IXS
+    /* Index Strategy is either a two element array or a scalar */
+	if (SvROK($arg))
+    {
+        if ( SvTYPE(SvRV($arg)) != SVt_PVAV)
+            croak(\"Index Strategy $var is not an array reference or scalar\")
+
+        $var = (AV*)SvRV($arg);
+
+        if (av_len($var) != 1)
+            croak(\"Index Strategy $var array reference does not contain 2 values\")
+    }
+    else
+        $var = $arg;
+
+
+MY_OBJECT
+    ckObjectPointer($arg, \"${Package}::$func_name()\", \"$var\", \"$ntype\");
+    $var = InputObject($arg, $type) ;
+
+MY_STD_OBJECT
+    ckObjectPointer($arg, \"${Package}::$func_name()\", \"$var\", \"std::exceptionPtr\");
+    $var = ($type)SvIV((SV*)SvRV( $arg ));
+    
+MY_OBJECT_OR_NULL
+	if ($arg == NULL || ! SvOK($arg)) {
+	    $var = NULL ;
+	}
+    else
+    {
+        ckObjectPointer($arg, \"${Package}::$func_name()\", \"$var\", \"$ntype\");
+        $var = InputObject($arg, $type);
+    }
+
+O_OBJECT
+	if( SV_IS_OBJECT($arg))
+		$var = ($type)SvIV((SV*)SvRV( $arg ));
+	else{
+		croak( \"${Package}::$func_name() -- $var is not a blessed SV reference\" ); 
+	}
+
+T_XML_SCALAR
+	if( sv_isobject($arg) && (SvTYPE(SvRV($arg)) == SVt_PVMG) )
+        //if (sv_derived_from($arg, \"${ntype}\")) 
+		$var = *($type*)SvIV((SV*)SvRV( $arg ));
+	else if (SvOK($arg)){
+        XmlValue tmp(SvPV_nolen($arg)) ;
+        $var = tmp;
+	}
+
+
+O_OBJECT_ADDRESS
+	if( sv_isobject($arg) && (SvTYPE(SvRV($arg)) == SVt_PVMG) )
+        //if (sv_derived_from($arg, \"${ntype}\")) 
+		$var = ($type)&SvIVX((SV*)SvRV( $arg ));
+	else{
+		croak( \"${Package}::$func_name() -- $var is not a blessed SV reference\" );
+	}
+
+O_OBJECT_OR_NULL
+	//if ($arg == NULL || $arg == &PL_sv_undef || SvTYPE($arg) == SVt_NULL) {
+	if ($arg == NULL || ! SvOK($arg)) {
+	    $var = NULL ;
+	}
+	else if( sv_isobject($arg) && (SvTYPE(SvRV($arg)) == SVt_PVMG) )
+        //else if (sv_derived_from($arg, \"${ntype}\")) 
+		$var = ($type)SvIV((SV*)SvRV( $arg ));
+	else{
+		croak( \"${Package}::$func_name() -- $var is not a blessed SV reference\" );
+	}
+
+O_OBJECT_OR_PV
+	if( sv_isobject($arg) && (SvTYPE(SvRV($arg)) == SVt_PVMG) )
+        //else if (sv_derived_from($arg, \"${ntype}\")) 
+		$var = ($type)SvIV((SV*)SvRV( $arg ));
+	else{
+		croak( \"${Package}::$func_name() -- $var is not a blessed SV reference\" );
+	}
+
+T_OBJECT
+	if( SvROK($arg) )
+		$var = ($type)SvIV((SV*)SvRV( $arg ));
+	else{
+		croak( \"${Package}::$func_name() -- $var is not an SV reference\" );
+	}
+
+
+T_AV
+	if (SvROK($arg) && SvTYPE(SvRV($arg)) == SVt_PVAV)
+        /* if (sv_isa($arg, \"${ntype}\")) */
+            $var = (AV*)SvRV($arg);
+        else
+            croak(\"$var is not an array reference\")
+
+T_RAW
+        $var = INT2PTR($type,SvIV($arg)
+
+T_U_INT
+        $var = SvUV($arg)
+
+T_U_INT_t
+        $var = ($type)SvUV($arg)
+
+T_SV_REF_NULL
+	if ($arg == &PL_sv_undef)
+	    $var = NULL ;
+        else if (sv_derived_from($arg, \"${ntype}\")) {
+            IV tmp = SvIV((SV *)GetInternalObject($arg));
+            $var =  INT2PTR($type, tmp);
+        }
+        else
+            croak(\"$var is not of type ${ntype}\")
+
+T_HV_REF_NULL
+	if ($arg == &PL_sv_undef)
+	    $var = NULL ;
+        else if (sv_derived_from($arg, \"${ntype}\")) {
+            HV * hv = (HV *)GetInternalObject($arg);
+            SV ** svp = hv_fetch(hv, \"db\", 2, FALSE);
+            IV tmp = SvIV(*svp);
+            $var =  INT2PTR($type, tmp);
+        }
+        else
+            croak(\"$var is not of type ${ntype}\")
+
+T_HV_REF
+        if (sv_derived_from($arg, \"${ntype}\")) {
+            HV * hv = (HV *)GetInternalObject($arg);
+            SV ** svp = hv_fetch(hv, \"db\", 2, FALSE);
+            IV tmp = SvIV(*svp);
+            $var =  INT2PTR($type, tmp);
+        }
+        else
+            croak(\"$var is not of type ${ntype}\")
+
+
+T_P_REF
+        if (sv_derived_from($arg, \"${ntype}\")) {
+            IV tmp = SvIV((SV*)SvRV($arg));
+            $var = INT2PTR($type, tmp);
+        }
+        else
+            croak(\"$var is not of type ${ntype}\")
+
+
+T_INNER
+	{
+	    HV * hv = (HV *)SvRV($arg);
+            SV ** svp = hv_fetch(hv, \"db\", 2, FALSE);
+            IV tmp = SvIV(*svp);
+            $var =  INT2PTR($type, tmp);
+	}
+
+T_PV_NULL
+	if ($arg == &PL_sv_undef || SvTYPE($arg) == SVt_NULL) 
+	    $var = NULL ;
+	else {
+            $var = ($type)SvPV($arg,PL_na) ;
+	    if (PL_na == 0)
+		$var = NULL ;
+	}
+
+T_IO_NULL
+	if ($arg == &PL_sv_undef)
+	    $var = NULL ; 
+	else 
+            $var = IoOFP(sv_2io($arg))
+
+T_PTROBJ_NULL
+	if ($arg == &PL_sv_undef)
+	    $var = NULL ;
+        else if (sv_derived_from($arg, \"${ntype}\")) {
+            IV tmp = SvIV((SV*)SvRV($arg));
+            $var = INT2PTR($type, tmp);
+        }
+        else
+            croak(\"$var is not of type ${ntype}\")
+
+T_PTROBJ_SELF
+	if ($arg == &PL_sv_undef)
+	    $var = NULL ;
+        else if (sv_derived_from($arg, \"${ntype}\")) {
+            IV tmp = SvIV((SV*)SvRV($arg));
+            $var = INT2PTR($type, tmp);
+        }
+        else
+            croak(\"$var is not of type ${ntype}\")
+
+T_PTROBJ_AV
+        if ($arg == &PL_sv_undef || $arg == NULL)
+            $var = NULL ;
+        else if (sv_derived_from($arg, \"${ntype}\")) {
+            IV tmp = SvIV(getInnerObject($arg)) ;
+            $var = INT2PTR($type, tmp);
+        }
+        else
+            croak(\"$var is not of type ${ntype}\")
+
+T_dbtkeydatum
+	DBM_ckFilter($arg, filter_store_key, \"filter_store_key\");
+	DBT_clear($var) ;
+	if (db->recno_or_queue) {
+	    Value = GetRecnoKey(db, SvIV($arg)) ; 
+	    $var.data = & Value; 
+	    $var.size = (int)sizeof(db_recno_t);
+	}
+	else {
+	    $var.data = SvPV($arg, PL_na);
+	    $var.size = (int)PL_na;
+	}
+
+T_dbtkeydatum_btree
+	DBM_ckFilter($arg, filter_store_key, \"filter_store_key\");
+	DBT_clear($var) ;
+	if (db->recno_or_queue ||
+		(db->type == DB_BTREE && flagSet(DB_SET_RECNO))) {
+	    Value = GetRecnoKey(db, SvIV($arg)) ; 
+	    $var.data = & Value; 
+	    $var.size = (int)sizeof(db_recno_t);
+	}
+	else {
+	    $var.data = SvPV($arg, PL_na);
+	    $var.size = (int)PL_na;
+	}
+
+	
+T_dbtdatum
+	DBM_ckFilter($arg, filter_store_value, \"filter_store_value\");
+	DBT_clear($var) ;
+	$var.data = SvPV($arg, PL_na);
+	$var.size = (int)PL_na;
+  	$var.flags = db->partial ;
+    	$var.dlen  = db->dlen ;
+	$var.doff  = db->doff ;
+	
+T_dbtdatum_opt
+	DBT_clear($var) ;
+	if (flagSet(DB_GET_BOTH)) {
+	   DBM_ckFilter($arg, filter_store_value, \"filter_store_value\");
+	   $var.data = SvPV($arg, PL_na);
+	   $var.size = (int)PL_na;
+  	   $var.flags = db->partial ;
+    	   $var.dlen  = db->dlen ;
+	   $var.doff  = db->doff ;
+	}
+	
+T_dbtdatum_btree
+	DBT_clear($var) ;
+	if (flagSet(DB_GET_BOTH)) {
+	    DBM_ckFilter($arg, filter_store_value, \"filter_store_value\");
+	    $var.data = SvPV($arg, PL_na);
+	    $var.size = (int)PL_na;
+  	    $var.flags = db->partial ;
+    	    $var.dlen  = db->dlen ;
+	    $var.doff  = db->doff ;
+	}
+	
+
+OUTPUT
+
+T_STD_STRING
+	sv_setsv($arg, newSVfromString($var));
+
+T_XMLDATA
+	sv_setsv($arg, newSVfromXmlData($var));
+
+O_OBJECT_OR_NULL
+        sv_setref_pv( $arg, CLASS, (void*)$var );
+
+MY_OBJECT_OR_NULL
+        OutputObject($arg, $var, CLASS, PARENT);
+
+MY_OBJECT
+        OutputObject($arg, $var, CLASS, PARENT);
+
+O_OBJECT
+        sv_setref_pv( $arg, CLASS, (void*)$var );
+
+
+
+T_OBJECT
+        sv_setref_pv( $arg, Nullch, (void*)$var );
+
+
+
+T_RAW
+        sv_setiv($arg, PTR2IV($var));
+
+T_SV_REF_NULL
+	sv_setiv($arg, PTR2IV($var));
+
+T_HV_REF_NULL
+	sv_setiv($arg, PTR2IV($var));
+
+T_HV_REF
+	sv_setiv($arg, PTR2IV($var));
+
+T_P_REF
+	sv_setiv($arg, PTR2IV($var));
+
+T_DUAL
+	setDUALerrno($arg, $var) ;
+
+T_U_INT
+        sv_setuv($arg, (UV)$var);
+
+T_U_INT_t
+        sv_setuv($arg, (UV)$var);
+
+T_PV_NULL
+        sv_setpv((SV*)$arg, (const char*)$var);
+
+T_dbtkeydatum_btree
+	OutputKey_B($arg, $var)
+T_dbtkeydatum
+	OutputKey($arg, $var)
+T_dbtdatum
+	OutputValue($arg, $var)
+T_dbtdatum_opt
+	OutputValue($arg, $var)
+T_dbtdatum_btree
+	OutputValue_B($arg, $var)
+
+T_PTROBJ_NULL
+        sv_setref_pv($arg, \"${ntype}\", (void*)$var);
+
+T_PTROBJ_SELF
+        sv_setref_pv($arg, self, (void*)$var);

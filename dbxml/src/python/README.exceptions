@@ -1,0 +1,43 @@
+
+As of Berkeley DB XML 2.3, the Python API supports
+a number of exceptions, all derived from XmlException.
+See examples/python/examples.py and examples/python/basic/*.py
+for examples of usage.
+
+The exception classes map to the XmlException::ExceptionCode
+enumeration in the C++ API.  The all derive from Python's Exception
+class, and include:
+	XmlException (parent class for all)
+	XmlContainerClosed
+	XmlContainerExists
+	XmlContainerOpen
+	XmlDatabaseError
+	XmlDocumentNotFound
+	XmlInvalidValue
+	XmlParserError
+	XmlInternalError
+	XmlVersionMismatch
+	XmlLazyEvaluation
+	XmlUnknownIndex
+	XmlQueryEvaluationError
+	XmlQueryParserError
+	XmlEventError
+	XmlContainerNotFound
+	XmlUniqueError
+	XmlNoMemoryError
+	XmlNullPointer
+	XmlTransactionError
+	XmlOperationInterrupted
+	XmlOperationTimeout
+
+They have the following properties that may be printed:
+     what (corresponds to XmlException::what() in the C++ API)
+     exceptionCode (corresponds to XmlException::ExceptionCode
+          in the C++ API)
+     dbError (valid if class is XmlDatabaseError)
+
+These next two are valid if class is XmlQueryParserError or
+XmlQueryEvaluationError, and indicate the location in the
+query expression that generated the exception:
+     queryLine
+     queryColumn

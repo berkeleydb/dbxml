@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Wood Apple</item>
+	<inventory>
+		<sku>WoodfruiufY37V</sku>
+		<price>0.24</price>
+		<inventory>719</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

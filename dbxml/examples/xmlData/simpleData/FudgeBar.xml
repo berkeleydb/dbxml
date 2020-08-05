@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Fudge Bar</item>
+	<inventory>
+		<sku>FudgdessPxaT0k</sku>
+		<price>3.68</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

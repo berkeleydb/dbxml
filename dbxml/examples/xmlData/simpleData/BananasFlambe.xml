@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Bananas Flambe</item>
+	<inventory>
+		<sku>BanadessbeEkp9</sku>
+		<price>11.06</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

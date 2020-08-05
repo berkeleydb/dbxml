@@ -1,0 +1,52 @@
+<VisualStudioProject ProjectType="Visual C++" Version="7.10" Name="db_tcl" ProjectGUID="{70EA3C84-40F8-48F8-A643-6A6B6E13D8F7}">
+  <Platforms>
+    <Platform Name="Win32"/>
+    <Platform Name="x64"/>
+    <Platform Name="IA64"/>
+  </Platforms>
+  <Configurations>
+    <Configuration Name="Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/db_tcl" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_UNICODE;DB_TCL_SUPPORT;DIAGNOSTIC;CONFIG_TEST;DB_CREATE_DLL" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db_tcl.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdb48d.lib tcl84g.lib" AdditionalLibraryDirectories="$(OutDir);C:/tcl/lib" OutputFile="$(OutDir)/libdb_tcl48d.dll" ProgramDatabaseFile="$(OutDir)/libdb_tcl48d.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/libdb_tcl48d.lib" ModuleDefinitionFile="..\..\db-4.8.26\build_windows\libdb_tcl.def" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat libdb_tcl48 dll $(OutDir) debug" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/db_tcl" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_UNICODE;DB_TCL_SUPPORT;DB_CREATE_DLL" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db_tcl.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdb48.lib tcl84.lib" AdditionalLibraryDirectories="$(OutDir);C:/tcl/lib" OutputFile="$(OutDir)/libdb_tcl48.dll" ProgramDatabaseFile="$(OutDir)/libdb_tcl48.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/libdb_tcl48.lib" ModuleDefinitionFile="..\..\db-4.8.26\build_windows\libdb_tcl.def" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat libdb_tcl48 dll $(OutDir) release" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+  </Configurations>
+  <References/>
+  <Files>
+    <File RelativePath="..\..\db-4.8.26\os\os_abort.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_stack.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_compat.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_db.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_db_pkg.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_dbcursor.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_env.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_internal.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_lock.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_log.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_mp.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_mutex.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_rep.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_seq.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_txn.c"/>
+    <File RelativePath="..\..\db-4.8.26\tcl\tcl_util.c"/>
+    <File RelativePath="..\..\db-4.8.26\build_windows\libdb_tcl.def"/>
+  </Files>
+  <Globals/>
+</VisualStudioProject>

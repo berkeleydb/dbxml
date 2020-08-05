@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Upo</product>
+	<inventory>
+		<sku>UpovegebMG82b</sku>
+		<price>0.82</price>
+		<inventory>223</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

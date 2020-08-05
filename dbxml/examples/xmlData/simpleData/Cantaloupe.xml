@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Cantaloupe</item>
+	<inventory>
+		<sku>CantvegeNk3cQG</sku>
+		<price>0.18</price>
+		<inventory>58</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

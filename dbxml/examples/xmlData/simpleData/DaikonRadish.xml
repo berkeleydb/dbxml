@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Daikon Radish</item>
+	<inventory>
+		<sku>DaikvegeRUg0ge</sku>
+		<price>0.09</price>
+		<inventory>437</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

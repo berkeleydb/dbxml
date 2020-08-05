@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="8.5">
+  <description>Management of multiple XmlManagers</description>
+  <program name='dbxml_test_databases' />
+
+  <!-- stuff that applies to the entire test -->
+
+  <!-- individual tests -->
+</test>
+

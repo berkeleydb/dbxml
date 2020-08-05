@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Chayote</product>
+	<inventory>
+		<sku>ChayvegeiEinZK</sku>
+		<price>0.85</price>
+		<inventory>120</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

@@ -1,0 +1,45 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="e" nodeType="element">
+            <StepQP axis="child" name="dictionary" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="hw" value="that"/>
+            </StepQP>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp3">
+            <StepQP axis="child" name="hwg" nodeType="element">
+              <VariableQP name="#tmp2"/>
+            </StepQP>
+            <ValueFilterQP comparison="eq" general="true">
+              <StepQP axis="child" name="hw" nodeType="element">
+                <VariableQP name="#tmp3"/>
+              </StepQP>
+              <Sequence>
+                <AnyAtomicTypeConstructor value="that" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+              </Sequence>
+            </ValueFilterQP>
+          </NodePredicateFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <Map>
+      <QueryPlanToAST>
+        <StepQP axis="child" name="ss" nodeType="element">
+          <VariableQP name=":a"/>
+        </StepQP>
+      </QueryPlanToAST>
+      <QueryPlanToAST>
+        <NumericPredicateFilterQP>
+          <StepQP axis="child" name="s" nodeType="element">
+            <ContextNodeQP/>
+          </StepQP>
+          <Sequence>
+            <NumericTypeConstructor value="1.0E0" typeuri="http://www.w3.org/2001/XMLSchema" typename="integer"/>
+          </Sequence>
+        </NumericPredicateFilterQP>
+      </QueryPlanToAST>
+    </Map>
+  </FLWOR>
+</XQuery>

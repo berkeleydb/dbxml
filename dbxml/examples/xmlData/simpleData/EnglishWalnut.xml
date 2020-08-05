@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>English Walnut</item>
+	<inventory>
+		<sku>EnglfruiHcYAoJ</sku>
+		<price>0.60</price>
+		<inventory>516</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

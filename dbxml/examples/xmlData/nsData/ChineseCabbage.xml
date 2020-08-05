@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Chinese Cabbage</product>
+	<inventory>
+		<sku>ChinvegejShNp9</sku>
+		<price>0.34</price>
+		<inventory>266</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

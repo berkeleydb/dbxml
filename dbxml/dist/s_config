@@ -1,0 +1,23 @@
+#!/bin/sh -
+#
+# Build the autoconfiguration files.
+
+. ./s_paths
+
+echo "Building version.m4"
+sed -f lib_paths.sed  < version.m4.template > version.m4
+
+echo "Running autoheader to build config.hin"
+cd ..
+autoheader
+
+echo "Running automake to build Makefile.in"
+automake
+
+echo "Running autoconf to build configure"
+autoconf
+
+echo "Cleaning up"
+rm -rf autom4te.cache
+touch configure
+touch aclocal.m4

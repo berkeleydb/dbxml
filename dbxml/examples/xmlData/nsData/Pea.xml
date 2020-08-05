@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Pea</product>
+	<inventory>
+		<sku>PeavegeZ7bm4I</sku>
+		<price>0.50</price>
+		<inventory>338</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

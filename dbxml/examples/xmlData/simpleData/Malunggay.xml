@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Malunggay</item>
+	<inventory>
+		<sku>MaluvegeRbNIkg</sku>
+		<price>0.29</price>
+		<inventory>496</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

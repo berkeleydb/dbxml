@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Yam</item>
+	<inventory>
+		<sku>Yamvege3z5vEc</sku>
+		<price>0.24</price>
+		<inventory>726</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

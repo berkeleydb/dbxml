@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Daiquiri Souffle</item>
+	<inventory>
+		<sku>DaiqdesseOPb6A</sku>
+		<price>1.54</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Chico Sapote</item>
+	<inventory>
+		<sku>Chicfrui8bTpc8</sku>
+		<price>0.54</price>
+		<inventory>344</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

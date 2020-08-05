@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" href="$StaticContext_8hpp.html" title="xqilla/context/StaticContext.hpp" alt="" coords="839,83,1044,112"/>
+<area shape="rect" href="$ATDurationOrDerived_8hpp.html" title="xqilla/items/ATDurationOrDerived.hpp" alt="" coords="1895,160,2132,189"/>
+<area shape="rect" href="$XQilla_8hpp.html" title="xqilla/simple&#45;api/XQilla.hpp" alt="" coords="797,547,973,576"/>
+<area shape="rect" href="$PlatformUtils_8hpp.html" title="xercesc/util/PlatformUtils.hpp" alt="" coords="421,624,613,653"/>
+<area shape="rect" href="$XMemory_8hpp.html" title="xercesc/util/XMemory.hpp" alt="" coords="637,624,811,653"/>
+<area shape="rect" href="$DocumentCache_8hpp.html" title="xqilla/schema/DocumentCache.hpp" alt="" coords="828,160,1055,189"/>
+<area shape="rect" href="$MemoryManager_8hpp.html" title="xercesc/framework/MemoryManager.hpp" alt="" coords="835,624,1091,653"/>
+<area shape="rect" href="$XPath2MemoryManager_8hpp.html" title="xqilla/framework/XPath2MemoryManager.hpp" alt="" coords="997,547,1280,576"/>
+<area shape="rect" href="$Node_8hpp.html" title="xqilla/items/Node.hpp" alt="" coords="1136,237,1283,267"/>
+<area shape="rect" href="$ATQNameOrDerived_8hpp.html" title="xqilla/items/ATQNameOrDerived.hpp" alt="" coords="1200,315,1432,344"/>
+<area shape="rect" href="$ATBooleanOrDerived_8hpp.html" title="xqilla/items/ATBooleanOrDerived.hpp" alt="" coords="1456,315,1693,344"/>
+<area shape="rect" href="$AnyAtomicType_8hpp.html" title="xqilla/items/AnyAtomicType.hpp" alt="" coords="1768,392,1976,421"/>
+<area shape="rect" href="$Item_8hpp.html" title="xqilla/items/Item.hpp" alt="" coords="1835,469,1976,499"/>
+<area shape="rect" href="$ReferenceCounted_8hpp.html" title="xqilla/framework/ReferenceCounted.hpp" alt="" coords="1608,547,1859,576"/>
+<area shape="rect" href="$ATDecimalOrDerived_8hpp.html" title="xqilla/items/ATDecimalOrDerived.hpp" alt="" coords="2064,237,2301,267"/>
+<area shape="rect" href="$Numeric_8hpp.html" title="xqilla/items/Numeric.hpp" alt="" coords="2051,315,2213,344"/>
+</map>

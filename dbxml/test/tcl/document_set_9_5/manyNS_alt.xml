@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<carn:RegistryEntry xmlns:carn="http://www.cacr.caltech.edu/projects/us-vo/schemas/Carnivore" xmlns:vr="http://www.ivoa.net/xml/VOResource/v0.10" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oxf="http://www.orbeon.com/oxf/processors" xmlns:xdb="http://orbeon.org/oxf/xml/xmldb" xmlns:p="http://www.orbeon.com/oxf/pipeline" xmlns:xdt="http://www.w3.org/2004/07/xpath-datatypes" xmlns:vs="http://www.ivoa.net/xml/VODataService/v0.5">
+    <carn:RegistryData>
+        <carn:User>carnivore</carn:User>
+        <carn:Id>org.astrogrid/SExtractor</carn:Id>
+        <carn:CreationDate>2005-04-28T20:08:50.468Z</carn:CreationDate>
+        <carn:LastModificationDate>2005-04-28T20:08:50.468Z</carn:LastModificationDate>
+        <carn:Source>http://hydra.star.le.ac.uk:8080/astrogrid-registry/OAIHandlerv0_10</carn:Source>
+        <carn:Version>Current</carn:Version>
+        <carn:Set/>
+        <carn:ValidationLevel>0</carn:ValidationLevel>
+    </carn:RegistryData>
+    <carn:RegistryItem>
+        <vr:Resource xmlns:cea="http://www.ivoa.net/xml/CEAService/v0.2" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v0.3" xmlns:vc="http://www.ivoa.net/xml/VORegistry/v0.3" xmlns:vm="http://www.ivoa.net/xml/VOMetadata/v0.1" xmlns:vt="http://www.ivoa.net/xml/VOTable/v0.1" xmlns:cs="http://www.ivoa.net/xml/ConeSearch/v0.3" xmlns:ceab="http://www.astrogrid.org/schema/CommonExecutionArchitectureBase/v1" xmlns:ceapd="http://www.astrogrid.org/schema/AGParameterDefinition/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v0.7" xmlns="http://www.ivoa.net/xml/VOResource/v0.10" status="active" updated="2005-03-07T14:28:44Z" xsi:type="cea:CeaApplicationType">
+            <title xmlns:xs="http://www.w3.org/2001/XMLSchema">SExtractor</title>
+            <shortName xmlns:xs="http://www.w3.org/2001/XMLSchema">SExtractor</shortName>
+            <identifier xmlns:xs="http://www.w3.org/2001/XMLSchema">ivo://org.astrogrid/SExtractor</identifier>
+            <curation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+                <publisher>Main Astrogrid Full Registry</publisher>
+                <contact>
+                    <name>Paul Harrison</name>
+                    <email>pah@jb.man.ac.uk</email>
+                </contact>
+            </curation>
+            <content xmlns:xs="http://www.w3.org/2001/XMLSchema">
+                <subject>SExtractor</subject>
+                <description>SExtractor is a program that builds a catalogue of objects from an astronomical image. Although it is particularly oriented towards reduction of large scale galaxy-survey data, it performs rather well on moderately crowded star fields.</description>
+                <referenceURL>http://terapix.iap.fr/cplt/oldSite/soft/sextractor/</referenceURL>
+                <type>Other</type>
+            </content>
+            <ns135:ApplicationDefinition xmlns:ns135="http://www.ivoa.net/xml/CEAService/v0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+                <ns135:Parameters>
+                    <ns135:ParameterDefinition accept-encodings="" name="CATALOG_NAME" sub-type="" type="VOTable">
+                        <ns136:UI_Name xmlns:ns136="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Derived output catalogue</ns136:UI_Name>
+                        <ns137:UI_Description xmlns:ns137="http://www.astrogrid.org/schema/AGParameterDefinition/v1">The catalogue of images derived from the input images</ns137:UI_Description>
+                        <ns138:UCD xmlns:ns138="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns139:DefaultValue xmlns:ns139="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns140:Units xmlns:ns140="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="GAIN" sub-type="" type="double">
+                        <ns141:UI_Name xmlns:ns141="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Gain</ns141:UI_Name>
+                        <ns142:UI_Description xmlns:ns142="http://www.astrogrid.org/schema/AGParameterDefinition/v1">detector gain in e-/ADU</ns142:UI_Description>
+                        <ns143:UCD xmlns:ns143="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns144:DefaultValue xmlns:ns144="http://www.astrogrid.org/schema/AGParameterDefinition/v1">0.0</ns144:DefaultValue>
+                        <ns145:Units xmlns:ns145="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="MASK_TYPE" sub-type="" type="text">
+                        <ns146:UI_Name xmlns:ns146="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Mask type</ns146:UI_Name>
+                        <ns147:UI_Description xmlns:ns147="http://www.astrogrid.org/schema/AGParameterDefinition/v1">type of detection MASKing: can be one of                                &amp;quot;NONE&amp;quot;, &amp;quot;BLANK&amp;quot; or &amp;quot;CORRECT&amp;quot;</ns147:UI_Description>
+                        <ns148:UCD xmlns:ns148="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns149:DefaultValue xmlns:ns149="http://www.astrogrid.org/schema/AGParameterDefinition/v1">CORRECT</ns149:DefaultValue>
+                        <ns150:Units xmlns:ns150="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="CLEAN" sub-type="" type="boolean">
+                        <ns151:UI_Name xmlns:ns151="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Clean?</ns151:UI_Name>
+                        <ns152:UI_Description xmlns:ns152="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Clean spurious detections? (Y or N)?</ns152:UI_Description>
+                        <ns153:UCD xmlns:ns153="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns154:DefaultValue xmlns:ns154="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Y</ns154:DefaultValue>
+                        <ns155:Units xmlns:ns155="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="FILTER" sub-type="" type="boolean">
+                        <ns156:UI_Name xmlns:ns156="http://www.astrogrid.org/schema/AGParameterDefinition/v1">use filter</ns156:UI_Name>
+                        <ns157:UI_Description xmlns:ns157="http://www.astrogrid.org/schema/AGParameterDefinition/v1">apply filter for detection</ns157:UI_Description>
+                        <ns158:UCD xmlns:ns158="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns159:DefaultValue xmlns:ns159="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns160:Units xmlns:ns160="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="FILTER_NAME" sub-type="" type="text">
+                        <ns161:UI_Name xmlns:ns161="http://www.astrogrid.org/schema/AGParameterDefinition/v1">detection filter</ns161:UI_Name>
+                        <ns162:UI_Description xmlns:ns162="http://www.astrogrid.org/schema/AGParameterDefinition/v1">the convolution filter (you can use the standard sextractor filters simply by naming them here)</ns162:UI_Description>
+                        <ns163:UCD xmlns:ns163="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns164:DefaultValue xmlns:ns164="http://www.astrogrid.org/schema/AGParameterDefinition/v1">file:///home/applications/tools/sextractor-2.3.2/config/default.conv</ns164:DefaultValue>
+                        <ns165:Units xmlns:ns165="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="MAG_ZEROPOINT" sub-type="" type="double">
+                        <ns166:UI_Name xmlns:ns166="http://www.astrogrid.org/schema/AGParameterDefinition/v1">magnitude zero-point</ns166:UI_Name>
+                        <ns167:UI_Description xmlns:ns167="http://www.astrogrid.org/schema/AGParameterDefinition/v1">magnitude zero-point</ns167:UI_Description>
+                        <ns168:UCD xmlns:ns168="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns169:DefaultValue xmlns:ns169="http://www.astrogrid.org/schema/AGParameterDefinition/v1">0.0</ns169:DefaultValue>
+                        <ns170:Units xmlns:ns170="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="BACKPHOTO_TYPE" sub-type="" type="text">
+                        <ns171:UI_Name xmlns:ns171="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns172:UI_Description xmlns:ns172="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns173:UCD xmlns:ns173="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns174:DefaultValue xmlns:ns174="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns175:Units xmlns:ns175="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="MAG_GAMMA" sub-type="" type="double">
+                        <ns176:UI_Name xmlns:ns176="http://www.astrogrid.org/schema/AGParameterDefinition/v1">MAG_GAMMA</ns176:UI_Name>
+                        <ns177:UI_Description xmlns:ns177="http://www.astrogrid.org/schema/AGParameterDefinition/v1">gamma of emulsion (for photographic scans)</ns177:UI_Description>
+                        <ns178:UCD xmlns:ns178="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns179:DefaultValue xmlns:ns179="http://www.astrogrid.org/schema/AGParameterDefinition/v1">4.0</ns179:DefaultValue>
+                        <ns180:Units xmlns:ns180="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="CHECKIMAGE_NAME" sub-type="" type="FITS">
+                        <ns181:UI_Name xmlns:ns181="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Checkimage name</ns181:UI_Name>
+                        <ns182:UI_Description xmlns:ns182="http://www.astrogrid.org/schema/AGParameterDefinition/v1">file containing the checkimage</ns182:UI_Description>
+                        <ns183:UCD xmlns:ns183="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns184:DefaultValue xmlns:ns184="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns185:Units xmlns:ns185="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="PIXEL_SCALE" sub-type="" type="double">
+                        <ns186:UI_Name xmlns:ns186="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Pixel scale</ns186:UI_Name>
+                        <ns187:UI_Description xmlns:ns187="http://www.astrogrid.org/schema/AGParameterDefinition/v1">size of pixel in arcsec (0=use FITS WCS info)</ns187:UI_Description>
+                        <ns188:UCD xmlns:ns188="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns189:DefaultValue xmlns:ns189="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns190:Units xmlns:ns190="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="FLAG_IMAGE" sub-type="" type="FITS">
+                        <ns191:UI_Name xmlns:ns191="http://www.astrogrid.org/schema/AGParameterDefinition/v1">flag image</ns191:UI_Name>
+                        <ns192:UI_Description xmlns:ns192="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns193:UCD xmlns:ns193="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns194:DefaultValue xmlns:ns194="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns195:Units xmlns:ns195="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="BACK_SIZE" sub-type="" type="text">
+                        <ns196:UI_Name xmlns:ns196="http://www.astrogrid.org/schema/AGParameterDefinition/v1">backgroud mesh size</ns196:UI_Name>
+                        <ns197:UI_Description xmlns:ns197="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns198:UCD xmlns:ns198="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns199:DefaultValue xmlns:ns199="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns200:Units xmlns:ns200="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="IMAGE_BAND" sub-type="" type="text">
+                        <ns201:UI_Name xmlns:ns201="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Input image band</ns201:UI_Name>
+                        <ns202:UI_Description xmlns:ns202="http://www.astrogrid.org/schema/AGParameterDefinition/v1">The input image measuerment band. This is used to form  the column name in the output VOTable for the measured photometry.</ns202:UI_Description>
+                        <ns203:UCD xmlns:ns203="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns204:DefaultValue xmlns:ns204="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns205:Units xmlns:ns205="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="BACK_FILTERSIZE " sub-type="" type="text">
+                        <ns206:UI_Name xmlns:ns206="http://www.astrogrid.org/schema/AGParameterDefinition/v1">background filter size</ns206:UI_Name>
+                        <ns207:UI_Description xmlns:ns207="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns208:UCD xmlns:ns208="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns209:DefaultValue xmlns:ns209="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns210:Units xmlns:ns210="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="PHOT_AUTOPARAMS" sub-type="" type="text">
+                        <ns211:UI_Name xmlns:ns211="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Photometry params</ns211:UI_Name>
+                        <ns212:UI_Description xmlns:ns212="http://www.astrogrid.org/schema/AGParameterDefinition/v1">MAG_AUTO parameters: &amp;lt;Kron_fact&amp;gt;,&amp;gt;min_radius&amp;gt;</ns212:UI_Description>
+                        <ns213:UCD xmlns:ns213="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns214:DefaultValue xmlns:ns214="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns215:Units xmlns:ns215="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="DETECT_TYPE" sub-type="" type="text">
+                        <ns216:UI_Name xmlns:ns216="http://www.astrogrid.org/schema/AGParameterDefinition/v1">detection type</ns216:UI_Name>
+                        <ns217:UI_Description xmlns:ns217="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns218:UCD xmlns:ns218="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns219:DefaultValue xmlns:ns219="http://www.astrogrid.org/schema/AGParameterDefinition/v1">CCD</ns219:DefaultValue>
+                        <ns220:Units xmlns:ns220="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="PARAMETERS_NAME" sub-type="" type="binary">
+                        <ns221:UI_Name xmlns:ns221="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Parameter File</ns221:UI_Name>
+                        <ns222:UI_Description xmlns:ns222="http://www.astrogrid.org/schema/AGParameterDefinition/v1">A File containing the list of catalogue paramters that should be computed</ns222:UI_Description>
+                        <ns223:UCD xmlns:ns223="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns224:DefaultValue xmlns:ns224="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns225:Units xmlns:ns225="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="config_file" sub-type="" type="binary">
+                        <ns226:UI_Name xmlns:ns226="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Configuration File</ns226:UI_Name>
+                        <ns227:UI_Description xmlns:ns227="http://www.astrogrid.org/schema/AGParameterDefinition/v1">File containing the main configuration parameters for SExtractor</ns227:UI_Description>
+                        <ns228:UCD xmlns:ns228="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns229:DefaultValue xmlns:ns229="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns230:Units xmlns:ns230="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="SEEING_FWHM" sub-type="" type="double">
+                        <ns231:UI_Name xmlns:ns231="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Seeing</ns231:UI_Name>
+                        <ns232:UI_Description xmlns:ns232="http://www.astrogrid.org/schema/AGParameterDefinition/v1">stellar FWHM in arcsec</ns232:UI_Description>
+                        <ns233:UCD xmlns:ns233="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns234:DefaultValue xmlns:ns234="http://www.astrogrid.org/schema/AGParameterDefinition/v1">1.2</ns234:DefaultValue>
+                        <ns235:Units xmlns:ns235="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="DETECT_THRESH" sub-type="" type="double">
+                        <ns236:UI_Name xmlns:ns236="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Detection Threshold</ns236:UI_Name>
+                        <ns237:UI_Description xmlns:ns237="http://www.astrogrid.org/schema/AGParameterDefinition/v1">sigmas or threshold,ZP in mag.arcsec-2</ns237:UI_Description>
+                        <ns238:UCD xmlns:ns238="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns239:DefaultValue xmlns:ns239="http://www.astrogrid.org/schema/AGParameterDefinition/v1">1.5</ns239:DefaultValue>
+                        <ns240:Units xmlns:ns240="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="DETECT_MINAREA" sub-type="" type="integer">
+                        <ns241:UI_Name xmlns:ns241="http://www.astrogrid.org/schema/AGParameterDefinition/v1">minimum detection area</ns241:UI_Name>
+                        <ns242:UI_Description xmlns:ns242="http://www.astrogrid.org/schema/AGParameterDefinition/v1">minimum number of pixels above threshold</ns242:UI_Description>
+                        <ns243:UCD xmlns:ns243="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns244:DefaultValue xmlns:ns244="http://www.astrogrid.org/schema/AGParameterDefinition/v1">5</ns244:DefaultValue>
+                        <ns245:Units xmlns:ns245="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="DEBLEND_NTHRESH " sub-type="" type="integer">
+                        <ns246:UI_Name xmlns:ns246="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Deblend thresholds</ns246:UI_Name>
+                        <ns247:UI_Description xmlns:ns247="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Number of deblending sub-thresholds</ns247:UI_Description>
+                        <ns248:UCD xmlns:ns248="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns249:DefaultValue xmlns:ns249="http://www.astrogrid.org/schema/AGParameterDefinition/v1">32</ns249:DefaultValue>
+                        <ns250:Units xmlns:ns250="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="CLEAN_PARAM" sub-type="" type="double">
+                        <ns251:UI_Name xmlns:ns251="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Cleaning efficiency</ns251:UI_Name>
+                        <ns252:UI_Description xmlns:ns252="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Cleaning Efficiency</ns252:UI_Description>
+                        <ns253:UCD xmlns:ns253="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns254:DefaultValue xmlns:ns254="http://www.astrogrid.org/schema/AGParameterDefinition/v1">1.0</ns254:DefaultValue>
+                        <ns255:Units xmlns:ns255="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="STARNNW_NAME" sub-type="" type="binary">
+                        <ns256:UI_Name xmlns:ns256="http://www.astrogrid.org/schema/AGParameterDefinition/v1">neural net file</ns256:UI_Name>
+                        <ns257:UI_Description xmlns:ns257="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Neural-Network_Weight table filename</ns257:UI_Description>
+                        <ns258:UCD xmlns:ns258="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns259:DefaultValue xmlns:ns259="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns260:Units xmlns:ns260="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="DetectionImage" sub-type="" type="binary">
+                        <ns261:UI_Name xmlns:ns261="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Detection Image</ns261:UI_Name>
+                        <ns262:UI_Description xmlns:ns262="http://www.astrogrid.org/schema/AGParameterDefinition/v1">The image that is used to detect sources. Basic position, shape and size informtaion is derived from this image</ns262:UI_Description>
+                        <ns263:UCD xmlns:ns263="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns264:DefaultValue xmlns:ns264="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns265:Units xmlns:ns265="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="DEBLEND_MINCONT" sub-type="" type="double">
+                        <ns266:UI_Name xmlns:ns266="http://www.astrogrid.org/schema/AGParameterDefinition/v1">de-blend contrast</ns266:UI_Name>
+                        <ns267:UI_Description xmlns:ns267="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Minimum contrast parameter for deblending</ns267:UI_Description>
+                        <ns268:UCD xmlns:ns268="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns269:DefaultValue xmlns:ns269="http://www.astrogrid.org/schema/AGParameterDefinition/v1">0.005</ns269:DefaultValue>
+                        <ns270:Units xmlns:ns270="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="PhotoImage" sub-type="" type="binary">
+                        <ns271:UI_Name xmlns:ns271="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Measurement Image</ns271:UI_Name>
+                        <ns272:UI_Description xmlns:ns272="http://www.astrogrid.org/schema/AGParameterDefinition/v1">The Image that is used to measure photometric parameters</ns272:UI_Description>
+                        <ns273:UCD xmlns:ns273="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns274:DefaultValue xmlns:ns274="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns275:Units xmlns:ns275="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="CHECKIMAGE_TYPE" sub-type="" type="text">
+                        <ns276:UI_Name xmlns:ns276="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Check image</ns276:UI_Name>
+                        <ns277:UI_Description xmlns:ns277="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns278:UCD xmlns:ns278="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns279:DefaultValue xmlns:ns279="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns280:Units xmlns:ns280="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="ANALYSIS_THRESH" sub-type="" type="double">
+                        <ns281:UI_Name xmlns:ns281="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Analysis Threshold</ns281:UI_Name>
+                        <ns282:UI_Description xmlns:ns282="http://www.astrogrid.org/schema/AGParameterDefinition/v1">sigmas or threshold,ZP in mag.arcsec-2</ns282:UI_Description>
+                        <ns283:UCD xmlns:ns283="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns284:DefaultValue xmlns:ns284="http://www.astrogrid.org/schema/AGParameterDefinition/v1">1.5</ns284:DefaultValue>
+                        <ns285:Units xmlns:ns285="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                    <ns135:ParameterDefinition accept-encodings="" name="PHOT_APERTURES" sub-type="" type="integer">
+                        <ns286:UI_Name xmlns:ns286="http://www.astrogrid.org/schema/AGParameterDefinition/v1">Photometry apertures</ns286:UI_Name>
+                        <ns287:UI_Description xmlns:ns287="http://www.astrogrid.org/schema/AGParameterDefinition/v1">MAG_APER aperture diameter(s) in pixels</ns287:UI_Description>
+                        <ns288:UCD xmlns:ns288="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                        <ns289:DefaultValue xmlns:ns289="http://www.astrogrid.org/schema/AGParameterDefinition/v1">5</ns289:DefaultValue>
+                        <ns290:Units xmlns:ns290="http://www.astrogrid.org/schema/AGParameterDefinition/v1"/>
+                    </ns135:ParameterDefinition>
+                </ns135:Parameters>
+                <ns135:Interfaces>
+                    <ns291:Interface xmlns:ns291="http://www.astrogrid.org/schema/CommonExecutionArchitectureBase/v1" name="Galactic">
+                        <ns291:input>
+                            <ns291:pref maxoccurs="1" minoccurs="1" ref="PARAMETERS_NAME"/>
+                            <ns291:pref maxoccurs="1" minoccurs="1" ref="config_file"/>
+                            <ns291:pref maxoccurs="1" minoccurs="0" ref="SEEING_FWHM"/>
+                            <ns291:pref maxoccurs="1" minoccurs="1" ref="DetectionImage"/>
+                            <ns291:pref maxoccurs="1" minoccurs="1" ref="IMAGE_BAND"/>
+                            <ns291:pref maxoccurs="1" minoccurs="1" ref="FILTER_NAME"/>
+                            <ns291:pref maxoccurs="1" minoccurs="0" ref="MAG_ZEROPOINT"/>
+                            <ns291:pref maxoccurs="1" minoccurs="1" ref="PhotoImage"/>
+                            <ns291:pref maxoccurs="1" minoccurs="0" ref="ANALYSIS_THRESH"/>
+                        </ns291:input>
+                        <ns291:output>
+                            <ns291:pref maxoccurs="1" minoccurs="1" ref="CATALOG_NAME"/>
+                        </ns291:output>
+                    </ns291:Interface>
+                    <ns292:Interface xmlns:ns292="http://www.astrogrid.org/schema/CommonExecutionArchitectureBase/v1" name="simple">
+                        <ns292:input>
+                            <ns292:pref maxoccurs="1" minoccurs="1" ref="PARAMETERS_NAME"/>
+                            <ns292:pref maxoccurs="1" minoccurs="1" ref="config_file"/>
+                            <ns292:pref maxoccurs="1" minoccurs="1" ref="DetectionImage"/>
+                            <ns292:pref maxoccurs="1" minoccurs="1" ref="IMAGE_BAND"/>
+                            <ns292:pref maxoccurs="1" minoccurs="1" ref="FILTER_NAME"/>
+                            <ns292:pref maxoccurs="1" minoccurs="1" ref="PhotoImage"/>
+                            <ns292:pref maxoccurs="1" minoccurs="0" ref="ANALYSIS_THRESH"/>
+                        </ns292:input>
+                        <ns292:output>
+                            <ns292:pref maxoccurs="1" minoccurs="1" ref="CATALOG_NAME"/>
+                        </ns292:output>
+                    </ns292:Interface>
+                </ns135:Interfaces>
+            </ns135:ApplicationDefinition>
+        </vr:Resource>
+    </carn:RegistryItem>
+</carn:RegistryEntry>

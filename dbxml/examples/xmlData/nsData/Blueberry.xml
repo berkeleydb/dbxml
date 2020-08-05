@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Blueberry</product>
+	<inventory>
+		<sku>BluefruiOj31yN</sku>
+		<price>0.64</price>
+		<inventory>584</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</fruits:item>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Carrot</item>
+	<inventory>
+		<sku>CarrvegexSGh7E</sku>
+		<price>0.35</price>
+		<inventory>73</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Pechay</product>
+	<inventory>
+		<sku>Pechvegexth0Ol</sku>
+		<price>0.41</price>
+		<inventory>261</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

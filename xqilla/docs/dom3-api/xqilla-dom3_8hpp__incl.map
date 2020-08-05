@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" href="$XQillaExpression_8hpp.html" title="xqilla/dom&#45;api/XQillaExpression.hpp" alt="" coords="651,83,877,112"/>
+<area shape="rect" href="$XPath2Result_8hpp.html" title="xqilla/dom&#45;api/XPath2Result.hpp" alt="" coords="443,160,651,189"/>
+<area shape="rect" href="$XQillaNSResolver_8hpp.html" title="xqilla/dom&#45;api/XQillaNSResolver.hpp" alt="" coords="1085,160,1317,189"/>
+<area shape="rect" href="$XQillaPlatformUtils_8hpp.html" title="xqilla/utils/XQillaPlatformUtils.hpp" alt="" coords="1341,160,1557,189"/>
+<area shape="rect" href="$XPath2MemoryManager_8hpp.html" title="xqilla/framework/XPath2MemoryManager.hpp" alt="" coords="1581,160,1864,189"/>
+<area shape="rect" href="$DOMNode_8hpp.html" title="xercesc/dom/DOMNode.hpp" alt="" coords="671,237,855,267"/>
+<area shape="rect" href="$DOMException_8hpp.html" title="xercesc/dom/DOMException.hpp" alt="" coords="416,315,629,344"/>
+<area shape="rect" href="$DOMXPathException_8hpp.html" title="xercesc/dom/DOMXPathException.hpp" alt="" coords="399,237,647,267"/>
+<area shape="rect" href="$DOMXPathExpression_8hpp.html" title="xercesc/dom/DOMXPathExpression.hpp" alt="" coords="764,315,1020,344"/>
+<area shape="rect" href="$DOMTypeInfo_8hpp.html" title="xercesc/dom/DOMTypeInfo.hpp" alt="" coords="119,237,324,267"/>
+<area shape="rect" href="$PlatformUtils_8hpp.html" title="xercesc/util/PlatformUtils.hpp" alt="" coords="432,392,624,421"/>
+<area shape="rect" href="$DOMXPathResult_8hpp.html" title="xercesc/dom/DOMXPathResult.hpp" alt="" coords="761,392,988,421"/>
+<area shape="rect" href="$DOMXPathNSResolver_8hpp.html" title="xercesc/dom/DOMXPathNSResolver.hpp" alt="" coords="1063,392,1321,421"/>
+<area shape="rect" href="$MemoryManager_8hpp.html" title="xercesc/framework/MemoryManager.hpp" alt="" coords="1728,237,1984,267"/>
+</map>

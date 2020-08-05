@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cookies, Oatmeal</item>
+	<inventory>
+		<sku>CookdessWDT0ke</sku>
+		<price>8.49</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

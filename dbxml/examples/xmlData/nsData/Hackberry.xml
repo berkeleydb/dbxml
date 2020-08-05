@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Hackberry</product>
+	<inventory>
+		<sku>Hackfruio8KfDS</sku>
+		<price>0.29</price>
+		<inventory>783</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</fruits:item>
+

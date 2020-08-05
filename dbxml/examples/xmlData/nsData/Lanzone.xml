@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Lanzone</product>
+	<inventory>
+		<sku>Lanzfruidntms8</sku>
+		<price>0.54</price>
+		<inventory>631</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</fruits:item>
+

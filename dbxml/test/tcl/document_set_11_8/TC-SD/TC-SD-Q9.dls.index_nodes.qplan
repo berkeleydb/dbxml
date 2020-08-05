@@ -1,0 +1,21 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="ent">
+      <QueryPlanToAST>
+        <ChildJoinQP>
+          <StepQP axis="child" name="dictionary" nodeType="element">
+            <SequentialScanQP nodeType="document"/>
+          </StepQP>
+          <StepQP axis="ancestor" name="e" nodeType="element">
+            <ValueQP index="node-element-equality-string" operation="eq" child="hw" value="or"/>
+          </StepQP>
+        </ChildJoinQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="descendant" name="qt" nodeType="element">
+        <VariableQP name=":ent"/>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

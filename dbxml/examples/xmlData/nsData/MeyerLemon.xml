@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Meyer Lemon</product>
+	<inventory>
+		<sku>Meyefrui1qB73d</sku>
+		<price>1.14</price>
+		<inventory>870</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</fruits:item>
+

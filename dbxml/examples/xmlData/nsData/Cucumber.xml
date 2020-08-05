@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Cucumber</product>
+	<inventory>
+		<sku>Cucuvege95s7Ls</sku>
+		<price>0.81</price>
+		<inventory>176</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cobbler, Peach</item>
+	<inventory>
+		<sku>Cobbdessfh2qPH</sku>
+		<price>12.56</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

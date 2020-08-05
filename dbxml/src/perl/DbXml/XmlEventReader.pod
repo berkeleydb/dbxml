@@ -1,0 +1,101 @@
+=head1 NAME
+
+XmlEventReader - A Perl interface to the DbXml XmlEventReader Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $mgr = new XmlManager()
+    my $doc = $mgr->createDocument()
+
+    my $reader = $doc->getContentAsEventReader();
+
+    my $doc1 = $manager->createDocument(); 
+    $doc1->setContentAsEventReader($reader);
+
+    my $doc2 = $manager->createDocument(); 
+    my $v =  new XmlValue($doc2);
+
+    my $reader1 = $v->asEventReader();
+
+
+    $reader->close();
+
+    $reader->setReportEntityInfo($value);
+    my $bool = $reader->getReportEntityInfo() ;
+    $reader->setExpandEntities($value);
+    my $bool = $reader->getExpandEntities() ;
+
+    $XmlEventType = $reader->next();
+    $XmlEventType = $reader->nextTag(); 
+
+    
+    my $bool = $reader->hasNext() ;
+    $XmlEventType = $reader->getEventType() ;
+
+    
+    my $uri = $reader->getNamespaceURI() ;
+    
+    my $name = $reader->getLocalName() ;
+    my $prefix = $reader->getPrefix() ;
+
+    my $value = $reader->getValue($len) ;
+
+    mi $count = $reader->getAttributeCount() ;
+    my $bool = $reader->isAttributeSpecified($index) ;
+    my $name = $reader->getAttributeLocalName($index) ;
+    my $uri = $reader->getAttributeNamespaceURI($index) ;
+    my $prefix = $reader->getAttributePrefix($index) ;
+    my $value = $reader->getAttributeValue($index) ;
+
+    my $encoding = $reader->getEncoding() ;
+    my $version = $reader->getVersion() ;
+    my $id = $reader->getSystemId() ;
+    my $bool = $reader->isStandalone() ;
+    my $bool = $reader->standaloneSet() ;
+    my $bool = $reader->encodingSet() ;
+
+    my $bool = $reader->hasEntityEscapeInfo() ;
+    my $bool = $reader->needsEntityEscape([$index]) ;
+    my $bool = $reader->hasEmptyElementInfo() ;
+    my $bool = $reader->isEmptyElement() ;
+    my $bool = $reader->isWhiteSpace() ;
+
+    # XmlEventType has the following values
+    XmlEventType::StartElement ;
+    XmlEventType::EndElement ;
+    XmlEventType::Characters ;
+    XmlEventType::CDATA ;
+    XmlEventType::Comment ;
+    XmlEventType::Whitespace ;
+    XmlEventType::StartDocument ;
+    XmlEventType::EndDocument ;
+    XmlEventType::StartEntityReference ;
+    XmlEventType::EndEntityReference ;
+    XmlEventType::ProcessingInstruction ;
+    XmlEventType::DTD ;
+
+
+=head1 DESCRIPTION
+
+
+=head1 CONFORMANCE to C++ API
+
+
+=head1 Constructor
+
+=head1 Methods
+
+
+=head1 NOTES
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

@@ -1,0 +1,78 @@
+#
+# Use this config file for building Windows Release configuration
+#
+# Step 1: What C++ Compiler do you want to use?
+#
+# Set the CC variable to the name of the C++ compiler you want to use.
+
+CC = cl -TP /EHsc
+
+# Step 2: Where is the DbXml Library?
+#
+# Set the DBXML_LIB_NAME variable to the name of the dbxml library.
+#
+# Set the DBXML_LIB_PATH variable to directory where the dbxml library
+# is installed.
+#
+# Set the DBXML_INC_PATH variable to directory where the dbxml include files
+# are installed.
+
+DBXML_LIB_NAME = libdbxml25
+DBXML_LIB_PATH = ../../../lib
+DBXML_INC_PATH = ../../../include
+
+# Step 3: Where is the Berkeley DB C++ library?
+#
+# Set the BDB_LIB_NAME variable to the name of the Berkeley DB C++ library.
+#
+# Set the BDB_LIB_PATH variable to directory where the Berkeley DB library
+# is installed.
+#
+# Set the BDB_INC_PATH variable to directory where the Berkeley DB include files
+# are installed.
+
+BDB_LIB_NAME = libdb48
+BDB_LIB_PATH = ../../../lib
+BDB_INC_PATH = ../../../include
+
+# Step 4: Where is the Xerces Library?
+#
+# Set the XERCES_LIB_NAME variable to the name of the Xerces library.
+#
+# Set the XERCES_LIB_PATH variable to directory where the Xerces library
+# is installed.
+#
+
+XERCES_LIB_NAME = xerces-c_3
+XERCES_LIB_PATH = ../../../lib
+
+
+# Step 5: Where is the xqilla Library?
+#
+# Set the XQILLA_LIB_NAME variable to the name of the xqilla library.
+#
+# Set the XQILLA_LIB_PATH variable to directory where the xqilla library
+# is installed.
+#
+
+XQILLA_LIB_NAME = xqilla22
+XQILLA_LIB_PATH = ../../../lib
+
+# Step 6: Any other libraries needed?
+#
+# If you need to include any additional libraries when building this module
+# uncomment and set the EXTRA_LIBS variable below.
+#
+# Examples
+#
+# Some Linux/Unix builds need to include the threading library
+#
+#EXTRA_LIBS = -lpthread
+
+
+# Windows - non-debug libraries
+EXTRA_LIBS = MSVCPRT.LIB
+
+EXTRA_CCFLAGS = -nologo -EHsc -GF -W3 -MD -O1 -Gd -DNDEBUG -DWIN32 -D_CONSOLE -DNO_STRICT -DHAVE_DES_FCRYPT -DPERL_IMPLICIT_CONTEXT -DPERL_IMPLICIT_SYS -DUSE_PERLIO -DPERL_MSVCRT_READFIX
+
+# End of File.

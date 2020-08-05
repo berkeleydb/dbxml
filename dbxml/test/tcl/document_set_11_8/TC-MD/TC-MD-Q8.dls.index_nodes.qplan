@@ -1,0 +1,24 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="art">
+      <QueryPlanToAST>
+        <LevelFilterQP>
+          <StepQP axis="parent-of-attribute" name="article" nodeType="element">
+            <ValueQP index="node-attribute-equality-string" operation="eq" child="id" value="2"/>
+          </StepQP>
+        </LevelFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="name" nodeType="element">
+        <StepQP axis="child" name="author" nodeType="element">
+          <StepQP axis="child" uri="*" name="*" nodeType="element">
+            <StepQP axis="child" name="prolog" nodeType="element">
+              <VariableQP name=":art"/>
+            </StepQP>
+          </StepQP>
+        </StepQP>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

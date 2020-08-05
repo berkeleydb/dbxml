@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Munggo</item>
+	<inventory>
+		<sku>Mungvegef4UWyu</sku>
+		<price>0.70</price>
+		<inventory>322</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

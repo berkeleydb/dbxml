@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Nectarine</item>
+	<inventory>
+		<sku>NectfruihEQpbG</sku>
+		<price>0.77</price>
+		<inventory>460</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

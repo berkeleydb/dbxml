@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Oregon Grape</item>
+	<inventory>
+		<sku>OregfruiSMz7Zo</sku>
+		<price>0.84</price>
+		<inventory>991</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

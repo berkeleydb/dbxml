@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cheesecake, Cran-Raspberry</item>
+	<inventory>
+		<sku>Cheedessyfik2i</sku>
+		<price>7.27</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

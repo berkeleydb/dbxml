@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Shift_Jis"?>
+<!DOCTYPE 文書 [
+<!ELEMENT 文書 (題,(段落|図面)*)>
+<!ATTLIST 文書 改訂日付 CDATA #IMPLIED>
+<!ELEMENT 題 (#PCDATA)>
+<!ELEMENT 段落 (#PCDATA)>
+<!ELEMENT 図面 EMPTY>
+<!ATTLIST 図面 図面実体名 ENTITY #REQUIRED>
+
+<!ENTITY 会社名 "東芝">
+<!ENTITY サンプル SYSTEM "サンプル.gif" NDATA gif>
+<!NOTATION gif SYSTEM "IE">
+
+]>
+<文書 改訂日付="１９９９年３月１日">
+<題>サンプル</題>
+<段落>これはサンプル文書です。</段落>
+<!-- コメント -->
+<段落>&会社名;</段落>
+<図面 図面実体名="サンプル" />
+</文書>

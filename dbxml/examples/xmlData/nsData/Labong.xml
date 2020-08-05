@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Labong</product>
+	<inventory>
+		<sku>LabovegenRDdCB</sku>
+		<price>0.18</price>
+		<inventory>354</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

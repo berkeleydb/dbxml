@@ -1,0 +1,16 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <LevelFilterQP>
+          <StepQP axis="parent-of-attribute" name="article" nodeType="element">
+            <ValueQP index="node-attribute-equality-string" operation="eq" child="id" value="9"/>
+          </StepQP>
+        </LevelFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":a"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

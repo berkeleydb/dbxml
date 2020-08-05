@@ -1,0 +1,36 @@
+<VisualStudioProject ProjectType="Visual C++" Version="7.10" Name="dbxml_java" ProjectGUID="{5F4D3079-5C22-41A4-833E-4110296973F8}">
+  <Platforms>
+    <Platform Name="Win32"/>
+    <Platform Name="x64"/>
+    <Platform Name="IA64"/>
+  </Platforms>
+  <Configurations>
+    <Configuration Name="Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml_java" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_java.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25d.lib libdb48d.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir)" OutputFile="$(OutDir)/libdbxml_java25d.dll" ProgramDatabaseFile="$(OutDir)/libdbxml_java25d.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/libdbxml_java25d.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="xcopy *.jar ..\..\jar /F/Y &#xA;installProj.bat libdbxml_java25 dll $(OutDir) debug" Description="Copying .jar and library files to install directory"/>
+      <Tool Name="VCCustomBuildTool" CommandLine="&#xA;mkdir &quot;./$(OutDir)/classes/dummy&quot; &quot;./../build_windows/dummy&quot;&#xA;echo compiling Berkeley DB XML Java classes &#xA;javac -source 1.5 -target 1.5 -g -d $(OutDir)/classes -classpath $(OutDir)/classes;$(OutDir)/classes.db;../build_windows/db.jar ../src/java/com/sleepycat/dbxml/*.java ../src/java/com/sleepycat/db/*.java &#xA;echo creating dbxml jar file &#xA;cd &quot;$(OutDir)/classes&quot; &#xA;jar cf ../../../../build_windows/dbxml.jar com/sleepycat/dbxml/*.class com/sleepycat/db/*.class &#xA;echo compiling Berkeley DB XML Java examples &#xA;cd ../../.. &#xA;javac -source 1.5 -target 1.5 -g -d $(OutDir)/classes -classpath ../build_windows/dbxml.jar;$(OutDir)/dbxml.jar;$(OutDir)/classes;$(OutDir)/classes.db;../build_windows/db.jar ../examples/java/gettingStarted/*.java ../examples/java/basic/*.java ../examples/java/event/*.java ../examples/java/misc/*.java &#xA;echo creating example jar file &#xA;cd &quot;$(OutDir)/classes&quot; &#xA;jar cf ../../../../build_windows/dbxmlexamples.jar dbxml/gettingStarted/*.class basic/*.class event/*.class misc/*.class &#xA;cd ../../.. &#xA;rmdir &quot;$(OutDir)/classes/dummy&quot; &quot;./../build_windows/dummy&quot;  &#xA;echo Java build finished" Outputs="force_compilation.txt"/></Configuration>
+    <Configuration Name="Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml_java" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_java.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25.lib libdb48.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir)" OutputFile="$(OutDir)/libdbxml_java25.dll" ProgramDatabaseFile="$(OutDir)/libdbxml_java25.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/libdbxml_java25.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="xcopy *.jar ..\..\jar /F/Y &#xA;installProj.bat libdbxml_java25 dll $(OutDir) release" Description="Copying .jar and library files to install directory"/>
+      <Tool Name="VCCustomBuildTool" CommandLine="&#xA;mkdir &quot;./$(OutDir)/classes/dummy&quot; &quot;./../build_windows/dummy&quot;&#xA;echo compiling Berkeley DB XML Java classes &#xA;javac -source 1.5 -target 1.5 -g -d $(OutDir)/classes -classpath $(OutDir)/classes;$(OutDir)/classes.db;../build_windows/db.jar ../src/java/com/sleepycat/dbxml/*.java ../src/java/com/sleepycat/db/*.java &#xA;echo creating dbxml jar file &#xA;cd &quot;$(OutDir)/classes&quot; &#xA;jar cf ../../../../build_windows/dbxml.jar com/sleepycat/dbxml/*.class com/sleepycat/db/*.class &#xA;echo compiling Berkeley DB XML Java examples &#xA;cd ../../.. &#xA;javac -source 1.5 -target 1.5 -g -d $(OutDir)/classes -classpath ../build_windows/dbxml.jar;$(OutDir)/dbxml.jar;$(OutDir)/classes;$(OutDir)/classes.db;../build_windows/db.jar ../examples/java/gettingStarted/*.java ../examples/java/basic/*.java ../examples/java/event/*.java ../examples/java/misc/*.java &#xA;echo creating example jar file &#xA;cd &quot;$(OutDir)/classes&quot; &#xA;jar cf ../../../../build_windows/dbxmlexamples.jar dbxml/gettingStarted/*.class basic/*.class event/*.class misc/*.class &#xA;cd ../../.. &#xA;rmdir &quot;$(OutDir)/classes/dummy&quot; &quot;./../build_windows/dummy&quot;  &#xA;echo Java build finished" Outputs="force_compilation.txt"/></Configuration>
+  </Configurations>
+  <References/>
+  <Files>
+    <File RelativePath="..\src\java\dbxml_java_wrap.cpp"/>
+  </Files>
+  <Globals/>
+</VisualStudioProject>

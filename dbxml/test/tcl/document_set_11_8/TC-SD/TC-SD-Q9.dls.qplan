@@ -1,0 +1,31 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="ent">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="e" nodeType="element">
+            <StepQP axis="child" name="dictionary" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="hw" value="or"/>
+            </StepQP>
+          </StepQP>
+          <ValueFilterQP comparison="eq" general="true">
+            <StepQP axis="descendant" name="hw" nodeType="element">
+              <VariableQP name="#tmp2"/>
+            </StepQP>
+            <Sequence>
+              <AnyAtomicTypeConstructor value="or" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+            </Sequence>
+          </ValueFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="descendant" name="qt" nodeType="element">
+        <DescendantOrSelfJoinQP>
+          <PresenceQP index="node-element-presence-none" operation="eq" child="qt"/>
+          <VariableQP name=":ent"/>
+        </DescendantOrSelfJoinQP>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

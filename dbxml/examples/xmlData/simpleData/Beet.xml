@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Beet</item>
+	<inventory>
+		<sku>BeetvegetPgUXE</sku>
+		<price>0.53</price>
+		<inventory>434</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

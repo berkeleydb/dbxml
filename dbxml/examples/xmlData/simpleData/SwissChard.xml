@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Swiss Chard</item>
+	<inventory>
+		<sku>SwisvegegiXI5Z</sku>
+		<price>0.12</price>
+		<inventory>652</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

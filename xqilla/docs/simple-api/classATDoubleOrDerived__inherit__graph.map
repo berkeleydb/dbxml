@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" href="$classNumeric.html" title="Numeric" alt="" coords="39,237,108,267"/>
+<area shape="rect" href="$classAnyAtomicType.html" title="AnyAtomicType" alt="" coords="16,160,131,189"/>
+<area shape="rect" href="$classItem.html" title="Item" alt="" coords="49,83,97,112"/>
+<area shape="rect" href="$classReferenceCounted.html" title="Super class for reference counted classes." alt="" coords="9,5,137,35"/>
+</map>

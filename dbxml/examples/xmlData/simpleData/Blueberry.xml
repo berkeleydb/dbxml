@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Blueberry</item>
+	<inventory>
+		<sku>BluefruiOj31yN</sku>
+		<price>0.64</price>
+		<inventory>584</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

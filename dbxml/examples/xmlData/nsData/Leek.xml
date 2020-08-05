@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Leek</product>
+	<inventory>
+		<sku>LeekvegeQiXMR1</sku>
+		<price>0.43</price>
+		<inventory>731</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

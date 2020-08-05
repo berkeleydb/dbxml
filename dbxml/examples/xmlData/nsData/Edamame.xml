@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Edamame</product>
+	<inventory>
+		<sku>EdamvegeXzF1QX</sku>
+		<price>0.20</price>
+		<inventory>247</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

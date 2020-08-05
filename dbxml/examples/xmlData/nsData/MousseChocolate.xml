@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<desserts:item xmlns:desserts="http://groceryItem.dbxml/desserts">
+	<product>Mousse, Chocolate</product>
+	<inventory>
+		<sku>Mousdessfvgj3y</sku>
+		<price>6.65</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</desserts:item>
+

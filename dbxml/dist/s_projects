@@ -1,0 +1,62 @@
+#
+# This script drives construction of Visual Studio (version 7.1) projects 
+# files, using an xquery script (genproject.template),an input XML
+# document, and a file containing a list of project names.
+#
+
+# project name list
+PROJECTS=dbxml.projects
+
+# xquery script template
+TEMPLATE=genproject.template
+
+# temporary script, post-sed-replacement
+TEMP_SCRIPT=genproject.script
+
+# xml document input template
+CONFIG_INPUT=dbxml.template.xml
+
+# temporary xml document, post-sed-replacement
+CONFIG_OUTPUT=dbxml.xml
+
+# location for output project files
+PROJECT_OUTPUT_DIR=../build_windows
+
+# substitute some variables in the XML document template
+sed -f lib_paths.sed < $CONFIG_INPUT > $CONFIG_OUTPUT
+
+# generate srcfiles.in, which gets used to create VC6 project files
+echo "Generating srcfiles.in"
+xqilla gensrcfiles.xq -v projectFile "$CONFIG_OUTPUT" -o srcfiles.in
+
+echo "Building Visual Studio project files -- "
+echo "   output only for modified projects (this can take a while)"
+
+# for each project, substitute 2 variables in the XQuery script, then run it
+for v in VC7.1 VC8
+do
+    if [ $v = "VC7.1" ]; then
+	VERSION="7.10"
+    else
+	VERSION="8.00"
+    fi
+
+    echo "Building for Visual Studio version $VERSION"
+
+    for i in `cat $PROJECTS`
+    do
+	sed -e "s!@PROJECT_NAME@!$i!g" -e "s!@PROJECT_INPUT@!$CONFIG_OUTPUT!g" -e"s!@VISUAL_STUDIO_VERSION@!$VERSION!g" < $TEMPLATE > $TEMP_SCRIPT
+	TMP=$PROJECT_OUTPUT_DIR/$i.tmp.vcproj
+	if [ $v = "VC7.1" ]; then
+	    TARG=$PROJECT_OUTPUT_DIR/${i}.vcproj
+	else
+	    TARG=$PROJECT_OUTPUT_DIR/${i}_vs8.vcproj
+	fi
+	xqilla -o $TMP $TEMP_SCRIPT
+	rm -f $TEMP_SCRIPT
+	cmp $TMP $TARG > /dev/null 2>&1 ||
+	(echo "Building $TARG" && rm -f $TARG &&
+	    cp $TMP $TARG && chmod 664 $TARG)
+	rm -f $TMP
+    done
+done

@@ -1,0 +1,26 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <AncestorJoinQP>
+          <ValueFilterQP comparison="substring">
+            <SequentialScanQP nodeType="element" name="p"/>
+            <Sequence>
+              <AnyAtomicTypeConstructor value="hockey" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+            </Sequence>
+          </ValueFilterQP>
+          <StepQP axis="child" name="article" nodeType="element">
+            <ValueQP index="node-element-substring-string" operation="substring" child="p" value="hockey"/>
+          </StepQP>
+        </AncestorJoinQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="title" nodeType="element">
+        <StepQP axis="child" name="prolog" nodeType="element">
+          <VariableQP name=":a"/>
+        </StepQP>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

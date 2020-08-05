@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" href="$ItemFactory_8hpp.html" title="ItemFactory.hpp" alt="" coords="5,237,120,267"/>
+<area shape="rect" href="$FunctionRef_8hpp.html" title="FunctionRef.hpp" alt="" coords="100,83,215,112"/>
+<area shape="rect" href="$Node_8hpp.html" title="Node.hpp" alt="" coords="239,83,313,112"/>
+<area shape="rect" href="$xqilla-simple_8hpp.html" title="xqilla&#45;simple.hpp" alt="" coords="199,392,316,421"/>
+<area shape="rect" href="$URIResolver_8hpp.html" title="URIResolver.hpp" alt="" coords="100,315,220,344"/>
+<area shape="rect" href="$XercesConfiguration_8hpp.html" title="XercesConfiguration.hpp" alt="" coords="195,160,357,189"/>
+<area shape="rect" href="$DocumentCache_8hpp.html" title="DocumentCache.hpp" alt="" coords="381,160,523,189"/>
+<area shape="rect" href="$StaticContext_8hpp.html" title="StaticContext.hpp" alt="" coords="341,237,467,267"/>
+<area shape="rect" href="$UpdateFactory_8hpp.html" title="UpdateFactory.hpp" alt="" coords="491,237,621,267"/>
+<area shape="rect" href="$XQQuery_8hpp.html" title="XQQuery.hpp" alt="" coords="295,315,393,344"/>
+<area shape="rect" href="$DynamicContext_8hpp.html" title="DynamicContext.hpp" alt="" coords="417,315,559,344"/>
+<area shape="rect" href="$ContextHelpers_8hpp.html" title="ContextHelpers.hpp" alt="" coords="420,392,556,421"/>
+</map>

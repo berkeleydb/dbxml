@@ -1,0 +1,28 @@
+//
+// Windows configuration file for Berkeley DB XML extension for PHP
+// NOTE: BDB XML depends on the Berkeley DB (db4) extension, and does 
+//       not build with mod_db4.
+//
+// 1.  If the library name below (e.g. libdbxml24.lib) does not match the 
+//     current version, replace it with the correct name.
+// 2.  replace both <path_to_lib> with the path to a built, release version of libdbxmlXX.lib
+//     e.g. C:/Programs/dbxml-2.4.x/lib
+// 3.  replace <path_to_include> with the path to the include directory for BDB XML
+//     e.g. C:/Programs/dbxml-2.4.x/include
+// 4.  replace <path_to_php_db4> with the path to the php_db4 directory for Berkeley DB
+//     e.g. C:/Programs/dbxml-2.4.x/db-4.6.x/php_db4
+// 5.  Follow the instructions in the Berkeley DB config.w32 file in dbxml-2.4.x/db-4.6.x/php_db4.
+//     Assuming BDB XML is built, in that file, you can use path_to_dbxml/include for 
+//     <path_to_build_windows> and path_to_dbxml/lib for <path_to_lib>
+// 6.  Instructions for configuring and building on Windows are in the file INSTALL.WINDOWS
+//
+ARG_ENABLE("dbxml","Berkeley DB XML support","no,shared");
+if (PHP_DBXML != "no") {
+	 EXTENSION("dbxml", "php_dbxml.cpp php_dbxml_manager.cpp php_dbxml_resolver.cpp php_dbxml_container.cpp php_dbxml_containerconfig.cpp php_dbxml_eventreader.cpp php_dbxml_eventwriter.cpp php_dbxml_eventreadertowriter.cpp php_dbxml_exception.cpp php_dbxml_inputstream.cpp php_dbxml_transaction.cpp php_dbxml_results.cpp php_dbxml_value.cpp php_dbxml_queryexpression.cpp php_dbxml_querycontext.cpp php_dbxml_updatecontext.cpp php_dbxml_indexspecification.cpp php_dbxml_data.cpp php_dbxml_document.cpp php_dbxml_statistics.cpp php_dbxml_indexlookup.cpp", null, "", "php_dbxml.dll");
+	CHECK_LIB("libdbxml24.lib", "dbxml", "f:/gmf/cvs/lib;");
+	ADD_FLAG("CFLAGS_DBXML", "/EHsc");
+	CHECK_HEADER_ADD_INCLUDE("dbxml/DbXml.hpp", "CFLAGS_DBXML", "f:/gmf/cvs/include");
+	CHECK_HEADER_ADD_INCLUDE("php_db4.h", "CFLAGS_DBXML", "f:/gmf/cvs/db-4.6.21/php_db4");
+	ADD_EXTENSION_DEP("dbxml","db4", null);
+	CHECK_LIB("libdb46.lib", "dbxml", "f:/gmf/cvs/lib;");
+}

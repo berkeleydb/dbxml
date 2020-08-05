@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Pie, Raspberry</item>
+	<inventory>
+		<sku>Pie,dessvob7UA</sku>
+		<price>6.75</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

@@ -1,0 +1,46 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <AncestorJoinQP>
+          <ValueFilterQP comparison="substring">
+            <ValueQP index="node-element-substring-string" operation="substring" child="p" value="the hockey"/>
+            <Sequence>
+              <AnyAtomicTypeConstructor value="the hockey" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+            </Sequence>
+          </ValueFilterQP>
+          <StepQP axis="child" name="article" nodeType="element">
+            <SequentialScanQP nodeType="document"/>
+          </StepQP>
+        </AncestorJoinQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="title" nodeType="element">
+              <StepQP axis="child" name="prolog" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="abstract" nodeType="element">
+              <StepQP axis="child" name="body" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Yellow Horn</item>
+	<inventory>
+		<sku>YellfruiVK8SXU</sku>
+		<price>0.79</price>
+		<inventory>859</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

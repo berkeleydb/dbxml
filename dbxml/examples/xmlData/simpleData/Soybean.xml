@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Soybean</item>
+	<inventory>
+		<sku>Soybvegeo6Y0xM</sku>
+		<price>0.75</price>
+		<inventory>402</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

@@ -1,0 +1,43 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="item">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="item" nodeType="element">
+            <StepQP axis="child" name="catalog" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="first_name" value="Ben"/>
+            </StepQP>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp3">
+            <StepQP axis="child" name="authors" nodeType="element">
+              <VariableQP name="#tmp2"/>
+            </StepQP>
+            <NodePredicateFilterQP uri="" name="#tmp4">
+              <StepQP axis="child" name="author" nodeType="element">
+                <VariableQP name="#tmp3"/>
+              </StepQP>
+              <NodePredicateFilterQP uri="" name="#tmp5">
+                <StepQP axis="child" name="name" nodeType="element">
+                  <VariableQP name="#tmp4"/>
+                </StepQP>
+                <ValueFilterQP comparison="eq" general="true">
+                  <StepQP axis="child" name="first_name" nodeType="element">
+                    <VariableQP name="#tmp5"/>
+                  </StepQP>
+                  <Sequence>
+                    <AnyAtomicTypeConstructor value="Ben" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                  </Sequence>
+                </ValueFilterQP>
+              </NodePredicateFilterQP>
+            </NodePredicateFilterQP>
+          </NodePredicateFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="title" nodeType="element">
+        <VariableQP name=":item"/>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

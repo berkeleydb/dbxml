@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<vendor type="wholesale">
+	<name>Off The Vine</name>
+	<address>133 American Ct.</address>
+	<city>Centennial</city>
+	<state>IA</state>
+	<zipcode>52002</zipcode>
+	<phonenumber>563 121 3800</phonenumber>
+	<salesrep>
+		<name>Bob King</name>
+		<phonenumber>563 121 3800 x54</phonenumber>
+	</salesrep>
+</vendor>
+

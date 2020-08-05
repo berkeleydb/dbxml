@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Kiwifruit</item>
+	<inventory>
+		<sku>Kiwivegek6wauH</sku>
+		<price>0.76</price>
+		<inventory>468</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

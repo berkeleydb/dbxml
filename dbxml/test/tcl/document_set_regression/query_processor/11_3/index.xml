@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="11.3.9">
+  <!-- using a variable in the query  -->
+  <category>queryPlan</category>
+  <description>Using a variable in a query plan</description>
+  <program name='dbxml_test_driver'/>
+
+  <!-- stuff that applies to the entire test -->
+  <indexSpecification>
+    <node>baz</node>
+    <index>edge-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>bar</node>
+    <index>node-element-presence</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>foo</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+
+  <!-- individual tests -->
+
+  <!-- 11.3.9 (setting a variable) -->
+  <base>
+    <variable>
+      <name>foo</name>
+      <value>la</value>
+    </variable>
+  </base>
+</test>
+

@@ -1,0 +1,27 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="item">
+      <QueryPlanToAST>
+        <ChildJoinQP>
+          <StepQP axis="child" name="catalog" nodeType="element">
+            <SequentialScanQP nodeType="document"/>
+          </StepQP>
+          <StepQP axis="parent-of-child" name="item" nodeType="element">
+            <StepQP axis="parent-of-child" name="authors" nodeType="element">
+              <StepQP axis="parent-of-child" name="author" nodeType="element">
+                <StepQP axis="parent-of-child" name="contact_information" nodeType="element">
+                  <StepQP axis="parent-of-child" name="mailing_address" nodeType="element">
+                    <ValueQP index="node-element-equality-string" operation="eq" child="name_of_country" value="Canada"/>
+                  </StepQP>
+                </StepQP>
+              </StepQP>
+            </StepQP>
+          </StepQP>
+        </ChildJoinQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":item"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

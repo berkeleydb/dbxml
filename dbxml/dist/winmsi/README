@@ -1,0 +1,43 @@
+Creation of the .msi is driven by dist/s_winmsi, dist/winmsi/s_winmsi_dbxml.fcn
+(built from s_winmsi_dbxml.fcn.template) and various configuration files and 
+scripts in dist/winmsi.  The scripts look for
+required files and utilities, including:
+o Visual Studio (Visual Studio .NET 2003)
+o WiX (uses version 2.03)
+o Perl (uses ActivePerl 5.8.8 now)
+o Python (uses ActivePython 2.5.1)
+o Java
+o XQilla (xqilla command line is used to help construct
+  WiX .wxs files which are in an XML format)
+
+The order of events can be seen in the s_winmsi script and 
+is roughly:
+1.  Build BDB XML and dependent libraries (Debug and Release)
+   winmsi/build.bat and winmsi/project.list.in drive this
+2.  Build Perl and Python
+3.  Build "component" lists for WiX.  This process is driven
+by the shell script winmsi/generateWix.sh which also uses a
+Python script (genWix.py) and XQuery Update scripts to construct
+dbxml_components.wxs which contains the majority of the files
+for the binary distribution.
+
+Relatively static WiX files include:
+ o dbxml.wxs ("main" WiX input file that includes the 
+    features to be installed).  This file references the
+    components/component groups that are generated in 
+    dbxml_components.wxs
+ o links_frag.wxs (references the links that become part of
+    the Windows application menu after installation)
+ o required_frag.wxs (license file, readme and other required
+   bits of installation)
+
+The scripts must be run from a cygwin bash shell.
+
+The .msi file is built into dbxml-x.y.z/wix/dbxml-x.y.z.msi
+
+Test it this way:
+Install:
+  msiexec /i blah.msi
+Uninstall:
+  msiexec /uninstall blah.msi
+

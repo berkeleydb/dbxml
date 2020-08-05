@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Sweet Potato</product>
+	<inventory>
+		<sku>SweevegeLsUOb0</sku>
+		<price>0.67</price>
+		<inventory>751</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

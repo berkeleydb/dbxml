@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="Big5"?>
+<!-- edited with XML Spy v2.0 NT  - http://www.xmlspy.com-->
+<?ascc-hint repertoire="Big5"?>
+<test>
+	<data xml:lang="en">This document tests attributes called "xml:lang".</data>
+	<data xml:lang="zh">
+&lt;data xml:lang="zh" &gt;
+1. 可延伸標示語言&lt;/data&gt;
+</data>
+	<data xml:lang="zh-CN">
+&lt;data   xml:lang="zh-CN" &gt;
+2. 可延伸標示語言&lt;/data&gt;
+</data>
+	<data xml:lang="zh-HK">
+&lt;data xml:lang="zh-HK" &gt;
+3. 可延伸標示語言&lt;/data&gt;
+</data>
+	<data xml:lang="zh-SG">
+&lt;data  xml:lang="zh-SG" &gt;
+4. 可延伸標示語言&lt;/data&gt;
+</data>
+	<data xml:lang="zh-TW">
+&lt;data  xml:lang="zh-TW" &gt;
+5. 可延伸標示語言&lt;/data&gt;
+</data>
+</test>

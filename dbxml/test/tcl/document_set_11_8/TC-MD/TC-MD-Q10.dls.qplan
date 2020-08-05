@@ -1,0 +1,56 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <StepQP axis="child" name="prolog" nodeType="element">
+          <StepQP axis="child" name="article" nodeType="element">
+            <SequentialScanQP nodeType="document"/>
+          </StepQP>
+        </StepQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <Sort>
+      <Specification modifier="ascending|empty_least">
+        <TreatAs>
+          <PromoteUntyped uri="http://www.w3.org/2001/XMLSchema" name="string">
+            <Atomize>
+              <QueryPlanToAST>
+                <StepQP axis="child" name="country" nodeType="element">
+                  <StepQP axis="child" name="dateline" nodeType="element">
+                    <VariableQP name=":a"/>
+                  </StepQP>
+                </StepQP>
+              </QueryPlanToAST>
+            </Atomize>
+          </PromoteUntyped>
+          <SequenceType occurrence="zero_or_one" testType="anything"/>
+        </TreatAs>
+      </Specification>
+    </Sort>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="title" nodeType="element">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="country" nodeType="element">
+              <StepQP axis="child" name="dateline" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

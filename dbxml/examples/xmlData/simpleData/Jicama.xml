@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Jicama</item>
+	<inventory>
+		<sku>JicavegeBuufWy</sku>
+		<price>0.82</price>
+		<inventory>791</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

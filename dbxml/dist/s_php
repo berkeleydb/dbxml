@@ -1,0 +1,11 @@
+#!/bin/sh -
+#
+# Build config.m4 for the PHP API using current configuration.
+
+. ./s_process
+
+PHP_SRCDIR=../src/php
+d=$PHP_SRCDIR/config.m4
+s=$PHP_SRCDIR/config.m4.in
+
+process $s $d

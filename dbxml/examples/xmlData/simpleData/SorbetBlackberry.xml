@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Sorbet, Blackberry</item>
+	<inventory>
+		<sku>SorbdessmIz61F</sku>
+		<price>6.45</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

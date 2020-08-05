@@ -1,0 +1,61 @@
+=head1 NAME
+
+XmlStatistics - A Perl interface to the DbXml XmlStatistics Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $manager = new XmlManager();
+    ...
+    my $cont = $manager->creatContainer()
+
+    my $stats = $cont->lookupStatistics([$txn,] $uri, $name, 
+                        $index [, $xmlvalue]);
+    my $stats = $cont->lookupStatistics([$txn,] $uri, $name, 
+                        $parent_uri, $parent_name, $index [, $xmlvalue]);
+
+    $count = $stats->getNumberOfIndexedKeys();
+    $count = $stats->getNumberOfUniqueKeys();
+    
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XmlStatistics is identical to the C++ API.
+
+=head1 Constructor
+
+There is no constructor provided for this class. An XmlStatistics
+object is returned from the XmlContainer::lookupStatistics method. This
+method can take the following forms
+
+    my $stats = $cont->lookupStatistics([$txn,] $uri, $name, 
+                        $index [, $xmlvalue]);
+
+    my $stats = $cont->lookupStatistics([$txn,] $uri, $name, 
+                        $parent_uri, $parent_name, $index [, $xmlvalue]);
+
+=head1 Methods
+
+=head2 $count = $stats->getNumberOfIndexedKeys();
+
+Returns the number of keys for the index.
+
+=head2 $count = $stats->getNumberOfUniqueKeys();
+
+Returns the number of unique keys for the index.
+
+=head1 EXAMPLES
+
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

@@ -1,0 +1,37 @@
+<map id="G" name="G">
+<area shape="rect" href="$classEventHandler.html" title="EventHandler" alt="" coords="23,139,121,168"/>
+<area shape="rect" href="$classEventFilter.html" title="EventFilter" alt="" coords="236,85,319,115"/>
+<area shape="rect" href="$classEventSerializer.html" title="EventSerializer" alt="" coords="224,139,331,168"/>
+<area shape="rect" href="$classSequenceBuilder.html" title="SequenceBuilder" alt="" coords="217,192,337,221"/>
+<area shape="rect" href="$classContentSequenceFilter.html" title="ContentSequenceFilter" alt="" coords="443,5,595,35"/>
+<area shape="rect" href="$classNSFixupFilter.html" title="NSFixupFilter" alt="" coords="469,59,568,88"/>
+<area shape="rect" href="$classQueryPathTreeFilter.html" title="QueryPathTreeFilter" alt="" coords="451,112,587,141"/>
+<area shape="rect" href="$classSchemaValidatorFilter.html" title="The SchemaValidatorFilter class will modify the incoming event stream by validating..." alt="" coords="445,165,592,195"/>
+<area shape="rect" href="$classxercesc_1_1XMemory.html" title="This class makes it possible to override the C++ memory management by adding new/delete..." alt="" coords="7,619,137,648"/>
+<area shape="rect" href="$classDocumentCache.html" title="Expression Context is a storage for contexts." alt="" coords="219,245,336,275"/>
+<area shape="rect" href="$classItemFactory.html" title="ItemFactory" alt="" coords="232,299,323,328"/>
+<area shape="rect" href="$classScope.html" title="used inside VariableStore to implement variable scoping" alt="" coords="219,352,336,381"/>
+<area shape="rect" href="$classSequence.html" title="An eagerly evaluated result of a query execution." alt="" coords="237,405,317,435"/>
+<area shape="rect" href="$classStaticContext.html" title="The parse time static context interface." alt="" coords="228,459,327,488"/>
+<area shape="rect" href="$classStaticType.html" title="Class that represents the static type of an expression." alt="" coords="236,512,319,541"/>
+<area shape="rect" href="$classUpdateFactory.html" title="UpdateFactory" alt="" coords="224,565,331,595"/>
+<area shape="rect" href="$classURIResolver.html" title="This is an abstract class used to resolve URIs in different ways." alt="" coords="231,619,324,648"/>
+<area shape="rect" href="$classVarHashEntry.html" title="The class that stores the values of the variables." alt="" coords="197,672,357,701"/>
+<area shape="rect" href="$classVariableTypeStore.html" title="This is the wrapper class for the variable store, which implements the lookup and..." alt="" coords="213,725,341,755"/>
+<area shape="rect" href="$classxercesc_1_1InputSource.html" title="A single input source for an XML entity." alt="" coords="205,779,349,808"/>
+<area shape="rect" href="$classxercesc_1_1XMLFormatTarget.html" title="xercesc::XMLFormatTarget" alt="" coords="188,832,367,861"/>
+<area shape="rect" href="$classxercesc_1_1XMLFormatter.html" title="This class provides the basic formatting capabilities that are required to turn the..." alt="" coords="199,885,356,915"/>
+<area shape="rect" href="$classXQilla.html" title="Provides factory methods for creating XQQuery and DynamicContext objects." alt="" coords="249,939,305,968"/>
+<area shape="rect" href="$classXQillaConfiguration.html" title="XQillaConfiguration" alt="" coords="212,992,343,1021"/>
+<area shape="rect" href="$classXQQuery.html" title="Encapsulates a query expression." alt="" coords="240,1045,315,1075"/>
+<area shape="rect" href="$classDynamicContext.html" title="The execution time dynamic context interface." alt="" coords="461,459,576,488"/>
+<area shape="rect" href="$classxercesc_1_1LocalFileInputSource.html" title="This class is a derivative of the standard InputSource class." alt="" coords="420,619,617,648"/>
+<area shape="rect" href="$classxercesc_1_1MemBufInputSource.html" title="This class is a derivative of the standard InputSource class." alt="" coords="421,672,616,701"/>
+<area shape="rect" href="$classxercesc_1_1StdInInputSource.html" title="This class is a derivative of the standard InputSource class." alt="" coords="431,725,607,755"/>
+<area shape="rect" href="$classxercesc_1_1URLInputSource.html" title="This class is a derivative of the standard InputSource class." alt="" coords="433,779,604,808"/>
+<area shape="rect" href="$classxercesc_1_1LocalFileFormatTarget.html" title="xercesc::LocalFileFormatTarget" alt="" coords="417,832,620,861"/>
+<area shape="rect" href="$classxercesc_1_1MemBufFormatTarget.html" title="xercesc::MemBufFormatTarget" alt="" coords="419,885,619,915"/>
+<area shape="rect" href="$classxercesc_1_1StdOutFormatTarget.html" title="xercesc::StdOutFormatTarget" alt="" coords="423,939,615,968"/>
+<area shape="rect" href="$classFastXDMConfiguration.html" title="FastXDMConfiguration" alt="" coords="443,992,595,1021"/>
+<area shape="rect" href="$classXercesConfiguration.html" title="XercesConfiguration" alt="" coords="451,1045,587,1075"/>
+</map>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Kola Nut</item>
+	<inventory>
+		<sku>KolafruiQWF0tt</sku>
+		<price>1.05</price>
+		<inventory>517</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

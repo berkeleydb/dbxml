@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Eggplant</item>
+	<inventory>
+		<sku>EggpvegePcgHnf</sku>
+		<price>0.42</price>
+		<inventory>333</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

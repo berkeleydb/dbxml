@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Labanos</product>
+	<inventory>
+		<sku>Labavege6gWGen</sku>
+		<price>0.23</price>
+		<inventory>578</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

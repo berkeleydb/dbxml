@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Japanese Eggplant</product>
+	<inventory>
+		<sku>Japavegequh409</sku>
+		<price>0.13</price>
+		<inventory>720</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

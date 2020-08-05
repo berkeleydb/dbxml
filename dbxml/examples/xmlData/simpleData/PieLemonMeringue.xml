@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Pie, Lemon Meringue</item>
+	<inventory>
+		<sku>Pie,dessOAcqgG</sku>
+		<price>6.87</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

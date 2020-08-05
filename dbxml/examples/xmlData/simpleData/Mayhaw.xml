@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Mayhaw</item>
+	<inventory>
+		<sku>Mayhfrui7dpAIk</sku>
+		<price>0.96</price>
+		<inventory>956</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

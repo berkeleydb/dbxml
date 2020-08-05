@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Rhubarb</product>
+	<inventory>
+		<sku>RhubvegebbpAMx</sku>
+		<price>0.42</price>
+		<inventory>780</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

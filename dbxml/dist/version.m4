@@ -1,0 +1,5 @@
+m4_define([M_DBXML_VERSION_MAJOR], [2])
+m4_define([M_DBXML_VERSION_MINOR], [5])
+m4_define([M_DBXML_VERSION_PATCH], [16])
+m4_define([M_DBXML_VERSION_STRING], [Oracle: Berkeley DB XML 2.5.16: (December 22, 2009)])
+m4_define([M_DBXML_VERSION], [2.5.16])

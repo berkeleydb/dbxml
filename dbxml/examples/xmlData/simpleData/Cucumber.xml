@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Cucumber</item>
+	<inventory>
+		<sku>Cucuvege95s7Ls</sku>
+		<price>0.81</price>
+		<inventory>176</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

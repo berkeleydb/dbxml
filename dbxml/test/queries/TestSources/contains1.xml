@@ -1,0 +1,7 @@
+<root>
+	<!--first comment-->
+	<a att1="abc">1</a>
+	<a att1="bcd">2</a>
+	<!--second comment-->
+	<a att1="efg">12</a>
+</root>

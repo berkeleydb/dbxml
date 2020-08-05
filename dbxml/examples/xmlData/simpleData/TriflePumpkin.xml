@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Trifle, Pumpkin</item>
+	<inventory>
+		<sku>TrifdessEWyC5w</sku>
+		<price>2.06</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

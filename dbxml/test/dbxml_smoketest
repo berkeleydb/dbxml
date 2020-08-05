@@ -1,0 +1,22 @@
+# dbxml shell smoke test script
+# usage: dbxml -s dbxml_smoketest
+# output is:
+# 	<name>joe</name>
+#	<age>35</age>
+#	<age>700</age>
+#	doc2
+#
+createContainer  smoketest.dbxml
+addIndex "" age node-element-equality-decimal
+addIndex "" name node-element-equality-string
+putDocument  doc1 <person><name>joe</name><age>35</age></person>
+putDocument  doc2 <person><name>jane</name><age>29</age></person>
+putDocument  doc3 <person><name>methuselah</name><age>700</age></person>
+query collection('smoketest.dbxml')/person/name[.='joe']
+print
+query collection('smoketest.dbxml')/person/age[.>30]
+print
+query collection('smoketest.dbxml')/person/age[.=29]
+printNames
+removeContainer smoketest.dbxml
+exit

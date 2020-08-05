@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Garlic</product>
+	<inventory>
+		<sku>GarlvegejD7cik</sku>
+		<price>0.81</price>
+		<inventory>772</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

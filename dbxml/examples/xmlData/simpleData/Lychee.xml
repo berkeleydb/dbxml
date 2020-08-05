@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Lychee</item>
+	<inventory>
+		<sku>LychfruieldDU9</sku>
+		<price>0.68</price>
+		<inventory>236</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

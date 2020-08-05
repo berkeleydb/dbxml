@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Pecan</item>
+	<inventory>
+		<sku>PecafruiOnJ5jp</sku>
+		<price>0.95</price>
+		<inventory>996</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

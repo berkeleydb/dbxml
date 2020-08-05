@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Asparagus</product>
+	<inventory>
+		<sku>AspavegeF7vz10</sku>
+		<price>0.78</price>
+		<inventory>542</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

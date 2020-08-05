@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Monos Plum</item>
+	<inventory>
+		<sku>MonofruihInjwH</sku>
+		<price>0.80</price>
+		<inventory>906</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

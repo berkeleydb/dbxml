@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cobbler, Strawberry</item>
+	<inventory>
+		<sku>Cobbdessh51gal</sku>
+		<price>5.77</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

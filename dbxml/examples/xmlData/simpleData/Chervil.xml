@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Chervil</item>
+	<inventory>
+		<sku>ChervegebmHab5</sku>
+		<price>0.40</price>
+		<inventory>454</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

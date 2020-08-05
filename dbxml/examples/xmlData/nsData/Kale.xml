@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Kale</product>
+	<inventory>
+		<sku>KalevegeKH6KN0</sku>
+		<price>0.85</price>
+		<inventory>672</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

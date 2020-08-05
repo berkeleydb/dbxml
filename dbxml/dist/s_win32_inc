@@ -1,0 +1,21 @@
+#!/bin/sh -
+#
+# Build Windows/32 include files.
+
+msgc="/* DO NOT EDIT: automatically built by dist/s_win32_inc. */"
+msgw="; DO NOT EDIT: automatically built by dist/s_win32_inc."
+
+. ./RELEASE
+
+s=/tmp/__db_a$$
+t=/tmp/__db_b$$
+rm -f $s $t
+
+trap 'rm -f $s $t ; exit 1' 1 2 3 13 15
+
+f=../build_windows/dbxml_config.h
+(echo "$msgc" && sed "s/__EDIT_DBXML_VERSION__/$DBXML_VERSION/" win_config.in) > $t
+cmp $t $f > /dev/null 2>&1 ||
+    (echo "Building $f" && rm -f $f && cp $t $f && chmod 444 $f)
+
+rm -f $s $t

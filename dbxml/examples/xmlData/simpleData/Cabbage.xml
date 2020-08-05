@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Cabbage</item>
+	<inventory>
+		<sku>Cabbvege96f3Rn</sku>
+		<price>0.44</price>
+		<inventory>485</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

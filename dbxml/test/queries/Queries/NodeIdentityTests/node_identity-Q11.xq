@@ -1,0 +1,1 @@
+collection()//id[.=50]/ancestor-or-self::*

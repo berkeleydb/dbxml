@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Avocado</item>
+	<inventory>
+		<sku>AvocfruijfHs18</sku>
+		<price>0.24</price>
+		<inventory>393</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

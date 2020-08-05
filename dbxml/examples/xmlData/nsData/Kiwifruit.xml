@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Kiwifruit</product>
+	<inventory>
+		<sku>Kiwivegek6wauH</sku>
+		<price>0.76</price>
+		<inventory>468</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

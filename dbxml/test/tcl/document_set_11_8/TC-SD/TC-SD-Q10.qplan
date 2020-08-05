@@ -1,0 +1,70 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp9">
+          <StepQP axis="child" name="e" nodeType="element">
+            <StepQP axis="child" name="dictionary" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="qd" value="1900"/>
+            </StepQP>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp10">
+            <StepQP axis="child" name="ss" nodeType="element">
+              <VariableQP name="#tmp9"/>
+            </StepQP>
+            <NodePredicateFilterQP uri="" name="#tmp11">
+              <StepQP axis="child" name="s" nodeType="element">
+                <VariableQP name="#tmp10"/>
+              </StepQP>
+              <NodePredicateFilterQP uri="" name="#tmp12">
+                <StepQP axis="child" name="qp" nodeType="element">
+                  <VariableQP name="#tmp11"/>
+                </StepQP>
+                <NodePredicateFilterQP uri="" name="#tmp13">
+                  <StepQP axis="child" name="q" nodeType="element">
+                    <VariableQP name="#tmp12"/>
+                  </StepQP>
+                  <ValueFilterQP comparison="eq" general="true">
+                    <StepQP axis="child" name="qd" nodeType="element">
+                      <VariableQP name="#tmp13"/>
+                    </StepQP>
+                    <Sequence>
+                      <AnyAtomicTypeConstructor value="1900" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                    </Sequence>
+                  </ValueFilterQP>
+                </NodePredicateFilterQP>
+              </NodePredicateFilterQP>
+            </NodePredicateFilterQP>
+          </NodePredicateFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="hw" nodeType="element">
+              <StepQP axis="child" name="hwg" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="pr" nodeType="element">
+              <StepQP axis="child" name="hwg" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

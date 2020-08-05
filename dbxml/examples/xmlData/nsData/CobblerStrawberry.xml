@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<desserts:item xmlns:desserts="http://groceryItem.dbxml/desserts">
+	<product>Cobbler, Strawberry</product>
+	<inventory>
+		<sku>Cobbdessh51gal</sku>
+		<price>5.77</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</desserts:item>
+

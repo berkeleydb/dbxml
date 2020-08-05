@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Madagascar Plum</product>
+	<inventory>
+		<sku>MadafruiaqDzeb</sku>
+		<price>1.07</price>
+		<inventory>955</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</fruits:item>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<desserts:item xmlns:desserts="http://groceryItem.dbxml/desserts">
+	<product>Tart, Apple</product>
+	<inventory>
+		<sku>TartdessElOvUd</sku>
+		<price>9.23</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</desserts:item>
+

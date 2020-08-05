@@ -1,0 +1,76 @@
+=head1 NAME
+
+XmlQueryContext - A Perl interface to the DbXml XmlQueryContext Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $mgr = new XmlManager();
+    my $q = $mgr->createQueryContext($returntype, $evaluationtype);
+
+    my $xmlvalue = new XmlValue(...);
+    $q->setVariableValue($name, $xmlresults);
+    $q->setVariableValue($name, $xmlvalue);
+    $q->setVariableValue($name, 'abc');
+
+    $q->clearNamespaces;
+
+
+    $q->getVariableValue($name, $xmlresults);
+    $q->getVariableValue($name, $xmlvalue);
+    $q->getVariableValue($name, $scalar);
+
+    $q->setEvaluationType($type);
+    $type = $q->getEvaluationType();
+
+    $q->removeNamespace($prefix);
+    $string = $q->getNamespace($prefix);
+    $q->setNamespace($prefix, $uri);
+
+    $q->setReturnType($type);
+    $type = $q->getReturnType();
+
+    $string = $q->getBaseURI();
+    $q->setBaseURI($string);
+
+	$q->interruptQuery();
+	$q->setQueryTimeoutSeconds($secs);
+	my $i = $q->sgetQueryTimeoutSeconds();
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlQueryContext is identical to the C++ API,
+apart from the following
+
+=over 5
+
+=item 1.
+
+=back
+
+
+=head1 Constructor
+
+An XmlQueryContext object is created by a call to
+XmlManager::createQueryContext.
+
+=head1 Methods
+
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Apricot</item>
+	<inventory>
+		<sku>AprifruipF3Dxy</sku>
+		<price>0.93</price>
+		<inventory>667</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

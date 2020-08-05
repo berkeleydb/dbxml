@@ -1,0 +1,121 @@
+<Wix
+  xmlns='http://schemas.microsoft.com/wix/2003/01/wi'
+>
+  <Fragment>
+    <ComponentGroup Id='dbxml_required'>
+      <ComponentRef Id='RequiredFiles' />
+      <ComponentRef Id='license_readme' />
+      <ComponentRef Id='RequiredRegistry' />
+      <ComponentRef Id='RequiredLinks' />
+    </ComponentGroup>
+    <DirectoryRef Id='INSTALLDIR' >
+      <Component
+        DiskId='1'
+        Guid='0ACC1E98-359A-4020-B563-7C96F297150E'
+        Id='RequiredFiles'
+        KeyPath='yes'
+        Location='either'
+        SharedDllRefCount='yes'
+      >
+        <File
+          Compressed='yes'
+          DiskId='1'
+          Id='dbxmlvars'
+          LongName='dbxmlvars.bat'
+          Name='dbvars.bat'
+          src='dbxmlvars.bat'
+         />
+        <Registry
+          Action='write'
+          Id='RootDir.RegistryVal'
+          Key='SOFTWARE\Oracle\Berkeley DB XML\@DBXML_WIX_VERSION@'
+          Name='RootDirectory'
+          Root='HKLM'
+          Type='string'
+          Value='[INSTALLDIR]'
+         />
+        <CreateFolder />
+      </Component>
+      <Component
+        DiskId='1'
+        Guid='545CFE00-93D7-11D9-EAD3-F63F68BDEB1A'
+        Id='RequiredRegistry'
+        KeyPath='yes'
+        Location='either'
+        SharedDllRefCount='yes'
+      >
+        <Registry
+          Action='write'
+          Id='Ext.Registry'
+          Key='.bdbsc'
+          Root='HKCR'
+          Type='string'
+          Value='Oracle.InformationalShortcut'
+         />
+        <Registry
+          Action='write'
+          Id='Name.Registry'
+          Key='Oracle.InformationalShortcut'
+          Root='HKCR'
+          Type='string'
+          Value='Oracle Corporation Informational Shortcut'
+         />
+        <Registry
+          Action='write'
+          Id='Tip.Registry'
+          Key='Oracle.InformationalShortcut'
+          Name='InfoTip'
+          Root='HKCR'
+          Type='string'
+          Value='Oracle Corporation Informational Shortcut'
+         />
+        <Registry
+          Action='write'
+          Id='NoShow.Registry'
+          Key='Oracle.InformationalShortcut'
+          Name='NeverShowExt'
+          Root='HKCR'
+          Type='string'
+         />
+        <Registry
+          Action='write'
+          Id='Icon.Registry'
+          Key='Oracle.InformationalShortcut\DefaultIcon'
+          Root='HKCR'
+          Type='string'
+          Value='[INSTALLDIR]\links\webicon.ico'
+         />
+        <Registry
+          Action='write'
+          Id='Command.Registry'
+          Key='Oracle.InformationalShortcut\shell\open\command'
+          Root='HKCR'
+          Type='string'
+          Value='rundll32.exe shdocvw.dll,OpenURL %1'
+         />
+        <Registry
+          Action='write'
+          Id='Explore.Registry'
+          Key='Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.bdbsc\OpenWithProgIds\Oracle.InformationalShortcut'
+          Root='HKCU'
+         />
+        <Registry
+          Action='write'
+          Id='HklmExt.Registry'
+          Key='Software\Classes\.bdbsc'
+          Root='HKLM'
+          Type='string'
+          Value='Oracle.InformationalShortcut'
+         />
+        <Registry
+          Action='write'
+          Id='HklmCommand.Registry'
+          Key='Software\Classes\Oracle.InformationalShortcut\shell\open\command'
+          Root='HKLM'
+          Type='string'
+          Value='rundll32.exe shdocvw.dll,OpenURL %1'
+         />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

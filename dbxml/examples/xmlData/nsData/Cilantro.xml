@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Cilantro</product>
+	<inventory>
+		<sku>CilavegeOqQYZx</sku>
+		<price>0.36</price>
+		<inventory>751</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

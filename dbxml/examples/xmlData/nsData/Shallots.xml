@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Shallots</product>
+	<inventory>
+		<sku>ShalvegeR4wXM8</sku>
+		<price>0.75</price>
+		<inventory>422</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

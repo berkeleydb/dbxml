@@ -1,0 +1,15 @@
+#!/bin/sh -
+#
+# Build miscellaneous files that change when the version is bumped.
+
+./s_paths
+
+. ./RELEASE
+
+. ./s_process
+
+process buildall.sh.template buildall.sh
+process reltools/build.template reltools/build
+process winmsi/s_winmsi_dbxml.fcn.template winmsi/s_winmsi_dbxml.fcn
+process winmsi/project.list.template winmsi/project.list.in
+

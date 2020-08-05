@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Macadamia Nut</item>
+	<inventory>
+		<sku>MacafruiyHrEoM</sku>
+		<price>0.52</price>
+		<inventory>823</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

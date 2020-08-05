@@ -1,0 +1,49 @@
+=head1 NAME
+
+Dbt - A Perl interface to the Berkeley DB Dbt Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::Db;
+
+    my $v = new Dbt()
+    my $v = new Dbt($string)
+    my $v = new Dbt($string, $size)
+
+    $v->get_data();
+    $v->set_data($string);
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to Dbt is identical to the C++ API, apart from
+the following
+
+=over 5
+
+=item 1.
+
+=back
+
+
+=head1 Constructor
+
+
+=head1 Methods
+
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

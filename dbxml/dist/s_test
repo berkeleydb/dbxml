@@ -1,0 +1,55 @@
+#!/bin/sh -
+#
+# Build the Tcl test files.
+
+msg1="# Automatically built by dist/s_test; may require local editing."
+sh ./s_paths
+
+t=/tmp/__t
+trap 'rm -f $t; exit 0' 0 1 2 3 13 15
+
+. ./RELEASE
+
+(echo "$msg1"					&& \
+ echo ""					&& \
+ echo "set tclsh_path @TCL_TCLSH@"		&& \
+ echo ""					&& \
+ echo "set src_root .."				&& \
+ echo "set test_path \$src_root/test/tcl"	&& \
+ echo "source \$test_path/globals.tcl"		&& \
+ echo ""					&& \
+ echo "set dbxml_tcllib .libs/libdbxml_tcl-@DBXML_VERSION_MAJOR@.@DBXML_VERSION_MINOR@@LIBTSO_MODSUFFIX@" && \
+ echo ""					&& \
+ echo "set db_tcllib @DB_TCLLIB@@LIBTSO_MODSUFFIX@" && \
+ echo "set db_test_path @DB_TEST_PATH@"		&& \
+ echo "set db_util_path @DB_UTIL_PATH@"		&& \
+ echo "set xmlutil_path ."			&& \
+ echo "set xmltest_path ."			&& \
+ echo ""					&& \
+ echo "set KILL \"@db_cv_path_kill@\"") > $t
+
+f=../test/tcl/include.tcl
+cmp $t $f > /dev/null 2>&1 ||
+    (echo "Building $f" && rm -f $f && cp $t $f && chmod 444 $f)
+
+
+(echo "$msg1"					&& \
+ echo ""					&& \
+ echo "set tclsh_path SET_YOUR_TCLSH_PATH"	&& \
+ echo ""					&& \
+ echo "set src_root .."				&& \
+ echo "set test_path \$src_root/test/tcl"	&& \
+ echo "source \$test_path/globals.tcl"		&& \
+ echo ""					&& \
+ echo "set dbxml_tcllib ../../bin/debug/@DBXML_TCL_LIBNAME@d.dll" && \
+ echo "set db_tcllib @DB_TCLLIB@" && \
+ echo "set db_test_path @DB_TEST_PATH@"		&& \
+ echo "set db_util_path @DB_UTIL_PATH@"		&& \
+ echo "set xmltest_path ./Win32/Debug"          && \
+ echo "set xmlutil_path ../../bin/debug"	&& \
+ echo ""					&& \
+ echo "set KILL @DB_LIBHOME@/dbkill.exe") | sed -f lib_paths.sed > $t
+
+f=../build_windows/include.tcl
+cmp $t $f > /dev/null 2>&1 ||
+    (echo "Building $f" && rm -f $f && cp $t $f && chmod 444 $f)

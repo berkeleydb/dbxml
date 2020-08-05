@@ -1,0 +1,52 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <StepQP axis="child" name="a_id" nodeType="element">
+          <StepQP axis="child" name="references" nodeType="element">
+            <StepQP axis="child" name="epilog" nodeType="element">
+              <LevelFilterQP>
+                <StepQP axis="parent-of-attribute" name="article" nodeType="element">
+                  <ValueQP index="node-attribute-equality-string" operation="eq" child="id" value="17"/>
+                </StepQP>
+              </LevelFilterQP>
+            </StepQP>
+          </StepQP>
+        </StepQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <ForBinding name="b">
+      <QueryPlanToAST>
+        <LevelFilterQP>
+          <StepQP axis="parent-of-attribute" name="article" nodeType="element">
+            <ValueQP index="node-attribute-equality-string" operation="eq" child="id">
+              <Atomize>
+                <QueryPlanToAST>
+                  <VariableQP name=":a"/>
+                </QueryPlanToAST>
+              </Atomize>
+            </ValueQP>
+          </StepQP>
+        </LevelFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="title" nodeType="element">
+              <StepQP axis="child" name="prolog" nodeType="element">
+                <VariableQP name=":b"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

@@ -1,0 +1,23 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# QP tests
+# Sequence functions
+
+# TODO specify and implement!
+# e.g.
+# doc("dbxml:/docURI")[foo]
+# doc("dbxml:/docURI")/foo
+# collection("dbxml:/collectionURI")[foo]
+# collection("dbxml:/collectionURI")/foo
+
+
+# may need the facility to specify XML documents/content to load
+
+TEST 11.8
+TITLE Sequence functions
+
+
+

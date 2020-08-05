@@ -1,0 +1,42 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="author" nodeType="element">
+            <StepQP axis="child" name="authors" nodeType="element">
+              <IntersectQP>
+                <PresenceQP index="edge-element-presence-none" operation="eq" parent="root:http://www.sleepycat.com/2002/dbxml" child="authors"/>
+                <ValueQP index="node-element-substring-string" operation="substring" child="biography" value="hockey"/>
+              </IntersectQP>
+            </StepQP>
+          </StepQP>
+          <ValueFilterQP comparison="substring">
+            <StepQP axis="child" name="biography" nodeType="element">
+              <VariableQP name="#tmp2"/>
+            </StepQP>
+            <Sequence>
+              <AnyAtomicTypeConstructor value="hockey" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+            </Sequence>
+          </ValueFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="attribute" name="id" nodeType="attribute">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

@@ -1,0 +1,22 @@
+#!/bin/sh -
+#
+# Build setup.py.in for the Python API with our default library paths.
+# It requires further processing via configure to create setup.py
+
+. ./s_process
+
+PYTHON_SRCDIR=../src/python
+d=$PYTHON_SRCDIR/setup.py.windows
+f=$PYTHON_SRCDIR/setup.py.in
+s=$PYTHON_SRCDIR/setup.py.template
+
+bin_src=$PYTHON_SRCDIR/pywinbin.install.template
+bin_dest=$PYTHON_SRCDIR/pywinbin.install
+
+readme_src=$PYTHON_SRCDIR/README.in
+readme_dest=$PYTHON_SRCDIR/README
+
+process $s $f
+process $s $d
+process $bin_src $bin_dest
+process $readme_src $readme_dest

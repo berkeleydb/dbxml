@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Moosewood</item>
+	<inventory>
+		<sku>MoosfruiR8JOnE</sku>
+		<price>0.76</price>
+		<inventory>442</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

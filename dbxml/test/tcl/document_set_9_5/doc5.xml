@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Company xmlns="http://my-company.com/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://my-company.com/namespace doc5.xsd">
+	<Address>
+		<Name>US dependency</Name>
+		<Street>Noble Ave.</Street>
+		<City>Dallas</City>
+	</Address>
+	<Person>
+		<First>Fred</First>
+		<Last>Smith</Last>
+		<PhoneExt>22</PhoneExt>
+		<EMail>Smith@work.com</EMail>
+	</Person>
+</Company>

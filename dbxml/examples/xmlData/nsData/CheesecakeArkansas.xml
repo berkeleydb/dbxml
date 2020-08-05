@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<desserts:item xmlns:desserts="http://groceryItem.dbxml/desserts">
+	<product>Cheesecake, Arkansas</product>
+	<inventory>
+		<sku>Cheedess4TzJwt</sku>
+		<price>7.62</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</desserts:item>
+

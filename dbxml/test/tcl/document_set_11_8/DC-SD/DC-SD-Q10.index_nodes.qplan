@@ -1,0 +1,69 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp4">
+          <NodePredicateFilterQP uri="" name="#tmp0">
+            <StepQP axis="parent-of-child" name="item" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="gt" child="date_of_release" value="1990-01-01"/>
+            </StepQP>
+            <LevelFilterQP>
+              <StepQP axis="parent-of-child" name="catalog" nodeType="element">
+                <VariableQP name="#tmp0"/>
+              </StepQP>
+            </LevelFilterQP>
+          </NodePredicateFilterQP>
+          <ValueFilterQP comparison="lt">
+            <StepQP axis="child" name="date_of_release" nodeType="element">
+              <VariableQP name="#tmp4"/>
+            </StepQP>
+            <Sequence>
+              <AnyAtomicTypeConstructor value="1995-01-01" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+            </Sequence>
+          </ValueFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <Sort>
+      <Specification modifier="ascending|empty_least">
+        <TreatAs>
+          <PromoteUntyped uri="http://www.w3.org/2001/XMLSchema" name="string">
+            <Atomize>
+              <QueryPlanToAST>
+                <StepQP axis="child" name="name" nodeType="element">
+                  <StepQP axis="child" name="publisher" nodeType="element">
+                    <VariableQP name=":a"/>
+                  </StepQP>
+                </StepQP>
+              </QueryPlanToAST>
+            </Atomize>
+          </PromoteUntyped>
+          <SequenceType occurrence="zero_or_one" testType="anything"/>
+        </TreatAs>
+      </Specification>
+    </Sort>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="title" nodeType="element">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="publisher" nodeType="element">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

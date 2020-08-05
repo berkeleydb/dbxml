@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Rosemary</item>
+	<inventory>
+		<sku>RosevegePe5fnu</sku>
+		<price>0.63</price>
+		<inventory>456</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

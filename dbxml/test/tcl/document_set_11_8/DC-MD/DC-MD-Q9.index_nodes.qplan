@@ -1,0 +1,59 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <LevelFilterQP>
+          <StepQP axis="parent-of-child" name="order" nodeType="element">
+            <ValueQP index="node-element-equality-double" operation="gt" child="total" value="11000"/>
+          </StepQP>
+        </LevelFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <Sort>
+      <Specification modifier="ascending|empty_least">
+        <TreatAs>
+          <PromoteUntyped uri="http://www.w3.org/2001/XMLSchema" name="string">
+            <Atomize>
+              <QueryPlanToAST>
+                <StepQP axis="child" name="ship_type" nodeType="element">
+                  <VariableQP name=":a"/>
+                </StepQP>
+              </QueryPlanToAST>
+            </Atomize>
+          </PromoteUntyped>
+          <SequenceType occurrence="zero_or_one" testType="anything"/>
+        </TreatAs>
+      </Specification>
+    </Sort>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="attribute" name="id" nodeType="attribute">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="order_date" nodeType="element">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="ship_type" nodeType="element">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

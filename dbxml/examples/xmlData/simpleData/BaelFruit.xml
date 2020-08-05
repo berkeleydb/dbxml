@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Bael Fruit</item>
+	<inventory>
+		<sku>Baelfruidt2IAv</sku>
+		<price>0.47</price>
+		<inventory>686</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

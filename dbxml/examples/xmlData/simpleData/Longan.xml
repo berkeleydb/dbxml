@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Longan</item>
+	<inventory>
+		<sku>Longfrui6ixF8v</sku>
+		<price>0.67</price>
+		<inventory>793</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

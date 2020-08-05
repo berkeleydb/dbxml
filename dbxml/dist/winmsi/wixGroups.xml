@@ -1,0 +1,41 @@
+<!-- simple file to drive creation of WiX ComponentGroup elements -->
+<groups>
+  <group name="dbxml">
+    <dir recurse="no" parent="DirectoryRef">dbxml</dir>
+  </group>
+  <group name="runtime">
+    <dir recurse="no" parent="DirectoryRef">bin</dir>
+  </group>
+  <!--<group name="debug">
+    <dir recurse="yes" parent="Directory" parentName="bin">debug</dir>
+  </group>-->
+  <group name="devo">
+    <dir recurse="yes" parent="DirectoryRef">bin</dir>
+    <dir recurse="yes" parent="DirectoryRef">include</dir>
+    <dir recurse="yes" parent="DirectoryRef">lib</dir>
+  </group>
+  <group name="doc">
+    <dir recurse="yes" parent="Directory" parentName="dbxml">docs</dir>
+  </group>
+  <group name="examples">
+    <dir recurse="yes" parent="Directory" parentName="dbxml">examples</dir>
+    <dir recurse="no" parent="Directory" parentName="dbxml">build_windows</dir>
+  </group>
+  <group name="java">
+    <dir recurse="no" parent="DirectoryRef">bin</dir>
+    <dir recurse="yes" parent="DirectoryRef">jar</dir>
+  </group>
+  <group name="perl">
+    <dir recurse="no" parent="DirectoryRef">bin</dir>
+    <dir recurse="yes" parent="DirectoryRef">perl</dir>
+  </group>
+  <group name="python">
+    <dir recurse="no" parent="DirectoryRef">bin</dir>
+    <dir recurse="yes" parent="DirectoryRef">python</dir>
+  </group>
+  <group name="php">
+    <dir recurse="no" parent="DirectoryRef">bin</dir>
+    <dir recurse="yes" parent="DirectoryRef">php</dir>
+  </group>
+</groups>
+

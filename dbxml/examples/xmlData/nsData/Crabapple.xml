@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Crabapple</product>
+	<inventory>
+		<sku>CrabfruicNFnrD</sku>
+		<price>1.14</price>
+		<inventory>756</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</fruits:item>
+

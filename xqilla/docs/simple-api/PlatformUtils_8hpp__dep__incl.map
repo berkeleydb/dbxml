@@ -1,0 +1,22 @@
+<map id="G" name="G">
+<area shape="rect" href="$XQilla_8hpp.html" title="XQilla.hpp" alt="" coords="416,83,496,112"/>
+<area shape="rect" href="$StaticContext_8hpp.html" title="StaticContext.hpp" alt="" coords="443,160,568,189"/>
+<area shape="rect" href="$Sequence_8hpp.html" title="Sequence.hpp" alt="" coords="1524,83,1628,112"/>
+<area shape="rect" href="$InputSource_8hpp.html" title="InputSource.hpp" alt="" coords="989,83,1104,112"/>
+<area shape="rect" href="$XMLFormatter_8hpp.html" title="XMLFormatter.hpp" alt="" coords="1372,83,1500,112"/>
+<area shape="rect" href="$xqilla-simple_8hpp.html" title="xqilla&#45;simple.hpp" alt="" coords="347,315,464,344"/>
+<area shape="rect" href="$XQillaConfiguration_8hpp.html" title="XQillaConfiguration.hpp" alt="" coords="209,160,364,189"/>
+<area shape="rect" href="$FastXDMConfiguration_8hpp.html" title="FastXDMConfiguration.hpp" alt="" coords="5,237,181,267"/>
+<area shape="rect" href="$XercesConfiguration_8hpp.html" title="XercesConfiguration.hpp" alt="" coords="205,237,368,267"/>
+<area shape="rect" href="$XQQuery_8hpp.html" title="XQQuery.hpp" alt="" coords="608,237,707,267"/>
+<area shape="rect" href="$DynamicContext_8hpp.html" title="DynamicContext.hpp" alt="" coords="443,237,584,267"/>
+<area shape="rect" href="$ContextHelpers_8hpp.html" title="ContextHelpers.hpp" alt="" coords="488,315,624,344"/>
+<area shape="rect" href="$LocalFileInputSource_8hpp.html" title="LocalFileInputSource.hpp" alt="" coords="592,160,760,189"/>
+<area shape="rect" href="$MemBufInputSource_8hpp.html" title="MemBufInputSource.hpp" alt="" coords="784,160,949,189"/>
+<area shape="rect" href="$StdInInputSource_8hpp.html" title="StdInInputSource.hpp" alt="" coords="973,160,1120,189"/>
+<area shape="rect" href="$URLInputSource_8hpp.html" title="URLInputSource.hpp" alt="" coords="1195,160,1336,189"/>
+<area shape="rect" href="$EventSerializer_8hpp.html" title="EventSerializer.hpp" alt="" coords="1019,237,1152,267"/>
+<area shape="rect" href="$LocalFileFormatTarget_8hpp.html" title="LocalFileFormatTarget.hpp" alt="" coords="1411,160,1587,189"/>
+<area shape="rect" href="$MemBufFormatTarget_8hpp.html" title="MemBufFormatTarget.hpp" alt="" coords="1611,160,1781,189"/>
+<area shape="rect" href="$StdOutFormatTarget_8hpp.html" title="StdOutFormatTarget.hpp" alt="" coords="1805,160,1968,189"/>
+</map>

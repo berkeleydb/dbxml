@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Savory</product>
+	<inventory>
+		<sku>SavovegelyMxqG</sku>
+		<price>0.51</price>
+		<inventory>148</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

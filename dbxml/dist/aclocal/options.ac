@@ -1,0 +1,385 @@
+
+# Process user-specified options.
+AC_DEFUN([AM_OPTIONS_SET], [
+
+# Check debug option
+AC_MSG_CHECKING(if --enable-debug option specified)
+AC_ARG_ENABLE(debug,
+	[AC_HELP_STRING([--enable-debug],
+			[Build a debugging version.])],
+	[db_cv_debug="$enable_debug"], [db_cv_debug="no"])
+AC_MSG_RESULT($db_cv_debug)
+
+# Check if we want to build the tests
+AC_MSG_CHECKING(if --enable-test option specified)
+AC_ARG_ENABLE(test,
+	[AC_HELP_STRING([--enable-test],
+			[Configure to run the test suite.])],
+	[db_cv_test="$enable_test"], [db_cv_test="no"])
+AC_MSG_RESULT($db_cv_test)
+
+# Check for Berkeley DB 
+AC_MSG_CHECKING([if --with-berkeleydb=DIR option specified])
+AC_ARG_WITH(berkeleydb,
+	[AC_HELP_STRING([--with-berkeleydb=DIR],
+			[Path of Berkeley DB. [DIR="/usr/local/BerkeleyDB.@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@"]])],
+	[with_berkeleydb="$withval"], [with_berkeleydb="no"])
+AC_MSG_RESULT($with_berkeleydb)
+
+# Check for Berkeley DB build directory
+AC_MSG_CHECKING([if --with-dbbuild=DIR option specified])
+AC_ARG_WITH(dbbuild,
+	[AC_HELP_STRING([--with-dbbuild=DIR],
+			[Path to Berkeley DB source tree (used for tcl-based testing).])],
+	[with_dbbuild="$withval"], [with_dbbuild="no"])
+AC_MSG_RESULT($with_dbbuild)
+
+# If --with-berkeleydb isn't specified, assume it's here | wc -l` -gt 0
+if test "$with_berkeleydb" = "no"; then
+	with_berkeleydb="/usr/local/BerkeleyDB.@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@"
+fi
+with_berkeleydb=`cd $with_berkeleydb && pwd`
+
+# Checking for DB includes many options:
+#  o install tree
+#  o source tree
+#  o build directory within a source tree
+#
+DB_TEST_PATH="<replace_with:_path_to_db_build>/test"
+DB_UTIL_PATH="<replace_with:_path_to_db_build>/build_unix"
+
+# Check for a DB install tree
+if test `ls "$with_berkeleydb"/lib/libdb-*.la 2>/dev/null | wc -l` -gt 0 ; then
+   	AC_MSG_CHECKING([for Berkeley DB version from install tree])
+	db_version=`ls "$with_berkeleydb"/lib/libdb-*.la | sed 's/.*db-\(.*\).la/\1/'`
+	AC_MSG_RESULT([$db_version])
+
+	DB_TCLLIB="<replace_with:_path_to_db_libs_with_tcl>/libdb_tcl-$db_version"
+  	berkeleydb_include="-I$with_berkeleydb/include"
+	berkeleydb_lib="$with_berkeleydb/lib"
+  	berkeleydb_library="db-$db_version"
+  	berkeleydb_jar="$with_berkeleydb/lib/db.jar"
+
+
+# Check for a built DB source tree
+elif test `ls "$with_berkeleydb"/build_unix/libdb-*.la 2>/dev/null | wc -l` -gt 0 ; then
+	AC_MSG_CHECKING([for Berkeley DB version from build tree])
+	db_version=`ls "$with_berkeleydb"/build_unix/libdb-*.la | sed 's/.*db-\(.*\).la/\1/'`
+	AC_MSG_RESULT([$db_version])
+
+  	berkeleydb_include="-I$with_berkeleydb/build_unix -I$with_berkeleydb -I$with_berkeleydb/dbinc"
+  	berkeleydb_lib="$with_berkeleydb/build_unix"
+  	berkeleydb_library="db-$db_version"
+  	berkeleydb_jar="$with_berkeleydb/build_unix/db.jar"
+
+	# test/tcl
+	DB_TCLLIB="$with_berkeleydb/build_unix/.libs/libdb_tcl-$db_version"
+	DB_TEST_PATH="$with_berkeleydb/test"
+	DB_UTIL_PATH="$with_berkeleydb/build_unix"
+
+# Alternate check for a built DB source tree
+elif test `ls "$with_berkeleydb"/build_unix/libdb-*.a 2>/dev/null | wc -l` -gt 0 ; then
+	AC_MSG_CHECKING([for Berkeley DB version from build tree])
+	db_version=`ls "$with_berkeleydb"/build_unix/libdb-*.a | sed 's/.*db-\(.*\).a/\1/'`
+	AC_MSG_RESULT([$db_version])
+
+ 	berkeleydb_include="-I$with_berkeleydb/build_unix -I$with_berkeleydb -I$with_berkeleydb/dbinc"
+  	berkeleydb_lib="$with_berkeleydb/build_unix"
+  	berkeleydb_library="db-$db_version"
+	berkeleydb_jar="$with_berkeleydb/build_unix/db.jar"
+
+	# test/tcl
+	DB_TCLLIB="$with_berkeleydb/build_unix/.libs/libdb_tcl-$db_version"
+	DB_TEST_PATH="$with_berkeleydb/test"
+	DB_UTIL_PATH="$with_berkeleydb/build_unix"
+
+# Check if path points to the build directory itself for DB
+elif test `ls "$with_berkeleydb"/libdb-*.la 2>/dev/null | wc -l` -gt 0 ; then
+	AC_MSG_CHECKING([for Berkeley DB version from build tree])
+	db_version=`ls "$with_berkeleydb"/libdb-*.la | sed 's/.*db-\(.*\).la/\1/'`
+	AC_MSG_RESULT([$db_version])
+
+  	berkeleydb_include="-I$with_berkeleydb -I$with_berkeleydb/.. -I$with_berkeleydb/../dbinc"
+  	berkeleydb_lib="$with_berkeleydb"
+  	berkeleydb_library="db-$db_version"
+	berkeleydb_jar="$with_berkeleydb/db.jar"
+
+	# test/tcl
+	DB_TCLLIB="$with_berkeleydb/.libs/libdb_tcl-$db_version"
+	DB_TEST_PATH="$with_berkeleydb/../test"
+	DB_UTIL_PATH="$with_berkeleydb"
+
+# Alternate check if path points to the build directory itself for DB
+elif test `ls "$with_berkeleydb"/libdb-*.a 2>/dev/null | wc -l` -gt 0 ; then
+	AC_MSG_CHECKING([for Berkeley DB version from build tree])
+	db_version=`ls "$with_berkeleydb"/libdb-*.a | sed 's/.*db-\(.*\).a/\1/'`
+	AC_MSG_RESULT([$db_version])
+
+  	berkeleydb_include="-I$with_berkeleydb -I$with_berkeleydb/.. -I$with_berkeleydb/../dbinc"
+  	berkeleydb_lib="$with_berkeleydb"
+	berkeleydb_library="db-$db_version"
+	berkeleydb_jar="$with_berkeleydb/db.jar"
+
+	DB_TCLLIB="$with_berkeleydb/.libs/libdb_tcl-$db_version"
+	DB_TEST_PATH="$with_berkeleydb/../test"
+	DB_UTIL_PATH="$with_berkeleydb"
+else
+	AC_MSG_ERROR([$with_berkeleydb not a valid Berkeley DB tree.  Note that Berkeley DB must be configured and built with '--enable-cxx'.])
+fi
+
+if test "$db_version" != "4.3" && test "$db_version" != "4.4" && test "$db_version" != "4.5" && test "$db_version" != "4.6" && test "$db_version" != "4.7" && test "$db_version" != "4.8"; then
+		AC_MSG_ERROR([$with_berkeleydb is version $db_version, which is not a supported version of Berkeley DB. The version must be at least 4.3])
+fi
+
+if test "$db_cv_test" = "yes"; then
+    if test "$with_dbbuild" != "no" && test -d $with_dbbuild/test; then
+        DB_TCLLIB="$with_dbbuild/build_unix/.libs/libdb_tcl-$db_version"
+        DB_TEST_PATH="$with_dbbuild/test"
+        DB_UTIL_PATH="$with_dbbuild/build_unix"
+    fi
+fi
+
+AC_SUBST(DB_TCLLIB)
+AC_SUBST(DB_TEST_PATH)
+AC_SUBST(DB_UTIL_PATH)
+
+DB_DIR=$with_berkeleydb
+AC_SUBST(DB_DIR)
+AC_SUBST(berkeleydb_include)
+AC_SUBST(berkeleydb_lib)
+AC_SUBST(berkeleydb_library)
+AC_SUBST(berkeleydb_jar)
+
+# Check for XQilla
+AC_MSG_CHECKING([if --with-xqilla=DIR option specified])
+AC_ARG_WITH(xqilla,
+	[AC_HELP_STRING([--with-xqilla=DIR],
+			[Path of XQilla. [DIR="@XQILLA_HOME@"]])],
+	[with_xqilla="$withval"], [with_xqilla="no"])
+AC_MSG_RESULT($with_xqilla)
+if test "$with_xqilla" = "no"; then
+	with_xqilla="@XQILLA_HOME@"
+fi
+with_xqilla=`cd $with_xqilla && pwd`
+# Try as an install directory (use a common header)
+if test `ls "$with_xqilla"/include/xqilla/xqilla-simple.hpp 2>/dev/null | wc -l` -gt 0 ; then
+  xqilla_lib="$with_xqilla/lib"
+  xqilla_include="-I$with_xqilla/include"
+# Try as a source directory, built in the top level directory, in this
+# case there should be a *.la file
+elif test `ls "$with_xqilla"/libxqilla*.la 2>/dev/null | wc -l` -gt 0 ; then
+  # If we have been given a build directory inside the XQilla top
+  # level directory, then we need the include directory that is
+  # a child of our parent directory
+  if test -d "$with_xqilla"/../include; then
+    xqilla_include="-I$with_xqilla/../include"
+  else
+    xqilla_include="-I$with_xqilla/include"
+  fi
+  xqilla_lib="$with_xqilla"
+else
+	AC_MSG_ERROR([XQilla is required to build DB XML.  $with_xqilla is not a valid XQilla tree (maybe it has not been compiled).  You should specify the path where XQilla is installed with --with-xqilla.])
+fi
+XQILLA_DIR=$with_xqilla
+AC_SUBST(XQILLA_DIR)
+AC_SUBST(xqilla_include)
+AC_SUBST(xqilla_lib)
+
+# Check for the Xerces-C library
+AC_MSG_CHECKING([if --with-xerces=DIR option specified])
+AC_ARG_WITH(xerces,
+        [AS_HELP_STRING(--with-xerces=DIR,Path of Xerces. [DIR="/usr/local"])],
+        [with_xerces="$withval"], [with_xerces="no"])
+AC_MSG_RESULT($with_xerces)
+if test "$with_xerces" = "no"; then
+        with_xerces="/usr/local"
+fi
+
+# Find the include directory
+if test `ls $with_xerces/src/xercesc/util/XercesVersion.hpp 2>/dev/null | wc -l` -gt 0 ; then
+   xerces_include_dir="$with_xerces/src"
+   xerces_include="-I$with_xerces/src"
+   xerces_source_tree="yes"
+
+elif test `ls $with_xerces/include/xercesc/util/XercesVersion.hpp 2>/dev/null | wc -l` -gt 0 ; then
+   xerces_include_dir="$with_xerces/include"
+   xerces_include="-I$with_xerces/include"
+   xerces_source_tree="no"
+
+elif test `ls $with_xerces/../src/xercesc/util/XercesVersion.hpp 2>/dev/null | wc -l` -gt 0 ; then
+   xerces_include_dir="$with_xerces/../src"
+   xerces_include="-I$with_xerces/../src -I$with_xerces/src"
+   xerces_source_tree="yes"
+
+else
+   AC_MSG_ERROR([Unable to find the Xerces-C include directory.])
+fi
+
+# Work out the Xerces-C version
+AC_MSG_CHECKING([for Xerces-C version])
+xerces_version_major=`grep "^\#define XERCES_VERSION_MAJOR" "$xerces_include_dir"/xercesc/util/XercesVersion.hpp | sed -e 's/^\#define XERCES_VERSION_MAJOR \([0-9]*\)/\1/'`
+xerces_version_minor=`grep "^\#define XERCES_VERSION_MINOR" "$xerces_include_dir"/xercesc/util/XercesVersion.hpp | sed -e 's/^\#define XERCES_VERSION_MINOR \([0-9]*\)/\1/'`
+xerces_version=$xerces_version_major"."$xerces_version_minor
+AC_MSG_RESULT([$xerces_version])
+
+# Find the library
+if test `ls $with_xerces/lib/libxerces-c.* 2>/dev/null | wc -l` -gt 0 ; then
+   xerces_lib="$with_xerces/lib"
+elif test `ls $with_xerces/src/libxerces-c.* 2>/dev/null | wc -l` -gt 0 ; then
+   xerces_lib="$with_xerces/src"
+else
+   if test "$xerces_source_tree" = "yes" -a "$xerces_version_major" -ge "3"; then
+      xerces_lib="$with_xerces/src"
+   else
+      xerces_lib="$with_xerces/lib"
+   fi
+
+   AC_MSG_WARN([Unable to find the Xerces-C library. Guessed path is $xerces_lib.])
+fi
+
+XERCES_DIR=$with_xerces
+AC_SUBST(XERCES_DIR)
+AC_SUBST(xerces_include)
+AC_SUBST(xerces_include_dir)
+AC_SUBST(xerces_lib)
+
+# Check if we want to compile the Java API
+AC_MSG_CHECKING(if --enable-java option specified)
+AC_ARG_ENABLE(java,
+	[AC_HELP_STRING([--enable-java],
+			[Build Java API.])],
+	[db_cv_java="$enable_java"], [db_cv_java="no"])
+AC_MSG_RESULT($db_cv_java)
+
+# JUnit location
+AC_MSG_CHECKING([if --with-junit=JUNIT_JAR option specified])
+AC_ARG_WITH(junit,
+	[AC_HELP_STRING([--with-junit=JUNIT_JAR],
+			[Path to JUnit jar.])],
+	[with_junit="$withval"], [with_junit="no"])
+AC_MSG_RESULT($with_junit)
+if test "$with_junit" != "no"; then
+	JUNIT_JAR=$with_junit
+fi
+AC_SUBST(JUNIT_JAR)
+
+# Check if we want to compile the Tcl API
+AC_MSG_CHECKING(if --enable-tcl option specified)
+AC_ARG_ENABLE(tcl,
+	[AC_HELP_STRING([--enable-tcl],
+			[Build Tcl API.])],
+	[db_cv_tcl="$enable_tcl"], [db_cv_tcl="no"])
+AC_MSG_RESULT($db_cv_tcl)
+
+AC_MSG_CHECKING([if --with-tcl=DIR option specified])
+AC_ARG_WITH(tcl,
+	[AC_HELP_STRING([--with-tcl=DIR],
+			[Directory location of tclConfig.sh.])],
+	[with_tclconfig="$withval"], [with_tclconfig="no"])
+AC_MSG_RESULT($with_tclconfig)
+if test "$with_tclconfig" != "no"; then
+	db_cv_tcl="yes"
+fi
+
+# Test requires Tcl
+if test "$db_cv_test" = "yes"; then
+   	tmp_has_lang="no"
+	if test "$db_cv_tcl" != "no"; then
+	    tmp_has_lang="yes"
+	fi	
+	if test "$db_cv_java" != "no"; then
+	    tmp_has_lang="yes"
+	    if test "$with_junit" = "no"; then
+		AC_MSG_ERROR([--enable-test plus --enable-java requires --with-junit])
+	    fi
+	fi
+	if  test "$tmp_has_lang" = "no"; then
+	    AC_MSG_ERROR([--enable-test requires either --enable-tcl or --enable-java])
+	fi
+fi
+
+# Check default compression option
+AC_MSG_CHECKING(if --enable-compression option specified)
+AC_ARG_ENABLE(compression,
+	[AC_HELP_STRING([--disable-compression],
+			[Disabling default compression.])],
+	[db_cv_compression="$enable_compression"], [db_cv_compression="yes"])
+AC_MSG_RESULT($db_cv_compression)
+
+# Check if the ZLIB library is present
+if test "$db_cv_compression" != "no"; then
+  AC_MSG_CHECKING([if --with-zlib=DIR option specified])
+  AC_ARG_WITH(zlib,
+        [AS_HELP_STRING(--with-zlib=DIR,Path of ZLIB. [DIR="/usr"])],
+        [with_zlib="$withval"], [with_zlib="/usr"])
+  AC_MSG_RESULT($with_zlib)
+  if test "$with_zlib" != "no"; then
+     AC_MSG_CHECKING([if the ZLIB library is present])
+     if test `ls $with_zlib/lib/libz.a 2>/dev/null | wc -l` -gt 0 ; then
+        AC_MSG_RESULT([yes])
+        zlib_lib="-L$with_zlib/lib -R$with_zlib/lib"
+        zlib_library="-lz"
+        zlib_include="-I$with_zlib/include"
+        with_zlib="$with_zlib/lib"
+     elif test `ls $with_zlib/libz.a 2>/dev/null | wc -l` -gt 0 ; then
+        if test `ls $with_zlib/include/zlib.h 2>/dev/null | wc -l` -gt 0 ; then
+                AC_MSG_RESULT([yes])
+                zlib_lib="-L$with_zlib -R$with_zlib"
+                zlib_library="-lz"
+                zlib_include="-I$with_zlib/include"
+        elif test `ls $with_zlib/../include/zlib.h 2>/dev/null | wc -l` -gt 0 ; then
+                AC_MSG_RESULT([yes])
+                zlib_lib="-L$with_zlib -R$with_zlib"
+                zlib_library="-lz"
+                zlib_include="-I$with_zlib/../include"
+        fi
+     else
+        AC_MSG_RESULT([no])
+	AC_MSG_NOTICE([ZLIB not found, disabling default data compression.])
+        zlib_lib=""
+        zlib_library=""
+        zlib_include=""
+	with_zlib="no"
+     fi
+  fi
+  db_cv_compression="$with_zlib"
+
+fi
+  
+
+#link zlib statically
+if test "$db_cv_compression" != "no"; then
+  AC_MSG_CHECKING(if --enable-static-zlib option specified)
+  AC_ARG_ENABLE(static_zlib,
+	[AC_HELP_STRING([--enable-static-zlib],
+			[Statically link ZLIB library.])],
+	[db_cv_zlib_static="yes"], 
+	[db_cv_zlib_static="no"])
+  AC_MSG_RESULT($db_cv_zlib_static)
+  if test "$db_cv_zlib_static" != "no"; then
+    zlib_library="$with_zlib/libz.a"
+  fi
+  #Cannot statically link a release library with a debug library
+  if test "$db_cv_debug" != "no"; then
+    zlib_library="-lz"
+  fi
+fi
+
+AC_SUBST(zlib_include)
+AC_SUBST(zlib_lib)
+AC_SUBST(zlib_library)
+
+# Check if rpath is disabled
+AC_MSG_CHECKING(if --enable-rpath option specified)
+AC_ARG_ENABLE(rpath,
+	[AC_HELP_STRING([--disable-rpath],
+			[Patches libtool to not use rpath in the libraries produced.])],
+	[db_cv_rpath="$enable_rpath"], [db_cv_rpath="yes"])
+AC_MSG_RESULT($db_cv_rpath)
+
+AM_CONDITIONAL([BUILD_TCL], [test "$with_tclconfig" != "no"])
+AM_CONDITIONAL([BUILD_JAVA], [test "$db_cv_java" != "no"])
+AM_CONDITIONAL([BUILD_TEST], [test "$db_cv_test" = "yes"])
+AM_CONDITIONAL([USE_COMPRESSION], [test "$db_cv_compression" != "no"])
+
+])

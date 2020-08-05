@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Toge</product>
+	<inventory>
+		<sku>TogevegeQsCXn3</sku>
+		<price>0.21</price>
+		<inventory>75</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

@@ -1,0 +1,259 @@
+=head1 NAME
+
+XmlValue - A Perl interface to the DbXml XmlValue Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $v = new XmlValue()
+    my $v = new XmlValue(VALUE);
+    my $v = new XmlValue(TYPE, VALUE);
+    my $v = new XmlValue(typeURI, typeName, stringValue);
+
+    my $type = $v->getType();
+    my $type = $v->getTypeName();
+    my $uri  = $v->getTypeURI();
+
+    my $boolean  = $v->isNull;
+    my $boolean  = $v->isType(TYPE);
+    my $boolean  = $v->isBoolean();
+    my $boolean  = $v->isNumber();
+    my $boolean  = $v->isString();
+    my $boolean  = $v->isNode();
+    my $boolean  = $v->isBinary();
+
+    my $boolean  = $v->asBoolean();
+    my $number   = $v->asNumber();
+    my $string   = $v->asString();
+    my $document = $v->asDocument();
+    my $document = $v->asBinary();
+
+    my $reader   = $v->asEventReader();
+    $v->equals($v2);
+
+    # Node traversal
+    my $string   = $v->getNodeName() ;
+    my $string   = $v->getNodeValue() ;
+    my $string   = $v->getNamespaceURI() ;
+    my $string   = $v->getPrefix() ;
+    my $string   = $v->getLocalName() ;
+    my $type     = $v->getNodeType() ;
+    my $xmlvalue = $v->getParentNode() ;
+    my $xmlvalue = $v->getFirstChild() ;
+    my $xmlvalue = $v->getLastChild() ;
+    my $xmlvalue = $v->getPreviousSibling() ;
+    my $xmlvalue = $v->getNextSibling() ;
+    my $xmlvalue = $v->getAttributes() ;
+    my $xmlvalue = $v->getOwnerElement();
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlValue is identical to the C++ API, apart from
+the following
+
+=over 5
+
+=item 1.
+
+No Perl interface is provided to the asNode method.
+
+=item 2
+
+Addition of getTypeName method.
+
+
+=item 3.
+
+The Node traversal methods are implemented but untested at present.
+
+=back
+
+
+=head1 Constructor
+
+The constructor for XmlValue can take one of the following four forms:
+
+    my $value = new XmlValue() ;
+    my $value = new XmlValue(VALUE);
+    my $value = new XmlValue(TYPE, VALUE);
+    my $v = new XmlValue(typeURI, typeName, stringValue);
+
+The first form, with no parameters, will create an empty XmlValue.
+
+The second, with one parameter, creates and initialises an XmlValue
+of type XmlValue::STRING. Value can be an XMlDocument object, another
+XmlValue object or a simple Perl scalar.
+
+The third form creates and initialises an XmlValue of the specified type.
+
+The TYPE parameter can be one of the following
+
+    XmlValue::NONE 
+    XmlValue::NODE 
+    XmlValue::ANY_SIMPLE_TYPE 
+    XmlValue::ANY_URI 
+    XmlValue::BASE_64_BINARY 
+    XmlValue::BOOLEAN 
+    XmlValue::DATE 
+    XmlValue::DATE_TIME 
+    XmlValue::DAY_TIME_DURATION 
+    XmlValue::DECIMAL 
+    XmlValue::DOUBLE 
+    XmlValue::DURATION 
+    XmlValue::FLOAT 
+    XmlValue::G_DAY 
+    XmlValue::G_MONTH 
+    XmlValue::G_MONTH_DAY 
+    XmlValue::G_YEAR 
+    XmlValue::G_YEAR_MONTH 
+    XmlValue::HEX_BINARY 
+    XmlValue::NOTATION 
+    XmlValue::QNAME 
+    XmlValue::STRING 
+    XmlValue::TIME 
+    XmlValue::YEAR_MONTH_DURATION 
+    XmlValue::UNTYPED_ATOMIC 
+    XmlValue::BINARY 
+
+
+The VALUE parameter is the value you want stored in the XmlValue object.
+
+XmlValue objects are overloaded to allow convenient access to their
+contents. Stringification of an XmlValue object or comparison of one
+(or more) XmValue objects will automagically result in the asString
+method being called.
+
+=head1 Methods
+
+=head2 my $type = $v->getType()
+
+Returns the numeric representation of the type of the XmlValue. The
+value returned will match one of the the TYPE constants defined in the
+constructor section, above.
+
+=head2 my $type = $v->getTypeName()
+
+Returns a string representation of the type of the XmlValue. The
+string returned will match one of the the TYPE constants defined in the
+constructor section, above.
+
+=head2 my $uri = $v->getType()
+
+return the URI for the type.
+
+=head2 my $boolean = $v->isNull
+
+Returns true if $v is null, otherwize returns false.
+
+=head2 my $boolean  = $v->isBoolean()
+
+Returns true if $v has type XmlValue::BOOLEAN, otherwise returns false.
+
+The $context parameter is optional, but if present must be a valid
+XmlQueryContext object.
+
+=head2 my $boolean  = $v->isNumber();
+
+Returns true if $v has type XmlValue::NUMBER, otherwise returns false.
+
+
+=head2 my $boolean  = $v->isString();
+
+Returns true if $v has type XmlValue::STRING, otherwise returns false.
+
+=head2 my $boolean  = $v->isNode();
+
+Returns true if $v has type XmlValue::NODE, otherwise returns false.
+
+=head2 my $boolean  = $v->asBoolean();
+
+Returns the value of the XmlValue as a Boolean. 
+
+=head2 my $number   = $v->asNumber();
+
+Returns the value of the XmlValue as a Number.
+
+=head2 my $string   = $v->asString();
+
+Returns the value of the XmlValue as a String.
+
+=head2 my $document = $v->asDocument();
+
+Returns the value of the XmlValue as a Document.
+
+=head2 $v->equals($v2);
+
+Returns true if $v and $v2 represrnt the same value.
+
+=head2    my $string   = $v->getNodeName() ;
+
+=head2    my $string   = $v->getNodeValue() ;
+
+=head2    my $string   = $v->getNamespaceURI() ;
+
+=head2    my $string   = $v->getPrefix() ;
+
+=head2    my $string   = $v->getLocalName() ;
+
+=head2    my $type     = $v->getNodeType() ;
+
+=head2    my $xmlvalue = $v->getParentNode() ;
+
+=head2    my $xmlvalue = $v->getFirstChild() ;
+
+=head2    my $xmlvalue = $v->getLastChild() ;
+
+=head2    my $xmlvalue = $v->getPreviousSibling() ;
+
+=head2    my $xmlvalue = $v->getNextSibling() ;
+
+=head2    my $xmlvalue = $v->getAttributes() ;
+
+=head2    my $xmlvalue = $v->getOwnerElement();
+
+=head1 EXAMPLES
+
+    use strict;
+    use warnings;
+
+    use DbXml;
+
+    my $mgr = new XMlManager();
+
+    # Create an empty object
+    my $value1 = new XmlValue ;
+
+    # Create and initialise a string
+    my $value2 = new XmlValue("alpha");
+
+    # Create and initialise another string
+    my $value3 = new XmlValue(XmlValue::STRING, "beta");
+
+    # Create and initialise a number
+    my $value4 = new XmlValue(XmlValue::DECIMAL, 42);
+
+    print "value2 contains " . $value2->asString() . "\n" ;
+
+    # Same as above using overloaded stringification XmlValue
+    print "value2 contains $value2"\n" ;
+
+    print "value4 is a DECIMAL\n"
+        if $value4->getType == XmlValue::DECIMAL ;
+    
+
+=head1 NOTES
+
+
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

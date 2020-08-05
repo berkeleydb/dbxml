@@ -1,0 +1,18 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="order">
+      <QueryPlanToAST>
+        <LevelFilterQP>
+          <StepQP axis="parent-of-attribute" name="order" nodeType="element">
+            <ValueQP index="edge-attribute-equality-string" operation="eq" parent="order" child="id" value="1"/>
+          </StepQP>
+        </LevelFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="customer_id" nodeType="element">
+        <VariableQP name=":order"/>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

@@ -1,0 +1,3 @@
+<root>
+	<a att1="abc" xml:base="http://base.uri">text<!-- comment --><?Pro In?></a>
+</root>

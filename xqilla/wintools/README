@@ -1,0 +1,55 @@
+This directory and the tools here are used to generate Windows
+project files for the main XQilla library and related projects.
+
+Both VC6 and Visual Studio 7.1 files are generated.  The
+latter can be opened using Visual Studio 2005 (8) and
+later releases as well.
+
+The process:
+
+1.  Source (including header) files are added to 2 file:
+    (1)srcfiles.in and (2)xqilla.template.xml  See those files for format.
+    Be sure to update that file when files are added or removed
+    from the project.  At some point, it will probably be possible
+    to generate srcfiles.in from xqilla.template.xml, but for now,
+    both need to be updated manually.
+
+2.  Run the script, s_win32, which calls the 2 scripts, s_win32_dsp
+    and s_projects to generate project files.  These files
+    land in ../Win32Projects/{VC6,VC7.1}.  s_projects requires that
+    the xqilla command line utility be in your PATH, because it
+    uses XQuery and the input XML document (xqilla.template.xml)
+    to generate the project files.
+
+The scripts must be run on a Unix-style machine, most likely,
+as they use bash and commands that are typically available
+on Unix.  They *may* run under cygwin.
+
+DO NOT EVER manually edit the output project files (*.dsp,
+*.vcproj).  If changes are required, edit the templates
+and scripts and generate the changed projects.
+
+Maintaining 2 mechanisms and 2 file lists is a bit of a hassle,
+but at some point, support for VC6 will likely be dropped,
+and/or the Todo items below may be done.
+
+Details:
+
+The VC6 scripts use template project files (ending in ".src")
+and do a lot of field substitution from configuration found
+in these files:
+   lib_paths.sed
+   s_win32_*
+
+The s_projects script uses lib_paths.sed to substitute
+variables in xqilla.template.xml, substitutes the project
+name in the XQuery script, genproject.template, then calls the 
+xqilla command passing the resulting script, which uses the 
+XML document input to generate a specific project file.
+
+Todo:
+
+1.  Generate srcfiles.in from xqilla.template.xml to remove multiple
+manual steps.
+2.  Maybe generate Makefile.am from xqilla.template.xml as well (or
+vice versa).

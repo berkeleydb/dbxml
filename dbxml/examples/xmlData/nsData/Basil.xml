@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Basil</product>
+	<inventory>
+		<sku>BasivegeGgPKGz</sku>
+		<price>0.54</price>
+		<inventory>604</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

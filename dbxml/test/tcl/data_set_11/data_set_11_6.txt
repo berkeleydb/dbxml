@@ -1,0 +1,21 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# QP tests
+# Boolean functions
+
+TEST 11.6
+TITLE Boolean functions
+
+INDEX "" "bar" "node-element-equality-string"
+INDEX "" "foo" "node-element-presence"
+
+11.6.1
+//foo[not(bar='baz')]
+Root(RS,RA(RS,n(RS,RI(RS,node-element-presence-none,=,foo),\(RS,SS(RS,),RI(RS,node-element-equality-string,=,bar,baz)))))
+
+11.6.2
+/foo[not(bar='baz')]
+Root(RA(RI(node-element-presence-none,=,foo)))

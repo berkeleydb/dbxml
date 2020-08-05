@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="10.X">
+  <!-- not much information in this index file - the file exists only to allow the unit test framework to be used for this task -->
+  <category>queryPlan</category>
+  <description>Conversion of the container indexing regression tests (6.2, 10.2, 12.3)</description>
+  <program name='dbxml_test_driver'/>
+
+  <!-- stuff that applies to the entire test -->
+
+  <!-- individual tests -->
+</test>
+

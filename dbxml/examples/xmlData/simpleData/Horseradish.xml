@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Horseradish</item>
+	<inventory>
+		<sku>HorsvegeNgoCrS</sku>
+		<price>0.29</price>
+		<inventory>494</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

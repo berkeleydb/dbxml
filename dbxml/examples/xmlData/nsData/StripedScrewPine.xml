@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Striped Screw Pine</product>
+	<inventory>
+		<sku>StrifruiDsDSpe</sku>
+		<price>0.27</price>
+		<inventory>995</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</fruits:item>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Talong</item>
+	<inventory>
+		<sku>TalovegeztTCbL</sku>
+		<price>0.73</price>
+		<inventory>673</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

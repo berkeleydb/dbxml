@@ -1,0 +1,34 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="ord">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp1">
+          <StepQP axis="child" name="order" nodeType="element">
+            <ValueQP index="node-element-equality-double" operation="gt" child="discount_rate" value="0.02"/>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp2">
+            <StepQP axis="child" name="order_lines" nodeType="element">
+              <VariableQP name="#tmp1"/>
+            </StepQP>
+            <NodePredicateFilterQP uri="" name="#tmp3">
+              <StepQP axis="child" name="order_line" nodeType="element">
+                <VariableQP name="#tmp2"/>
+              </StepQP>
+              <ValueFilterQP comparison="gt" general="true">
+                <StepQP axis="child" name="discount_rate" nodeType="element">
+                  <VariableQP name="#tmp3"/>
+                </StepQP>
+                <Sequence>
+                  <NumericTypeConstructor value="2.0E-2" typeuri="http://www.w3.org/2001/XMLSchema" typename="decimal"/>
+                </Sequence>
+              </ValueFilterQP>
+            </NodePredicateFilterQP>
+          </NodePredicateFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":ord"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Okra</product>
+	<inventory>
+		<sku>OkravegeqLe5gq</sku>
+		<price>0.22</price>
+		<inventory>629</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

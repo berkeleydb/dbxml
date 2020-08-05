@@ -1,0 +1,471 @@
+<order id="1"><customer_id>66</customer_id>
+<order_date>2004-08-26</order_date>
+<subtotal>5219.40</subtotal>
+<tax>430.60</tax>
+<total>5909.00</total>
+<ship_type>COURIER</ship_type>
+<ship_date>2004-08-31</ship_date>
+<bill_address_id>5101</bill_address_id>
+<ship_address_id>5538</ship_address_id>
+<order_status>PROCESSING</order_status>
+<credit_card_transaction><credit_card_type>MASTERCARD</credit_card_type>
+<credit_card_number>3474211809537465</credit_card_number>
+<name_on_credit_card>evenly bold theodolit</name_on_credit_card>
+<expiration_date>2006-03-04</expiration_date>
+<authorization_id>h.rAd~R!80jq7cG</authorization_id>
+<transaction_amount>5909.00</transaction_amount>
+<authorization_date>2004-08-31</authorization_date>
+<transaction_country_id>38</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>407</item_id>
+<quantity_of_item>205</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>}h83J;-D#C{RQ+0U sEzSZrt[6^32S:r-Ngr$K?8L</special_instructions>
+</order_line>
+<order_line id="2"><item_id>15</item_id>
+<quantity_of_item>51</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>x#}Y0H 1_r^o@n_789py5:e-4n7GBA-)2x$4wSaVM#hIYnU(miH4aw^2lj~MWAJ</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="3"><customer_id>211</customer_id>
+<order_date>2004-09-23</order_date>
+<subtotal>2683.60</subtotal>
+<tax>221.40</tax>
+<total>3698.00</total>
+<ship_type>COURIER</ship_type>
+<ship_date>2004-09-24</ship_date>
+<bill_address_id>5562</bill_address_id>
+<ship_address_id>5388</ship_address_id>
+<order_status>PENDING</order_status>
+<credit_card_transaction><credit_card_type>MASTERCARD</credit_card_type>
+<credit_card_number>7364761685848527</credit_card_number>
+<name_on_credit_card>sly depths near the final c</name_on_credit_card>
+<expiration_date>2005-03-25</expiration_date>
+<authorization_id>usf.[k0MOJMprB8</authorization_id>
+<transaction_amount>3698.00</transaction_amount>
+<authorization_date>2004-09-24</authorization_date>
+<transaction_country_id>3</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>389</item_id>
+<quantity_of_item>178</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>^}vI~W.bs0b#8ap=z:Z729(D OIXAd2Oz0^bvkhD[w5T}</special_instructions>
+</order_line>
+<order_line id="2"><item_id>830</item_id>
+<quantity_of_item>44</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>@rDPN;9z1V2laL9DocJfvAP}$jeFZ}OzzU^:T#N0QdM[g$dw[9zVho1G/m[wj08*y1(7pBne^){9^</special_instructions>
+</order_line>
+<order_line id="3"><item_id>592</item_id>
+<quantity_of_item>297</quantity_of_item>
+<discount_rate>0.00</discount_rate>
+<special_instructions>nhDp:akO#V}8wqf1QNUuM!PJtKH~(0cYqxKb8Z(MpMTp,=M[Je${S4MpEv#</special_instructions>
+</order_line>
+<order_line id="4"><item_id>614</item_id>
+<quantity_of_item>169</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>AFtj:cC/;.N$ +YyU|(MXR!t68go,7R3M1W${DN=#Je-:/{NDAJ.javXHu;QfPJH+P6+z7=U2#K(,$7GxKi-wDqv,CP|</special_instructions>
+</order_line>
+<order_line id="5"><item_id>646</item_id>
+<quantity_of_item>102</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>bs_-#GnpAEhy!B9b+96l?33X(hkzqy=c^;O]</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="4"><customer_id>2410</customer_id>
+<order_date>2004-08-04</order_date>
+<subtotal>188.70</subtotal>
+<tax>15.57</tax>
+<total>1075.27</total>
+<ship_type>FEDEX</ship_type>
+<ship_date>2004-08-04</ship_date>
+<bill_address_id>3810</bill_address_id>
+<ship_address_id>9</ship_address_id>
+<order_status>DENIED</order_status>
+<credit_card_transaction><credit_card_type>AMEX</credit_card_type>
+<credit_card_number>8435759613280093</credit_card_number>
+<name_on_credit_card>bravely dogged depths over th</name_on_credit_card>
+<expiration_date>2004-11-18</expiration_date>
+<authorization_id>.E_mjpYe@p/Y@=A</authorization_id>
+<transaction_amount>1075.27</transaction_amount>
+<authorization_date>2004-08-04</authorization_date>
+<transaction_country_id>76</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>601</item_id>
+<quantity_of_item>35</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>3GM^w[OOaTKYbj(W7qp=KT|[I3w@QODYl6F@5tU#@/lx9wF#@^iIlxBW7_V#e1*fx $|vA~44p=I~N(</special_instructions>
+</order_line>
+<order_line id="2"><item_id>580</item_id>
+<quantity_of_item>227</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>{XFVh{6V,uaChrRHy;Oqi^1dJ4(GGJRs|wl3o5Af3SZ}yw3Ybq3;a2:6q0QSh0I}t</special_instructions>
+</order_line>
+<order_line id="3"><item_id>899</item_id>
+<quantity_of_item>265</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>=jZ(OKD(QlByC0aEh4Yo^p8kgEKjz?3)lL0^]U0^)XR/H gsIe.|pXARZ9)I4Vq</special_instructions>
+</order_line>
+<order_line id="4"><item_id>5</item_id>
+<quantity_of_item>141</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>ett;KNW~tJ9^ydvM$tGZMV,XAUw/gVXXLnY6QQljKa=iH4]jq;,XY}sr</special_instructions>
+</order_line>
+<order_line id="5"><item_id>223</item_id>
+<quantity_of_item>200</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>4N as+,flxfUm^-2u@Lv}@RDr;~_-ua9Fy</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="6"><customer_id>1625</customer_id>
+<order_date>2004-08-14</order_date>
+<subtotal>6006.30</subtotal>
+<tax>495.52</tax>
+<total>7205.82</total>
+<ship_type>AIR</ship_type>
+<ship_date>2004-08-16</ship_date>
+<bill_address_id>4245</bill_address_id>
+<ship_address_id>392</ship_address_id>
+<order_status>SHIPPED</order_status>
+<credit_card_transaction><credit_card_type>MASTERCARD</credit_card_type>
+<credit_card_number>8850483651305764</credit_card_number>
+<name_on_credit_card>brave, ironic pinto need </name_on_credit_card>
+<expiration_date>2005-05-05</expiration_date>
+<authorization_id>0iCYV-F~?)dZyBa</authorization_id>
+<transaction_amount>7205.82</transaction_amount>
+<authorization_date>2004-08-16</authorization_date>
+<transaction_country_id>70</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>861</item_id>
+<quantity_of_item>92</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>AiI-^Txg9z5RB*-r[aPq]!ON2YZcg6|XMdREg5D.F2,l2~D_t7~Kun+J.|Bqw:-FCQ~XQCL]</special_instructions>
+</order_line>
+<order_line id="2"><item_id>96</item_id>
+<quantity_of_item>73</quantity_of_item>
+<discount_rate>0.00</discount_rate>
+<special_instructions>j*1vcbL|}WY[i3rf]ZXKLhx^;zWO)D~3c4;@1W</special_instructions>
+</order_line>
+<order_line id="3"><item_id>91</item_id>
+<quantity_of_item>79</quantity_of_item>
+<discount_rate>0.00</discount_rate>
+<special_instructions>{/336s@;LPyYA.~}dV/.0_9br,Swt/RzcCSEsd/gZ +ZzSsk(^ozC3e}_4{FZX!b+[?zC6E(S</special_instructions>
+</order_line>
+<order_line id="4"><item_id>564</item_id>
+<quantity_of_item>223</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>-fNWa;*FxkgU.FAde)P]31,hvb_*W+i*VRNmLn~</special_instructions>
+</order_line>
+<order_line id="5"><item_id>461</item_id>
+<quantity_of_item>234</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>9$wI}5cC(HEAjbL(waH4GvCxkG5TNIf~O|UDOJjxh</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="8"><customer_id>2132</customer_id>
+<order_date>2004-08-20</order_date>
+<subtotal>1394.10</subtotal>
+<tax>115.01</tax>
+<total>2237.11</total>
+<ship_type>FEDEX</ship_type>
+<ship_date>2004-08-22</ship_date>
+<bill_address_id>4937</bill_address_id>
+<ship_address_id>4131</ship_address_id>
+<order_status>SHIPPED</order_status>
+<credit_card_transaction><credit_card_type>AMEX</credit_card_type>
+<credit_card_number>5767782450264531</credit_card_number>
+<name_on_credit_card>slowly sly deco</name_on_credit_card>
+<expiration_date>2004-11-21</expiration_date>
+<authorization_id>!Km^}|K?jn[!WH8</authorization_id>
+<transaction_amount>2237.11</transaction_amount>
+<authorization_date>2004-08-22</authorization_date>
+<transaction_country_id>80</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>745</item_id>
+<quantity_of_item>126</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>e],SL5po4AI*y1YGJx5dicrzNTJzCIZ|Cz82oitxLangRB1V3t5$S),~qZ|qM^sY;Aq22*|kr/TM#N)zzoj(,Ef;6xu2Ov${cK</special_instructions>
+</order_line>
+<order_line id="2"><item_id>945</item_id>
+<quantity_of_item>109</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>NvuybnCL~NK#WGTiTeO8Y!nP?BsC9</special_instructions>
+</order_line>
+<order_line id="3"><item_id>983</item_id>
+<quantity_of_item>172</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>TohT_ cP,S2bv_k$G5Nz7;JiORmzAF3BZZ{5gODy~2APlbJ6c01xu8}uCyuCB}sxFfVf?o]c[#A:e:(Ct</special_instructions>
+</order_line>
+<order_line id="4"><item_id>478</item_id>
+<quantity_of_item>111</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>7pqlDUT8]k?g-]e)($LQMbt_b/3M#LM/}2E)1O1hcC|gvrT9</special_instructions>
+</order_line>
+<order_line id="5"><item_id>51</item_id>
+<quantity_of_item>207</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>?_t2as$ue2^$e+c?O);1qc~</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="10"><customer_id>2695</customer_id>
+<order_date>2004-09-25</order_date>
+<subtotal>22.90</subtotal>
+<tax>1.89</tax>
+<total>342.79</total>
+<ship_type>UPS</ship_type>
+<ship_date>2004-10-02</ship_date>
+<bill_address_id>3533</bill_address_id>
+<ship_address_id>730</ship_address_id>
+<order_status>PROCESSING</order_status>
+<credit_card_transaction><credit_card_type>MASTERCARD</credit_card_type>
+<credit_card_number>0608361144547856</credit_card_number>
+<name_on_credit_card>silent, idle patterns su</name_on_credit_card>
+<expiration_date>2006-08-21</expiration_date>
+<authorization_id>c!IL0FZvb4cnG3m</authorization_id>
+<transaction_amount>342.79</transaction_amount>
+<authorization_date>2004-10-02</authorization_date>
+<transaction_country_id>35</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>327</item_id>
+<quantity_of_item>113</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>[z}H[Z^vxlDa!41GysRX2v4F8~oW$mz5</special_instructions>
+</order_line>
+<order_line id="2"><item_id>62</item_id>
+<quantity_of_item>93</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>1^3:Fb.$E!=MQgLOIN)IAd@K~:+cC$vY;uK=y )vzcN4ic(ImOrO-c WE8w$xo[ tE8:sKAzni-@=DLzi)NRbeY}w/5n*</special_instructions>
+</order_line>
+<order_line id="3"><item_id>401</item_id>
+<quantity_of_item>85</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>sn,_[.UPtYW[Aar)ZU)Xe} Z?</special_instructions>
+</order_line>
+<order_line id="4"><item_id>565</item_id>
+<quantity_of_item>24</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>753kPxlVf.e5MOUlS_4D]8C[K}_/!P00#S;S)yHc]Liy{Bo,82q-m85gZ@qf#L</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="11"><customer_id>1928</customer_id>
+<order_date>2004-08-28</order_date>
+<subtotal>6444.90</subtotal>
+<tax>531.70</tax>
+<total>7573.60</total>
+<ship_type>SHIP</ship_type>
+<ship_date>2004-09-03</ship_date>
+<bill_address_id>1658</bill_address_id>
+<ship_address_id>1018</ship_address_id>
+<order_status>SHIPPED</order_status>
+<credit_card_transaction><credit_card_type>AMEX</credit_card_type>
+<credit_card_number>2890277380378067</credit_card_number>
+<name_on_credit_card>quick, stealthy excu</name_on_credit_card>
+<expiration_date>2006-01-23</expiration_date>
+<authorization_id>NF4Vy6i+i@7KsNM</authorization_id>
+<transaction_amount>7573.60</transaction_amount>
+<authorization_date>2004-09-03</authorization_date>
+<transaction_country_id>20</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>927</item_id>
+<quantity_of_item>199</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>r#isOd^A:]mbpO;/{/[UNA,q4qrjd,Dvve#kB8d]/gwYNSV</special_instructions>
+</order_line>
+<order_line id="2"><item_id>938</item_id>
+<quantity_of_item>289</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>LyNf|@Vs#yXO1]W+JcZLjMnY.#_RHA#)$^2CBSTJUt}</special_instructions>
+</order_line>
+<order_line id="3"><item_id>835</item_id>
+<quantity_of_item>94</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>p6=P/;); W}yu5fk:fEk]z1Ie:K}j0KI$_TQ3f]rdz ~DnafZr:U,f5=Vh!</special_instructions>
+</order_line>
+<order_line id="4"><item_id>99</item_id>
+<quantity_of_item>12</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>qRxEm6UnYmVxGbBG=p51d0YA)fkToB-v+vU84b|)}jBGS*c_di</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="12"><customer_id>142</customer_id>
+<order_date>2004-09-16</order_date>
+<subtotal>7225.60</subtotal>
+<tax>596.11</tax>
+<total>8233.71</total>
+<ship_type>FEDEX</ship_type>
+<ship_date>2004-09-20</ship_date>
+<bill_address_id>3552</bill_address_id>
+<ship_address_id>456</ship_address_id>
+<order_status>DENIED</order_status>
+<credit_card_transaction><credit_card_type>AMEX</credit_card_type>
+<credit_card_number>5669640954987266</credit_card_number>
+<name_on_credit_card>ironic platelets behind </name_on_credit_card>
+<expiration_date>2006-02-16</expiration_date>
+<authorization_id>/$nLOv2lI/15p:l</authorization_id>
+<transaction_amount>8233.71</transaction_amount>
+<authorization_date>2004-09-20</authorization_date>
+<transaction_country_id>69</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>128</item_id>
+<quantity_of_item>211</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>SdZC(|A;EpmjG[[t~A8{q[Mtt]n=5lFUZf2o|_mw ]R[Nn@</special_instructions>
+</order_line>
+<order_line id="2"><item_id>299</item_id>
+<quantity_of_item>98</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>2JL6r5r,9vL V3n!XfM(Aozbt/8qpRE@|KPo*@XHgE_1</special_instructions>
+</order_line>
+<order_line id="3"><item_id>428</item_id>
+<quantity_of_item>79</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>Lq|CAB]8G=I_r1Iq;aT)T]oyKRA*[12n3rxaFOZ3+QfSZ)tc:U(L#=ox^1cgy}I]u/P},W</special_instructions>
+</order_line>
+<order_line id="4"><item_id>109</item_id>
+<quantity_of_item>21</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>|iuEo;;]^9;(@NV l*sQ{FZW|{jpQVI?NEPka7bffy#d7|Ki{</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="14"><customer_id>2334</customer_id>
+<order_date>2004-08-16</order_date>
+<subtotal>3326.20</subtotal>
+<tax>274.41</tax>
+<total>4544.61</total>
+<ship_type>AIR</ship_type>
+<ship_date>2004-08-18</ship_date>
+<bill_address_id>1698</bill_address_id>
+<ship_address_id>1497</ship_address_id>
+<order_status>PENDING</order_status>
+<credit_card_transaction><credit_card_type>MASTERCARD</credit_card_type>
+<credit_card_number>0970444275609398</credit_card_number>
+<name_on_credit_card>blithe, dogged dol</name_on_credit_card>
+<expiration_date>2005-09-26</expiration_date>
+<authorization_id>m$X H_B*WR_+y@b</authorization_id>
+<transaction_amount>4544.61</transaction_amount>
+<authorization_date>2004-08-18</authorization_date>
+<transaction_country_id>85</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>846</item_id>
+<quantity_of_item>221</quantity_of_item>
+<discount_rate>0.00</discount_rate>
+<special_instructions>9b8cKiW#j1U 0kdu2W-MA,*S|4a</special_instructions>
+</order_line>
+<order_line id="2"><item_id>815</item_id>
+<quantity_of_item>249</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>ob#K?N_} #4[P^w.o~n(RtnYB;9Vm(</special_instructions>
+</order_line>
+<order_line id="3"><item_id>588</item_id>
+<quantity_of_item>225</quantity_of_item>
+<discount_rate>0.00</discount_rate>
+<special_instructions>@cb eVSH/Ks8eQCs/MmmS24SZudQ~oGje</special_instructions>
+</order_line>
+<order_line id="4"><item_id>759</item_id>
+<quantity_of_item>246</quantity_of_item>
+<discount_rate>0.01</discount_rate>
+<special_instructions>4IkG)21L/:w0(Z+0WWPucOZo/2P</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="15"><customer_id>2085</customer_id>
+<order_date>2004-08-05</order_date>
+<subtotal>6408.30</subtotal>
+<tax>528.68</tax>
+<total>7069.98</total>
+<ship_type>SHIP</ship_type>
+<ship_date>2004-08-07</ship_date>
+<bill_address_id>4557</bill_address_id>
+<ship_address_id>3728</ship_address_id>
+<order_status>DENIED</order_status>
+<credit_card_transaction><credit_card_type>AMEX</credit_card_type>
+<credit_card_number>1239424963150206</credit_card_number>
+<name_on_credit_card>permanently dogged </name_on_credit_card>
+<expiration_date>2006-03-23</expiration_date>
+<authorization_id> :p+UC~W Kbk|II</authorization_id>
+<transaction_amount>7069.98</transaction_amount>
+<authorization_date>2004-08-07</authorization_date>
+<transaction_country_id>81</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>133</item_id>
+<quantity_of_item>130</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>IClUdL4/Ta@,eg#8Tx[xqtZ]0di7M,84XkI1.XA~Hw4~</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="18"><customer_id>302</customer_id>
+<order_date>2004-08-27</order_date>
+<subtotal>8599.60</subtotal>
+<tax>709.47</tax>
+<total>10330.07</total>
+<ship_type>SHIP</ship_type>
+<ship_date>2004-08-27</ship_date>
+<bill_address_id>5512</bill_address_id>
+<ship_address_id>2863</ship_address_id>
+<order_status>DENIED</order_status>
+<credit_card_transaction><credit_card_type>DISCOVER</credit_card_type>
+<credit_card_number>0686755684879262</credit_card_number>
+<name_on_credit_card>pearls must hav</name_on_credit_card>
+<expiration_date>2005-08-30</expiration_date>
+<authorization_id>qGUD[Gh!J2CcfTM</authorization_id>
+<transaction_amount>10330.07</transaction_amount>
+<authorization_date>2004-08-27</authorization_date>
+<transaction_country_id>83</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>513</item_id>
+<quantity_of_item>52</quantity_of_item>
+<discount_rate>0.00</discount_rate>
+<special_instructions>dJJc.hm*FK68$2VDiZyN(PlAW,[vWxPH</special_instructions>
+</order_line>
+<order_line id="2"><item_id>988</item_id>
+<quantity_of_item>271</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>b/QQKG.~kt[o7nay291yz6+ZP9F[S1M05[fn}c0j</special_instructions>
+</order_line>
+<order_line id="3"><item_id>861</item_id>
+<quantity_of_item>246</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>9+@;3[?{LzZS;,/~3k{8mqCk[8ol(P}2fS|S$N!b873</special_instructions>
+</order_line>
+<order_line id="4"><item_id>313</item_id>
+<quantity_of_item>256</quantity_of_item>
+<discount_rate>0.00</discount_rate>
+<special_instructions>Lgv*kxryJ-Fr@~xqZ~PGMlN?Oo_</special_instructions>
+</order_line>
+<order_line id="5"><item_id>301</item_id>
+<quantity_of_item>193</quantity_of_item>
+<discount_rate>0.02</discount_rate>
+<special_instructions>W]Nx;@w6ah]VAwWDKwpJJ Vj*^0V*ZT_@v</special_instructions>
+</order_line>
+</order_lines>
+</order><order id="19"><customer_id>1287</customer_id>
+<order_date>2004-09-01</order_date>
+<subtotal>6641.00</subtotal>
+<tax>547.88</tax>
+<total>7444.88</total>
+<ship_type>COURIER</ship_type>
+<ship_date>2004-09-06</ship_date>
+<bill_address_id>1690</bill_address_id>
+<ship_address_id>1272</ship_address_id>
+<order_status>PENDING</order_status>
+<credit_card_transaction><credit_card_type>DISCOVER</credit_card_type>
+<credit_card_number>9289643612504876</credit_card_number>
+<name_on_credit_card>carefully sly patterns </name_on_credit_card>
+<expiration_date>2006-06-16</expiration_date>
+<authorization_id>m7IKCMuf=L=dmy.</authorization_id>
+<transaction_amount>7444.88</transaction_amount>
+<authorization_date>2004-09-06</authorization_date>
+<transaction_country_id>4</transaction_country_id>
+</credit_card_transaction>
+<order_lines><order_line id="1"><item_id>688</item_id>
+<quantity_of_item>11</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>0|;KI7L,thrY| $!PGk[JT6L!$LP4o|}:pbsKaE)KCWLCdO.xGgB^#i :ZW/PAQTA8u..0@,hU8--Qf5fD W}MOw|MLH,</special_instructions>
+</order_line>
+<order_line id="2"><item_id>400</item_id>
+<quantity_of_item>242</quantity_of_item>
+<discount_rate>0.03</discount_rate>
+<special_instructions>?#Hcg-hkWBAXW[4(GiI1M_!$|v5gp~.DbM:@$L+DO:{v.bpzCu3i,,],K*f$E^P2b+?VwHc_LF..cC{</special_instructions>
+</order_line>
+</order_lines>
+</order>

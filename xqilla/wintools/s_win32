@@ -1,0 +1,9 @@
+#!/bin/sh
+#	$Id: s_win32 551 2008-07-01 13:16:55Z jpcs $
+#
+# s_projects requires that xqilla (the command line program) be in 
+# your PATH
+sh ./s_projects
+
+# s_projects generate srcfiles.in needed by s_win32_dsp
+sh ./s_win32_dsp

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<desserts:item xmlns:desserts="http://groceryItem.dbxml/desserts">
+	<product>Cookies, Peanut Butter</product>
+	<inventory>
+		<sku>CookdessG0hkuf</sku>
+		<price>11.83</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</desserts:item>
+

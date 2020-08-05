@@ -1,0 +1,24 @@
+#!/bin/sh -
+#
+# Build config for the Perl API with our default paths.
+
+. ./RELEASE
+. ./s_process
+
+PERL_SRCDIR=../src/perl
+PERL_DBDIR=$PERL_SRCDIR/Db
+PERL_DBXMLDIR=$PERL_SRCDIR/DbXml
+
+process $PERL_SRCDIR/config.win32.in $PERL_SRCDIR/config.win32
+process $PERL_SRCDIR/config.win32d.in $PERL_SRCDIR/config.win32d
+process $PERL_DBDIR/Db.pm.in $PERL_DBDIR/Db.pm
+process $PERL_DBXMLDIR/DbXml.pm.in $PERL_DBXMLDIR/DbXml.pm
+
+###f=$PERL_SRCDIR/config
+#t=/tmp/__t
+#trap 'rm -f $t; exit 0' 0 1 2 3 13 15
+
+#sed  -e "s!@TOP@!../..!g" -f lib_paths.sed $f.in > $t
+
+#cmp $t $f > /dev/null 2>&1 ||
+#    (echo "Building $f" && rm -f $f && cp $t $f && chmod 444 $f)

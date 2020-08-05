@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cake, Angel Food</item>
+	<inventory>
+		<sku>CakedessuBvJaW</sku>
+		<price>6.70</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

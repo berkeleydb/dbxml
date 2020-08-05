@@ -1,0 +1,14 @@
+<!-- simple file to drive creation of WiX Environment elements -->
+<envVars>
+  <env name="jar">
+    <Environment Id="classpath1" Name="CLASSPATH" Action="set" System="no" Part="last" Value="[INSTALLDIR]jar\db.jar" />
+    <Environment Id="classpath2" Name="CLASSPATH" Action="set" System="no" Part="last" Value="[INSTALLDIR]jar\dbxml.jar" />
+    <Environment Id="classpath3" Name="CLASSPATH" Action="set" System="no" Part="last" Value="[INSTALLDIR]jar\dbxmlexamples.jar" />
+  </env>
+  <env name="bin">
+    <Environment Id="path1" Name="PATH" Action="set" Part="last" System="no" Value="[INSTALLDIR]bin" />
+  </env>
+  <!--<env name="debug" parent="Directory" parentName="bin">
+    <Environment Id="path2" Name="PATH" Action="set" Part="last" System="no" Value="[INSTALLDIR]bin\debug" />
+  </env>-->
+</envVars>

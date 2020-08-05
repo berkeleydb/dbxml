@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Pepper</item>
+	<inventory>
+		<sku>Peppvegek0yeIW</sku>
+		<price>0.63</price>
+		<inventory>453</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

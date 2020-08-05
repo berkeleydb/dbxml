@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Watercress</product>
+	<inventory>
+		<sku>Wateveget9r3qz</sku>
+		<price>0.58</price>
+		<inventory>704</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

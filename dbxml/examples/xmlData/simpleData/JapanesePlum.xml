@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Japanese Plum</item>
+	<inventory>
+		<sku>Japafrui3YNO02</sku>
+		<price>1.02</price>
+		<inventory>966</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

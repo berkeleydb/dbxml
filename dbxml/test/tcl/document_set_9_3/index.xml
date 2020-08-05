@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="9.3">
+  <category>resolver</category>
+  <description>Resolution of entities defined on the local file system</description>
+  <program name='dbxml_test_driver' />
+
+  <!-- stuff that applies to the entire test -->
+
+  <!-- individual tests -->
+  <base>
+    <document>control.xml</document>
+    <document>external_dtd.xml</document>
+  </base>
+</test>
+

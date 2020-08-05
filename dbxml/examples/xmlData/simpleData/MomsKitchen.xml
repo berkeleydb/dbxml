@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<vendor type="wholesale">
+	<name>Mom's Kitchen</name>
+	<address>53 Yerman Ct.</address>
+	<city>Middle Town</city>
+	<state>MN</state>
+	<zipcode>55432</zipcode>
+	<phonenumber>763 554 9200</phonenumber>
+	<salesrep>
+		<name>Maggie Kultgen</name>
+		<phonenumber>763 554 9200 x12</phonenumber>
+	</salesrep>
+</vendor>
+

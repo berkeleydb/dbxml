@@ -1,0 +1,135 @@
+
+Python module for the Berkeley DB XML library.
+Copyright (c) 2003,2009 Oracle.  All rights reserved.
+
+INTRODUCTION
+------------
+
+This module is built using SWIG (http://www.swig.org) to produce a
+Python module that maps to the Berkeley DB XML C++ API fairly closely.
+At present, separate documentation for the Python API is not provided.
+Refer to the C++ API documentation and the Python examples for more
+information.
+
+BUILD REQUIREMENTS
+------------------
+
+To build and install this module, you first need:
+
+  * A working C++ compiler
+
+  * Python 2.3 or newer (preferably 2.5)
+
+  * a working build of Berkeley DB XML compiled with the same C++
+    compiler as Python.
+
+  * an installed version of the bsddb3 Python module that supports 
+    Berkeley DB 4.3 or higher.  As of early 2008 this project has moved
+    from http://pybsddb.sourceforge.net to
+    http://www.jcea.es/programacion/pybsddb.htm
+
+    Note: the bsddb3 module has been accepted into the Python core, and 
+    ships with Python 2.3 and above.  Also note that this module 
+    must be compiled against the same version of Berkeley DB you 
+    are building Berkeley DB XML against.  Python generally includes
+    a Berkeley DB release, but that release may or may not be 
+    sufficient for BDB XML, which requires at least Berkeley DB 4.3,
+    and higher releases for advanced features.
+    See below for further instructions.
+
+This module uses the standard Python distutils to control building and
+installing into the Python tree.
+
+BUILDING bsddb3 module
+----------------------
+
+If you have already built and installed a version of the bsddb3
+Python module against the same version of Berkeley DB used to 
+build BDB XML, you can skip to the next section.
+
+For convenience, a current, known-working version of the pybsddb 
+project is included with this distribution.  It is
+in the directory, src/python/bsddb3-4.8.1 (or a path very
+similar), and can support Berkeley DB through at least release 
+4.8.
+
+These instructions assume that you have built BDB XML into its default
+location.  If that is not the case, you may need to edit the setup files,
+or add flags such as --berkeley-db=<path-to-db-install>.
+A customized setup file (setup.dbxml.py) that is tailored
+to the BDB XML build tree is provided.
+
+1.  cd bsddb3-4.8.1
+2.  Build:
+    python setup.dbxml.py build [--debug]
+3.  Install (may require extra privilege):
+    python setup.dbxml.py install
+4.  cd ..
+
+BUILDING the dbxml module
+-------------------------
+   
+1. Build (in the directory containing this README file):
+    python setup.py [--with-bsddb=bsddb3-4.8.1] build [--debug]
+or if you do not have bsddb3 source available
+    python setup.py build [--debug]
+
+2. Install:
+    python setup.py install
+
+If there are any problems, ensure that setup.py is correct.  
+The key variables are:
+  db_home, xerces_home, and xquery_home
+    a.  Unix.  The variables should be correct, based
+    on your input to the dist/configure script, which modifies
+    the setup.py file.  They can be modified by using --with-<module>=<path>
+    options when executing setup.py.  See setup.py for details.
+
+    b.  Windows.  The values for the variables are based
+    on the default installation.  If your installation is not
+    default, hand edit setup.py to reflect the actual locations
+    of the products.
+
+Note: the variables are primarily used to locate the libraries
+BDB XML requires for linking, and not for include file locations.
+ 
+TESTING and examples
+--------------------
+
+1. If you want to test before installing, you will need to build and set
+PYTHONPATH to include the build directory, src/python/build/lib.*.
+If you have built the bsddb3 module, also include the directory,
+src/python/build/bsddb3-4.8.1/build/lib.*
+
+2.  Verify correct versions.  First, be sure that
+you have the correct versions of Berkeley DB and BDB XML
+installed.  In order to do this, run these commands in
+a script, or interactively, using python.  Output here is
+assuming BDB XML 2.5.16:
+  python
+  >>> from bsddb3.db import *
+  >>> from dbxml import *
+  >>> print version()
+  (4, 8, 11)    ### output must be the version of DB bundled with BDB XML
+  >>> mgr=XmlManager()
+  >>> print mgr.get_version_string()
+  Oracle: Berkeley DB XML 2.4.x: (<some date>)
+  	    ### output should look like above, where the
+	    ### version is 2.4.x
+
+NOTE: if you are using BDB XML 2.5.16 and version() 
+indicates something other than DB 4.8.26 and you have not built that DB version yourself, your build of
+pybsddb probably found another incompatible release of Berkeley DB,
+and you'll have problems.
+
+3.  There are Python examples in the directory examples/python in the top of the
+Berkeley DB XML tree.  Once this module is installed, the examples can
+be run in that directory with:
+
+    python examples.py test
+to run all examples, or
+    python examples.py <test_number (1-13)>
+to run a single example.
+
+Test number 7 is a good one to try to be sure that your BDB XML
+and Berkeley DB libraries are correct and compatible.

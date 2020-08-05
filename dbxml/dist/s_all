@@ -1,0 +1,15 @@
+#!/bin/sh -
+
+sh s_readme		# distribution README file
+
+sh s_config		# autoconf.
+sh s_include		# general include files.
+sh s_win32		# Win32 build and include files.
+sh s_perm		# permissions.
+sh s_java		# Java support.
+sh s_perl		# Perl support.
+sh s_python		# Python support.
+sh s_php		# PHP support.
+sh s_release		# other files that depend on the version
+sh s_swig		# SWIG files.
+sh s_test		# Test suite support.

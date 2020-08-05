@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Kwai Muk</item>
+	<inventory>
+		<sku>KwaifruisNnfTf</sku>
+		<price>0.76</price>
+		<inventory>883</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

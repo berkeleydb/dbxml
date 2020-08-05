@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Neem Tree</product>
+	<inventory>
+		<sku>NeemfruiHaPOBU</sku>
+		<price>0.90</price>
+		<inventory>501</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</fruits:item>
+

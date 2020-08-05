@@ -1,0 +1,26 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="item">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="item" nodeType="element">
+            <StepQP axis="child" name="catalog" nodeType="element">
+              <ValueQP index="node-attribute-equality-string" operation="eq" child="id" value="I1"/>
+            </StepQP>
+          </StepQP>
+          <ValueFilterQP comparison="eq" general="true">
+            <StepQP axis="attribute" name="id" nodeType="attribute">
+              <VariableQP name="#tmp2"/>
+            </StepQP>
+            <Sequence>
+              <AnyAtomicTypeConstructor value="I1" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+            </Sequence>
+          </ValueFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":item"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

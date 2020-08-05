@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Fennel</product>
+	<inventory>
+		<sku>FennvegebbcEg2</sku>
+		<price>0.79</price>
+		<inventory>762</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

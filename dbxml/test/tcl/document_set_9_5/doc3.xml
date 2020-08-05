@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+
+    <display-name>PPI Project</display-name>
+    <description>Classes for the PPI Project</description>
+
+    <!-- EJBs -->
+
+    <module>
+        <ejb>manager.jar</ejb>
+    </module>
+
+    <!-- HIBERNATE JARs -->
+
+<!--    <module>-->
+<!--        <java>lib/cglib-2.0-rc2.jar</java>-->
+<!--    </module>-->
+<!---->
+<!--    <module>-->
+<!--        <java>lib/commons-collections-2.1.jar</java>-->
+<!--    </module>-->
+<!---->
+<!--    <module>-->
+<!--        <java>lib/commons-logging-1.0.3.jar</java>-->
+<!--    </module>-->
+<!---->
+<!--    <module>-->
+<!--        <java>lib/commons-lang-1.0.1.jar</java>-->
+<!--    </module>-->
+<!---->
+<!--    <module>-->
+<!--        <java>lib/jcs-1.0-dev.jar</java>-->
+<!--    </module>-->
+<!---->
+<!--    <module>-->
+<!--        <java>lib/odmg-3.0.jar</java>-->
+<!--    </module>-->
+<!---->
+<!--    <module>-->
+<!--        <java>lib/dom4j-1.4.jar</java>-->
+<!--    </module>-->
+<!---->
+<!--    <module>-->
+<!--        <java>lib/hibernate2.jar</java>-->
+<!--    </module>-->
+<!---->
+<!--    <module>-->
+<!--        <java>lib/ehcache-0.6.jar</java>-->
+<!--    </module>-->
+
+</application>

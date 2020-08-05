@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Mexican Barberry</item>
+	<inventory>
+		<sku>MexifruiJAFgF0</sku>
+		<price>0.33</price>
+		<inventory>338</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

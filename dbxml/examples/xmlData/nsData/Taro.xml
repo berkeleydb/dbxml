@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Taro</product>
+	<inventory>
+		<sku>TarovegeBOU2SI</sku>
+		<price>0.41</price>
+		<inventory>790</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

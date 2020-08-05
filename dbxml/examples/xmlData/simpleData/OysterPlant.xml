@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Oyster Plant</item>
+	<inventory>
+		<sku>OystfruiIUMSue</sku>
+		<price>1.12</price>
+		<inventory>310</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

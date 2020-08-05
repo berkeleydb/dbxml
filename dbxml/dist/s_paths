@@ -1,0 +1,25 @@
+#!/bin/sh -
+#
+# Build lib_paths.sed from a template file
+
+. ./RELEASE
+
+TMP=/tmp/s_paths$$a
+trap "rm -f $TMPA; exit 1" 1 2 3 15
+
+template=lib_paths.sed.template
+target=lib_paths.sed
+
+sed -e "s/@SED_DBXML_VERSION_MAJOR@/$DBXML_VERSION_MAJOR/g" \
+    -e "s/@SED_DBXML_VERSION_MINOR@/$DBXML_VERSION_MINOR/g" \
+    -e "s/@SED_DBXML_VERSION_PATCH@/$DBXML_VERSION_PATCH/g" \
+    -e "s/@SED_DBXML_VERSION_STRING@/$DBXML_VERSION_STRING/g" \
+    < $template > $TMP
+
+    # Set the file mode to 644 because the VC++ IDE needs a writeable file
+    # in our development environment.
+cmp $TMP $target > /dev/null 2>&1 ||
+(echo "Building $target" && rm -f $target &&
+    cp $TMP $target && chmod 664 $target)
+
+rm -f $TMP

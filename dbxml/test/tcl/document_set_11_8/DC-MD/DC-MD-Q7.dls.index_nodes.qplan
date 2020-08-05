@@ -1,0 +1,22 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <LevelFilterQP>
+          <StepQP axis="parent-of-attribute" name="order" nodeType="element">
+            <ValueQP index="edge-attribute-equality-string" operation="eq" parent="order" child="id" value="3"/>
+          </StepQP>
+        </LevelFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="item_id" nodeType="element">
+        <StepQP axis="child" name="order_line" nodeType="element">
+          <StepQP axis="child" uri="*" name="*" nodeType="element">
+            <VariableQP name=":a"/>
+          </StepQP>
+        </StepQP>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

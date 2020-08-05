@@ -1,0 +1,75 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NegativeNodePredicateFilterQP uri="" name="#tmp116">
+          <NodePredicateFilterQP uri="" name="#tmp8">
+            <NodePredicateFilterQP uri="" name="#tmp0">
+              <StepQP axis="parent-of-child" name="item" nodeType="element">
+                <ValueQP index="node-element-equality-string" operation="gt" child="date_of_release" value="1990-01-01"/>
+              </StepQP>
+              <LevelFilterQP>
+                <StepQP axis="parent-of-child" name="catalog" nodeType="element">
+                  <VariableQP name="#tmp0"/>
+                </StepQP>
+              </LevelFilterQP>
+            </NodePredicateFilterQP>
+            <ValueFilterQP comparison="lt">
+              <StepQP axis="child" name="date_of_release" nodeType="element">
+                <VariableQP name="#tmp8"/>
+              </StepQP>
+              <Sequence>
+                <AnyAtomicTypeConstructor value="1991-01-01" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+              </Sequence>
+            </ValueFilterQP>
+          </NodePredicateFilterQP>
+          <StepQP axis="child" name="FAX_number" nodeType="element">
+            <StepQP axis="child" name="contact_information" nodeType="element">
+              <StepQP axis="child" name="publisher" nodeType="element">
+                <NodePredicateFilterQP uri="" name="#tmp21">
+                  <NodePredicateFilterQP uri="" name="#tmp13">
+                    <ParentOfChildJoinQP>
+                      <ValueQP index="node-element-equality-string" operation="gt" child="date_of_release" value="1990-01-01"/>
+                      <VariableQP name="#tmp116"/>
+                    </ParentOfChildJoinQP>
+                    <LevelFilterQP>
+                      <StepQP axis="parent-of-child" name="catalog" nodeType="element">
+                        <VariableQP name="#tmp13"/>
+                      </StepQP>
+                    </LevelFilterQP>
+                  </NodePredicateFilterQP>
+                  <ValueFilterQP comparison="lt">
+                    <StepQP axis="child" name="date_of_release" nodeType="element">
+                      <VariableQP name="#tmp21"/>
+                    </StepQP>
+                    <Sequence>
+                      <AnyAtomicTypeConstructor value="1991-01-01" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                    </Sequence>
+                  </ValueFilterQP>
+                </NodePredicateFilterQP>
+              </StepQP>
+            </StepQP>
+          </StepQP>
+        </NegativeNodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="name" nodeType="element">
+              <StepQP axis="child" name="publisher" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

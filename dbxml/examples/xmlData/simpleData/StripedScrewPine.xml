@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Striped Screw Pine</item>
+	<inventory>
+		<sku>StrifruiDsDSpe</sku>
+		<price>0.27</price>
+		<inventory>995</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

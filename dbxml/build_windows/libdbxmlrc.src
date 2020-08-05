@@ -1,0 +1,33 @@
+1 VERSIONINFO
+ FILEVERSION @DBXML_VERSION_MAJOR@,@DBXML_VERSION_MINOR@,@DBXML_VERSION_PATCH@,0
+ PRODUCTVERSION @DBXML_VERSION_MAJOR@,@DBXML_VERSION_MINOR@,@DBXML_VERSION_PATCH@,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Oracle\0"
+            VALUE "FileDescription", "Shared Library for Berkeley DB XML @DBXML_VERSION_MAJOR@.@DBXML_VERSION_MINOR@\0"
+            VALUE "FileVersion", "@DBXML_VERSION_MAJOR@.@DBXML_VERSION_MINOR@.@DBXML_VERSION_PATCH@\0"
+            VALUE "InternalName", "libdbxml@DBXML_VERSION_MAJOR@@DBXML_VERSION_MINOR@.dll\0"
+            VALUE "LegalCopyright", "Copyright © Oracle 1997,2009\0"
+            VALUE "OriginalFilename", "libdbxml@DBXML_VERSION_MAJOR@@DBXML_VERSION_MINOR@.dll\0"
+            VALUE "ProductName", "Oracle libdbxml\0"
+            VALUE "ProductVersion", "@DBXML_VERSION_MAJOR@.@DBXML_VERSION_MINOR@.@DBXML_VERSION_PATCH@\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

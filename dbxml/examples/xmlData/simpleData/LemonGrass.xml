@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Lemon Grass</item>
+	<inventory>
+		<sku>Lemofruixc1i44</sku>
+		<price>0.47</price>
+		<inventory>228</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

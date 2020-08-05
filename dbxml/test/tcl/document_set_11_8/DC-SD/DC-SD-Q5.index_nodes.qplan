@@ -1,0 +1,35 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp0">
+          <StepQP axis="parent-of-attribute" name="item" nodeType="element">
+            <ValueQP index="node-attribute-equality-string" operation="eq" child="id" value="I3"/>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="catalog" nodeType="element">
+              <VariableQP name="#tmp0"/>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <Map>
+      <QueryPlanToAST>
+        <StepQP axis="child" name="authors" nodeType="element">
+          <VariableQP name=":a"/>
+        </StepQP>
+      </QueryPlanToAST>
+      <QueryPlanToAST>
+        <NumericPredicateFilterQP>
+          <StepQP axis="child" name="author" nodeType="element">
+            <ContextNodeQP/>
+          </StepQP>
+          <Sequence>
+            <NumericTypeConstructor value="1.0E0" typeuri="http://www.w3.org/2001/XMLSchema" typename="integer"/>
+          </Sequence>
+        </NumericPredicateFilterQP>
+      </QueryPlanToAST>
+    </Map>
+  </FLWOR>
+</XQuery>

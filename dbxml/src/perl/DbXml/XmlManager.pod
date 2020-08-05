@@ -1,0 +1,147 @@
+=head1 NAME
+
+XmlManager - A Perl interface to the DbXml XmlManager Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $mgr = new XmlManager([$dbenv,] [, $flags]);
+
+    my $c = $mgr->createContainer([$txn,] $name [, $config]);
+
+    my $doc = $mgr->createDocument();
+
+    my $fmt = $mgr->existsContainer($name);
+    
+    my $s = $mgr->createLocalFileInputStream($filename);
+    my $m = $mgr->createModify();
+    my $x = $mgr->createQueryContext($rt, $et);
+    my $r = $mgr->createResults();
+    my $s = $mgr->createStdInInputStream();
+    my $txn = $mgr->createTransaction($flags);
+    my $s = $mgr->createURLInputStream($baseID, $systemID [, $publicID]);
+    my $c = $mgr->createUpdateContext();
+    $mgr->dumpContainer($name, $out_filename);
+    my $env = $mgr->getDbEnv();
+    my $string = $mgr->getHome();
+    my $flags = $mgr->getFlags();
+    $mgr->loadContainer($name, $in_filename, [$lineno, [$context]]);
+    my $c = $mgr->openContainer([$txn,] $name [, $config]);
+    my $e = $mgr->prepare([$txn,] $xquery, $context);
+    my $results = $mgr->query([$txn,] $xquery, $context, $flags);
+    $mgr->registerResolver($resolver);
+    $mgr->removeContainer([$txn,] $name);
+    $mgr->renameContainer([$txn,] $oldName, $newName);
+    $mgr->setDefaultContainerFlags($flags);
+    my $flags = $mgr->getDefaultContainerFlags();
+    $mgr->setDefaultContainerConfig($ContainerConfig);
+    my $ContainerConfig = $mgr->getDefaultContainerConfig();
+    $mgr->setDefaultContainerType($type);
+    my $type = $mgr->getDefaultContainerType();
+    $mgr->setDefaultPageSize($pageSize);
+    my $pageSize = $mgr->getDefaultPageSize();
+    $mgr->setDefaultSequenceIncrement($incr);
+    my $incr = $mgr->getDefaultSequenceIncrement();
+    $mgr->upgradeContainer($name [, $context]);
+    $mgr->verifyContainer($name, $out_filename, $flags);
+
+    $mgr->reindexContainer([$txn, ]$name[, $context [, $config]]);
+    my $ix = $mgr->createIndexLookup($container, $uri, $name, $index [, $value, $op]);
+
+    my $tz = $mgr->getImplicitTimezone();
+    $mgr->setImplicitTimezone($tz);
+
+    $mgr->truncateContainer($name[, $context [, $config]]);
+    $mgr->compactContainer($name[, $context [, $config]]);
+    
+
+=head1 DESCRIPTION
+
+
+This module 
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlManager is identical to the C++ API, apart
+from the following
+
+=over 5
+
+=item 1.
+
+The use of the TxnId parameter is optional.
+
+=item 2.
+
+The following methods are not supported.
+
+    createMemBufInputStream
+
+=back
+
+
+=head1 Constructor
+
+The constructor for this class can take any of the following forms
+
+    my $mgr = new XmlManager();
+    my $mgr = new XmlManager($env);
+    my $mgr = new XmlManager($env, $flags);
+    my $mgr = new XmlManager($e, $flagsnv);
+
+=head1 Methods
+
+=head2 $mgr->setPageSize($size)
+
+Sets the underlying page size that will be used by DbXml in the database
+files it uses to store documents. The value, $size, shold be between
+512 bytes and 64K.
+
+=head2 $mgr->dumpContainer($name, $filename);
+
+Dumps the contents of the container, $name, to the file, $filename.
+
+
+=head2 $mgr->loadContainer($name, $filename);
+=head2 $mgr->loadContainer($name, $filename, $lineno);
+=head2 $mgr->loadContainer($name, $filename, $lineno, $context);
+
+Loads the contents of the container, $name, with the contents of the
+file, $filename. The file must have been created by a previous call to
+the dumpContainer method.
+
+If $lineno is present, it controls the line number in $filename to start
+reading from. On completion, the line number of the last line in $filename
+is stored in $lineno.
+
+If $context is present, it must ne an XmlUpdateContext object.
+
+=head2 $mgr->verifyContainer($name, $filename);
+=head2 $mgr->verifyContainer($name, $filename, $flags);
+
+Verifies the container, $name, and dumps the contents of the container to
+the file, $filename.
+
+If present valid values for the $flags parameter are:
+
+=over 5
+
+=item Db::DB_SALVAGE
+
+=item Db::SALVAGE | Db::DB_AGGRESSIVE
+
+=back
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

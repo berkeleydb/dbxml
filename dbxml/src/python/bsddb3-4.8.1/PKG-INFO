@@ -1,0 +1,54 @@
+Metadata-Version: 1.0
+Name: bsddb3
+Version: 4.8.1
+Summary: Python interface for Berkeley DB
+Home-page: http://www.jcea.es/programacion/pybsddb.htm
+Author: Jesus Cea, Robin Dunn, Gregory P. Smith, Andrew Kuchling, Barry Warsaw
+Author-email: pybsddb@jcea.es
+License: MIT License
+Description: This module provides a nearly complete wrapping
+        of the Oracle/Sleepycat C API for the Database
+        Environment, Database, Cursor, Sequence and Transaction
+        objects, and each of these is exposed as a Python
+        type in the bsddb3.db module. The database objects
+        can use various access methods: btree, hash, recno,
+        and queue. Complete support of Berkeley DB distributed
+        transactions. Complete support for Berkeley DB
+        Replication Manager. Complete support for Berkeley DB
+        Base Replication. Support for RPC.
+        
+        Please see the documents in the docs
+        directory of the source distribution or at the
+        website for more details on the types and methods
+        provided. The goal is to mirror most of the real
+        Berkeley DB API so fall back to the Oracle Berkeley DB
+        documentation as appropriate.
+        
+        `Homepage <http://www.jcea.es/programacion/
+        pybsddb.htm>`__ --
+        `Documentation <http://www.jcea.es/programacion/
+        pybsddb_doc/>`__ --
+        `Mailing List <http://mailman.jcea.es/listinfo/pybsddb>`__
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Natural Language :: English
+Classifier: Natural Language :: Spanish
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Clustering
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.3
+Classifier: Programming Language :: Python :: 2.4
+Classifier: Programming Language :: Python :: 2.5
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2

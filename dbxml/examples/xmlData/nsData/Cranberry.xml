@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Cranberry</product>
+	<inventory>
+		<sku>CranfruiYXFVDH</sku>
+		<price>0.81</price>
+		<inventory>750</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</fruits:item>
+

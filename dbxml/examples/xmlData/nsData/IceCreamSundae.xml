@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<desserts:item xmlns:desserts="http://groceryItem.dbxml/desserts">
+	<product>Ice Cream Sundae</product>
+	<inventory>
+		<sku>Ice desssESdvK</sku>
+		<price>4.62</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</desserts:item>
+

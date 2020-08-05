@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Onion</item>
+	<inventory>
+		<sku>OniovegeHPHrn5</sku>
+		<price>0.39</price>
+		<inventory>705</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

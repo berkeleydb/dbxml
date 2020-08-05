@@ -1,0 +1,157 @@
+                                Sleepycat::DbXml
+                                 Version 2.4.x
+
+         Copyright (c) 2003-8 Paul Marquess. All rights reserved. This
+        program is free software; you can redistribute it and/or modify
+                    it under the same terms as Perl itself.
+
+
+DESCRIPTION
+-----------
+
+This Perl module provides an interface to the Oracle Berkeley DB XML
+library (BDB XML).
+
+
+
+PREREQUISITES
+-------------
+
+Before you can build this module you need to have the following
+installed on your system:
+
+    * Perl 5.6.1 or greater.  ActivePerl has current distributions.
+      See www.activestate.com
+
+    * A C++ Compiler that is compatible with the C compiler that was
+      used to build your Perl binary. This usually means that the C & C++
+      compilers come from the same vendor and are compatible versions.
+      Alternatively, if you can manage to build Perl using your C++
+      compiler, use the same one to build this module.  On Windows it 
+      is *possible* that multiple versions of Visual Studio will generate
+      compatible code.
+
+    * The BDB XML C++ library version 2.4 or greater.
+
+      The official web site for Berkeley DB and BDB XML is 
+      
+          http://www.oracle.com/technology/products/berkeley-db/index.html
+
+As of release 2.4 Berkeley DB XML Windows Binary distribution includes
+Perl binaries compatible with ActivePerl 5.8.  If you are using Windows
+this may be your best option.
+
+
+BUILDING THE MODULE ON UNIX PLATFORMS
+-------------------------------------
+
+Assuming you have met all the prerequisites, follow the steps below:
+
+Step 1 : Edit the file config to suit you local installation.
+         Instructions are given in the file.
+
+Step 2 : Build and test the module using this sequence of commands:
+
+             perl Makefile.PL
+             make
+             make test
+
+BUILDING THE MODULE ON WINDOWS
+-------------------------------------
+
+Assuming you have met all the prerequisites, follow the steps below:
+
+Step 1 : Try using the file, build.bat, to find Visual Studio and
+     build.  If that succeeds, you're done; if it fails, keep reading...
+
+Step 1a : Edit the file build.bat to point to your installation of
+     Visual Studio and try again.  If that succeeds, you're done; if it
+     fails...
+
+Step 2 : If you are using a version of Visual Studio, you
+     need to have nmake.exe and cl.exe in your PATH.
+     This can usually be accomplished by running
+     the script, vcvars32.bat.  This script is in the MSVC
+     distribution, perhaps in the directory,
+     <path_to_msvc_installation>\VC7\bin\vcvars32.bat.
+     Running this script sets up the necessary environment.	 
+
+Step 3 : Verify the configuration:
+     Edit config.win32 to make sure that the paths to the
+     libraries, and the library names are correct for your
+     installation.
+     
+Step 4 : Build and test the module using this sequence of commands:
+
+     perl Makefile.PL -config config.win32
+     nmake
+     cd Db
+     nmake test
+     cd ..\DbXml
+     nmake test
+
+INSTALLATION
+------------
+
+UNIX:
+    make install
+Windows:
+    nmake install
+
+EXAMPLES
+========
+
+There are some Perl examples in the top-level examples/perl
+directory (dbxml-x.y.z/dbxml/examples/perl).
+
+TROUBLESHOOTING
+===============
+
+FEEDBACK
+--------
+
+General feedback/questions/bug reports can be sent to me at pmqs@cpan.org.
+You can also use the Oracle technology forum for Berkeley DB XML at
+    http://forums.oracle.com/forums/forum.jspa?forumID=274
+
+
+
+How to report a problem with Sleepycat::DbXml.
+----------------------------------------------
+
+If you are having problems building this module, send me *all* of the
+following:
+
+1. The version of this module. If you don't know, run this command to 
+   find out
+
+        grep VERSION DbXml/DbXml.pm
+
+2. The complete output from running Perl -V.
+
+3. The name and version of the C++ compiler you are using. If you are
+   running g++, this will tell you
+
+        g++ --version
+
+4. A copy of the config file.
+
+5. A *complete* log of what happend when you tried to build the
+   module. I need everything from the point when you run this
+
+       perl Makefile.PL
+
+   in the root directory of this module.    
+
+6. Are you building the module in the dbxml source tree, i.e. in the
+   directory src/perl?
+
+7. The version of the BDB XML library you are using.
+
+8. The version of the XQilla library you are using.
+
+9. The version of the Xerces library you are using.
+
+10. The version of the Berkeley DB library you are using.
+
+

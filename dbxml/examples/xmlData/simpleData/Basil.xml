@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Basil</item>
+	<inventory>
+		<sku>BasivegeGgPKGz</sku>
+		<price>0.54</price>
+		<inventory>604</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

@@ -1,0 +1,941 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# Container indexing tests
+# Queries are fully satisfied by the index
+#   10.3.1-10.3.42
+#
+# Use "SKIP BEGIN" and "SKIP END" to comment out tests
+#
+
+TEST 10.3_1
+TITLE Container indexing (fully satisfied queries)
+
+################################################################
+#   node indexes
+################################################################
+
+# node-element-presence (equality)
+10.3.1.1
+Presence
+"" "person" "node-element-presence"
+//person
+Root(RS,RA(RS,RI(RS,node-element-presence-none,=,person)))
+RI(RS,node-element-presence-none,=,person),RA,
+person 1
+
+10.3.1.2
+Default Presence
+"" "" "node-element-presence"
+//person
+Root(RS,RA(RS,RI(RS,node-element-presence-none,=,person)))
+RI(RS,node-element-presence-none,=,person),RA,
+person 1
+
+# node-attribute-presence (equality)
+10.3.2.1
+Presence
+"" "age" "node-attribute-presence"
+//@age
+Root(RS,RA(RS,RI(RS,node-attribute-presence-none,=,age)))
+RI(RS,node-attribute-presence-none,=,age),RA,
+age 1
+
+10.3.2.2
+Default Presence
+"" "" "node-attribute-presence"
+//@age
+Root(RS,RA(RS,RI(RS,node-attribute-presence-none,=,age)))
+RI(RS,node-attribute-presence-none,=,age),RA,
+age 1
+
+# node-element-equality-string (equality)
+10.3.3.1
+Equality
+"" "name" "node-element-equality-string"
+//name[.='Bloggs']
+Root(RS,RA(RS,RI(RS,node-element-equality-string,=,name,Bloggs)))
+RI(RS,node-element-equality-string,=,name,Bloggs),RA,
+name 1
+
+10.3.3.2
+Default Equality
+"" "name" "node-element-equality-string"
+//name[.='Bloggs']
+Root(RS,RA(RS,RI(RS,node-element-equality-string,=,name,Bloggs)))
+RI(RS,node-element-equality-string,=,name,Bloggs),RA,
+name 1
+
+# node-element-equality-string (prefix)
+10.3.4.1
+Prefix
+"" "name" "node-element-equality-string"
+//name[starts-with(.,'Blog')]
+Root(RS,RA(RS,RI(RS,node-element-equality-string,prefix,name,Blog)))
+RI(RS,node-element-equality-string,prefix,name,Blog),RA,
+name 1
+
+10.3.4.2
+Default Prefix
+"" "name" "node-element-equality-string"
+//name[starts-with(.,'Blog')]
+Root(RS,RA(RS,RI(RS,node-element-equality-string,prefix,name,Blog)))
+RI(RS,node-element-equality-string,prefix,name,Blog),RA,
+name 1
+
+# node-element-equality-decimal (equality)
+10.3.5
+Equality
+"" "balance" "node-element-equality-decimal"
+//balance[.=123]
+Root(RS,RA(RS,RI(RS,node-element-equality-decimal,=,balance,123)))
+RI(RS,node-element-equality-decimal,=,balance,123),RA,
+balance 1
+
+10.3.6.1
+Inequality (!=)
+"" "balance" "node-element-equality-decimal"
+//balance[.!=124]
+Root(RS,RA(RS,n(RS,RI(RS,node-element-equality-decimal,prefix,balance),\(RS,RI(RS,node-element-equality-decimal,prefix,balance),RI(RS,node-element-equality-decimal,=,balance,124)))))
+RI(RS,node-element-equality-decimal,prefix,balance),RI(RS,node-element-equality-decimal,prefix,balance),RI(RS,node-element-equality-decimal,=,balance,124),\,n,RA,
+balance 1
+
+10.3.6.2
+Inequality (<)
+"" "balance" "node-element-equality-decimal"
+//balance[.<124]
+Root(RS,RA(RS,RI(RS,node-element-equality-decimal,<,balance,124)))
+RI(RS,node-element-equality-decimal,<,balance,124),RA,
+balance 1
+
+10.3.6.3
+Inequality (>)
+"" "balance" "node-element-equality-decimal"
+//balance[.>122]
+Root(RS,RA(RS,RI(RS,node-element-equality-decimal,>,balance,122)))
+RI(RS,node-element-equality-decimal,>,balance,122),RA,
+balance 1
+
+10.3.6.4
+Inequality (<=)
+"" "balance" "node-element-equality-decimal"
+//balance[.<=123]
+Root(RS,RA(RS,RI(RS,node-element-equality-decimal,<=,balance,123)))
+RI(RS,node-element-equality-decimal,<=,balance,123),RA,
+balance 1
+
+10.3.6.5
+Inequality (>=)
+"" "balance" "node-element-equality-decimal"
+//balance[.>=123]
+Root(RS,RA(RS,RI(RS,node-element-equality-decimal,>=,balance,123)))
+RI(RS,node-element-equality-decimal,>=,balance,123),RA,
+balance 1
+
+10.3.6.6
+Inequality (range with 'and')
+"" "balance" "node-element-equality-decimal"
+//balance[.>122 and .<124]
+Root(RS,RA(RS,RI(RS,node-element-equality-decimal,range,balance,122,124)))
+RI(RS,node-element-equality-decimal,range,balance,122,124),RA,
+balance 1
+
+10.3.6.7
+Inequality (range)
+"" "balance" "node-element-equality-decimal"
+//balance[.>122][.<124]
+Root(RS,RA(RS,n(RS,RI(RS,node-element-equality-decimal,>,balance,122),RI(RS,node-element-equality-decimal,<,balance,124))))
+RI(RS,node-element-equality-decimal,>,balance,122),RI(RS,node-element-equality-decimal,<,balance,124),n,RA,
+balance 1
+
+# node-element-equality-decimal (prefix)
+10.3.7
+Prefix
+"" "balance" "node-element-equality-decimal"
+//balance
+Root(RS,RA(RS,RI(RS,node-element-equality-decimal,prefix,balance)))
+RI(RS,node-element-equality-decimal,prefix,balance),RA,
+balance 1
+
+# node-element-equality-date (equality)
+10.3.8
+Equality
+"" "elected" "node-element-equality-date"
+//elected[.=xs:date('1999-12-31')]
+Root(RS,RA(RS,RI(RS,node-element-equality-date,=,elected,1999-12-31)))
+RI(RS,node-element-equality-date,=,elected,1999-12-31),RA,
+elected 1
+
+# node-element-equality-date (inequality)
+10.3.9.1
+Inequality (!=)
+"" "elected" "node-element-equality-date"
+//elected[.!=xs:date('2000-01-01')]
+Root(RS,RA(RS,n(RS,RI(RS,node-element-equality-date,prefix,elected),\(RS,RI(RS,node-element-equality-date,prefix,elected),RI(RS,node-element-equality-date,=,elected,2000-01-01)))))
+RI(RS,node-element-equality-date,prefix,elected),RI(RS,node-element-equality-date,prefix,elected),RI(RS,node-element-equality-date,=,elected,2000-01-01),\,n,RA,
+elected 1
+
+10.3.9.2
+Inequality (<)
+"" "elected" "node-element-equality-date"
+//elected[.<xs:date('2000-01-01')]
+Root(RS,RA(RS,RI(RS,node-element-equality-date,<,elected,2000-01-01)))
+RI(RS,node-element-equality-date,<,elected,2000-01-01),RA,
+elected 1
+
+10.3.9.3
+Inequality (>)
+"" "elected" "node-element-equality-date"
+//elected[.>xs:date('1999-12-30')]
+Root(RS,RA(RS,RI(RS,node-element-equality-date,>,elected,1999-12-30)))
+RI(RS,node-element-equality-date,>,elected,1999-12-30),RA,
+elected 1
+
+10.3.9.4
+Inequality (<=)
+"" "elected" "node-element-equality-date"
+//elected[.<=xs:date('1999-12-31')]
+Root(RS,RA(RS,RI(RS,node-element-equality-date,<=,elected,1999-12-31)))
+RI(RS,node-element-equality-date,<=,elected,1999-12-31),RA,
+elected 1
+
+10.3.9.5
+Inequality (>=)
+"" "elected" "node-element-equality-date"
+//elected[.>=xs:date('1999-12-31')]
+Root(RS,RA(RS,RI(RS,node-element-equality-date,>=,elected,1999-12-31)))
+RI(RS,node-element-equality-date,>=,elected,1999-12-31),RA,
+elected 1
+
+10.3.9.6
+Inequality (range with 'and')
+"" "elected" "node-element-equality-date"
+//elected[.>xs:date('1999-12-30') and .<xs:date('2000-01-01')]
+Root(RS,RA(RS,RI(RS,node-element-equality-date,range,elected,1999-12-30,2000-01-01)))
+RI(RS,node-element-equality-date,range,elected,1999-12-30,2000-01-01),RA,
+elected 1
+
+10.3.9.7
+Inequality (range)
+"" "elected" "node-element-equality-date"
+//elected[.>xs:date('1999-12-30')][.<xs:date('2000-01-01')]
+Root(RS,RA(RS,n(RS,RI(RS,node-element-equality-date,>,elected,1999-12-30),RI(RS,node-element-equality-date,<,elected,2000-01-01))))
+RI(RS,node-element-equality-date,>,elected,1999-12-30),RI(RS,node-element-equality-date,<,elected,2000-01-01),n,RA,
+elected 1
+
+# node-element-equality-date (prefix)
+10.3.10
+Prefix
+"" "elected" "node-element-equality-date"
+//elected
+Root(RS,RA(RS,RI(RS,node-element-equality-date,prefix,elected)))
+RI(RS,node-element-equality-date,prefix,elected),RA,
+elected 1
+
+# node-element-substring-string (equality)
+10.3.11.1
+Equality
+"" "name" "node-element-substring-string"
+//name[contains(.,'Blo')]
+Root(RA(RI(node-element-substring-string,=,name,blo)))
+RI(node-element-substring-string,=,name,blo),RA,
+blo log ogg ggs 1
+
+10.3.11.2
+Equality
+"" "name" "node-element-substring-string"
+//name[contains(.,'log')]
+Root(RA(RI(node-element-substring-string,=,name,log)))
+RI(node-element-substring-string,=,name,log),RA,
+blo log ogg ggs 1
+
+10.3.11.3
+Equality
+"" "name" "node-element-substring-string"
+//name[contains(.,'ggs')]
+Root(RA(RI(node-element-substring-string,=,name,ggs)))
+RI(node-element-substring-string,=,name,ggs),RA,
+blo log ogg ggs 1
+
+# node-attribute-equality-string (equality)
+10.3.12
+Equality
+"" "first" "node-attribute-equality-string"
+//*[@first='fred']
+Root(RA(RI(node-attribute-equality-string,=,first,fred)))
+RI(node-attribute-equality-string,=,first,fred),RA,
+first 1
+
+# node-attribute-equality-string (prefix)
+10.3.13
+Prefix
+"" "first" "node-attribute-equality-string"
+//@first
+Root(RS,RA(RS,RI(RS,node-attribute-equality-string,prefix,first)))
+RI(RS,node-attribute-equality-string,prefix,first),RA,
+first 1
+
+# node-attribute-equality-decimal (equality)
+10.3.14
+Equality
+"" "age" "node-attribute-equality-decimal"
+//*[@age=33]
+Root(RA(RI(node-attribute-equality-decimal,=,age,33)))
+RI(node-attribute-equality-decimal,=,age,33),RA,
+age 1
+
+# node-attribute-equality-decimal (inequality)
+10.3.15.1
+Inequality (!=)
+"" "age" "node-attribute-equality-decimal"
+//*[@age!=34]
+Root(RA(\(RI(RS,node-attribute-equality-decimal,prefix,age),RI(RS,node-attribute-equality-decimal,=,age,34))))
+RI(RS,node-attribute-equality-decimal,prefix,age),RI(RS,node-attribute-equality-decimal,=,age,34),\,RA,
+age 1
+
+10.3.15.2
+Inequality (<)
+"" "age" "node-attribute-equality-decimal"
+//*[@age<34]
+Root(RA(RI(node-attribute-equality-decimal,<,age,34)))
+RI(node-attribute-equality-decimal,<,age,34),RA,
+age 1
+
+10.3.15.3
+Inequality (>)
+"" "age" "node-attribute-equality-decimal"
+//*[@age>32]
+Root(RA(RI(node-attribute-equality-decimal,>,age,32)))
+RI(node-attribute-equality-decimal,>,age,32),RA,
+age 1
+
+10.3.15.4
+Inequality (<=)
+"" "age" "node-attribute-equality-decimal"
+//*[@age<=33]
+Root(RA(RI(node-attribute-equality-decimal,<=,age,33)))
+RI(node-attribute-equality-decimal,<=,age,33),RA,
+age 1
+
+10.3.15.5
+Inequality (>=)
+"" "age" "node-attribute-equality-decimal"
+//*[@age>=33]
+Root(RA(RI(node-attribute-equality-decimal,>=,age,33)))
+RI(node-attribute-equality-decimal,>=,age,33),RA,
+age 1
+
+10.3.15.6
+Inequality (range with 'and')
+"" "age" "node-attribute-equality-decimal"
+//*[@age>32 and @age<34]
+Root(RA(RI(node-attribute-equality-decimal,range,age,32,34)))
+RI(node-attribute-equality-decimal,range,age,32,34),RA,
+age 1
+
+10.3.15.7
+Inequality (range)
+"" "age" "node-attribute-equality-decimal"
+//*[@age>32][@age<34]
+Root(RA(n(RI(node-attribute-equality-decimal,>,age,32),RI(RS,node-attribute-equality-decimal,<,age,34))))
+RI(node-attribute-equality-decimal,>,age,32),RI(RS,node-attribute-equality-decimal,<,age,34),n,RA,
+age 1
+
+# node-attribute-equality-decimal (prefix)
+10.3.16
+Prefix
+"" "age" "node-attribute-equality-decimal"
+//@age
+Root(RS,RA(RS,RI(RS,node-attribute-equality-decimal,prefix,age)))
+RI(RS,node-attribute-equality-decimal,prefix,age),RA,
+age 1
+
+# node-attribute-equality-date (equality)
+10.3.17
+Equality
+"" "registered" "node-attribute-equality-date"
+//*[@registered=xs:date('2003-12-15')]
+Root(RA(RI(node-attribute-equality-date,=,registered,2003-12-15)))
+RI(node-attribute-equality-date,=,registered,2003-12-15),RA,
+registered 1
+
+# node-attribute-equality-date (inequality)
+10.3.18.1
+Inequality (!=)
+"" "registered" "node-attribute-equality-date"
+//*[@registered!=xs:date('2003-12-16')]
+Root(RA(\(RI(RS,node-attribute-equality-date,prefix,registered),RI(RS,node-attribute-equality-date,=,registered,2003-12-16))))
+RI(RS,node-attribute-equality-date,prefix,registered),RI(RS,node-attribute-equality-date,=,registered,2003-12-16),\,RA,
+registered 1
+
+10.3.18.2
+Inequality (<)
+"" "registered" "node-attribute-equality-date"
+//*[@registered<xs:date('2003-12-16')]
+Root(RA(RI(node-attribute-equality-date,<,registered,2003-12-16)))
+RI(node-attribute-equality-date,<,registered,2003-12-16),RA,
+registered 1
+
+10.3.18.3
+Inequality (>)
+"" "registered" "node-attribute-equality-date"
+//*[@registered>xs:date('2003-12-14')]
+Root(RA(RI(node-attribute-equality-date,>,registered,2003-12-14)))
+RI(node-attribute-equality-date,>,registered,2003-12-14),RA,
+registered 1
+
+10.3.18.4
+Inequality (<=)
+"" "registered" "node-attribute-equality-date"
+//*[@registered<=xs:date('2003-12-15')]
+Root(RA(RI(node-attribute-equality-date,<=,registered,2003-12-15)))
+RI(node-attribute-equality-date,<=,registered,2003-12-15),RA,
+registered 1
+
+10.3.18.5
+Inequality (>=)
+"" "registered" "node-attribute-equality-date"
+//*[@registered>=xs:date('2003-12-15')]
+Root(RA(RI(node-attribute-equality-date,>=,registered,2003-12-15)))
+RI(node-attribute-equality-date,>=,registered,2003-12-15),RA,
+registered 1
+
+10.3.18.6
+Inequality (range with 'and')
+"" "registered" "node-attribute-equality-date"
+//*[@registered>xs:date('2003-12-14') and @registered<xs:date('2003-12-16')]
+Root(RA(RI(node-attribute-equality-date,range,registered,2003-12-14,2003-12-16)))
+RI(node-attribute-equality-date,range,registered,2003-12-14,2003-12-16),RA,
+registered 1
+
+10.3.18.7
+Inequality (range)
+"" "registered" "node-attribute-equality-date"
+//*[@registered>xs:date('2003-12-14')][@registered<xs:date('2003-12-16')]
+Root(RA(n(RI(node-attribute-equality-date,>,registered,2003-12-14),RI(RS,node-attribute-equality-date,<,registered,2003-12-16))))
+RI(node-attribute-equality-date,>,registered,2003-12-14),RI(RS,node-attribute-equality-date,<,registered,2003-12-16),n,RA,
+registered 1
+
+# node-attribute-equality-date (prefix)
+10.3.19
+Prefix
+"" "registered" "node-attribute-equality-date"
+//@registered
+Root(RS,RA(RS,RI(RS,node-attribute-equality-date,prefix,registered)))
+RI(RS,node-attribute-equality-date,prefix,registered),RA,
+registered 1
+
+# node-attribute-substring-string (equality)
+10.3.20.1
+Equality
+"" "first" "node-attribute-substring-string"
+//*[contains(@first,'fre')]
+Root(RA(RI(node-attribute-substring-string,=,first,fre)))
+RI(node-attribute-substring-string,=,first,fre),RA,
+fre red 1
+
+10.3.20.2
+Equality
+"" "first" "node-attribute-substring-string"
+//*[contains(@first,'red')]
+Root(RA(RI(node-attribute-substring-string,=,first,red)))
+RI(node-attribute-substring-string,=,first,red),RA,
+fre red 1
+
+################################################################
+#   edge indexes
+################################################################
+
+# edge-element-presence (equality)
+10.3.21.1
+Presence
+"" "name" "edge-element-presence"
+//person/name
+Root(RA(RI(edge-element-presence-none,=,person.name)))
+RI(edge-element-presence-none,=,person.name),RA,
+person.name 1
+
+10.3.21.2
+Default Presence
+"" "" "edge-element-presence"
+//person/name
+Root(RA(RI(edge-element-presence-none,=,person.name)))
+RI(edge-element-presence-none,=,person.name),RA,
+person.name 1
+
+# edge-attribute-presence (equality)
+10.3.22.1
+Presence
+"" "age" "edge-attribute-presence"
+//person/@age
+Root(RA(RI(edge-attribute-presence-none,=,person.age)))
+RI(edge-attribute-presence-none,=,person.age),RA,
+person.age 1
+
+10.3.22.2
+Default Presence
+"" "" "edge-attribute-presence"
+//person/@age
+Root(RA(RI(edge-attribute-presence-none,=,person.age)))
+RI(edge-attribute-presence-none,=,person.age),RA,
+person.age 1
+
+# edge-element-equality-string (equality)
+10.3.23.1
+Equality
+"" "name" "edge-element-equality-string"
+//person[name='Bloggs']
+Root(RS,RA(RS,RI(RS,edge-element-equality-string,=,person.name,Bloggs)))
+RI(RS,edge-element-equality-string,=,person.name,Bloggs),RA,
+person.name 1
+
+10.3.23.2
+Default Equality
+"" "" "edge-element-equality-string"
+//person[name='Bloggs']
+Root(RS,RA(RS,RI(RS,edge-element-equality-string,=,person.name,Bloggs)))
+RI(RS,edge-element-equality-string,=,person.name,Bloggs),RA,
+person.name 1
+
+# edge-element-equality-string (prefix)
+10.3.24
+Prefix
+"" "name" "edge-element-equality-string"
+//person/name
+Root(RA(RI(edge-element-equality-string,prefix,person.name)))
+RI(edge-element-equality-string,prefix,person.name),RA,
+person.name 1
+
+# edge-element-equality-decimal (equality)
+10.3.25
+Equality
+"" "balance" "edge-element-equality-decimal"
+//person[balance=123]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,=,person.balance,123)))
+RI(RS,edge-element-equality-decimal,=,person.balance,123),RA,
+person.balance 1
+
+# edge-element-equality-decimal (inequality)
+10.3.26.1
+Inequality (!=)
+"" "balance" "edge-element-equality-decimal"
+//person[balance!=124]
+Root(RA(\(RI(RS,edge-element-equality-decimal,prefix,person.balance),RI(RS,edge-element-equality-decimal,=,person.balance,124))))
+RI(RS,edge-element-equality-decimal,prefix,person.balance),RI(RS,edge-element-equality-decimal,=,person.balance,124),\,RA,
+person.balance 1
+
+10.3.26.2
+Inequality (<)
+"" "balance" "edge-element-equality-decimal"
+//person[balance<124]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,<,person.balance,124)))
+RI(RS,edge-element-equality-decimal,<,person.balance,124),RA,
+person.balance 1
+
+10.3.26.3
+Inequality (>)
+"" "balance" "edge-element-equality-decimal"
+//person[balance>122]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,>,person.balance,122)))
+RI(RS,edge-element-equality-decimal,>,person.balance,122),RA,
+person.balance 1
+
+10.3.26.4
+Inequality (<=)
+"" "balance" "edge-element-equality-decimal"
+//person[balance<=123]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,<=,person.balance,123)))
+RI(RS,edge-element-equality-decimal,<=,person.balance,123),RA,
+person.balance 1
+
+10.3.26.5
+Inequality (>=)
+"" "balance" "edge-element-equality-decimal"
+//person[balance>=123]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,>=,person.balance,123)))
+RI(RS,edge-element-equality-decimal,>=,person.balance,123),RA,
+person.balance 1
+
+10.3.26.6
+Inequality (range with 'and')
+"" "balance" "edge-element-equality-decimal"
+//person[balance>122 and balance<124]
+Root(RA(RI(edge-element-equality-decimal,range,person.balance,122,124)))
+RI(edge-element-equality-decimal,range,person.balance,122,124),RA,
+person.balance 1
+
+10.3.26.7
+Inequality (range)
+"" "balance" "edge-element-equality-decimal" \
+//person[balance>122][balance<124]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,range,person.balance,122,124)))
+RI(RS,edge-element-equality-decimal,range,person.balance,122,124),RA,
+person.balance 1
+
+# edge-element-equality-decimal (prefix)
+10.3.27
+Prefix
+"" "balance" "edge-element-equality-decimal"
+//person/balance
+Root(RA(RI(edge-element-equality-decimal,prefix,person.balance)))
+RI(edge-element-equality-decimal,prefix,person.balance),RA,
+person.balance 1
+
+# edge-element-equality-date (equality)
+10.3.28
+Equality
+"" "elected" "edge-element-equality-date"
+//person[elected=xs:date('1999-12-31')]
+Root(RS,RA(RS,RI(RS,edge-element-equality-date,=,person.elected,1999-12-31)))
+RI(RS,edge-element-equality-date,=,person.elected,1999-12-31),RA,
+person.elected 1
+
+# edge-element-equality-date (inequality)
+10.3.29.1
+Inequality (!=)
+"" "elected" "edge-element-equality-date"
+//person[elected!=xs:date('2000-01-01')]
+Root(RA(\(RI(RS,edge-element-equality-date,prefix,person.elected),RI(RS,edge-element-equality-date,=,person.elected,2000-01-01))))
+RI(RS,edge-element-equality-date,prefix,person.elected),RI(RS,edge-element-equality-date,=,person.elected,2000-01-01),\,RA,
+person.elected 1
+
+10.3.29.2
+Inequality (<)
+"" "elected" "edge-element-equality-date"
+//person[elected<xs:date('2000-01-01')]
+Root(RS,RA(RS,RI(RS,edge-element-equality-date,<,person.elected,2000-01-01)))
+RI(RS,edge-element-equality-date,<,person.elected,2000-01-01),RA,
+person.elected 1
+
+10.3.29.3
+Inequality (>)
+"" "elected" "edge-element-equality-date"
+//person[elected>xs:date('1999-12-30')]
+Root(RS,RA(RS,RI(RS,edge-element-equality-date,>,person.elected,1999-12-30)))
+RI(RS,edge-element-equality-date,>,person.elected,1999-12-30),RA,
+person.elected 1
+
+10.3.29.4
+Inequality (<=)
+"" "elected" "edge-element-equality-date"
+//person[elected<=xs:date('1999-12-31')]
+Root(RS,RA(RS,RI(RS,edge-element-equality-date,<=,person.elected,1999-12-31)))
+RI(RS,edge-element-equality-date,<=,person.elected,1999-12-31),RA,
+person.elected 1
+
+10.3.29.5
+Inequality (>=)
+"" "elected" "edge-element-equality-date"
+//person[elected>=xs:date('1999-12-31')]
+Root(RS,RA(RS,RI(RS,edge-element-equality-date,>=,person.elected,1999-12-31)))
+RI(RS,edge-element-equality-date,>=,person.elected,1999-12-31),RA,
+person.elected 1
+
+10.3.29.6
+Inequality (range with 'and')
+"" "elected" "edge-element-equality-date"
+//person[elected>xs:date('1999-12-30') and elected<xs:date('2000-01-01')]
+Root(RA(RI(edge-element-equality-date,range,person.elected,1999-12-30,2000-01-01)))
+RI(edge-element-equality-date,range,person.elected,1999-12-30,2000-01-01),RA,
+
+person.elected 1
+
+10.3.29.7
+Inequality (range)
+"" "elected" "edge-element-equality-date"
+//person[elected>xs:date('1999-12-30')][elected<xs:date('2000-01-01')]
+Root(RS,RA(RS,RI(RS,edge-element-equality-date,range,person.elected,1999-12-30,2000-01-01)))
+RI(RS,edge-element-equality-date,range,person.elected,1999-12-30,2000-01-01),RA,
+person.elected 1
+
+# edge-element-equality-date (prefix)
+10.3.30
+Prefix
+"" "elected" "edge-element-equality-date"
+//person/elected
+Root(RA(RI(edge-element-equality-date,prefix,person.elected)))
+RI(edge-element-equality-date,prefix,person.elected),RA,
+person.elected 1
+
+# edge-element-substring-string (equality)
+10.3.31
+Equality
+"" "name" "edge-element-substring-string"
+//person[contains(name,'log')]
+Root(RA(RI(edge-element-substring-string,=,person.name,log)))
+RI(edge-element-substring-string,=,person.name,log),RA,
+blo log ogg ggs 1
+
+# edge-attribute-equality-string (equality)
+10.3.32
+Equality
+"" "first" "edge-attribute-equality-string"
+//name[@first='fred']
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-string,=,name.first,fred)))
+RI(RS,edge-attribute-equality-string,=,name.first,fred),RA,
+name.first 1
+
+# edge-attribute-equality-string (prefix)
+10.3.33
+Prefix
+"" "first" "edge-attribute-equality-string"
+//name/@first
+Root(RA(RI(edge-attribute-equality-string,prefix,name.first)))
+RI(edge-attribute-equality-string,prefix,name.first),RA,
+name.first 1
+
+# edge-attribute-equality-decimal (equality)
+10.3.34
+Equality
+"" "age" "edge-attribute-equality-decimal"
+//person[@age=33]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,=,person.age,33)))
+RI(RS,edge-attribute-equality-decimal,=,person.age,33),RA,
+person.age 1
+
+# edge-attribute-equality-decimal (inequality)
+10.3.35.1
+Inequality (!=)
+"" "age" "edge-attribute-equality-decimal"
+//person[@age!=34]
+Root(RA(\(RI(RS,edge-attribute-equality-decimal,prefix,person.age),RI(RS,edge-attribute-equality-decimal,=,person.age,34))))
+RI(RS,edge-attribute-equality-decimal,prefix,person.age),RI(RS,edge-attribute-equality-decimal,=,person.age,34),\,RA,
+person.age 1
+
+10.3.35.2
+Inequality (<)
+"" "age" "edge-attribute-equality-decimal"
+//person[@age<34]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,<,person.age,34)))
+RI(RS,edge-attribute-equality-decimal,<,person.age,34),RA,
+person.age 1
+
+10.3.35.3
+Inequality (>)
+"" "age" "edge-attribute-equality-decimal"
+//person[@age>32]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,>,person.age,32)))
+RI(RS,edge-attribute-equality-decimal,>,person.age,32),RA,
+person.age 1
+
+10.3.35.4
+Inequality (<=)
+"" "age" "edge-attribute-equality-decimal"
+//person[@age<=33]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,<=,person.age,33)))
+RI(RS,edge-attribute-equality-decimal,<=,person.age,33),RA,
+person.age 1
+
+10.3.35.5
+Inequality (>=)
+"" "age" "edge-attribute-equality-decimal"
+//person[@age>=33]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,>=,person.age,33)))
+RI(RS,edge-attribute-equality-decimal,>=,person.age,33),RA,
+person.age 1
+
+10.3.35.6
+Inequality (range with 'and')
+"" "age" "edge-attribute-equality-decimal"
+//person[@age>32 and @age<34]
+Root(RA(RI(edge-attribute-equality-decimal,range,person.age,32,34)))
+RI(edge-attribute-equality-decimal,range,person.age,32,34),RA,
+person.age 1
+
+10.3.35.7
+Inequality (range)
+"" "age" "edge-attribute-equality-decimal"
+//person[@age>32][@age<34]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,range,person.age,32,34)))
+RI(RS,edge-attribute-equality-decimal,range,person.age,32,34),RA,
+person.age 1
+
+# edge-attribute-equality-decimal (prefix)
+10.3.36
+Prefix
+"" "age" "edge-attribute-equality-decimal"
+//person[@age]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,prefix,person.age)))
+RI(RS,edge-attribute-equality-decimal,prefix,person.age),RA,
+person.age 1
+
+# edge-attribute-equality-date (equality)
+10.3.37
+Equality
+"" "registered" "edge-attribute-equality-date"
+//balance[@registered=xs:date('2003-12-15')]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-date,=,balance.registered,2003-12-15)))
+RI(RS,edge-attribute-equality-date,=,balance.registered,2003-12-15),RA,
+balance.registered 1
+
+# edge-attribute-equality-date (inequality)
+10.3.38.1
+Inequality (!=)
+"" "registered" "edge-attribute-equality-date"
+//balance[@registered!=xs:date('2003-12-16')]
+Root(RA(\(RI(RS,edge-attribute-equality-date,prefix,balance.registered),RI(RS,edge-attribute-equality-date,=,balance.registered,2003-12-16))))
+RI(RS,edge-attribute-equality-date,prefix,balance.registered),RI(RS,edge-attribute-equality-date,=,balance.registered,2003-12-16),\,RA,
+balance.registered 1
+
+10.3.38.2
+Inequality (<)
+"" "registered" "edge-attribute-equality-date"
+//balance[@registered<xs:date('2003-12-16')]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-date,<,balance.registered,2003-12-16)))
+RI(RS,edge-attribute-equality-date,<,balance.registered,2003-12-16),RA,
+balance.registered 1
+
+10.3.38.3
+Inequality (>)
+"" "registered" "edge-attribute-equality-date"
+//balance[@registered>xs:date('2003-12-14')]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-date,>,balance.registered,2003-12-14)))
+RI(RS,edge-attribute-equality-date,>,balance.registered,2003-12-14),RA,
+balance.registered 1
+
+10.3.38.4
+Inequality (<=)
+"" "registered" "edge-attribute-equality-date" \
+//balance[@registered<=xs:date('2003-12-15')]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-date,<=,balance.registered,2003-12-15)))
+RI(RS,edge-attribute-equality-date,<=,balance.registered,2003-12-15),RA,
+balance.registered 1
+
+10.3.38.5
+Inequality (>=)
+"" "registered" "edge-attribute-equality-date"
+//balance[@registered>=xs:date('2003-12-15')]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-date,>=,balance.registered,2003-12-15)))
+RI(RS,edge-attribute-equality-date,>=,balance.registered,2003-12-15),RA,
+balance.registered 1
+
+10.3.38.6
+Inequality (range with 'and')
+"" "registered" "edge-attribute-equality-date"
+//balance[@registered>xs:date('2003-12-14') and @registered<xs:date('2003-12-16')]
+Root(RA(RI(edge-attribute-equality-date,range,balance.registered,2003-12-14,2003-12-16)))
+RI(edge-attribute-equality-date,range,balance.registered,2003-12-14,2003-12-16),RA,
+balance.registered 1
+
+10.3.38.7
+Inequality (range)
+"" "registered" "edge-attribute-equality-date"
+//balance[@registered>xs:date('2003-12-14')][@registered<xs:date('2003-12-16')]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-date,range,balance.registered,2003-12-14,2003-12-16)))
+RI(RS,edge-attribute-equality-date,range,balance.registered,2003-12-14,2003-12-16),RA,
+balance.registered 1
+
+# edge-attribute-equality-date (prefix)
+10.3.39
+Prefix
+"" "registered" "edge-attribute-equality-date"
+//balance[@registered]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-date,prefix,balance.registered)))
+RI(RS,edge-attribute-equality-date,prefix,balance.registered),RA,
+balance.registered 1
+
+# edge-attribute-substring-string (equality)
+10.3.40.1
+Equality
+"" "first" "edge-attribute-substring-string"
+//name[contains(@first,'fre')]
+Root(RA(RI(edge-attribute-substring-string,=,name.first,fre)))
+RI(edge-attribute-substring-string,=,name.first,fre),RA,
+fre red 1
+
+10.3.40.2
+Equality
+"" "first" "edge-attribute-substring-string"
+//name[contains(@first,'red')]
+Root(RA(RI(edge-attribute-substring-string,=,name.first,red)))
+RI(edge-attribute-substring-string,=,name.first,red),RA,
+fre red 1
+
+################################################################
+#   queries for documents
+################################################################
+
+# URI specified, query for document name
+10.3.41
+Equality
+#"http://www.sleepycat.com/2002/dbxml" "name" "node-attribute-equality-string"
+"" "" ""
+//*[@dbxml:name='$test_path/document_set_10_2/document_10_2_match.xml']
+Root(RA(RI(node-attribute-equality-string,=,http://www.sleepycat.com/2002/dbxml:name,$test_path/document_set_10_2/document_10_2_match.xml)))
+RI(node-attribute-equality-string,=,http://www.sleepycat.com/2002/dbxml:name,$test_path/document_set_10_2/document_10_2_match.xml),RA,
+"" 0
+
+################################################################
+# Tests for substring lookups with less than 3 characters
+################################################################
+
+# node-element-substring-string (prefix)
+10.3.42
+Prefix
+"" "name" "node-element-substring-string"
+//name[dbxml:contains(.,'bl')]
+Root(RA(RI(node-element-substring-string,=,name,blo)))
+RI(node-element-substring-string,=,name,blo),RA,
+blo log ogg ggs 1
+
+10.3.43
+Prefix
+"" "name" "node-element-substring-string"
+//name[starts-with(.,'B')]
+Root(RA(RI(node-element-substring-string,=,name,log)))
+RI(node-element-substring-string,=,name,log),RA,
+blo log ogg ggs 1
+
+10.3.44
+Prefix
+"" "name" "node-element-substring-string"
+//name[ends-with(.,'gs')]
+Root(RA(RI(node-element-substring-string,=,name,ggs)))
+RI(node-element-substring-string,=,name,ggs),RA,
+blo log ogg ggs 1
+
+# node-attribute-substring-string (prefix)
+10.3.45
+Prefix
+"" "first" "node-attribute-substring-string"
+//*[starts-with(@first,'fr')]
+Root(RA(RI(node-attribute-substring-string,=,first,fre)))
+RI(node-attribute-substring-string,=,first,fre),RA,
+fre red 1
+
+10.3.46
+Prefix
+"" "registered" "node-attribute-substring-string"
+//*[contains(@registered,'-')]
+Root(RA(RI(node-attribute-substring-string,=,first,red)))
+RI(node-attribute-substring-string,=,first,red),RA,
+fre red 1
+
+# edge-element-substring-string (prefix)
+10.3.47
+Prefix
+"" "name" "edge-element-substring-string"
+//person[contains(name,'og')]
+Root(RA(RI(edge-element-substring-string,=,person.name,log)))
+RI(edge-element-substring-string,=,person.name,log),RA,
+blo log ogg ggs 1
+
+# edge-attribute-substring-string (prefix)
+10.3.48
+Prefix
+"" "first" "edge-attribute-substring-string"
+//name[ends-with(@first,'d')]
+Root(RA(RI(edge-attribute-substring-string,=,name.first,fre)))
+RI(edge-attribute-substring-string,=,name.first,fre),RA,
+fre red 1
+
+10.3.49
+Prefix
+"" "first" "edge-attribute-substring-string"
+//name[contains(@first,'')]
+Root(RA(RI(edge-attribute-substring-string,=,name.first,red)))
+RI(edge-attribute-substring-string,=,name.first,red),RA,
+fre red 1
+

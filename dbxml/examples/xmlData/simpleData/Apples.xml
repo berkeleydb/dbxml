@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Apples</item>
+	<inventory>
+		<sku>Applfrui1q6lpq</sku>
+		<price>1.10</price>
+		<inventory>535</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

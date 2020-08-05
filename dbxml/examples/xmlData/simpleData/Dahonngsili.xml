@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Dahon ng sili</item>
+	<inventory>
+		<sku>Dahovegebj7IyW</sku>
+		<price>0.60</price>
+		<inventory>243</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Boysenberry</item>
+	<inventory>
+		<sku>Boysfrui55o29v</sku>
+		<price>0.41</price>
+		<inventory>377</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

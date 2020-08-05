@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v2.5 NT  - http://www.xmlspy.com -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;" />
+		<title>When the world wants to talk, it speaks Unicode</title>
+	</head>
+	<body>
+		<h1>When the world wants to talk, it speaks Unicode</h1>
+		<p lang="Arabic [ar]">عندما يريد العالم أن يتكلّم, فهو يتحدّث بلغة يونيكود.</p>
+		<p lang="Catalan [ca]">Quan el món vol conversar, parla Unicode</p>
+		<p lang="Chinese (Simplified) [zh-cn]">当世界需要沟通时，请用Unicode！</p>
+		<p lang="Chinese (Traditional) [zh-tw]">當世界需要溝通時，請用統一碼（Unicode）</p>
+		<p lang="Danish [da]">Når verden vil tale, taler den Unicode</p>
+		<p lang="Dutch[ nl]">Als de wereld wil praten, spreekt hij Unicode</p>
+		<p lang="English [en]">When the world wants to talk, it speaks Unicode</p>
+		<p lang="Esperanto [eo]">Kiam la mondo volas paroli, ĝi parolas Unicode</p>
+		<p lang="Finnish [fi]">Kun maailma haluaa puhua, se puhuu Unicodea</p>
+		<p lang="French [fr]">Quand le monde veut communiquer, il parle en Unicode</p>
+		<p lang="German [de]">Wenn die Welt miteinander spricht, spricht sie Unicode</p>
+		<p lang="Hebrew [he]">כאשר העולם רוצה לדבר, הוא מדבר ב־Unicode</p>
+		<p lang="Hungarian [hu]">Ha a világ beszélni akar, azt Unicode-ul mondja</p>
+		<p lang="Italian [it]">Quando il mondo vuole comunicare, parla Unicode</p>
+		<p lang="Japanese [ja]">世界的に話すなら、Unicode です。</p>
+		<p lang="Korean [ko]">세계를 향한 대화, 유니코드로 하십시오</p>
+		<p lang="Norwegian (Bokmål) [no-bok]">Når verden vil snakke, snakker den Unicode</p>
+		<p lang="Norwegian (Nynorsk) [no-nyn]">Når verda ønskjer å snakke, talar ho Unicode</p>
+		<p lang="Portugese [pt]">Quando o mundo quer falar, fala Unicode</p>
+		<p lang="Romanian [ro]">Când lumea vrea să comunice, vorbeşte Unicode</p>
+		<p lang="Russian [ru]">Если мир хочет общаться, он общается на Unicode</p>
+		<p lang="Slovenian [sl]">Ko se želi svet pogovarjati, govori Unicode</p>
+		<p lang="Spanish [es]">Cuando el mundo quiere conversar, habla Unicode</p>
+		<p lang="Swedish [sv]">När världen vill tala, så talar den Unicode</p>
+	</body>
+</html>

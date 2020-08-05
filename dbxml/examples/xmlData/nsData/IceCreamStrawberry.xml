@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<desserts:item xmlns:desserts="http://groceryItem.dbxml/desserts">
+	<product>Ice Cream, Strawberry</product>
+	<inventory>
+		<sku>Ice dessHjRUux</sku>
+		<price>7.41</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</desserts:item>
+

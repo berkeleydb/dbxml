@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<desserts:item xmlns:desserts="http://groceryItem.dbxml/desserts">
+	<product>Brownies, Butterscotch</product>
+	<inventory>
+		<sku>BrowdessAGeerO</sku>
+		<price>2.93</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</desserts:item>
+

@@ -1,0 +1,81 @@
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="dbxml_xqts_runner" ProjectGUID="{8BE60C40-70B7-48DE-BCA3-C929A5405F65}">
+  <Platforms>
+    <Platform Name="Win32"/>
+    <Platform Name="x64"/>
+    <Platform Name="IA64"/>
+  </Platforms>
+  <Configurations>
+    <Configuration Name="Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml_xqts_runner" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_xqts_runner.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25d.lib libdb48d.lib xqilla22d.lib xerces-c_3d.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win32/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml_xqts_runner.exe" ProgramDatabaseFile="$(OutDir)/dbxml_xqts_runner.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml_xqts_runner prog $(OutDir) debug" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml_xqts_runner" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_xqts_runner.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdbxml25.lib libdb48.lib xqilla22.lib xerces-c_3.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win32/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml_xqts_runner.exe" ProgramDatabaseFile="$(OutDir)/dbxml_xqts_runner.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml_xqts_runner prog $(OutDir) release" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Debug|x64" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml_xqts_runner" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_xqts_runner.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="libdbxml25d.lib libdb48d.lib xqilla22d.lib xerces-c_3d.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win64/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml_xqts_runner.exe" ProgramDatabaseFile="$(OutDir)/dbxml_xqts_runner.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml_xqts_runner prog $(OutDir) debug" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Release|x64" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml_xqts_runner" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_xqts_runner.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="libdbxml25.lib libdb48.lib xqilla22.lib xerces-c_3.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win64/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml_xqts_runner.exe" ProgramDatabaseFile="$(OutDir)/dbxml_xqts_runner.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml_xqts_runner prog $(OutDir) release" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Debug|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml_xqts_runner" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_xqts_runner.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="libdbxml25d.lib libdb48d.lib xqilla22d.lib xerces-c_3d.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml_xqts_runner.exe" ProgramDatabaseFile="$(OutDir)/dbxml_xqts_runner.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml_xqts_runner prog $(OutDir) debug" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Release|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml_xqts_runner" ConfigurationType="1" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CONSOLE" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/dbxml_xqts_runner.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="libdbxml25.lib libdb48.lib xqilla22.lib xerces-c_3.lib" AdditionalLibraryDirectories="$(OutDir);$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName)" OutputFile="$(OutDir)/dbxml_xqts_runner.exe" ProgramDatabaseFile="$(OutDir)/dbxml_xqts_runner.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat dbxml_xqts_runner prog $(OutDir) release" Description="Copying program files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+  </Configurations>
+  <References/>
+  <Files>
+    <File RelativePath="..\src\clib\getopt.c"/>
+    <File RelativePath="..\test\cpp\xqts\xqts_runner.cpp"/>
+  </Files>
+  <Globals/>
+</VisualStudioProject>

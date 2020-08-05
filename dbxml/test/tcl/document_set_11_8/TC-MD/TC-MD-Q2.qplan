@@ -1,0 +1,38 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="prolog">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="prolog" nodeType="element">
+            <StepQP axis="child" name="article" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="name" value="Ben Yang"/>
+            </StepQP>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp3">
+            <StepQP axis="child" name="authors" nodeType="element">
+              <VariableQP name="#tmp2"/>
+            </StepQP>
+            <NodePredicateFilterQP uri="" name="#tmp4">
+              <StepQP axis="child" name="author" nodeType="element">
+                <VariableQP name="#tmp3"/>
+              </StepQP>
+              <ValueFilterQP comparison="eq" general="true">
+                <StepQP axis="child" name="name" nodeType="element">
+                  <VariableQP name="#tmp4"/>
+                </StepQP>
+                <Sequence>
+                  <AnyAtomicTypeConstructor value="Ben Yang" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                </Sequence>
+              </ValueFilterQP>
+            </NodePredicateFilterQP>
+          </NodePredicateFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="title" nodeType="element">
+        <VariableQP name=":prolog"/>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

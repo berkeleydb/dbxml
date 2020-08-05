@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Brownies, Mint Chip</item>
+	<inventory>
+		<sku>BrowdessinO6CC</sku>
+		<price>12.05</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

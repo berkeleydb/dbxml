@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Sesame</item>
+	<inventory>
+		<sku>SesavegePcxaVB</sku>
+		<price>0.74</price>
+		<inventory>526</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

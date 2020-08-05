@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<project name="dbxmltest" basedir="." default="main">
+<description>Complie and run the dbxml test </description>	
+
+
+	<fail message="Ant 1.7.0 or greater is required">
+      <condition><not><antversion atleast="1.7.0"/></not></condition>
+    </fail>
+	
+	<!--Where the source file is -->
+	<property name="src.dir" value="." />
+	<property name="build.dir" value="build" />
+	<property name="classes.dir" value="${build.dir}/classes"/>
+	<property name="jar.dir" value="${build.dir}/jar"/>
+    
+	<!--Optional -->
+	<!--property name="main-class" value="HelloWorld"/ -->
+	
+	<!--Where the generate report is -->
+	<property name="report.dir" value="${build.dir}/junitreport" />
+	
+	<target name="clean">
+        <delete dir="${build.dir}"/>
+		<delete dir="${report.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}">
+			<include name="**/*.java" />
+			<include name="TestUtil.java" />
+		</javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${ant.project.name}"/>
+            </manifest>
+        </jar>
+    </target>
+	
+	<target name="junit" depends="jar">
+		<delete dir="${report.dir}"/>
+		<mkdir dir="${report.dir}" />
+		<junit printsummary="withOutAndErr" fork="yes" >
+			<formatter type="xml" />
+			<classpath>
+				<pathelement path="${classes.dir}" />
+			</classpath>
+			<batchtest fork="yes" todir="${report.dir}">
+				<fileset dir="${classes.dir}" >
+					<include name="**/*Test*.class" />
+					<exclude name="**/TestUtil.class" />
+					<exclude name="**/TestAll.class" />
+				</fileset>
+			</batchtest>	
+		</junit>
+	</target>
+	
+	<target name="junitReport">
+		<junitreport todir="${report.dir}">
+			<fileset dir="${report.dir}" includes="TEST-*.xml" />
+			<report todir="${report.dir}" />
+		</junitreport>
+	</target>
+
+	<target name="runtest" depends="junit,junitReport" />
+	<target name="clean-build" depends="clean,jar" />
+	<target name="main" depends="clean,runtest" />
+	
+</project>

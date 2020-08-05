@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Salsify</product>
+	<inventory>
+		<sku>SalsvegezTMKFn</sku>
+		<price>0.29</price>
+		<inventory>198</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

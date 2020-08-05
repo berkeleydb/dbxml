@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>White Walnut</item>
+	<inventory>
+		<sku>WhitfruimCdlI4</sku>
+		<price>0.88</price>
+		<inventory>628</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x xmlns:edi="http://ecommerce.org/schema">
+  <!-- the "edi" prefix is bound to http://ecommerce.org/schema for the "x" element and contents -->
+  <edi:price units="Euro">32.18</edi:price>
+  <lineItem edi:taxClass="exempt">Baby food</lineItem>
+</x>

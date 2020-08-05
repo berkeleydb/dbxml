@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XQUTSCatalog.xsl" ?>
+<test-suite
+   xmlns="http://www.w3.org/2005/02/query-test-update"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   CatalogDesignDate="2003-04-03"
+   version="0.1.0"
+   SourceOffsetPath="./"
+   ResultOffsetPath="ExpectedTestResults/"
+   XQueryQueryOffsetPath="Queries/" 
+   XQueryXQueryOffsetPath="Queries/XQueryX/" 
+   XQueryFileExtension=".xq"
+   XQueryXFileExtension=".xqx" 
+   
+   xsi:schemaLocation="http://www.w3.org/2005/02/query-test-update XQUTSCatalog.xsd">
+
+   <test-suite-info> 
+      <title>XQuery Update Test Suite 0.1.0</title> 
+      <description> 
+         Test Suite for XQuery Update 0.1.0. 
+         See http://www.w3.org/XML/Query/test-suite/update. 
+      </description> 
+   </test-suite-info> 
+
+   <citations>
+      <citation-spec name="XQUPDATE">
+         <description last-mod="2006-04-12">XQuery Update Facility</description>
+         <spec-URI>http://www.w3.org/TR/xqupdate/</spec-URI>
+      </citation-spec>
+   </citations>
+   <comparisons>
+      <comparison name="XML">
+         <description last-mod="2003-03-25">The XML InfoSets should be canonicalized and compared.</description>
+      </comparison>
+      <comparison name="Fragment">
+         <description last-mod="2004-10-20">
+            A 'fragment' refers to an XML based instance which has multiple top-level elements and NO XML declaration.
+            The comparator for this should simply wrap the entire fragment in a container element and perform XML comparison.
+         </description>
+      </comparison>
+      <comparison name="Text">
+         <description last-mod="2003-03-25">
+            Each line of non-whitespace text should match. New-line sequences
+            may vary and should be neutralized. Due to issues with the XML serialization of certain characters (e.g. '&lt;'),
+            it is not possible to simply compare the actual and expected results. Rather (as is the case with the 'Fragment' comparator)
+            the test harness should convert the results into valid XML (by adding a container element) and perform comparison
+            on the XML canonicalized versions of the results.
+         </description>
+      </comparison>
+      <comparison name="Ignore">
+         <description last-mod="2003-03-25">
+            Only the presence/absence of this file is significant,
+            not its content.
+         </description>
+      </comparison>
+      <comparison name="Inspect">
+         <description last-mod="2003-03-25">
+            Automated comparison is not possible. the output should be
+            inspected by a human.
+         </description>
+      </comparison>
+   </comparisons>
+   <roles>
+      <role name="principal-data">
+         <description last-mod="2003-03-25">
+            This is the source that is handed in to the processor as the
+            initial input sequence, setting the "evaluation context" as described in XQuery chapter 2.
+         </description>
+      </role>
+      <role name="supplemental-data">
+         <description last-mod="2003-03-25">
+            These are sources that may be read by functions such as
+            fn:document() as the query is evaluated.
+         </description>
+      </role>
+      <role name="schema">
+         <description last-mod="2003-03-25">
+            These are schema definitions that may be referenced by sources
+            or in the query.
+         </description>
+      </role>
+      <role name="dtd">
+         <description last-mod="2003-03-25">
+            These are dtd definitions that may be referenced by sources
+            or in the query.
+         </description>
+      </role>
+      <role name="principal">
+         <description last-mod="2003-03-25">
+            This is an output (either text or XML) that will contain the
+            query results. If the processor invocation sequence accepts a filename for results, this name may be
+            passed, possibly prefixed by a partial directory path to allow storage of the results in a separate
+            directory tree.
+         </description>
+      </role>
+      <role name="console-log">
+         <description last-mod="2003-03-25">
+            This is an output (text file tagged .log) that will contain the
+            captured "console" output for a command-line invocation, or equivalent messages from a harness. The
+            main goal is to capture error messages that came from the processor.
+         </description>
+         <note>
+            A test lab may choose to capture console output for every test case, in which case the presence
+            of this element is a signal that the console log of this test contains messages that are significant to
+            the pass/fail determination.
+         </note>
+      </role>
+   </roles>
+   <scenarios>
+      <scenario name="standard">
+         <description last-mod="2005-06-10">
+            A query this is expected to produce valid results. Principal input should always be specified, even if the query doesn't have any PathExpr.
+         </description>
+      </scenario>
+      <scenario name="parse-error">
+         <description last-mod="2005-06-10">
+            A query this is expected to raise a parsing/syntax error at query parse time. Principal input should always be specified, even if the query doesn't have any PathExpr.
+         </description>
+      </scenario>
+      <scenario name="runtime-error">
+         <description last-mod="2005-06-10">
+            A query this is expected to raise a runtime error at query parse time. Runtime errors in this case include those raised by static typing rules. Principal input should always be specified, even if the query doesn't have any PathExpr.
+         </description>
+      </scenario>
+      <scenario name="trivial">
+         <description last-mod="2006-03-29">
+            A query this is expected to produce valid results. Principal input should always be specified, even if the query doesn't have any PathExpr.
+            The initial query returns an &lt;xqx:xquery&gt; element (Trivial Embedding of XQuery).
+            This embedded query is then executed to produce the final result.
+         </description>
+      </scenario>
+   </scenarios>
+   <sources>
+      <source ID="emptydoc" FileName="TestSources/emptydoc.xml" Creator="David Marston">
+         <description last-mod="2003-03-25">Contains just a "doc" element, no comments/text/PIs.</description>
+      </source>      
+      <source ID="airports" FileName="TestSources/airports.xml" Creator="spec-authors">
+         <description last-mod="2006-05-08">Data for use cases.</description>
+      </source>      
+      <source ID="soapMsg" FileName="TestSources/soapMsg.xml" Creator="spec-authors">
+         <description last-mod="2006-05-08">Data for use cases.</description>
+      </source>
+      <source ID="archive" FileName="TestSources/archive.xml" Creator="spec-authors">
+         <description last-mod="2006-05-08">Data for use cases.</description>
+      </source>
+      <source ID="copy1" FileName="TestSources/copy1.xml" Creator="spec-authors">
+         <description last-mod="2006-05-08">Data for use cases.</description>
+      </source>
+      <source ID="copy2" FileName="TestSources/copy2.xml" Creator="spec-authors">
+         <description last-mod="2006-05-08">Data for use cases.</description>
+      </source>
+      <source ID="grant" FileName="TestSources/grant.xml" Creator="spec-authors">
+         <description last-mod="2006-05-08">Data for use cases.</description>
+      </source>
+      <source ID="log" FileName="TestSources/log.xml" Creator="spec-authors">
+         <description last-mod="2006-05-08">Data for use cases.</description>
+      </source>
+      <source ID="part-list" FileName="TestSources/part-list.xml" Creator="spec-authors">
+         <description last-mod="2006-05-08">Data for use cases.</description>
+      </source>
+      <source ID="part-tree" FileName="TestSources/part-tree.xml" Creator="spec-authors">
+         <description last-mod="2006-05-08">Data for use cases.</description>
+      </source>
+      <source ID="items" FileName="TestSources/items.xml" Creator="XML Query WG">
+         <description last-mod="2005-02-11">Data for the the XML Query RDB use cases</description>
+      </source>
+      <source ID="bids" FileName="TestSources/bids.xml" Creator="XML Query WG">
+         <description last-mod="2005-02-11">Data for the the XML Query RDB use cases</description>
+      </source>
+      <source ID="users" FileName="TestSources/users.xml" Creator="XML Query WG">
+         <description last-mod="2005-02-11">Data for the the XML Query RDB use cases</description>
+      </source>      
+      <source ID="users2" FileName="TestSources/users2.xml" Creator="XML Query WG">
+         <description last-mod="2005-02-11">Data for the the XML Query RDB use cases (Includes Anabel lee)</description>
+      </source>      
+      <source ID="employees" FileName="TestSources/employees.xml" Creator="XML Query Working Group">
+         <description last-mod="2006-05-08">Data for nil use case</description>
+      </source>  
+      <source ID="employeesNIST" FileName="TestSources/employeesNIST.xml" Creator="CarmeloMontanez">
+         <description last-mod="2006-05-08">One of the main data files for the NIST tests</description>
+      </source>       
+      <source ID="works-mod" FileName="TestSources/works-mod.xml" Creator="Carmelo Montanez">
+         <description last-mod="2005-02-11">One of the main XML File used by NIST tests.</description>
+      </source>       
+      <source ID="TopMany" FileName="TestSources/TopMany.xml" Creator="David Marston">
+         <description last-mod="2003-03-25">Like TreeCompass, but with comments and PIs off the root. PI targets vary.</description>
+         <note>All text nodes must have non-whitespace characters.</note>
+      </source>
+   </sources>
+   <implementation-defined-items>
+     <implementation-defined-item spec = "XQUPDATE" name = "Space Holder for now">
+       <description last-mod="2005-04-04">The statically-known collations.</description>
+     </implementation-defined-item>
+   </implementation-defined-items>
+   <features>
+      <feature name="Minimal Conformance"/>
+   </features>
+   <context-properties>
+     <context-property context-type = "static" name = "SpaceHolderfornow"/>
+   </context-properties>
+    <test-group name="AttrDataModelErrs">
+      <GroupInfo>
+        <title>Data model errors on changing attributes</title>
+        <description/>
+      </GroupInfo>
+      <test-case name="attribute-errors-q1" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q1" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q2" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q2" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q3" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q3" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q4" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q4" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q5" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q5" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q6" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q6" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q7" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q7" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q8" FilePath="AttributeErrors" scenario="standard" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q8" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+        </state>
+        <state time="1">
+          <query name="attribute-errors-q8-test" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <output-file role="principal" compare="Fragment">attribute-errors-q8.xml</output-file>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q9" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q9" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q10" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q10" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q11" FilePath="AttributeErrors" scenario="standard" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q11" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+        </state>
+        <state time="1">
+          <query name="attribute-errors-q11-test" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <output-file role="principal" compare="Fragment">attribute-errors-q11.xml</output-file>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q12" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q12" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q13" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q13" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q14" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q14" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+          <output-file role="principal" compare="Fragment">attribute-errors-q14.xml</output-file>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q15" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q15" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="attribute-errors-q16" FilePath="AttributeErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.2.2" section-title="upd:applyUpdates" section-pointer="#id-upd-apply-updates"/>
+        <state time="0">
+          <query name="attribute-errors-q16" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">works-mod</input-file>
+          <expected-error>XUDY0021</expected-error>
+        </state>
+      </test-case>  
+    </test-group>
+    <test-group name="NSBindingConflictErrs">
+      <GroupInfo>
+        <title>Namespace binding conflicts on attribute updates</title>
+        <description/>
+      </GroupInfo>
+      <test-case name="namespace-errors-q1" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="2.3.1" section-title="Insert" section-pointer="#id-insert"/>
+        <state time="0">
+          <query name="namespace-errors-q1" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0023</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q2" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="2.3.1" section-title="Insert" section-pointer="#id-insert"/>
+        <state time="0">
+          <query name="namespace-errors-q2" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0023</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q3" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="2.3.1" section-title="Insert" section-pointer="#id-insert"/>
+        <state time="0">
+          <query name="namespace-errors-q3" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0023</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q4" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="2.3.4" section-title="Rename" section-pointer="#id-rename"/>
+        <state time="0">
+          <query name="namespace-errors-q4" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0023</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q5" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="2.3.4" section-title="Rename" section-pointer="#id-rename"/>
+        <state time="0">
+          <query name="namespace-errors-q5" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0023</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q6" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="2.3.4" section-title="Rename" section-pointer="#id-rename"/>
+        <state time="0">
+          <query name="namespace-errors-q6" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0023</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q7" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="2.3.3" section-title="Replace" section-pointer="#id-replace"/>
+        <state time="0">
+          <query name="namespace-errors-q7" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0023</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q8" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="2.3.3" section-title="Replace" section-pointer="#id-replace"/>
+        <state time="0">
+          <query name="namespace-errors-q8" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0023</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q9" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.1.6" section-title="upd:insertAttributes" section-pointer="#id-upd-insert-attributes"/>
+        <state time="0">
+          <query name="namespace-errors-q9" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0024</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q10" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.1.6" section-title="upd:insertAttributes" section-pointer="#id-upd-insert-attributes"/>
+        <spec-citation spec="XQUPDATE" section-number="3.1.8" section-title="upd:replaceNode" section-pointer="#id-upd-replacenode"/>
+        <state time="0">
+          <query name="namespace-errors-q10" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0024</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q11" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.1.8" section-title="upd:replaceNode" section-pointer="#id-upd-replacenode"/>
+        <state time="0">
+          <query name="namespace-errors-q11" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0024</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q12" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.1.8" section-title="upd:replaceNode" section-pointer="#id-upd-replacenode"/>
+        <spec-citation spec="XQUPDATE" section-number="3.1.11" section-title="upd:rename" section-pointer="#id-upd-rename"/>
+        <state time="0">
+          <query name="namespace-errors-q12" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0024</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q13" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.1.11" section-title="upd:rename" section-pointer="#id-upd-rename"/>
+        <state time="0">
+          <query name="namespace-errors-q13" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0024</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q14" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.1.6" section-title="upd:insertAttributes" section-pointer="#id-upd-insert-attributes"/>
+        <spec-citation spec="XQUPDATE" section-number="3.1.11" section-title="upd:rename" section-pointer="#id-upd-rename"/>
+        <state time="0">
+          <query name="namespace-errors-q14" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0024</expected-error>
+        </state>
+      </test-case>  
+      <test-case name="namespace-errors-q15" FilePath="NamespaceErrors" scenario="runtime-error" Creator="John Snelson">
+        <description></description>
+        <spec-citation spec="XQUPDATE" section-number="3.1.6" section-title="upd:insertAttributes" section-pointer="#id-upd-insert-attributes"/>
+        <spec-citation spec="XQUPDATE" section-number="3.1.11" section-title="upd:rename" section-pointer="#id-upd-rename"/>
+        <state time="0">
+          <query name="namespace-errors-q15" date="2007-08-30"/>
+          <input-file role="principal-data" variable="input-context">grant</input-file>
+          <expected-error>XUDY0024</expected-error>
+        </state>
+      </test-case>  
+    </test-group>
+    <test-group name="ComplexUpdates">
+      <GroupInfo>
+        <title>Complex Updates</title>
+        <description/>
+      </GroupInfo>
+      <test-group name="ComplexDeletes">
+        <GroupInfo>
+          <title>Complex Deletes</title>
+          <description/>
+        </GroupInfo>
+        <test-case name="complex-deletes-q1" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/> 
+          <state time="0">
+            <query name="complex-deletes-q1" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q1-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q1.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q1-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q1-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q2" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q2-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q2.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q2-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q2-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q3" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q3" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q3-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q3.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q3-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q3-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q4" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q4" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q4-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q4.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q4-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q4-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q5" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q5" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q5-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q5.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q5-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q5-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q6" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q6" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q6-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q6.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q6-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q6-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q7" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q7" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q7-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q7.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q7-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q7-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q8" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q8" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q8-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q8.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q8-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q8-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q9" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q9" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q9-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q9.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q9-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q9-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q10" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q10" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q10-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q10.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q10-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q10-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q11" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q11" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q11-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q11.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q11-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q11-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q12" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q12" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q12-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q12.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q12-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q12-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q13" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q13" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q13-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q13.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-deletes-q13-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q13-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-deletes-q14" FilePath="ComplexUpdates/ComplexDeletes" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.2" section-title="Delete" section-pointer="#id-delete"/>
+          <state time="0">
+            <query name="complex-deletes-q14" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <expected-error>XUDY0020</expected-error>
+            <output-file role="principal" compare="Fragment">complex-deletes-q14.xml</output-file>
+          </state>
+          <state time="1">
+            <query name="complex-deletes-q14-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-deletes-q14-2.xml</output-file>
+          </state>
+        </test-case>
+      </test-group>
+      <test-group name="ComplexRenames">
+        <GroupInfo>
+          <title>Complex Renames</title>
+          <description/>
+        </GroupInfo>
+        <test-case name="complex-renames-q1" FilePath="ComplexUpdates/ComplexRenames" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.4" section-title="Rename" section-pointer="#id-rename"/>
+          <state time="0">
+            <query name="complex-renames-q1" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-renames-q1-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q1.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-renames-q1-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q1-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-renames-q2" FilePath="ComplexUpdates/ComplexRenames" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.4" section-title="Rename" section-pointer="#id-rename"/>
+          <state time="0">
+            <query name="complex-renames-q2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-renames-q2-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q2.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-renames-q2-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q2-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-renames-q3" FilePath="ComplexUpdates/ComplexRenames" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.4" section-title="Rename" section-pointer="#id-rename"/>
+          <state time="0">
+            <query name="complex-renames-q3" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-renames-q3-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q3.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-renames-q3-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q3-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-renames-q4" FilePath="ComplexUpdates/ComplexRenames" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.4" section-title="Rename" section-pointer="#id-rename"/>
+          <state time="0">
+            <query name="complex-renames-q4" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-renames-q4-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q4.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-renames-q4-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q4-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-renames-q5" FilePath="ComplexUpdates/ComplexRenames" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.4" section-title="Rename" section-pointer="#id-rename"/>
+          <state time="0">
+            <query name="complex-renames-q5" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-renames-q5-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q5.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-renames-q5-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q5-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-renames-q6" FilePath="ComplexUpdates/ComplexRenames" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.4" section-title="Rename" section-pointer="#id-rename"/>
+          <state time="0">
+            <query name="complex-renames-q6" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-renames-q6-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q6.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-renames-q6-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q6-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-renames-q7" FilePath="ComplexUpdates/ComplexRenames" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.4" section-title="Rename" section-pointer="#id-rename"/>
+          <state time="0">
+            <query name="complex-renames-q7" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-renames-q7-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q7.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-renames-q7-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q7-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-renames-q8" FilePath="ComplexUpdates/ComplexRenames" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.4" section-title="Rename" section-pointer="#id-rename"/>
+          <state time="0">
+            <query name="complex-renames-q8" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-renames-q8-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q8.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-renames-q8-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-renames-q8-2.xml</output-file>
+          </state>
+        </test-case>
+      </test-group>
+
+
+      <test-group name="ComplexReplaceValues">
+        <GroupInfo>
+          <title>Complex Replace Values</title>
+          <description/>
+        </GroupInfo>
+        <test-case name="complex-replacevalues-q1" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/>
+          <state time="0">
+            <query name="complex-replacevalues-q1" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q1-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q1.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q1-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q1-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q2" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q2-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q2.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q2-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q2-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q3" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q3" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q3-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q3.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q3-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q3-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q4" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q4" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q4-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q4.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q4-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q4-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q5" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q5" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q5-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q5.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q5-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q5-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q6" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q6" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q6-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q6.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q6-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q6-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q7" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q7" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q7-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q7.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q7-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q7-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q8" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q8" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q8-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q8.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q8-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q8-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q9" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q9" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q9-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q9.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q9-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q9-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q10" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q10" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q10-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q10.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q10-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q10-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q11" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q11" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q11-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q11.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q11-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q11-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q12" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q12" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q12-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q12.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q12-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q12-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q13" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q13" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q13-test" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q13.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q13-test2" date="2007-10-23"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q13-2.xml</output-file>
+          </state>
+        </test-case>
+        <test-case name="complex-replacevalues-q14" FilePath="ComplexUpdates/ComplexReplaceValues" scenario="standard" Creator="John Snelson">
+          <description></description>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3" section-title="Replace" section-pointer="#id-replace"/>
+          <spec-citation spec="XQUPDATE" section-number="2.4.3.2" section-title="Replacing the Value of a Node" section-pointer="#id-replacing-node-value"/> 
+          <state time="0">
+            <query name="complex-replacevalues-q14" date="2008-01-03"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+          </state>
+          <state time="1">
+            <query name="complex-replacevalues-q14-test" date="2008-01-03"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q14.xml</output-file>
+          </state>
+          <state time="2">
+            <query name="complex-replacevalues-q14-test2" date="2008-01-03"/>
+            <input-file role="principal-data" variable="input-context">TopMany</input-file>
+            <output-file role="principal" compare="Fragment">complex-replacevalues-q14-2.xml</output-file>
+          </state>
+        </test-case>
+      </test-group>
+    </test-group>
+</test-suite>

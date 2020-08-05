@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Irish Potato</product>
+	<inventory>
+		<sku>Irisvege6kyF1A</sku>
+		<price>0.16</price>
+		<inventory>530</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

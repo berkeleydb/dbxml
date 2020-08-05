@@ -1,0 +1,43 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# QP tests
+# String functions
+
+TEST 11.5 
+TITLE String functions
+
+INDEX "" "foo" "node-element-equality-string"
+
+11.5.1
+//foo[starts-with(bar, 'a')]
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+11.5.2
+//foo[ends-with(bar, 'a')]
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+11.5.3
+//foo[starts-with(bar, 'a') or ends-with(bar, 'z')]
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+11.5.4
+//foo[contains(bar, 'a')]
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+11.5.5
+//foo[substring-before(bar, 'baz')]
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+11.5.6
+//foo[substring-after(bar, 'baz')]
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+11.5.7
+//foo[contains(bar, '12CharString')]
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+
+

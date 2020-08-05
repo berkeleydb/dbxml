@@ -1,0 +1,469 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# Retrieving documents with unusual UTF-8 characters
+#
+# Use "SKIP BEGIN" and "SKIP END" to comment out tests
+#
+
+TEST 6.2 
+TITLE Retrieving documents with unusual UTF-8 characters
+
+6.2.1
+Equality
+"" "món" "node-element-presence"
+//món
+Root(RS,RA(RS,RI(RS,node-element-presence-none,=,món)))
+RI(RS,node-element-presence-none,=,món),RA,
+món 1
+
+6.2.2
+Equality
+"" "Når" "node-attribute-presence"
+//@Når
+Root(RS,RA(RS,RI(RS,node-attribute-presence-none,=,Når)))
+RI(RS,node-attribute-presence-none,=,Når),RA,
+Når 1
+
+6.2.3
+Equality
+"" "כאשר" "node-element-equality-string"
+//כאשר[text()='bloggs']
+Root(RF(RA(RI(node-element-equality-string,prefix,כאשר))))
+RI(node-element-equality-string,prefix,כאשר),RA,RF,
+כאשר 1
+
+6.2.4
+Prefix
+"" "כאשר" "node-element-equality-string"
+//כאשר[starts-with(text(),'blog')]
+Root(RF(RA(RI(node-element-equality-string,prefix,כאשר))))
+RI(node-element-equality-string,prefix,כאשר),RA,RF,
+כאשר 1
+
+6.2.5
+Equality
+"" "världen" "node-element-equality-decimal"
+//världen[text()=123]
+Root(RF(RA(RI(node-element-equality-decimal,prefix,världen))))
+RI(node-element-equality-decimal,prefix,världen),RA,RF,
+världen 1
+
+6.2.6.1
+Inequality (!=)
+"" "världen" "node-element-equality-decimal"
+//världen[text()!=124]
+Root(RF(RA(RI(node-element-equality-decimal,prefix,världen))))
+RI(node-element-equality-decimal,prefix,världen),RA,RF,
+världen 1
+
+6.2.6.2
+Inequality (<)
+"" "världen" "node-element-equality-decimal"
+//världen[text()<124]
+Root(RF(RA(RI(node-element-equality-decimal,prefix,världen))))
+RI(node-element-equality-decimal,prefix,världen),RA,RF,
+världen 1
+
+6.2.6.3
+Inequality (>)
+"" "världen" "node-element-equality-decimal"
+//världen[text()>122]
+Root(RF(RA(RI(node-element-equality-decimal,prefix,världen))))
+RI(node-element-equality-decimal,prefix,världen),RA,RF,
+världen 1
+
+6.2.6.4
+Inequality (<=)
+"" "världen" "node-element-equality-decimal"
+//världen[text()<=123]
+Root(RF(RA(RI(node-element-equality-decimal,prefix,världen))))
+RI(node-element-equality-decimal,prefix,världen),RA,RF,
+världen 1
+
+6.2.6.5
+Inequality (>=)
+"" "världen" "node-element-equality-decimal"
+//världen[text()>=123]
+Root(RF(RA(RI(node-element-equality-decimal,prefix,världen))))
+RI(node-element-equality-decimal,prefix,världen),RA,RF,
+världen 1
+
+6.2.6.6
+Inequality (range with 'and')
+"" "världen" "node-element-equality-decimal"
+//världen[text()>122 and text()<124]
+Root(RF(RA(RI(node-element-equality-decimal,prefix,världen))))
+RI(node-element-equality-decimal,prefix,världen),RA,RF,
+världen 1
+
+6.2.6.7
+Inequality (range)
+"" "världen" "node-element-equality-decimal"
+//världen[text()>122][text()<124]
+Root(RF(RA(RI(node-element-equality-decimal,prefix,världen))))
+RI(node-element-equality-decimal,prefix,världen),RA,RF,
+världen 1
+
+6.2.7
+Prefix
+"" "världen" "node-element-equality-decimal"
+//världen
+Root(RS,RA(RS,RI(RS,node-element-equality-decimal,prefix,världen)))
+RI(RS,node-element-equality-decimal,prefix,världen),RA,
+världen 1
+
+6.2.8.1
+Equality
+"" "כאשר" "node-element-substring-string"
+//כאשר[contains(text(),'blo')]
+Root(RF(RA(RI(node-element-substring-string,prefix,כאשר))))
+RI(node-element-substring-string,prefix,כאשר),RA,RF,
+blo log ogg ggs 1
+
+6.2.8.2
+Equality
+"" "כאשר" "node-element-substring-string"
+//כאשר[contains(text(),'log')]
+Root(RF(RA(RI(node-element-substring-string,prefix,כאשר))))
+RI(node-element-substring-string,prefix,כאשר),RA,RF,
+blo log ogg ggs 1
+
+6.2.8.3
+Equality
+"" "כאשר" "node-element-substring-string"
+//כאשר[contains(text(),'ggs')]
+Root(RF(RA(RI(node-element-substring-string,prefix,כאשר))))
+RI(node-element-substring-string,prefix,כאשר),RA,RF,
+blo log ogg ggs 1
+
+6.2.8.4
+Equality
+"" "כאשר" "node-element-substring-string"
+//כאשר[contains(text(),'blog')]
+Root(RF(RA(RI(node-element-substring-string,prefix,כאשר))))
+RI(node-element-substring-string,prefix,כאשר),RA,RF,
+blo log ogg ggs 1
+
+6.2.9
+Equality
+"" "Если" "node-attribute-equality-string"
+//*[@Если='fred']
+Root(RF(RA(RI(node-attribute-equality-string,=,Если,fred))))
+RI(node-attribute-equality-string,=,Если,fred),RA,RF,
+Если 1
+
+6.2.10
+Prefix
+"" "Если" "node-attribute-equality-string"
+//@Если
+Root(RS,RA(RS,RI(RS,node-attribute-equality-string,prefix,Если)))
+RI(RS,node-attribute-equality-string,prefix,Если),RA,
+Если 1
+
+6.2.11
+Equality
+"" "Når" "node-attribute-equality-decimal"
+//*[@Når=33]
+Root(RF(RA(RI(node-attribute-equality-decimal,=,Når,33))))
+RI(node-attribute-equality-decimal,=,Når,33),RA,RF,
+Når 1
+
+6.2.12.1
+Inequality (!=)
+"" "Når" "node-attribute-equality-decimal"
+//*[@Når!=34]
+Root(RF(RA(\(RI(RS,node-attribute-equality-decimal,prefix,Når),RI(RS,node-attribute-equality-decimal,=,Når,34)))))
+RI(RS,node-attribute-equality-decimal,prefix,Når),RI(RS,node-attribute-equality-decimal,=,Når,34),\,RA,RF,
+Når 1
+
+
+6.2.12.2
+Inequality (<)
+"" "Når" "node-attribute-equality-decimal"
+//*[@Når<34]
+Root(RF(RA(RI(node-attribute-equality-decimal,<,Når,34))))
+RI(node-attribute-equality-decimal,<,Når,34),RA,RF,
+Når 1
+
+6.2.12.3
+Inequality (>)
+"" "Når" "node-attribute-equality-decimal"
+//*[@Når>32]
+Root(RF(RA(RI(node-attribute-equality-decimal,>,Når,32))))
+RI(node-attribute-equality-decimal,>,Når,32),RA,RF,
+Når 1
+
+6.2.12.4
+Inequality (<=)
+"" "Når" "node-attribute-equality-decimal"
+//*[@Når<=33]
+Root(RF(RA(RI(node-attribute-equality-decimal,<=,Når,33))))
+RI(node-attribute-equality-decimal,<=,Når,33),RA,RF,
+Når 1
+
+6.2.12.5
+Inequality (>=)
+"" "Når" "node-attribute-equality-decimal"
+//*[@Når>=33]
+Root(RF(RA(RI(node-attribute-equality-decimal,>=,Når,33))))
+RI(node-attribute-equality-decimal,>=,Når,33),RA,RF,
+Når 1
+
+6.2.12.6
+Inequality (range with 'and')
+"" "Når" "node-attribute-equality-decimal"
+//*[@Når>32 and @Når<34]
+Root(RF(RA(RI(node-attribute-equality-decimal,range,Når,32,34))))
+RI(node-attribute-equality-decimal,range,Når,32,34),RA,RF,
+Når 1
+
+6.2.12.7
+Inequality (range)
+"" "Når" "node-attribute-equality-decimal"
+//*[@Når>32][@Når<34]
+Root(RF(RA(n(RI(node-attribute-equality-decimal,>,Når,32),RI(RS,node-attribute-equality-decimal,<,Når,34)))))
+RI(node-attribute-equality-decimal,>,Når,32),RI(RS,node-attribute-equality-decimal,<,Når,34),n,RA,RF,
+Når 1
+
+6.2.13
+Prefix
+"" "Når" "node-attribute-equality-decimal"
+//@Når
+Root(RS,RA(RS,RI(RS,node-attribute-equality-decimal,prefix,Når)))
+RI(RS,node-attribute-equality-decimal,prefix,Når),RA,
+Når 1
+
+6.2.14.1
+Equality
+"" "Если" "node-attribute-substring-string"
+//*[contains(@Если,'fre')]
+Root(RF(RA(RI(node-attribute-substring-string,=,Если,fre))))
+RI(node-attribute-substring-string,=,Если,fre),RA,RF,
+fre red 1
+
+6.2.14.2
+Equality
+"" "Если" "node-attribute-substring-string"
+//*[contains(@Если,'red')]
+Root(RF(RA(RI(node-attribute-substring-string,=,Если,red))))
+RI(node-attribute-substring-string,=,Если,red),RA,RF,
+fre red 1
+
+6.2.15
+Equality
+"" "כאשר" "edge-element-presence"
+//món/כאשר
+Root(RF(RA(RI(edge-element-presence-none,=,món.כאשר))))
+RI(edge-element-presence-none,=,món.כאשר),RA,RF,
+món.כאשר 1
+
+6.2.16
+Equality
+"" "Når" "edge-attribute-presence"
+//món/@Når
+Root(RF(RA(RI(edge-attribute-presence-none,=,món.Når))))
+RI(edge-attribute-presence-none,=,món.Når),RA,RF,
+món.Når 1
+
+6.2.17
+Equality
+"" "כאשר" "edge-element-equality-string"
+//món[כאשר='bloggs']
+Root(RS,RA(RS,RI(RS,edge-element-equality-string,=,món.כאשר,bloggs)))
+RI(RS,edge-element-equality-string,=,món.כאשר,bloggs),RA,
+món.כאשר 1
+
+6.2.18
+Prefix
+"" "כאשר" "edge-element-equality-string"
+//món/כאשר
+Root(RF(RA(RI(edge-element-equality-string,prefix,món.כאשר))))
+RI(edge-element-equality-string,prefix,món.כאשר),RA,RF,
+món.כאשר 1
+
+6.2.19
+Equality
+"" "världen" "edge-element-equality-decimal"
+//món[världen=123]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,=,món.världen,123)))
+RI(RS,edge-element-equality-decimal,=,món.världen,123),RA,
+món.världen 1
+
+6.2.20.1
+Inequality (!=)
+"" "världen" "edge-element-equality-decimal"
+//món[världen!=124]
+Root(RF(RA(\(RI(RS,edge-element-equality-decimal,prefix,món.världen),RI(RS,edge-element-equality-decimal,=,món.världen,124)))))
+RI(RS,edge-element-equality-decimal,prefix,món.världen),RI(RS,edge-element-equality-decimal,=,món.världen,124),\,RA,RF,
+món.världen 1
+
+6.2.20.2
+Inequality (<)
+"" "världen" "edge-element-equality-decimal"
+//món[världen<124]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,<,món.världen,124)))
+RI(RS,edge-element-equality-decimal,<,món.världen,124),RA,
+món.världen 1
+
+6.2.20.3
+Inequality (>)
+"" "världen" "edge-element-equality-decimal"
+//món[världen>122]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,>,món.världen,122)))
+RI(RS,edge-element-equality-decimal,>,món.världen,122),RA,
+món.världen 1
+
+6.2.20.4
+Inequality (<=)
+"" "världen" "edge-element-equality-decimal"
+//món[världen<=123]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,<=,món.världen,123)))
+RI(RS,edge-element-equality-decimal,<=,món.världen,123),RA,
+món.världen 1
+
+6.2.20.5
+Inequality (>=)
+"" "världen" "edge-element-equality-decimal"
+//món[världen>=123]
+Root(RS,RA(RS,RI(RS,edge-element-equality-decimal,>=,món.världen,123)))
+RI(RS,edge-element-equality-decimal,>=,món.världen,123),RA,
+món.världen 1
+
+6.2.20.6
+Inequality (range with 'and')
+"" "världen" "edge-element-equality-decimal"
+/món[världen>122 and världen<124]
+Root(RF(RA(RI(edge-element-equality-decimal,range,món.världen,122,124))))
+RI(edge-element-equality-decimal,range,món.världen,122,124),RA,RF,
+món.världen 1
+
+6.2.20.7
+Inequality (range)
+"" "världen" "edge-element-equality-decimal"
+/món[världen>122][världen<124]
+Root(RF(RA(RI(edge-element-equality-decimal,range,món.världen,122,124))))
+RI(edge-element-equality-decimal,range,món.världen,122,124),RA,RF,
+món.världen 1
+
+6.2.21
+Prefix
+"" "världen" "edge-element-equality-decimal"
+//món/världen
+Root(RF(RA(RI(edge-element-equality-decimal,prefix,món.världen))))
+RI(edge-element-equality-decimal,prefix,món.världen),RA,RF,
+món.världen 1
+
+6.2.22
+Equality
+"" "כאשר" "edge-element-substring-string"
+//món[contains(כאשר,'log')]
+Root(RF(RA(RI(edge-element-substring-string,=,món.כאשר,log))))
+RI(edge-element-substring-string,=,món.כאשר,log),RA,RF,
+blo log ogg ggs 1
+
+6.2.23
+Equality
+"" "Если" "edge-attribute-equality-string"
+//כאשר[@Если='fred']
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-string,=,כאשר.Если,fred)))
+RI(RS,edge-attribute-equality-string,=,כאשר.Если,fred),RA,
+כאשר.Если 1
+
+6.2.24
+Prefix
+"" "Если" "edge-attribute-equality-string"
+//כאשר/@Если
+Root(RF(RA(RI(edge-attribute-equality-string,prefix,כאשר.Если))))
+RI(edge-attribute-equality-string,prefix,כאשר.Если),RA,RF,
+כאשר.Если 1
+
+6.2.25
+Equality
+"" "Når" "edge-attribute-equality-decimal"
+//món[@Når=33]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,=,món.Når,33)))
+RI(RS,edge-attribute-equality-decimal,=,món.Når,33),RA,
+món.Når 1
+
+6.2.26.1
+Inequality (!=)
+"" "Når" "edge-attribute-equality-decimal"
+//món[@Når!=34]
+Root(RF(RA(\(RI(RS,edge-attribute-equality-decimal,prefix,món.Når),RI(RS,edge-attribute-equality-decimal,=,món.Når,34)))))
+RI(RS,edge-attribute-equality-decimal,prefix,món.Når),RI(RS,edge-attribute-equality-decimal,=,món.Når,34),\,RA,RF,
+món.Når 1
+
+6.2.26.2
+Inequality (<)
+"" "Når" "edge-attribute-equality-decimal"
+//món[@Når<34]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,<,món.Når,34)))
+RI(RS,edge-attribute-equality-decimal,<,món.Når,34),RA,
+món.Når 1
+
+6.2.26.3
+Inequality (>)
+"" "Når" "edge-attribute-equality-decimal"
+//món[@Når>32]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,>,món.Når,32)))
+RI(RS,edge-attribute-equality-decimal,>,món.Når,32),RA,
+món.Når 1
+
+6.2.26.4
+Inequality (<=)
+"" "Når" "edge-attribute-equality-decimal"
+//món[@Når<=33]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,<=,món.Når,33)))
+RI(RS,edge-attribute-equality-decimal,<=,món.Når,33),RA,
+món.Når 1
+
+6.2.26.5
+Inequality (>=)
+"" "Når" "edge-attribute-equality-decimal"
+//món[@Når>=33]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,>=,món.Når,33)))
+RI(RS,edge-attribute-equality-decimal,>=,món.Når,33),RA,
+món.Når 1
+
+6.2.26.6
+Inequality (range with 'and')
+"" "Når" "edge-attribute-equality-decimal"
+/món[@Når>32 and @Når<34]
+Root(RF(RA(RI(edge-attribute-equality-decimal,range,món.Når,32,34))))
+RI(edge-attribute-equality-decimal,range,món.Når,32,34),RA,RF,
+món.Når 1
+
+6.2.26.7
+Inequality (range)
+"" "Når" "edge-attribute-equality-decimal"
+/món[@Når>32][@Når<34]
+Root(RF(RA(RI(edge-attribute-equality-decimal,range,món.Når,32,34))))
+RI(edge-attribute-equality-decimal,range,món.Når,32,34),RA,RF,
+món.Når 1
+
+6.2.27
+Prefix
+"" "Når" "edge-attribute-equality-decimal"
+//món[@Når]
+Root(RS,RA(RS,RI(RS,edge-attribute-equality-decimal,prefix,món.Når)))
+RI(RS,edge-attribute-equality-decimal,prefix,món.Når),RA,
+món.Når 1
+
+6.2.28.1
+Equality
+"" "Если" "edge-attribute-substring-string"
+//כאשר[contains(@Если,'fre')]
+Root(RF(RA(RI(edge-attribute-substring-string,=,כאשר.Если,fre))))
+RI(edge-attribute-substring-string,=,כאשר.Если,fre),RA,RF,
+fre red 1
+
+6.2.28.2
+Equality
+"" "Если" "edge-attribute-substring-string"
+//כאשר[contains(@Если,'red')]
+Root(RF(RA(RI(edge-attribute-substring-string,=,כאשר.Если,red))))
+RI(edge-attribute-substring-string,=,כאשר.Если,red),RA,RF,
+fre red 1

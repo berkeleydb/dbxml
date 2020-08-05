@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Melons</product>
+	<inventory>
+		<sku>MelovegetXmzDX</sku>
+		<price>0.69</price>
+		<inventory>308</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

@@ -1,0 +1,81 @@
+=head1 NAME
+
+XmlIndexSpecification - A Perl interface to the DbXml XmlIndexSpecification Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $mgr = new XmlManager(...);
+
+    my $ix = new XmlIndexSpecification();
+    my $ix = $container->getIndexSpecification();
+
+    $ix->addDefaultIndex($index);
+    $ix->deleteDefaultIndex($index);
+    $ix->replaceDefaultIndex($index);
+
+    $ix->addIndex($uri, $name, $index);
+    $ix->deleteIndex($uri, $name, $index);
+    $ix->replaceIndex($uri, $name, $index);
+    my $bool = $ix->find($uri, $name, $index);
+    my $bool = $ix->next($uri, $name, $index);
+    $ix->reset();
+
+    my $type = XmlIndexSpecification::getValueType($string);
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlValue is identical to the C++ API except for
+the following.
+
+=over 5
+
+=item 1 
+
+An Index Strategy can only be speficied as a string. The use of an
+XmlIndexSpecification::Type and XmlValue::Type pair is unsupported
+at present.
+
+=back
+
+=head1 Constructor
+
+
+=head1 Methods
+
+=head2 addDefaultIndex
+
+=head2 deleteDefaultIndex
+
+=head2 replaceDefaultIndex
+
+
+=head2 addIndex
+
+=head2 deleteIndex
+
+=head2 replaceIndex
+
+=head2 find
+
+=head2 next
+
+=head2 reset
+
+=head2 my $type = XmlIndexSpecification::getValueType($string);
+
+=head1 EXAMPLES
+
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

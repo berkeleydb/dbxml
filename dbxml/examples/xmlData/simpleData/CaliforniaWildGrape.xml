@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>California Wild Grape</item>
+	<inventory>
+		<sku>CalifruixCG8zJ</sku>
+		<price>0.68</price>
+		<inventory>988</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

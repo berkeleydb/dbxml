@@ -1,0 +1,409 @@
+#
+# Functions used to build the Windows Installer Package
+#
+# This script uses several bash extensions that are convenient
+# since we "know" it will always run under Cygwin: shell functions,
+# 'return', declaration of 'local' variables, $(command) syntax,
+# ${#X} (counting chars), ${X#regexp} (searching) $((expr)) (arithmetic)
+#
+#   PRODUCT_SUB_BLDDIR  - top of the subproduct build e.g. "dbxml-2.0.1/dbxml"
+#   PRODUCT_BLDDIR       - top of the build tree e.g. "dbxml-2.0.1"
+#   ERRORLOG - error output file
+
+Progress()
+{
+    if [ "$1" = -minor ]; then
+       shift
+    else
+       echo "" >> $ERRORLOG
+       echo "============================" >> $ERRORLOG
+    fi
+    echo "$@" >> $ERRORLOG
+    echo "$@" >&15
+}
+
+SetupErrorLog() {
+
+    # Before we start to use ERRORLOG, we get a full pathname,
+    # since the caller may change directories at times.
+    case "$ERRORLOG" in
+    /* ) ;;
+    *)   ERRORLOG=`pwd`"/$ERRORLOG" ;;
+    esac
+
+    rm -f $ERRORLOG
+
+    # File descriptor tricks.
+    # Duplicate current stderr to 15, as we'll occasionally
+    # need to report progress to it.  Then, redirect all
+    # stderr from now on to the ERRORLOG.
+    # 
+    exec 15>&2
+    exec 2>>$ERRORLOG
+}
+
+SetDbXmlDir()
+{
+         if [ -d $PRODUCT_BLDDIR/dbxml ]; then
+                PRODUCT_SUB_BLDDIR=${PRODUCT_BLDDIR}/dbxml
+                 return
+        fi      
+        if [ -d $PRODUCT_BLDDIR/xml ]; then
+                PRODUCT_SUB_BLDDIR=${PRODUCT_BLDDIR}/xml
+                 return
+        fi
+        Error "Cannot find DbXml dir in ${PRODUCT_BLDDIR}"
+        exit 1
+}
+
+# Fail fast for certain missing files
+RequireFileInPath()
+{
+    local type="$1"
+    local origpath="$2"
+    local file="$3"
+    local upath="$origpath"
+    if [ "$1" != PATH ]; then
+       upath=`cygpath -up "$origpath"`
+    fi
+
+    SAVEIFS="$IFS"
+    IFS=":"
+    found=no
+    for dir in $upath; do
+        if [ -f "$dir/$file" ]; then
+            IFS="$SAVEIFS"
+            return
+        fi
+    done
+    IFS="$SAVEIFS"
+    Error "File $file not found in $type path: $origpath"
+    exit 1
+}
+
+Error()
+{
+    echo "" >> $ERRORLOG
+    echo "****************** FAIL ******************" >> $ERRORLOG
+    echo "ERROR: $@" >> $ERRORLOG
+    echo "ERROR: $@" >&15
+    echo "See $ERRORLOG for details" >&15
+    return 1
+}
+
+RequireCygwin() {
+    Progress -minor "checking for Cygwin..."
+    RequireFileInPath PATH "$PATH" m4
+    RequireFileInPath PATH "$PATH" gcc
+    RequireFileInPath PATH "$PATH" make
+    RequireFileInPath PATH "$PATH" unzip
+    RequireFileInPath PATH "$PATH" bc
+    RequireFileInPath PATH "$PATH" openssl    # needed for MD5 hashing
+}
+
+# RequireJava()
+# A java SDK (with include files) must be installed
+#
+RequireJava() {
+    Progress -minor "checking for Java..."
+    RequireFileInPath INCLUDE "$INCLUDE" jni.h
+    RequireFileInPath INCLUDE "$INCLUDE" jni_md.h
+    RequireFileInPath PATH "$PATH" jar.exe
+    RequireFileInPath PATH "$PATH" javac.exe
+}
+
+# RequireTcl()
+# A Tcl SDK (with compatible .lib files) must be installed
+#
+RequireTcl() {
+    Progress -minor "checking for Tcl..."
+    RequireFileInPath INCLUDE "$INCLUDE" tcl.h
+    RequireFileInPath LIB "$LIB" tcl84g.lib
+    RequireFileInPath LIB "$LIB" tcl84.lib
+}
+
+# RequireWix()
+# WiX must be installed
+#
+RequireWix() {
+    Progress -minor "checking for WiX..."
+    RequireFileInPath PATH "$PATH" candle.exe
+    RequireFileInPath PATH "$PATH" light.exe
+}
+
+# RequirePerl()
+# Perl must be installed
+#
+RequirePerl() {
+    Progress -minor "checking for Perl..."
+    RequireFileInPath PATH "$PATH" perl.exe
+}
+
+# RequirePython()
+# Python (and include files) must be installed
+#
+RequirePython() {
+    Progress -minor "checking for Python..."
+    RequireFileInPath PATH "$PATH" python.exe
+}
+
+# RequirePHP()
+# PHP (and include files) must be installed
+#
+RequirePHP() {
+    Progress -minor "checking for PHP..."
+    RequireFileInPath INCLUDE "$INCLUDE" php.h
+    RequireFileInPath PATH "$PATH" php.exe
+}
+
+CreateWindowsSystem() {
+    local here=`pwd`
+    Progress "Copy Window system files..."
+    cd "${PRODUCT_BLDDIR}"
+    cp -f $SYSTEMROOT/system32/msvcr71.dll  bin/ || exit 1
+    cp -f $SYSTEMROOT/system32/msvcp71.dll  bin/ || exit 1
+    cd $here
+}
+
+BuildDbXml() {
+    local here=`pwd`
+    Progress "Building BDB XML"
+    cd ${PRODUCT_SUB_BLDDIR}/dist
+    cmd.exe /x /c call winmsi/build.bat
+    # TBD: handle output and errors
+}
+
+# FixupExamples
+# Change text files to DOS mode
+#
+FixupExamples() {
+    local here=`pwd`
+    Progress "fixing readme files for examples"
+    cd ${PRODUCT_SUB_BLDDIR}/examples
+    for i in README cxx/gettingStarted/Readme.txt java/gettingStarted/Readme.txt perl/gettingStarted/Readme.txt php/php.ini; do
+	chmod +w $i
+	unix2dos $i
+	chmod 444 $i
+    done
+    cd $here
+}
+
+# CreateDbXmlPerl()
+# Build Perl interface for BDB XML and package them for
+# ActivePerl PPM installation
+#
+CreateDbXmlPerl() {
+
+    local here=`pwd`
+    Progress "building perl for BDB XML (using Windows tools)"
+    mkdir -p ${PRODUCT_BLDDIR}/perl
+    cd ${PRODUCT_SUB_BLDDIR}/src/perl
+    cmd.exe /x /c call build.bat "noinstall"
+    status=$?
+    cat winbld.out >>$ERRORLOG
+    if [ -s winbld.err -o "$status" != 0 ]; then
+       cat winbld.err >> $ERRORLOG
+       Error "Errors during windows build of Perl"
+       exit 1
+    fi
+    # tar up the Perl build and edit the .ppd file to point to it
+    # this is sufficient for ActivePerl PPM installation
+    tar czf ${PRODUCT_BLDDIR}/perl/dbxml_perl.tar.gz blib
+    sed -e"s/HREF=\"\"/HREF=\".\/dbxml_perl.tar.gz\"/g" Sleepycat-DbXml.ppd > dbxml_perl.ppd
+    mv dbxml_perl.ppd ${PRODUCT_BLDDIR}/perl/dbxml_perl.ppd
+    # copy a "readme" file for installation
+    cp -f perlwinbin.install ${PRODUCT_BLDDIR}/perl/INSTALL.txt
+    chmod +w ${PRODUCT_BLDDIR}/perl/INSTALL.txt
+    unix2dos ${PRODUCT_BLDDIR}/perl/INSTALL.txt
+    chmod 444 ${PRODUCT_BLDDIR}/perl/INSTALL.txt
+    cd $here
+}
+
+# CreateDbXmlPython()
+# Build Python interface for BDB XML
+#
+# Note: BDB XML version is handled by the s_release script,
+# but if pybsddb number
+# or python release changes, some editing is necessary
+#
+CreateDbXmlPython() {
+
+    local here=`pwd`
+    Progress "building python for BDB XML"
+    cd ${PRODUCT_SUB_BLDDIR}/src/python/@PYBSDDB_REL@
+    chmod +w ${PRODUCT_SUB_BLDDIR}/build_windows/zlib1.dll
+    chmod +w ${PRODUCT_SUB_BLDDIR}/build_windows/zlibwapi.dll
+    mkdir -p ${PRODUCT_BLDDIR}/python
+    python setup.dbxml.py bdist_wininst >> $ERRORLOG
+    cp -f dist/@PYBSDDB_REL@.win32-py2.5.exe ${PRODUCT_BLDDIR}/python
+    cd ..
+    python setup.py --with-bsddb=@PYBSDDB_REL@ bdist_wininst >> $ERRORLOG
+    cp -f dist/dbxml-@DBXML_VERSION_MAJOR@.@DBXML_VERSION_MINOR@.@DBXML_VERSION_PATCH@.win32-py@PYREL@.exe ${PRODUCT_BLDDIR}/python
+    # copy a "readme" file for installation
+    cp -f pywinbin.install ${PRODUCT_BLDDIR}/python/INSTALL.txt
+    chmod +w ${PRODUCT_BLDDIR}/python/INSTALL.txt
+    unix2dos ${PRODUCT_BLDDIR}/python/INSTALL.txt
+    chmod 444 ${PRODUCT_BLDDIR}/python/INSTALL.txt
+    cd $here
+}
+
+CreateLicenseRtf() {
+    local licensein="$1"
+    local licensertf="$2"
+
+    if [ ! -f "$licensein" ]; then
+        Error "License file $licensein: does not exist"
+        exit 1
+    fi
+    Progress "creating ${licensertf}..."
+    
+    # Build a list of references to components ids (i.e. directories)
+    # that are listed in the .wxs file.  This is needed to refer to
+    # all of the source (sadly it appears there is no better way!)
+    #
+    if ! grep '^=-=-=-=' $licensein > /dev/null; then
+        Error "LICENSE has changed format, this script must be adapted"
+        exit 1
+    fi
+    
+    sed -e '1,/^=-=-=-=-=/d' < $licensein | MakeRtf > $licensertf
+}
+
+# MakeRtf()
+# Standard input is plain text, standard output is RTF.
+#
+MakeRtf() {
+    temp1=/tmp/sbm$$a
+    cat > $temp1
+
+# Courier is a good font, but the lines with all caps
+# overflows our current dialog size:
+#     {\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+#     \viewkind4\uc1\pard\lang1033\f0\fs16 
+#
+# Using Small fonts works:
+#      {\rtf1\ansi\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Small Fonts;}}
+#      {\colortbl ;\red0\green0\blue0;}
+#      \viewkind4\uc1\pard\cf1\lang1033\f0\fs14 
+
+# Arial is the best compromise:
+    sed -e 's/^ *//' << 'EndOfRTFHeader'
+      {\rtf1\ansi\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+      {\colortbl ;\red0\green0\blue0;}
+      \viewkind4\uc1\pard\cf1\lang1033\f0\fs16 
+EndOfRTFHeader
+
+# Embedded '<' and '>' can cause problems for Wix
+    sed -e 's:$:\\par:' -e 's:<: \\lquote :' -e 's:>: \\rquote :' < $temp1
+    echo -n '}'
+    rm -f $temp1
+}
+
+CreateRuntimeComponents() {
+    local here=`pwd`
+    Progress "Building/updating .wxs files for runtime..."
+    cd "${PRODUCT_BLDDIR}"
+    ${DIST_DIR}/winmsi/generateWix.sh  dbxml/dist/winmsi bin/xqilla.exe
+    cd $here
+}
+
+MakeLink() {
+    local outfile=$1
+    local url=$2
+    echo '[Default]' > $outfile
+    echo "BASEURL=$url" >> $outfile
+    echo '[InternetShortcut]' >> $outfile
+    echo "URL=$url" >> $outfile
+    echo "Modified=0000000007DCC3101DE" >> $outfile
+    unix2dos $outfile
+}
+
+MakeCommand() {
+    local outfile=$1
+    local command=$2
+    echo "@echo off"                               > $outfile
+    echo "set DBROOTDIR="                         >> $outfile
+    echo "for /F \"tokens=3 delims=	\" %%A in ('REG QUERY \"HKLM\\SOFTWARE\\Oracle\\$PRODUCT_NAME\\$PRODUCT_VERSION\" /v RootDirectory') do set DBROOTDIR=%%A"                                   >> $outfile
+    echo "if ERRORLEVEL 2 goto MISSING"           >> $outfile
+    echo "if not defined DBROOTDIR goto MISSING"  >> $outfile
+    echo "set FN=\"%DBROOTDIR%$command\""         >> $outfile
+    echo "if not exist %FN% goto NOTFOUND"        >> $outfile
+    echo "cmd /k \"%DBROOTDIR%$command\"$CR"      >> $outfile
+    echo "goto END"                               >> $outfile
+    echo ":NOTFOUND"                              >> $outfile
+    echo "echo"                                   >> $outfile
+    echo "echo  Error: The program does not appear to be installed." >> $outfile
+    echo "echo"                                   >> $outfile
+    echo "cmd /k"                                 >> $outfile
+    echo "goto END"                               >> $outfile
+    echo ":MISSING"                               >> $outfile
+    echo "echo"                                   >> $outfile
+    echo "echo NOTE:"                             >> $outfile
+    echo "echo   The $PRODUCT_NAME version could not be determined." >> $outfile
+    echo "echo   If you are running on Windows 2000, make sure the" >> $outfile
+    echo "echo   REG.EXE program is installed from the Tools disk" >> $outfile
+    echo "echo"                                   >> $outfile
+    echo "cmd /k"                                 >> $outfile
+    echo ":END"                                   >> $outfile
+    unix2dos $outfile
+}
+
+CreateLinks() {
+    # Create link files that are referenced from
+    # links_frag.wxs and installed
+    mkdir links
+    cd links
+    MakeCommand oraclecs.bat bin\\dbxml.exe
+    MakeLink oracletn.bdbsc http://forums.oracle.com/forums/forum.jspa?forumID=274
+    MakeLink oracleon.bdbsc http://www.oracle.com/technology/documentation/berkeley-db/xml/index.html
+    MakeLink oraclefa.bdbsc http://www.oracle.com/technology/products/berkeley-db/faq/xml_faq.html
+    MakeLink oraclewb.bdbsc http://www.oracle.com
+    cp ${DIST_DIR}/winmsi/webicon.ico .
+    cd ..
+}
+
+CreateDbvars() {
+    # create dbxmlvars.bat file
+   sed -e"s:@DBXML_WIX_VERSION@:$DBXML_VERSION:g" ${DIST_DIR}/winmsi/dbvarsbat.in > ./dbxmlvars.bat
+   unix2dos dbxmlvars.bat
+}
+
+CreateMsi() {
+    local here=`pwd`
+    Progress "Building .msi file..."
+    cd "${PRODUCT_BLDDIR}"
+    chmod +w README
+    unix2dos README
+    chmod 444 README
+    mkdir wix 2>/dev/null
+    cd wix
+
+    # copy/edit .wxs files to here
+    # use pattern that is *NOT* in lib_paths.sed to keep it intact
+    for i in dbxml.wxs dbxml_components.wxs links_frag.wxs required_frag.wxs; do
+      sed -e"s:@DBXML_WIX_VERSION@:$DBXML_VERSION:g" -e"s:@DBXML_WIX_VERSION_SHORT@:@DBXML_VERSION_MAJOR@.@DBXML_VERSION_MINOR@:g" ${DIST_DIR}/winmsi/$i > ./$i
+    done
+
+    # WiX will pick up License.rtf in the current (work) directory
+    cp ${DIST_DIR}/License.rtf .
+
+    # Create link files.  These are referenced from links_frag.wxs,
+    # and "light" linking below will fail without them
+    CreateLinks
+
+    # Create dbxmlvars.bat in current directory
+    CreateDbvars
+
+    local candlepath=`which candle`
+    local wixhome=`dirname $candlepath`
+
+    # hack!  WiX tools do not like /cygdrive/* paths
+    wixhome=`echo $wixhome | sed -e"s!/cygdrive/c!c:!g" `
+    wixhome=`echo $wixhome | sed -e"s!/cygdrive/d!d:!g" `
+    wixhome=`echo $wixhome | sed -e"s!/cygdrive/f!f:!g" `
+    wixhome=`echo $wixhome | sed -e"s!/cygdrive/g!g:!g" `
+
+    $wixhome/candle -sw1044 *.wxs
+    $wixhome/light -out $dbver.msi *.wixobj $wixhome/wixui.wixlib -loc $wixhome/WixUI_en-us.wxl
+    cd $here
+}

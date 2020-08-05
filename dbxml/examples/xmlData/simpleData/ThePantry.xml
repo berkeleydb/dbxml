@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<vendor type="retail">
+	<name>The Pantry</name>
+	<address>1206 N. Creek Way</address>
+	<city>Middle Town</city>
+	<state>MN</state>
+	<zipcode>55432</zipcode>
+	<phonenumber>763 555 3391</phonenumber>
+	<salesrep>
+		<name>Sully Beckstrom</name>
+		<phonenumber>763 555 3391</phonenumber>
+	</salesrep>
+</vendor>
+

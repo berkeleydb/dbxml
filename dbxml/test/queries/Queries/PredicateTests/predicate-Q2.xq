@@ -1,0 +1,1 @@
+for $a in collection() where $a//a/b/c return $a

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Labanos</item>
+	<inventory>
+		<sku>Labavege6gWGen</sku>
+		<price>0.23</price>
+		<inventory>578</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

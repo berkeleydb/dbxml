@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="11.8.4">
+  <category>xquery</category>
+  <description>TC-SD Benchmark Tests</description>
+  <program name='dbxml_test_driver' />
+
+  <!-- stuff that applies to the entire test -->
+  <indexSpecification>
+    <node>id</node>
+    <index>node-attribute-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>qd</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>loc</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>hw</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>cr</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>qt</node>
+    <index>node-element-presence</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>e</node>
+    <index>node-element-substring-string</index>
+  </indexSpecification>
+
+  <document>dictionary.xml</document>
+
+  <!-- individual tests -->
+  <base>
+    <query>TC-SD-Q1.xquery</query>
+    <query>TC-SD-Q2.xquery</query>
+    <query>TC-SD-Q3.xquery</query>
+    <query>TC-SD-Q4.xquery</query>
+    <query>TC-SD-Q5.xquery</query>
+    <query>TC-SD-Q6.xquery</query>
+    <query>TC-SD-Q7.xquery</query>
+    <query>TC-SD-Q8.xquery</query>
+    <query>TC-SD-Q9.xquery</query>
+    <query>TC-SD-Q10.xquery</query>
+    <query>TC-SD-Q11.xquery</query>
+    <query>TC-SD-Q12.xquery</query>
+    <query>TC-SD-Q13.xquery</query>
+    <query>TC-SD-Q14.xquery</query>
+    <query>TC-SD-Q15.xquery</query>
+    <query>TC-SD-Q16.xquery</query>
+    <query>TC-SD-Q17.xquery</query>
+  </base>
+</test>

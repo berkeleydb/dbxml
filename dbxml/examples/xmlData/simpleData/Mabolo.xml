@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Mabolo</item>
+	<inventory>
+		<sku>MabofruibVLleC</sku>
+		<price>0.71</price>
+		<inventory>217</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

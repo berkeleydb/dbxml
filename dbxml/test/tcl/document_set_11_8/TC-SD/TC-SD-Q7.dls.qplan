@@ -1,0 +1,51 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="word">
+      <QueryPlanToAST>
+        <ChildJoinQP>
+          <StepQP axis="child" name="dictionary" nodeType="element">
+            <ValueQP index="node-element-equality-string" operation="eq" child="qd" value="1900"/>
+          </StepQP>
+          <StepQP axis="parent-of-child" name="e" nodeType="element">
+            <ExceptQP>
+              <StepQP axis="parent-of-child" name="ss" nodeType="element">
+                <StepQP axis="parent-of-child" name="s" nodeType="element">
+                  <StepQP axis="parent-of-child" name="qp" nodeType="element">
+                    <StepQP axis="parent-of-child" name="q" nodeType="element">
+                      <ValueFilterQP comparison="eq">
+                        <SequentialScanQP nodeType="element" name="qd"/>
+                        <Sequence>
+                          <AnyAtomicTypeConstructor value="1900" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                        </Sequence>
+                      </ValueFilterQP>
+                    </StepQP>
+                  </StepQP>
+                </StepQP>
+              </StepQP>
+              <StepQP axis="parent-of-child" name="ss" nodeType="element">
+                <StepQP axis="parent-of-child" name="s" nodeType="element">
+                  <StepQP axis="parent-of-child" name="qp" nodeType="element">
+                    <ExceptQP>
+                      <SequentialScanQP nodeType="element" name="q"/>
+                      <StepQP axis="parent-of-child" name="q" nodeType="element">
+                        <ValueFilterQP comparison="eq">
+                          <SequentialScanQP nodeType="element" name="qd"/>
+                          <Sequence>
+                            <AnyAtomicTypeConstructor value="1900" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                          </Sequence>
+                        </ValueFilterQP>
+                      </StepQP>
+                    </ExceptQP>
+                  </StepQP>
+                </StepQP>
+              </StepQP>
+            </ExceptQP>
+          </StepQP>
+        </ChildJoinQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":word"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

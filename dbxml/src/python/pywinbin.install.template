@@ -1,0 +1,25 @@
+		Installing and Using Python Binaries
+
+Requirements
+------------
+
+1.  ActivePython 2.5.x must be properly installed on your system
+
+Install
+-------
+
+1. execute @PYBSDDB_REL@.win32-py2.5.exe 
+   -- installs the Berkeley DB (bsddb3) module
+2. execute dbxml-@DBXML_VERSION_MAJOR@.@DBXML_VERSION_MINOR@.@DBXML_VERSION_PATCH@.win32-py2.5.exe
+   -- installs the Berkeley DB XML module
+
+The executables above include all of the dependent libraries so it is 
+not necessary to install either of the core runtime libraries. Only a 
+Release version of the Python libraries is available. The installation 
+will fail if Python 2.5 is not installed on the target machine.
+
+Python example programs, if installed, can be found in 
+<InstallDir>/dbxml/examples/python. A simple smoke test that can be 
+done after installation is running the Python example script 
+<InstallDir>/dbxml/examples/python/basic/helloWorld.py. 
+If this works then your installation is good. 

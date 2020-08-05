@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Chinese Mustard</item>
+	<inventory>
+		<sku>ChinvegeqTvDVr</sku>
+		<price>0.54</price>
+		<inventory>617</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

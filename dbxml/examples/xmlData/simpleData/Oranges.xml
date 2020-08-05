@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Oranges</item>
+	<inventory>
+		<sku>OranfruiS1neHs</sku>
+		<price>0.94</price>
+		<inventory>579</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

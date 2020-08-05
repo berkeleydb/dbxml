@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Rosemary</product>
+	<inventory>
+		<sku>RosevegePe5fnu</sku>
+		<price>0.63</price>
+		<inventory>456</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Lanzone</item>
+	<inventory>
+		<sku>Lanzfruidntms8</sku>
+		<price>0.54</price>
+		<inventory>631</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

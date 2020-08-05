@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cake, Lemon Blueberry</item>
+	<inventory>
+		<sku>CakedessiaysiE</sku>
+		<price>12.52</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

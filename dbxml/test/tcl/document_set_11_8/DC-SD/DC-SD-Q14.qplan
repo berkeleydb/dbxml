@@ -1,0 +1,39 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="item" nodeType="element">
+            <StepQP axis="child" name="catalog" nodeType="element">
+              <ValueQP index="node-element-substring-string" operation="substring" child="description" value="hockey"/>
+            </StepQP>
+          </StepQP>
+          <ValueFilterQP comparison="substring">
+            <StepQP axis="child" name="description" nodeType="element">
+              <VariableQP name="#tmp2"/>
+            </StepQP>
+            <Sequence>
+              <AnyAtomicTypeConstructor value="hockey" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+            </Sequence>
+          </ValueFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="attribute" name="id" nodeType="attribute">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

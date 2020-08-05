@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Edamame</item>
+	<inventory>
+		<sku>EdamvegeXzF1QX</sku>
+		<price>0.20</price>
+		<inventory>247</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

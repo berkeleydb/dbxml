@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Savory</item>
+	<inventory>
+		<sku>SavovegelyMxqG</sku>
+		<price>0.51</price>
+		<inventory>148</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

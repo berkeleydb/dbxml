@@ -1,0 +1,727 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "All"=".\All.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_dump
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_load
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_addIndex
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_buildDB
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_deleteDocument
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_deleteIndex
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_exampleLoadContainer
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_queryForDocumentValue
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_queryForMetaData
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_queryWithContext
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_queryWithDocumentNames
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_replaceIndex
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_retrieveDB
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_simpleAdd
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_simpleContainer
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_simpleContainerInEnv
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_simpleQuery
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_example_updateDocument
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_load_container
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name helloWorld
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name helloWorldTxn
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name query
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name queryTxn
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name dbxml_shell
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "XercesLib"="..\..\xerces-c-src\Projects\Win32\VC6\xerces-all\XercesLib\XercesLib.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "db_dll"="..\..\db-4.8.26\build_windows\db_dll.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "db_dump"="..\..\db-4.8.26\build_windows\db_dump.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name db_dll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "db_load"="..\..\db-4.8.26\build_windows\db_load.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name db_dll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "db_recover"="..\..\db-4.8.26\build_windows\db_recover.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name db_dll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "db_stat"="..\..\db-4.8.26\build_windows\db_stat.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name db_dll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "db_archive"="..\..\db-4.8.26\build_windows\db_archive.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name db_dll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "db_checkpoint"="..\..\db-4.8.26\build_windows\db_checkpoint.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name db_dll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "db_java"="..\..\db-4.8.26\build_windows\db_java.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name db_dll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "db_tcl"="..\..\db-4.8.26\build_windows\db_tcl.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name db_dll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml"=".\dbxml.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name db_dll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name XercesLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name xqilla
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_dump"=".\dbxml_dump.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_addIndex"=".\dbxml_example_addIndex.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_buildDB"=".\dbxml_example_buildDB.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_deleteDocument"=".\dbxml_example_deleteDocument.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_deleteIndex"=".\dbxml_example_deleteIndex.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_exampleLoadContainer"=".\dbxml_example_exampleLoadContainer.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_queryForDocumentValue"=".\dbxml_example_queryForDocumentValue.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_queryForMetaData"=".\dbxml_example_queryForMetaData.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_queryWithContext"=".\dbxml_example_queryWithContext.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_queryWithDocumentNames"=".\dbxml_example_queryWithDocumentNames.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_replaceIndex"=".\dbxml_example_replaceIndex.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_retrieveDB"=".\dbxml_example_retrieveDB.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_simpleAdd"=".\dbxml_example_simpleAdd.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_simpleContainer"=".\dbxml_example_simpleContainer.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_simpleContainerInEnv"=".\dbxml_example_simpleContainerInEnv.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_simpleQuery"=".\dbxml_example_simpleQuery.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "externalFunction"=".\externalFunction.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "compression"=".\compression.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "debug"=".\debug.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_example_updateDocument"=".\dbxml_example_updateDocument.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_java"=".\dbxml_java.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name db_java
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_load"=".\dbxml_load.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_load_container"=".\dbxml_load_container.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+
+###############################################################################
+
+Project: "dbxml_shell"=".\dbxml_shell.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_tcl"=".\dbxml_tcl.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name db_tcl
+    End Project Dependency
+}}}
+
+
+###############################################################################
+
+Project: "dbxml_test_databases"=".\dbxml_test_databases.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_test_driver"=".\dbxml_test_driver.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_test_input_streams"=".\dbxml_test_input_streams.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbxml_test_query_processor_api"=".\dbxml_test_query_processor_api.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "xqilla"="..\..\xqilla\Win32Projects\VC6\xqilla.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name XercesLib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

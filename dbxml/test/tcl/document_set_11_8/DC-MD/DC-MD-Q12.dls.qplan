@@ -1,0 +1,47 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <NegativeNodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="order" nodeType="element">
+            <PresenceQP index="edge-element-presence-none" operation="eq" parent="root:http://www.sleepycat.com/2002/dbxml" child="order"/>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp1">
+            <LevelFilterQP>
+              <VariableQP name="#tmp2"/>
+            </LevelFilterQP>
+            <NodePredicateFilterQP>
+              <StepQP axis="child" name="order_lines" nodeType="element">
+                <VariableQP name="#tmp1"/>
+              </StepQP>
+              <NumericPredicateFilterQP>
+                <StepQP axis="child" name="order_line" nodeType="element">
+                  <ContextNodeQP/>
+                </StepQP>
+                <Sequence>
+                  <NumericTypeConstructor value="2.0E0" typeuri="http://www.w3.org/2001/XMLSchema" typename="integer"/>
+                </Sequence>
+              </NumericPredicateFilterQP>
+            </NodePredicateFilterQP>
+          </NodePredicateFilterQP>
+        </NegativeNodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="OneItemLine" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="attribute" name="id" nodeType="attribute">
+              <VariableQP name=":a"/>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

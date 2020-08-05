@@ -1,0 +1,115 @@
+<XQuery>
+  <FLWOR>
+    <LetBinding name="ent">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp0">
+          <StepQP axis="parent-of-child" name="e" nodeType="element">
+            <StepQP axis="parent-of-child" name="hwg" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="hw" value="you"/>
+            </StepQP>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="dictionary" nodeType="element">
+              <VariableQP name="#tmp0"/>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </LetBinding>
+    <ForBinding name="prevEnt">
+      <Map>
+        <QueryPlanToAST>
+          <StepQP axis="child" name="dictionary" nodeType="element">
+            <SequentialScanQP nodeType="document"/>
+          </StepQP>
+        </QueryPlanToAST>
+        <QueryPlanToAST>
+          <NumericPredicateFilterQP>
+            <NodePredicateFilterQP uri="" name="#tmp5">
+              <StepQP axis="child" name="e" nodeType="element">
+                <ContextNodeQP/>
+              </StepQP>
+              <NodePredicateFilterQP uri="" name="#tmp6">
+                <StepQP axis="child" name="hwg" nodeType="element">
+                  <VariableQP name="#tmp5"/>
+                </StepQP>
+                <PredicateFilterQP uri="" name="a">
+                  <StepQP axis="child" name="hw" nodeType="element">
+                    <VariableQP name="#tmp6"/>
+                  </StepQP>
+                  <Operator name="node-order">
+                    <TreatAs>
+                      <QueryPlanToAST>
+                        <VariableQP name=":a"/>
+                      </QueryPlanToAST>
+                      <SequenceType occurrence="zero_or_one" testType="node"/>
+                    </TreatAs>
+                    <TreatAs>
+                      <QueryPlanToAST>
+                        <VariableQP name=":ent"/>
+                      </QueryPlanToAST>
+                      <SequenceType occurrence="zero_or_one" testType="node"/>
+                    </TreatAs>
+                  </Operator>
+                </PredicateFilterQP>
+              </NodePredicateFilterQP>
+            </NodePredicateFilterQP>
+            <Operator name="equal">
+              <Function name="{http://www.w3.org/2005/xpath-functions}:position"/>
+              <Function name="{http://www.w3.org/2005/xpath-functions}:last"/>
+            </Operator>
+          </NumericPredicateFilterQP>
+        </QueryPlanToAST>
+      </Map>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <DOMConstructor type="element">
+          <Name>
+            <Sequence>
+              <ATQNameConstructor uri="" prefix="" localname="CurrentEntry" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+            </Sequence>
+          </Name>
+          <Children>
+            <ContentSequence>
+              <QueryPlanToAST>
+                <StepQP axis="child" uri="*" name="*" nodeType="text">
+                  <StepQP axis="child" name="hw" nodeType="element">
+                    <StepQP axis="child" name="hwg" nodeType="element">
+                      <VariableQP name=":ent"/>
+                    </StepQP>
+                  </StepQP>
+                </StepQP>
+              </QueryPlanToAST>
+            </ContentSequence>
+          </Children>
+        </DOMConstructor>
+        <DOMConstructor type="element">
+          <Name>
+            <Sequence>
+              <ATQNameConstructor uri="" prefix="" localname="PreviousEntry" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+            </Sequence>
+          </Name>
+          <Children>
+            <ContentSequence>
+              <QueryPlanToAST>
+                <StepQP axis="child" uri="*" name="*" nodeType="text">
+                  <StepQP axis="child" name="hw" nodeType="element">
+                    <StepQP axis="child" name="hwg" nodeType="element">
+                      <VariableQP name=":prevEnt"/>
+                    </StepQP>
+                  </StepQP>
+                </StepQP>
+              </QueryPlanToAST>
+            </ContentSequence>
+          </Children>
+        </DOMConstructor>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

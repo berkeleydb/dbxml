@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Cobbler, Huckleberry</item>
+	<inventory>
+		<sku>CobbdessHpGwFF</sku>
+		<price>2.81</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

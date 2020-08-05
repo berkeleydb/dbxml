@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Melons</item>
+	<inventory>
+		<sku>MelovegetXmzDX</sku>
+		<price>0.69</price>
+		<inventory>308</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

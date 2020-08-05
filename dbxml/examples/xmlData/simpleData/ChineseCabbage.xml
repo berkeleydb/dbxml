@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Chinese Cabbage</item>
+	<inventory>
+		<sku>ChinvegejShNp9</sku>
+		<price>0.34</price>
+		<inventory>266</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

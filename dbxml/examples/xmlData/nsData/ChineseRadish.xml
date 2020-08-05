@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Chinese Radish</product>
+	<inventory>
+		<sku>Chinvege9lyhLz</sku>
+		<price>0.21</price>
+		<inventory>535</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

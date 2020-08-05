@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Madagascar Plum</item>
+	<inventory>
+		<sku>MadafruiaqDzeb</sku>
+		<price>1.07</price>
+		<inventory>955</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

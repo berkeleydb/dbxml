@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Lemon</product>
+	<inventory>
+		<sku>LemofruimR3sG9</sku>
+		<price>0.77</price>
+		<inventory>545</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</fruits:item>
+

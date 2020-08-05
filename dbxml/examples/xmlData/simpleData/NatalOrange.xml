@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Natal Orange</item>
+	<inventory>
+		<sku>NatafruiJjKpQ2</sku>
+		<price>0.85</price>
+		<inventory>389</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

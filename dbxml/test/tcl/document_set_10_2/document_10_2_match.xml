@@ -1,0 +1,6 @@
+<person age='33' drink='beer'>
+<name first='fred'>Bloggs</name>
+<balance registered='2003-12-15'>123</balance>
+<lunch><fruit>apple</fruit></lunch>
+<elected>1999-12-31</elected>
+</person>

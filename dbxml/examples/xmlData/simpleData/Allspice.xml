@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Allspice</item>
+	<inventory>
+		<sku>AllsfruiaOMb1f</sku>
+		<price>0.48</price>
+		<inventory>634</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

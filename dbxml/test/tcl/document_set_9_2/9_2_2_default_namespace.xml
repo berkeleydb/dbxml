@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x xmlns="http://ecommerce.org/schema">
+  <price units="Euro">32.18</price>
+  <lineItem taxClass="exempt">Baby food</lineItem>
+</x>

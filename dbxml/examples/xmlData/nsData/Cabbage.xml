@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Cabbage</product>
+	<inventory>
+		<sku>Cabbvege96f3Rn</sku>
+		<price>0.44</price>
+		<inventory>485</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

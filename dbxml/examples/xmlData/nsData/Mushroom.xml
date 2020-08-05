@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Mushroom</product>
+	<inventory>
+		<sku>MushvegezTqqNL</sku>
+		<price>0.84</price>
+		<inventory>530</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

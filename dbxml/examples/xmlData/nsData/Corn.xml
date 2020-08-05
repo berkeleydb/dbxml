@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Corn</product>
+	<inventory>
+		<sku>CornvegelH9nyu</sku>
+		<price>0.31</price>
+		<inventory>349</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

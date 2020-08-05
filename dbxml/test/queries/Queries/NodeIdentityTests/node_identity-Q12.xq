@@ -1,0 +1,1 @@
+collection()//id[.=9999 or .=50]

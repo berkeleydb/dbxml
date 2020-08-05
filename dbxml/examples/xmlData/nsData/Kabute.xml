@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Kabute</product>
+	<inventory>
+		<sku>KabuvegegAU65H</sku>
+		<price>0.70</price>
+		<inventory>564</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

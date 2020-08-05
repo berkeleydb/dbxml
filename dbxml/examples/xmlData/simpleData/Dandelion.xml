@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Dandelion</item>
+	<inventory>
+		<sku>DandvegeDRGpAu</sku>
+		<price>0.66</price>
+		<inventory>449</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

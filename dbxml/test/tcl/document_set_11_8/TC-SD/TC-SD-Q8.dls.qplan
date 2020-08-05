@@ -1,0 +1,44 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="ent">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="e" nodeType="element">
+            <StepQP axis="child" name="dictionary" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="hw" value="and"/>
+            </StepQP>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp3">
+            <StepQP axis="child" uri="*" name="*" nodeType="element">
+              <VariableQP name="#tmp2"/>
+            </StepQP>
+            <ValueFilterQP comparison="eq" general="true">
+              <StepQP axis="child" name="hw" nodeType="element">
+                <VariableQP name="#tmp3"/>
+              </StepQP>
+              <Sequence>
+                <AnyAtomicTypeConstructor value="and" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+              </Sequence>
+            </ValueFilterQP>
+          </NodePredicateFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="qt" nodeType="element">
+        <StepQP axis="child" uri="*" name="*" nodeType="element">
+          <StepQP axis="child" name="qp" nodeType="element">
+            <StepQP axis="child" name="s" nodeType="element">
+              <StepQP axis="child" name="ss" nodeType="element">
+                <DescendantOrSelfJoinQP>
+                  <PresenceQP index="node-element-presence-none" operation="eq" child="qt"/>
+                  <VariableQP name=":ent"/>
+                </DescendantOrSelfJoinQP>
+              </StepQP>
+            </StepQP>
+          </StepQP>
+        </StepQP>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

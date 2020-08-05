@@ -1,0 +1,50 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# QP tests
+# Basic operations on result values
+
+TEST 11.4 
+TITLE Operations |, intersect, or, and, !=; Functions name() on result values
+
+INDEX "" "foo" "node-element-equality-string"
+INDEX "" "bar" "node-element-presence-none"
+INDEX "" "baz" "edge-element-equality-string"
+
+RETURNTYPE LiveValues
+
+
+11.4.1
+/*[foo or bar]
+Root(RA(u(RI(node-element-equality-string,prefix,foo),RI(node-element-presence-none,=,bar))))
+
+11.4.2
+/*[foo and bar]
+Root(RA(n(RI(node-element-equality-string,prefix,foo),RI(node-element-presence-none,=,bar))))
+
+11.4.3
+//foo!='123'
+Root(RS,RA(RS,SS(RS,)))
+
+11.4.4
+/foo[.='123']
+Root(RA(RI(node-element-equality-string,=,foo,123)))
+
+11.4.5
+/*[.='123']
+Root(RA(SS()))
+
+11.4.6
+/foo/baz[.='abc']
+Root(RA(RI(edge-element-equality-string,=,foo.baz,abc)))
+
+11.4.7
+/foo/baz[.='abc' or .='123']
+Root(RA(n(RI(edge-element-equality-string,prefix,foo.baz),u(RI(edge-element-equality-string,=,foo.baz,abc),RI(edge-element-equality-string,=,foo.baz,123)))))
+
+11.4.8
+/foo/@lala/baz
+Root(RS,RA(RS,E(RS,)))
+

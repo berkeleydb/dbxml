@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Kohlrabi</item>
+	<inventory>
+		<sku>Kohlvege1BTa94</sku>
+		<price>0.17</price>
+		<inventory>684</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

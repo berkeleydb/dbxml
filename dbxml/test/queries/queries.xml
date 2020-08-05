@@ -1,0 +1,706 @@
+<test-suite version="$Id$"
+            ResultOffsetPath="ExpectedTestResults/"
+            XQueryQueryOffsetPath="Queries/"
+            XQueryFileExtension=".xq">
+
+  <test-suite-info> 
+    <title>DB XML Query Test Suite</title> 
+  </test-suite-info> 
+
+  <sources>
+    <source ID="category" FileName="TestSources/category.xml"/>
+    <source ID="predicate" FileName="TestSources/predicate.xml"/>
+    <source ID="part1" FileName="TestSources/part1.xml"/>
+    <source ID="part2" FileName="TestSources/part2.xml"/>
+    <source ID="part3" FileName="TestSources/part3.xml"/>
+    <source ID="part4" FileName="TestSources/part4.xml"/>
+    <source ID="part5" FileName="TestSources/part5.xml"/>
+    <source ID="part6" FileName="TestSources/part6.xml"/>
+    <source ID="part7" FileName="TestSources/part7.xml"/>
+    <source ID="part8" FileName="TestSources/part8.xml"/>
+    <source ID="part9" FileName="TestSources/part9.xml"/>
+    <source ID="part10" FileName="TestSources/part10.xml"/>
+    <source ID="records" FileName="TestSources/records.xml"/>
+    <source ID="a1" FileName="TestSources/a1.xml"/>
+    <source ID="a2" FileName="TestSources/a2.xml"/>
+    <source ID="bug1" FileName="TestSources/bug1.xml"/>
+    <source ID="bug2" FileName="TestSources/bug2.xml"/>
+    <source ID="contains1" FileName="TestSources/contains1.xml"/>
+    <source ID="contains2" FileName="TestSources/contains2.xml"/>
+    <source ID="range" FileName="TestSources/range.xml"/>
+    <source ID="coverage1" FileName="TestSources/coverage1.xml"/>
+
+    <module ID="module1" FileName="Queries/ModuleTests/module1"/>
+    <module ID="module2" FileName="Queries/ModuleTests/module2"/>
+    <module ID="module3" FileName="Queries/ModuleTests/module3"/>
+    <module ID="module4" FileName="Queries/ModuleTests/module4"/>
+    <module ID="module5" FileName="Queries/ModuleTests/module5"/>
+    <module ID="module6" FileName="Queries/ModuleTests/module6"/>
+    <module ID="module7" FileName="Queries/ModuleTests/module7"/>
+
+    <collection ID="categoryCollection">
+      <auto-index value="off"/>
+      <input-document>category</input-document>
+    </collection>
+
+    <collection ID="aCollection">
+      <auto-index value="off"/>
+      <input-document>a1</input-document>
+      <input-document>a2</input-document>
+    </collection>
+
+    <collection ID="bugCollection1">
+      <auto-index value="off"/>
+      <input-document>bug1</input-document>
+      <input-document>bug2</input-document>
+    </collection>
+
+    <collection ID="predicateCollection">
+      <auto-index value="off"/>
+      <index uri="" name="a" index="node-element-presence"/>
+      <index uri="" name="b" index="node-element-presence"/>
+      <index uri="" name="c" index="node-element-presence"/>
+      <index uri="" name="d" index="node-element-presence"/>
+      <input-document>predicate</input-document>
+    </collection>
+
+    <collection ID="idCollection">
+      <auto-index value="off"/>
+      <index uri="" name="id" index="edge-attribute-equality-double"/>
+      <index uri="" name="name" index="node-attribute-equality-string"/>
+      <index uri="" name="name" index="node-attribute-substring-string"/>
+      <input-document>part1</input-document>
+      <input-document>part2</input-document>
+      <input-document>part3</input-document>
+      <input-document>part4</input-document>
+      <input-document>part5</input-document>
+      <input-document>part6</input-document>
+      <input-document>part7</input-document>
+      <input-document>part8</input-document>
+      <input-document>part9</input-document>
+      <input-document>part10</input-document>
+    </collection>
+
+    <collection ID="moduleCollection">
+      <auto-index value="off"/>
+      <index uri="" name="category" index="node-element-presence"/>
+      <index uri="" name="id" index="node-attribute-equality-string"/>
+      <input-document>category</input-document>
+    </collection>
+
+    <collection ID="nodeIdentityCollection">
+      <auto-index value="off"/>
+      <index uri="" name="id" index="node-element-equality-double"/>
+      <index uri="" name="foo" index="node-element-equality-string"/>
+      <input-document>records</input-document>
+    </collection>
+
+    <collection ID="containsCollection1">
+      <auto-index value="off"/>
+      <index uri="" name="att1" index="node-attribute-substring-string"/>
+      <index uri="" name="a" index="node-element-substring-string"/>
+      <input-document>contains1</input-document>
+    </collection>
+
+    <collection ID="containsCollection2">
+      <auto-index value="off"/>
+      <input-document>contains1</input-document>
+    </collection>
+
+    <collection ID="containsCollection3">
+      <auto-index value="off"/>
+      <index uri="" name="att1" index="node-attribute-substring-string"/>
+      <input-document>contains2</input-document>
+    </collection>
+
+    <collection ID="rangeCollection">
+      <auto-index value="off"/>
+    	<index uri="" name="att" index="node-attribute-equality-decimal"/>
+    	<input-document>range</input-document>
+    </collection>
+
+    <collection ID="coverageCollection1">
+      <auto-index value="off"/>
+    	<input-document>coverage1</input-document>
+    </collection>
+  </sources>
+
+  <test-group name="AncestorTests">
+    <GroupInfo>
+      <title>Tests for the ancestor axes</title>
+    </GroupInfo>
+    <test-case name="ancestor-Q1" FilePath="AncestorTests/">
+      <query name="ancestor-Q1"/>
+      <defaultCollection>categoryCollection</defaultCollection>
+      <output-file compare="Fragment">ancestor-Q1.out</output-file>
+    </test-case>
+    <test-case name="ancestor-Q2" FilePath="AncestorTests/">
+      <query name="ancestor-Q2"/>
+      <defaultCollection>categoryCollection</defaultCollection>
+      <output-file compare="Fragment">ancestor-Q2.out</output-file>
+    </test-case>
+    <test-case name="ancestor-Q3" FilePath="AncestorTests/">
+      <query name="ancestor-Q3"/>
+      <defaultCollection>categoryCollection</defaultCollection>
+      <output-file compare="Fragment">ancestor-Q3.out</output-file>
+    </test-case>
+    <test-case name="ancestor-Q4" FilePath="AncestorTests/">
+      <query name="ancestor-Q4"/>
+      <defaultCollection>aCollection</defaultCollection>
+      <output-file compare="Fragment">ancestor-Q4.out</output-file>
+    </test-case>
+    <test-case name="ancestor-Q5" FilePath="AncestorTests/">
+      <query name="ancestor-Q5"/>
+      <defaultCollection>aCollection</defaultCollection>
+      <output-file compare="Fragment">ancestor-Q5.out</output-file>
+    </test-case>
+  </test-group>
+
+  <test-group name="PredicateTests">
+    <GroupInfo>
+      <title>Tests for complex predicates</title>
+    </GroupInfo>
+    <test-case name="predicate-Q1" FilePath="PredicateTests/">
+      <query name="predicate-Q1"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q1.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q2" FilePath="PredicateTests/">
+      <query name="predicate-Q2"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q2.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q3" FilePath="PredicateTests/">
+      <query name="predicate-Q3"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q3.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q4" FilePath="PredicateTests/">
+      <query name="predicate-Q4"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q4.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q5" FilePath="PredicateTests/">
+      <query name="predicate-Q5"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q5.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q6" FilePath="PredicateTests/">
+      <query name="predicate-Q6"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q6.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q7" FilePath="PredicateTests/">
+      <query name="predicate-Q7"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q7.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q8" FilePath="PredicateTests/">
+      <query name="predicate-Q8"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q8.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q9" FilePath="PredicateTests/">
+      <query name="predicate-Q9"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q9.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q10" FilePath="PredicateTests/">
+      <query name="predicate-Q10"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q10.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q11" FilePath="PredicateTests/">
+      <query name="predicate-Q11"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q11.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q12" FilePath="PredicateTests/">
+      <query name="predicate-Q12"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q12.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q13" FilePath="PredicateTests/">
+      <query name="predicate-Q13"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q13.out</output-file>
+    </test-case>
+    <test-case name="predicate-Q14" FilePath="PredicateTests/">
+      <query name="predicate-Q14"/>
+      <defaultCollection>predicateCollection</defaultCollection>
+      <output-file compare="Fragment">predicate-Q14.out</output-file>
+    </test-case>
+  </test-group>
+
+  <test-group name="IDTests">
+    <GroupInfo>
+      <title>Tests for an attribute index on "id"</title>
+    </GroupInfo>
+    <test-case name="ID-Q1" FilePath="IDTests/">
+      <query name="ID-Q1"/>
+      <defaultCollection>idCollection</defaultCollection>
+      <output-file compare="Fragment">ID-Q1.out</output-file>
+    </test-case>
+    <test-case name="ID-Q2" FilePath="IDTests/">
+      <query name="ID-Q2"/>
+      <defaultCollection>idCollection</defaultCollection>
+      <output-file compare="Fragment">ID-Q2.out</output-file>
+    </test-case>
+    <test-case name="ID-Q3" FilePath="IDTests/">
+      <query name="ID-Q3"/>
+      <defaultCollection>idCollection</defaultCollection>
+      <output-file compare="Fragment">ID-Q3.out</output-file>
+    </test-case>
+    <test-case name="ID-Q4" FilePath="IDTests/">
+      <query name="ID-Q4"/>
+      <defaultCollection>idCollection</defaultCollection>
+      <output-file compare="Fragment">ID-Q4.out</output-file>
+    </test-case>
+    <test-case name="ID-Q5" FilePath="IDTests/">
+      <query name="ID-Q5"/>
+      <defaultCollection>idCollection</defaultCollection>
+      <output-file compare="Fragment">ID-Q5.out</output-file>
+    </test-case>
+  </test-group>
+
+  <test-group name="ModuleTests">
+    <GroupInfo>
+      <title>Tests for modules</title>
+    </GroupInfo>
+    <test-case name="module_test-Q1" FilePath="ModuleTests/">
+      <query name="module_test-Q1"/>
+      <defaultCollection>moduleCollection</defaultCollection>
+      <module namespace="http://test.module">module1</module>
+      <output-file compare="Fragment">module_test-Q1.out</output-file>
+    </test-case>
+    <test-case name="module_test-Q2" FilePath="ModuleTests/">
+      <query name="module_test-Q2"/>
+      <defaultCollection>moduleCollection</defaultCollection>
+      <module namespace="http://test.module2">module2</module>
+      <output-file compare="Fragment">module_test-Q2.out</output-file>
+    </test-case>
+    <test-case name="module_test-Q3" FilePath="ModuleTests/">
+      <query name="module_test-Q3"/>
+      <defaultCollection>moduleCollection</defaultCollection>
+      <module namespace="http://test.module3">module3</module>
+      <output-file compare="Fragment">module_test-Q3.out</output-file>
+    </test-case>
+    <test-case name="module_test-Q4" FilePath="ModuleTests/">
+      <query name="module_test-Q4"/>
+      <defaultCollection>moduleCollection</defaultCollection>
+      <module namespace="http://test.module4">module4</module>
+      <output-file compare="Fragment">module_test-Q4.out</output-file>
+    </test-case>
+    <test-case name="module_test-Q5" FilePath="ModuleTests/">
+      <query name="module_test-Q5"/>
+      <defaultCollection>moduleCollection</defaultCollection>
+      <module namespace="http://test.module5">module5</module>
+      <output-file compare="Fragment">module_test-Q5.out</output-file>
+    </test-case>
+    <test-case name="module_test-Q6" FilePath="ModuleTests/">
+      <query name="module_test-Q6"/>
+      <defaultCollection>moduleCollection</defaultCollection>
+      <module namespace="http://test.module6">module6</module>
+      <output-file compare="Fragment">module_test-Q6.out</output-file>
+    </test-case>
+    <test-case name="module_test-Q7" FilePath="ModuleTests/">
+      <query name="module_test-Q7"/>
+      <defaultCollection>moduleCollection</defaultCollection>
+      <module namespace="http://test.module7">module7</module>
+      <output-file compare="Fragment">module_test-Q7.out</output-file>
+    </test-case>
+    <test-case name="module_test-Q8" FilePath="ModuleTests/">
+      <query name="module_test-Q8"/>
+      <defaultCollection>moduleCollection</defaultCollection>
+      <output-file compare="Fragment">module_test-Q8.out</output-file>
+    </test-case>
+  </test-group>
+
+  <test-group name="NodeIdentityTests">
+    <GroupInfo>
+      <title>Tests for node identity</title>
+    </GroupInfo>
+    <test-case name="node_identity-Q1" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q1"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q1.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q2" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q2"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q2.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q3" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q3"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q3.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q4" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q4"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q4.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q5" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q5"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q5.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q6" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q6"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q6.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q7" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q7"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q7.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q8" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q8"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q8.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q9" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q9"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q9.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q10" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q10"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q10.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q11" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q11"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q11.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q12" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q12"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q12.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q13" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q13"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q13.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q14" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q14"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q14.out</output-file>
+    </test-case>
+    <test-case name="node_identity-Q15" FilePath="NodeIdentityTests/">
+      <query name="node_identity-Q15"/>
+      <defaultCollection>nodeIdentityCollection</defaultCollection>
+      <output-file compare="Fragment">node_identity-Q15.out</output-file>
+    </test-case>
+  </test-group>
+
+  <test-group name="RemoteDocumentTests">
+    <GroupInfo>
+      <title>Tests for remote documents</title>
+    </GroupInfo>
+    <test-case name="remote-Q1" FilePath="RemoteDocumentTests/">
+      <query name="remote-Q1"/>
+      <output-file compare="Fragment">remote-Q1.out</output-file>
+    </test-case>
+    <test-case name="remote-Q2" FilePath="RemoteDocumentTests/">
+      <query name="remote-Q2"/>
+      <output-file compare="Fragment">remote-Q2.out</output-file>
+    </test-case>
+  </test-group>
+
+  <test-group name="Bugs">
+    <GroupInfo>
+      <title>Tests for previous query bugs</title>
+    </GroupInfo>
+    <test-case name="bug-Q1" FilePath="BugTests/">
+      <!-- Test for unicode bug in query parsing -->
+      <query name="bug-Q1"/>
+      <output-file compare="Fragment">bug-Q1.out</output-file>
+    </test-case>
+    <test-case name="bug-Q2" FilePath="BugTests/">
+      <!-- Test for leap year date bug -->
+      <query name="bug-Q2"/>
+      <output-file compare="Fragment">bug-Q2.out</output-file>
+    </test-case>
+    <test-case name="bug-Q3" FilePath="BugTests/">
+      <!-- Test for the unoptimizable last step of a navigation bug -->
+      <query name="bug-Q3"/>
+      <defaultCollection>aCollection</defaultCollection>
+      <output-file compare="Fragment">bug-Q3.out</output-file>
+    </test-case>
+    <test-case name="bug-Q4" FilePath="BugTests/">
+      <!-- Test for the exponential negative predicate bug -->
+      <query name="bug-Q4"/>
+      <defaultCollection>aCollection</defaultCollection>
+      <expected-error>FORG0001</expected-error>
+    </test-case>
+    <test-case name="bug-Q5" FilePath="BugTests/">
+      <!-- Test for nested numeric predicate in where clause optimisation bug -->
+      <query name="bug-Q5"/>
+      <defaultCollection>aCollection</defaultCollection>
+      <output-file compare="Fragment">bug-Q5.out</output-file>
+    </test-case>
+    <test-case name="bug-Q6" FilePath="BugTests/">
+      <!-- Test for nested numeric DecisionPointQP JIT optimisation bug -->
+      <query name="bug-Q6"/>
+      <input-URI variable="collection">aCollection</input-URI>
+      <output-file compare="Fragment">bug-Q6.out</output-file>
+    </test-case>
+    <test-case name="bug-Q7" FilePath="BugTests/">
+      <!-- Test for a bug in the optimisation of unions -->
+      <query name="bug-Q7"/>
+      <defaultCollection>bugCollection1</defaultCollection>
+      <output-file compare="Fragment">bug-Q7.out</output-file>
+    </test-case>
+    <test-case name="bug-Q8" FilePath="BugTests/">
+      <!-- Test for a bug which resulted in a SS on container 0 -->
+      <query name="bug-Q8"/>
+      <output-file compare="Fragment">bug-Q8.out</output-file>
+    </test-case>
+    <test-case name="bug-Q9" FilePath="BugTests/">
+      <!-- Test for a bug with paths ending in a comparison step-->
+      <query name="bug-Q9"/>
+      <input-URI variable="collection">aCollection</input-URI>
+      <output-file compare="Fragment">bug-Q9.out</output-file>
+    </test-case>
+    <test-case name="bug-Q10" FilePath="BugTests/">
+      <!-- Test for a bug with paths ending in a contains step-->
+      <query name="bug-Q10"/>
+      <input-URI variable="collection">aCollection</input-URI>
+      <output-file compare="Fragment">bug-Q10.out</output-file>
+    </test-case>
+    <test-case name="bug-Q11" FilePath="BugTests/">
+      <!-- Test for a bug with using an unseen element URI in a query -->
+      <query name="bug-Q11"/>
+      <defaultCollection>aCollection</defaultCollection>
+      <output-file compare="Fragment">bug-Q11.out</output-file>
+    </test-case>
+    <test-case name="bug-Q12" FilePath="BugTests/">
+      <!-- Test for a bug with preparing a recursive function that uses collection() -->
+      <query name="bug-Q12"/>
+      <defaultCollection>aCollection</defaultCollection>
+      <output-file compare="Fragment">bug-Q12.out</output-file>
+    </test-case>
+  </test-group>
+  
+  <test-group name="FunctionTests">
+    <GroupInfo>
+      <title>Tests for some XQuery functions</title>
+    </GroupInfo>
+    <!-- Test for dbxml:contains() function-->
+    <!-- Test positive -->
+    <test-case name="Contains-Q1" FilePath="FunctionTests/">
+      <query name="Contains-Q1"/>
+      <output-file compare="Fragment">Contains-Q1.out</output-file>
+    </test-case>
+    <!-- Test empty sequence-->
+    <test-case name="Contains-Q2" FilePath="FunctionTests/">
+      <query name="Contains-Q2"/>
+      <output-file compare="Fragment">Contains-Q2.out</output-file>
+    </test-case>
+    <!-- Test empty sequence -->
+    <test-case name="Contains-Q3" FilePath="FunctionTests/">
+      <query name="Contains-Q3"/>
+      <output-file compare="Fragment">Contains-Q3.out</output-file>
+    </test-case>
+    <!-- Test negative -->
+    <test-case name="Contains-Q4" FilePath="FunctionTests/">
+      <query name="Contains-Q4"/>
+      <output-file compare="Fragment">Contains-Q4.out</output-file>
+    </test-case>
+    <!-- Test case insensitive -->
+    <test-case name="Contains-Q5" FilePath="FunctionTests/">
+      <query name="Contains-Q5"/>
+      <output-file compare="Fragment">Contains-Q5.out</output-file>
+    </test-case>
+    <!-- Test diacritic insensitive -->
+    <test-case name="Contains-Q6" FilePath="FunctionTests/">
+      <query name="Contains-Q6"/>
+      <output-file compare="Fragment">Contains-Q6.out</output-file>
+    </test-case>
+    <!-- Test attribute node with substring index -->
+    <test-case name="Contains-Q7" FilePath="FunctionTests/">
+      <query name="Contains-Q7"/>
+      <defaultCollection>containsCollection1</defaultCollection>
+      <output-file compare="Fragment">Contains-Q7.out</output-file>
+    </test-case>
+    <!-- Test empty sequence both parameter -->
+    <test-case name="Contains-Q8" FilePath="FunctionTests/">
+      <query name="Contains-Q8"/>
+      <output-file compare="Fragment">Contains-Q8.out</output-file>
+    </test-case>
+    <!-- Test odd characters -->
+    <test-case name="Contains-Q9" FilePath="FunctionTests/">
+      <query name="Contains-Q9"/>
+      <output-file compare="Fragment">Contains-Q9.out</output-file>
+    </test-case>
+    <!-- Test odd characters negative -->
+    <test-case name="Contains-Q10" FilePath="FunctionTests/">
+      <query name="Contains-Q10"/>
+      <output-file compare="Fragment">Contains-Q10.out</output-file>
+    </test-case>
+    <!-- Test Chinese characters positive -->
+    <test-case name="Contains-Q11" FilePath="FunctionTests/">
+      <query name="Contains-Q11"/>
+      <output-file compare="Fragment">Contains-Q11.out</output-file>
+    </test-case>
+    <!-- Test very long string positive -->
+    <test-case name="Contains-Q12" FilePath="FunctionTests/">
+      <query name="Contains-Q12"/>
+      <output-file compare="Fragment">Contains-Q12.out</output-file>
+    </test-case>
+    <!-- Test very long string negative -->
+    <test-case name="Contains-Q13" FilePath="FunctionTests/">
+      <query name="Contains-Q13"/>
+      <output-file compare="Fragment">Contains-Q13.out</output-file>
+    </test-case>
+    <!-- Test too few arguments -->
+    <test-case name="Contains-Q14" FilePath="FunctionTests/">
+      <query name="Contains-Q14"/>
+      <expected-error>XPST0017</expected-error>
+    </test-case>
+    <!-- Test Chinese characters negative -->
+    <test-case name="Contains-Q15" FilePath="FunctionTests/">
+      <query name="Contains-Q15"/>
+      <output-file compare="Fragment">Contains-Q15.out</output-file>
+    </test-case>
+    <!-- Test too many arguments -->
+    <test-case name="Contains-Q16" FilePath="FunctionTests/">
+      <query name="Contains-Q16"/>
+      <expected-error>XPST0017</expected-error>
+    </test-case>
+    <!-- Test attribute nodes without any index -->
+    <test-case name="Contains-Q17" FilePath="FunctionTests/">
+      <query name="Contains-Q17"/>
+      <defaultCollection>containsCollection2</defaultCollection>
+      <output-file compare="Fragment">Contains-Q17.out</output-file>
+    </test-case>
+    <!-- Test element nodes with substring index -->
+    <test-case name="Contains-Q18" FilePath="FunctionTests/">
+      <query name="Contains-Q18"/>
+      <defaultCollection>containsCollection1</defaultCollection>
+      <output-file compare="Fragment">Contains-Q18.out</output-file>
+    </test-case>
+    <!-- Test element nodes without substirng index -->
+    <test-case name="Contains-Q19" FilePath="FunctionTests/">
+      <query name="Contains-Q19"/>
+      <defaultCollection>containsCollection2</defaultCollection>
+      <output-file compare="Fragment">Contains-Q19.out</output-file>
+    </test-case>
+    <!-- Test text nodes -->
+    <test-case name="Contains-Q20" FilePath="FunctionTests/">
+      <query name="Contains-Q20"/>
+      <defaultCollection>containsCollection1</defaultCollection>
+      <output-file compare="Fragment">Contains-Q20.out</output-file>
+    </test-case>
+    <!-- Test comment nodes -->
+    <test-case name="Contains-Q21" FilePath="FunctionTests/">
+      <query name="Contains-Q21"/>
+      <defaultCollection>containsCollection1</defaultCollection>
+      <output-file compare="Fragment">Contains-Q21.out</output-file>
+    </test-case>
+    <!-- Test wrong type arguments -->
+    <test-case name="Contains-Q22" FilePath="FunctionTests/">
+      <query name="Contains-Q22"/>
+      <expected-error>XPTY0004</expected-error>
+    </test-case>
+    <!-- Test odd characters in substring index -->
+    <test-case name="Contains-Q23" FilePath="FunctionTests/">
+      <query name="Contains-Q23"/>
+      <defaultCollection>containsCollection3</defaultCollection>
+      <output-file compare="Fragment">Contains-Q23.out</output-file>
+    </test-case>
+    <!-- Test case in substring index -->
+    <test-case name="Contains-Q24" FilePath="FunctionTests/">
+      <query name="Contains-Q24"/>
+      <defaultCollection>containsCollection3</defaultCollection>
+      <output-file compare="Fragment">Contains-Q24.out</output-file>
+    </test-case>
+    <!-- Test diacritic characters in substring index -->
+    <test-case name="Contains-Q25" FilePath="FunctionTests/">
+      <query name="Contains-Q25"/>
+      <defaultCollection>containsCollection3</defaultCollection>
+      <output-file compare="Fragment">Contains-Q25.out</output-file>
+    </test-case>
+    <!-- Test for dbxml:doc-available() function-->
+    <test-case name="DocAva-Q1" FilePath="FunctionTests/">
+      <query name="DocAva-Q1"/>
+      <output-file compare="Fragment">DocAva-Q1.out</output-file>
+    </test-case>
+    <test-case name="DocAva-Q2" FilePath="FunctionTests/">
+      <query name="DocAva-Q2"/>
+      <output-file compare="Fragment">DocAva-Q2.out</output-file>
+    </test-case>
+    <test-case name="DocAva-Q3" FilePath="FunctionTests/">
+      <query name="DocAva-Q3"/>
+      <output-file compare="Fragment">DocAva-Q3.out</output-file>
+    </test-case>
+    <test-case name="DocAva-Q4" FilePath="FunctionTests/">
+      <query name="DocAva-Q4"/>
+      <output-file compare="Fragment">DocAva-Q4.out</output-file>
+    </test-case>
+  </test-group>
+
+  <test-group name="CoverageTests">
+    <GroupInfo>
+      <title>Tests for improve DBXML coverage</title>
+    </GroupInfo>
+    <test-case name="Coverage-Q1" FilePath="CoverageTests/">
+      <!-- Test range query with index -->
+      <query name="Coverage-Q1"/>
+      <defaultCollection>rangeCollection</defaultCollection>
+      <output-file compare="Fragment">Coverage-Q1.out</output-file>
+    </test-case>
+    <test-case name="Coverage-Q2" FilePath="CoverageTests/">
+      <!-- Test base-uri() with remote documemnt -->
+      <query name="Coverage-Q2"/>
+      <output-file compare="Fragment">Coverage-Q2.out</output-file>
+    </test-case>
+    <test-case name="Coverage-Q3" FilePath="CoverageTests/">
+      <!-- Test base-uri() on attribute node -->
+      <query name="Coverage-Q3"/>
+      <defaultCollection>coverageCollection1</defaultCollection>
+      <output-file compare="Fragment">Coverage-Q3.out</output-file>
+    </test-case>
+    <test-case name="Coverage-Q4" FilePath="CoverageTests/">
+      <!-- Test base-uri() on PI node -->
+      <query name="Coverage-Q4"/>
+      <defaultCollection>coverageCollection1</defaultCollection>
+      <output-file compare="Fragment">Coverage-Q3.out</output-file>
+    </test-case>
+    <test-case name="Coverage-Q5" FilePath="CoverageTests/">
+      <!-- Test base-uri() on comment node -->
+      <query name="Coverage-Q5"/>
+      <defaultCollection>coverageCollection1</defaultCollection>
+      <output-file compare="Fragment">Coverage-Q3.out</output-file>
+    </test-case>
+    <test-case name="Coverage-Q6" FilePath="CoverageTests/">
+      <!-- Test base-uri() on text node -->
+      <query name="Coverage-Q6"/>
+      <defaultCollection>coverageCollection1</defaultCollection>
+      <output-file compare="Fragment">Coverage-Q3.out</output-file>
+    </test-case>
+    <test-case name="Coverage-Q7" FilePath="CoverageTests/">
+      <!-- Test base-uri() on constructed attribute node -->
+      <query name="Coverage-Q7"/>
+      <defaultCollection>coverageCollection1</defaultCollection>
+      <output-file compare="Fragment">Coverage-Q7.out</output-file>
+    </test-case>
+    <test-case name="Coverage-Q8" FilePath="CoverageTests/">
+      <!-- Test ancestor-or-self axis on document node -->
+      <query name="Coverage-Q8"/>
+      <defaultCollection>coverageCollection1</defaultCollection>
+      <output-file compare="Fragment">Coverage-Q8.out</output-file>
+    </test-case>
+    <test-case name="Coverage-Q9" FilePath="CoverageTests/">
+      <!-- Test descendant axis on attribute node -->
+      <query name="Coverage-Q9"/>
+      <defaultCollection>coverageCollection1</defaultCollection>
+      <output-file compare="Fragment">Coverage-Q9.out</output-file>
+    </test-case>
+  </test-group>
+
+</test-suite>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Thyme</item>
+	<inventory>
+		<sku>ThymvegeYgFjLn</sku>
+		<price>0.67</price>
+		<inventory>389</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

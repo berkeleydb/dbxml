@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Eggplant</product>
+	<inventory>
+		<sku>EggpvegePcgHnf</sku>
+		<price>0.42</price>
+		<inventory>333</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

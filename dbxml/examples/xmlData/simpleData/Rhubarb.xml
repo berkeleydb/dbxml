@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Rhubarb</item>
+	<inventory>
+		<sku>RhubvegebbpAMx</sku>
+		<price>0.42</price>
+		<inventory>780</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

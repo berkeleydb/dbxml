@@ -1,0 +1,52 @@
+=head1 NAME
+
+XmlInputStream - A Perl interface to the DbXml XmlInputStream Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $manager = new XmlManager();
+    my $stream = $mgr->createLocalFileInputStream();
+    my $stream = $mgr->createStdInInputStream();
+    my $stream = $mgr->createURLInputStream();
+    ...
+    
+    my $stream = $xmldocument->getContentASXmlInputStream();
+
+    my $pos = $stream->curPos();
+    my $count = $stream->readBytes();
+
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XmlInputStream is identical to the C++ API.
+
+=head1 Constructor
+
+There is no constructor provided for this class. An XmlInputStream object
+is created as follows
+
+    my $manager = new XmlManager();
+    my $stream = $mgr->createLocalFileInputStream();
+    my $stream = $mgr->createStdInInputStream();
+    my $stream = $mgr->createURLInputStream();
+
+=head1 Methods
+
+=head2 $stream->curPos()
+
+=head1 EXAMPLES
+
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

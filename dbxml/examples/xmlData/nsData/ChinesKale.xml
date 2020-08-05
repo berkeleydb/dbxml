@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Chines Kale</product>
+	<inventory>
+		<sku>ChinvegekjfGUh</sku>
+		<price>0.40</price>
+		<inventory>307</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

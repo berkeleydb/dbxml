@@ -1,0 +1,1 @@
+dbxml:contains('abc','a')

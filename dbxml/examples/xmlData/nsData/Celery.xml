@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Celery</product>
+	<inventory>
+		<sku>CelevegeQG00RH</sku>
+		<price>0.74</price>
+		<inventory>471</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

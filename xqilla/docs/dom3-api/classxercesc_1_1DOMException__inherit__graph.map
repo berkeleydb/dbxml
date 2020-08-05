@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$classxercesc_1_1DOMLSException.html" title="xercesc::DOMLSException" alt="" coords="5,83,184,112"/>
+<area shape="rect" href="$classxercesc_1_1DOMRangeException.html" title="Range operations may throw a DOMRangeException as specified in their method descriptions..." alt="" coords="208,83,408,112"/>
+<area shape="rect" href="$classxercesc_1_1DOMXPathException.html" title="xercesc::DOMXPathException" alt="" coords="432,83,629,112"/>
+</map>

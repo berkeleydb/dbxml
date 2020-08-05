@@ -1,0 +1,38 @@
+#!/bin/sh -
+#
+# Build Windows .dsp (VS6) project files
+
+BUILDDIR=../build_windows
+OUTDIR="..\\\\build_windows"
+TEMPLATEDIR=../build_windows
+SRCFILES=srcfiles.in
+# for now, do not parameterize the filter templates
+FILT_START="filter_dsp.start"
+FILT_END="filter_dsp.end"
+# intput templates
+LIB_SRC=$TEMPLATEDIR/dbxml_dsp.src
+DLL_SRC=$TEMPLATEDIR/dll_dsp.src
+APP_SRC=$TEMPLATEDIR/app_dsp.src
+FILT_FILE_SRC=$TEMPLATEDIR/srcfile_dsp.src
+FILE_SRC=$FILT_FILE_SRC
+LIBNAME=dbxml
+EXT=dsp
+
+# source dependencies
+. ./s_win32_common
+
+generate_projects
+
+f=$BUILDDIR/BDBXML_all.dsw
+sed -f lib_paths.sed < $f.template | sed 's,/,\\,g' > $TMPA
+cmp $TMPA $f > /dev/null 2>&1 ||
+        (echo "$f" && rm -f $f && cp $TMPA $f && chmod 664 $f)
+
+# generate copyHeaders.bat script for VC6
+sed -f lib_paths.sed < $BUILDDIR/copyFiles.bat.template > $BUILDDIR/copyFiles.bat.new
+cmp $BUILDDIR/copyFiles.bat.new $BUILDDIR/copyFiles.bat > /dev/null 2>&1 ||
+	(echo "Building copyFiles.bat" && rm -f $BUILDDIR/copyFiles.bat &&
+	    cp $BUILDDIR/copyFiles.bat.new $BUILDDIR/copyFiles.bat && chmod 664 $BUILDDIR/copyFiles.bat)
+rm -f $BUILDDIR/copyFiles.bat.new
+
+rm -f $TMPA

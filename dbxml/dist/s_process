@@ -1,0 +1,23 @@
+#
+# shell function to process a single template
+
+. ./RELEASE
+
+TMP=/tmp/s_process$$a
+trap "rm -f $TMPA; exit 1" 1 2 3 15
+
+process() {
+    template=$1
+    target=$2
+
+    sed -f lib_paths.sed  < $template > $TMP
+
+    # Set the file mode to 775 because the VC++ IDE needs a writeable file
+    # in our development environment and some of the output files need
+    # to be executable
+    cmp $TMP $target > /dev/null 2>&1 ||
+	(echo "Building $target" && rm -f $target &&
+	    cp $TMP $target && chmod 775 $target)
+
+    rm -f $TMP
+}

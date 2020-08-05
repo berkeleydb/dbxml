@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Zulu Nut</item>
+	<inventory>
+		<sku>ZulufruiqSBlzV</sku>
+		<price>0.53</price>
+		<inventory>371</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

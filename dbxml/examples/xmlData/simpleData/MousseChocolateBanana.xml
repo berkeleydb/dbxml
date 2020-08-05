@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Mousse, Chocolate Banana</item>
+	<inventory>
+		<sku>MousdessIeIgae</sku>
+		<price>6.77</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

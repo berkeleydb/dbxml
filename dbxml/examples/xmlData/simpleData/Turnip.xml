@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Turnip</item>
+	<inventory>
+		<sku>TurnvegeEpbsjo</sku>
+		<price>0.38</price>
+		<inventory>545</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

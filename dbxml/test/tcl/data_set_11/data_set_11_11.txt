@@ -1,0 +1,41 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# QP tests
+# Edge index lookup optimizations
+
+TEST 11.11
+TITLE Edge index lookup optimizations
+
+INDEX "" "foo" "edge-element-presence"
+INDEX "" "bar" "edge-element-presence"
+INDEX "" "baz" "edge-element-presence"
+INDEX "" "boo" "edge-element-presence"
+INDEX "" "bim" "edge-element-presence"
+
+11.11.1
+/foo/bar
+Root(RA(RI(edge-element-presence-none,=,foo.bar)))
+
+11.11.2
+/foo/bar/baz
+Root(RA(n(RI(edge-element-presence-none,=,foo.bar),RI(edge-element-presence-none,=,bar.baz))))
+
+11.11.3
+/foo/bar/baz/boo
+Root(RA(n(n(RI(edge-element-presence-none,=,foo.bar),RI(edge-element-presence-none,=,bar.baz)),RI(edge-element-presence-none,=,baz.boo))))
+
+11.11.4
+/foo[bar]
+Root(RA(RI(edge-element-presence-none,=,foo.bar)))
+
+11.11.5
+/foo[bar or baz]
+Root(RA(u(RI(edge-element-presence-none,=,foo.bar),RI(edge-element-presence-none,=,foo.baz))))
+
+11.11.6
+/foo[bar or baz[boo or bim]]
+Root(RA(u(RI(edge-element-presence-none,=,foo.bar),n(RI(edge-element-presence-none,=,foo.baz),u(RI(edge-element-presence-none,=,baz.boo),RI(edge-element-presence-none,=,baz.bim))))))
+

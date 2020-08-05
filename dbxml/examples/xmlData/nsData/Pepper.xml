@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Pepper</product>
+	<inventory>
+		<sku>Peppvegek0yeIW</sku>
+		<price>0.63</price>
+		<inventory>453</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

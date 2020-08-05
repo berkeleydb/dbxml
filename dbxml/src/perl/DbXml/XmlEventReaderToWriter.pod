@@ -1,0 +1,58 @@
+=head1 NAME
+
+XmlEventReaderToWriter - A Perl interface to the DbXml XmlEventReaderToWriter Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $mgr = new XmlManager()
+    my $doc = $mgr->createDocument()
+    my $doc2 = $mgr->createDocument()
+
+    my $c = $mgr->createContainer(...);
+
+    my $writer = $c->putDocumentAsEventWriter($doc, $context);
+    my $reader = $doc2->getContentAsEventReader();
+
+
+    my $rw = new XmlEventReaderToWriter($reader, $writer);
+    $rw->start();
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlValue is identical to the C++ API.
+
+=head1 Constructor
+
+The constructor for XmlDocument can takes the following form:
+
+    my $mgr = new XmlManager;
+    my $doc = $mgr->createXmlDocument() ;
+
+    my $rwe = new XmlEventReaderToWriter($reader, $writer);
+
+
+In addition an XmlDocument object is returned from XmlContainer::getDocument.
+
+=head1 Methods
+
+=head2 $rwEvent->start();
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

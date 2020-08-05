@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Watercress</item>
+	<inventory>
+		<sku>Wateveget9r3qz</sku>
+		<price>0.58</price>
+		<inventory>704</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

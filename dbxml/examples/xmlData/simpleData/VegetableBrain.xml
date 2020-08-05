@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Vegetable Brain</item>
+	<inventory>
+		<sku>VegefruiLQRO8P</sku>
+		<price>1.10</price>
+		<inventory>673</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

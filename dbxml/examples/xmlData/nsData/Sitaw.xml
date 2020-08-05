@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Sitaw</product>
+	<inventory>
+		<sku>SitavegeOirn0Y</sku>
+		<price>0.12</price>
+		<inventory>242</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

@@ -1,0 +1,108 @@
+
+=head1 NAME
+
+Sleepycat::DbXml - A Perl interface to the Sleepycat DbXml library
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    eval {
+        my $mgr = new XmlManager();
+
+        ...
+    };
+    if (my $e = catch XmlException)
+    {
+    }
+
+=head1 DESCRIPTION
+
+This module provides a Perl interface to the Sleepycat library, DbXml. The
+majority of the DbXml C++ interface is available via this Perl module
+and in general the Perl interface closely mirrors the underlying C++
+API. Wherever the Perl interface differs from the C++ interface, it will
+be clearly noted in the documentation. Notable exceptions are:
+
+=over 5
+
+=item 1.
+
+The following parts of the Sleepycat DbXml API are not supported at present by
+this module:
+
+    XmlResolver
+
+=item 2.
+
+Use of Dbt and XmlData objects is not needed, so they are not
+supported. Anywhere in the C++ API where a Dbt of an XmlData object is
+required, the Perl user can use a plain-vanilla Perl scalar.
+
+=item 3.
+
+Anwhere where a DbXml method expects an XmlValue as a parameter, it is
+possible to use either an XmlValue object or a simple Perl Scalar. When
+a Perl scalar is used an XmlValue of type STRING will be created behind
+the scenes.
+
+=item 3.
+
+Whenever the C++ API uses a std::string, the Perl interface uses a scalar.
+
+=item 4.
+
+A number of the DbXml methods take a XmlTransaction object as their first
+parameter. To make life easier for users who aren't using transactions,
+this first parameter can be made optional. This is done
+
+    use Sleepycat::DbXml 'simple';
+    
+Note that this doesn't outlaw the use of the XmlTransaction parameters,
+it just makes their use optional.
+
+
+=item 5.
+
+The C++ interface makes heavy use of exceptions to report errors back
+to the user code. This module uses the Perl equivalent.
+
+That means that a typical
+
+    eval
+    {
+        
+    };
+    if (my $e = catch XmlException)
+    {
+    }
+
+=back
+
+The documentation for each of the individual classes in DbXml are each
+stored in individual files.
+
+=over 5
+
+=item XmlValue
+
+=item XmlContainer
+
+=back
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+The example below ...
+
+=head1 SEE ALSO
+
+The Sleepycat site, http://www.sleepycat.com
+
+
+=head1 AUTHOR
+
+Paul Marquess

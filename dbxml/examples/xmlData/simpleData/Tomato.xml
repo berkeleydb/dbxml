@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Tomato</item>
+	<inventory>
+		<sku>Tomavegek4wa4y</sku>
+		<price>0.66</price>
+		<inventory>733</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

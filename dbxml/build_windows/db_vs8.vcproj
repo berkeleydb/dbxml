@@ -1,0 +1,371 @@
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="db" ProjectGUID="{20E83A5C-A325-4962-8F3A-CDD367AE6D33}">
+  <Platforms>
+    <Platform Name="Win32"/>
+    <Platform Name="x64"/>
+    <Platform Name="IA64"/>
+  </Platforms>
+  <Configurations>
+    <Configuration Name="Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE;DIAGNOSTIC;CONFIG_TEST;DB_CREATE_DLL" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86 /FIXED:NO /export:__db_assert" AdditionalDependencies="ws2_32.lib" AdditionalLibraryDirectories="" OutputFile="$(OutDir)/libdb48d.dll" ProgramDatabaseFile="$(OutDir)/libdb48d.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/libdb48d.lib" ModuleDefinitionFile="..\..\db-4.8.26\build_windows\libdb.def" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat libdb48 dll $(OutDir) debug" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Static Debug" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE" StringPooling="TRUE" RuntimeLibrary="1" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:x86" OutputFile="$(OutDir)/libdb48sd.lib"/></Configuration>
+    <Configuration Name="Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE;DB_CREATE_DLL" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="ws2_32.lib" AdditionalLibraryDirectories="" OutputFile="$(OutDir)/libdb48.dll" ProgramDatabaseFile="$(OutDir)/libdb48.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/libdb48.lib" ModuleDefinitionFile="..\..\db-4.8.26\build_windows\libdb.def" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat libdb48 dll $(OutDir) release" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Static Release" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE" StringPooling="TRUE" RuntimeLibrary="0" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:x86" OutputFile="$(OutDir)/libdb48s.lib"/></Configuration>
+    <Configuration Name="Debug|x64" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE;DIAGNOSTIC;CONFIG_TEST;DB_CREATE_DLL" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64 /FIXED:NO /export:__db_assert" AdditionalDependencies="ws2_32.lib" AdditionalLibraryDirectories="" OutputFile="$(OutDir)/libdb48d.dll" ProgramDatabaseFile="$(OutDir)/libdb48d.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/libdb48d.lib" ModuleDefinitionFile="..\..\db-4.8.26\build_windows\libdb.def" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat libdb48 dll $(OutDir) debug" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Debug|x64" OutputDirectory="..\build_windows\$(PlatformName)\Static Debug" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE" StringPooling="TRUE" RuntimeLibrary="1" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:x64" OutputFile="$(OutDir)/libdb48sd.lib"/></Configuration>
+    <Configuration Name="Release|x64" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE;DB_CREATE_DLL" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="ws2_32.lib" AdditionalLibraryDirectories="" OutputFile="$(OutDir)/libdb48.dll" ProgramDatabaseFile="$(OutDir)/libdb48.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/libdb48.lib" ModuleDefinitionFile="..\..\db-4.8.26\build_windows\libdb.def" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat libdb48 dll $(OutDir) release" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Release|x64" OutputDirectory="..\build_windows\$(PlatformName)\Static Release" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE" StringPooling="TRUE" RuntimeLibrary="0" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:x64" OutputFile="$(OutDir)/libdb48s.lib"/></Configuration>
+    <Configuration Name="Debug|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE;DIAGNOSTIC;CONFIG_TEST;DB_CREATE_DLL" StringPooling="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64 /FIXED:NO /export:__db_assert" AdditionalDependencies="ws2_32.lib" AdditionalLibraryDirectories="" OutputFile="$(OutDir)/libdb48d.dll" ProgramDatabaseFile="$(OutDir)/libdb48d.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/libdb48d.lib" ModuleDefinitionFile="..\..\db-4.8.26\build_windows\libdb.def" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat libdb48 dll $(OutDir) debug" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Debug|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Static Debug" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE" StringPooling="TRUE" RuntimeLibrary="1" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:IA64" OutputFile="$(OutDir)/libdb48sd.lib"/></Configuration>
+    <Configuration Name="Release|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE;DB_CREATE_DLL" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="ws2_32.lib" AdditionalLibraryDirectories="" OutputFile="$(OutDir)/libdb48.dll" ProgramDatabaseFile="$(OutDir)/libdb48.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/libdb48.lib" ModuleDefinitionFile="..\..\db-4.8.26\build_windows\libdb.def" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="installProj.bat libdb48 dll $(OutDir) release" Description="Copying library files to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Release|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Static Release" IntermediateDirectory="./$(OutDir)/db" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories="../../db-4.8.26,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;_UNICODE;UNICODE" StringPooling="TRUE" RuntimeLibrary="0" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderFile="./$(IntDir)/db.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:IA64" OutputFile="$(OutDir)/libdb48s.lib"/></Configuration>
+  </Configurations>
+  <References/>
+  <Files>
+    <File RelativePath="..\..\db-4.8.26\crypto\aes_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_compact.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_compare.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_compress.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_conv.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_curadj.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_cursor.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_delete.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_open.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_put.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_rec.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_reclaim.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_recno.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_rsearch.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_search.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_split.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_upgrade.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\bt_verify.c"/>
+    <File RelativePath="..\..\db-4.8.26\btree\btree_auto.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\crdel_auto.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\crdel_rec.c"/>
+    <File RelativePath="..\..\db-4.8.26\crypto\crypto.c"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_db.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_dbc.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_dbt.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_env.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_except.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_lock.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_logc.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_mpool.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_multi.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_seq.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\cxx\cxx_txn.cpp"/>
+    <File RelativePath="..\..\db-4.8.26\db\db.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_am.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_auto.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\db_byteorder.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_cam.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_cds.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_conv.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_dispatch.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_dup.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\db_err.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\db_getlong.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\db_idspace.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\db_compint.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_iface.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_join.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\db_log2.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_meta.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_open.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_overflow.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_ovfl_vrfy.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_pr.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_rec.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_reclaim.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_remove.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_rename.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_ret.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_setid.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_setlsn.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\db_shash.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_sort_multiple.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_stati.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_truncate.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_upg.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_upg_opd.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_vrfy.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\db_vrfyutil.c"/>
+    <File RelativePath="..\..\db-4.8.26\db\partition.c"/>
+    <File RelativePath="..\..\db-4.8.26\dbm\dbm.c"/>
+    <File RelativePath="..\..\db-4.8.26\dbreg\dbreg.c"/>
+    <File RelativePath="..\..\db-4.8.26\dbreg\dbreg_auto.c"/>
+    <File RelativePath="..\..\db-4.8.26\dbreg\dbreg_rec.c"/>
+    <File RelativePath="..\..\db-4.8.26\dbreg\dbreg_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\dbreg\dbreg_util.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\dbt.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_alloc.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_config.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_failchk.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_file.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_globals.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_name.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_open.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_recover.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_region.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_register.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_sig.c"/>
+    <File RelativePath="..\..\db-4.8.26\env\env_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\fileops\fileops_auto.c"/>
+    <File RelativePath="..\..\db-4.8.26\fileops\fop_basic.c"/>
+    <File RelativePath="..\..\db-4.8.26\fileops\fop_rec.c"/>
+    <File RelativePath="..\..\db-4.8.26\fileops\fop_util.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_auto.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_conv.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_dup.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_func.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_meta.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_open.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_page.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_rec.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_reclaim.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_upgrade.c"/>
+    <File RelativePath="..\..\db-4.8.26\hash\hash_verify.c"/>
+    <File RelativePath="..\..\db-4.8.26\hmac\hmac.c"/>
+    <File RelativePath="..\..\db-4.8.26\hsearch\hsearch.c"/>
+    <File RelativePath="..\..\db-4.8.26\lock\lock.c"/>
+    <File RelativePath="..\..\db-4.8.26\lock\lock_deadlock.c"/>
+    <File RelativePath="..\..\db-4.8.26\lock\lock_failchk.c"/>
+    <File RelativePath="..\..\db-4.8.26\lock\lock_id.c"/>
+    <File RelativePath="..\..\db-4.8.26\lock\lock_list.c"/>
+    <File RelativePath="..\..\db-4.8.26\lock\lock_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\lock\lock_region.c"/>
+    <File RelativePath="..\..\db-4.8.26\lock\lock_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\lock\lock_timer.c"/>
+    <File RelativePath="..\..\db-4.8.26\lock\lock_util.c"/>
+    <File RelativePath="..\..\db-4.8.26\log\log.c"/>
+    <File RelativePath="..\..\db-4.8.26\log\log_archive.c"/>
+    <File RelativePath="..\..\db-4.8.26\log\log_compare.c"/>
+    <File RelativePath="..\..\db-4.8.26\log\log_debug.c"/>
+    <File RelativePath="..\..\db-4.8.26\log\log_get.c"/>
+    <File RelativePath="..\..\db-4.8.26\log\log_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\log\log_put.c"/>
+    <File RelativePath="..\..\db-4.8.26\log\log_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\mkpath.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_alloc.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_bh.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_fget.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_fmethod.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_fopen.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_fput.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_fset.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_mvcc.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_region.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_register.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_resize.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_sync.c"/>
+    <File RelativePath="..\..\db-4.8.26\mp\mp_trickle.c"/>
+    <File RelativePath="..\..\db-4.8.26\crypto\mersenne\mt19937db.c"/>
+    <File RelativePath="..\..\db-4.8.26\mutex\mut_alloc.c"/>
+    <File RelativePath="..\..\db-4.8.26\mutex\mut_failchk.c"/>
+    <File RelativePath="..\..\db-4.8.26\mutex\mut_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\mutex\mut_region.c"/>
+    <File RelativePath="..\..\db-4.8.26\mutex\mut_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\mutex\mut_win32.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\openflags.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_abort.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_addrinfo.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_abs.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_alloc.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_clock.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_config.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_cpu.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_ctime.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_dir.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_errno.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_fid.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_flock.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_fsync.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_getenv.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_handle.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_map.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_mkdir.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_open.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_pid.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_rename.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_root.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_rpath.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_rw.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_seek.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_stack.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_tmpdir.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_truncate.c"/>
+    <File RelativePath="..\..\db-4.8.26\os\os_uid.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_unlink.c"/>
+    <File RelativePath="..\..\db-4.8.26\os_windows\os_yield.c"/>
+    <File RelativePath="..\..\db-4.8.26\qam\qam.c"/>
+    <File RelativePath="..\..\db-4.8.26\qam\qam_auto.c"/>
+    <File RelativePath="..\..\db-4.8.26\qam\qam_conv.c"/>
+    <File RelativePath="..\..\db-4.8.26\qam\qam_files.c"/>
+    <File RelativePath="..\..\db-4.8.26\qam\qam_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\qam\qam_open.c"/>
+    <File RelativePath="..\..\db-4.8.26\qam\qam_rec.c"/>
+    <File RelativePath="..\..\db-4.8.26\qam\qam_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\qam\qam_upgrade.c"/>
+    <File RelativePath="..\..\db-4.8.26\qam\qam_verify.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_auto.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_backup.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_elect.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_lease.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_log.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_record.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_region.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_util.c"/>
+    <File RelativePath="..\..\db-4.8.26\rep\rep_verify.c"/>
+    <File RelativePath="..\..\db-4.8.26\repmgr\repmgr_auto.c"/>
+    <File RelativePath="..\..\db-4.8.26\repmgr\repmgr_elect.c"/>
+    <File RelativePath="..\..\db-4.8.26\repmgr\repmgr_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\repmgr\repmgr_msg.c"/>
+    <File RelativePath="..\..\db-4.8.26\repmgr\repmgr_net.c"/>
+    <File RelativePath="..\..\db-4.8.26\repmgr\repmgr_queue.c"/>
+    <File RelativePath="..\..\db-4.8.26\repmgr\repmgr_sel.c"/>
+    <File RelativePath="..\..\db-4.8.26\repmgr\repmgr_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\repmgr\repmgr_util.c"/>
+    <File RelativePath="..\..\db-4.8.26\repmgr\repmgr_windows.c"/>
+    <File RelativePath="..\..\db-4.8.26\crypto\rijndael\rijndael-alg-fst.c"/>
+    <File RelativePath="..\..\db-4.8.26\crypto\rijndael\rijndael-api-fst.c"/>
+    <File RelativePath="..\..\db-4.8.26\sequence\seq_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\sequence\sequence.c"/>
+    <File RelativePath="..\..\db-4.8.26\hmac\sha1.c"/>
+    <File RelativePath="..\..\db-4.8.26\clib\strsep.c"/>
+    <File RelativePath="..\..\db-4.8.26\txn\txn.c"/>
+    <File RelativePath="..\..\db-4.8.26\txn\txn_auto.c"/>
+    <File RelativePath="..\..\db-4.8.26\txn\txn_chkpt.c"/>
+    <File RelativePath="..\..\db-4.8.26\txn\txn_failchk.c"/>
+    <File RelativePath="..\..\db-4.8.26\txn\txn_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\txn\txn_rec.c"/>
+    <File RelativePath="..\..\db-4.8.26\txn\txn_recover.c"/>
+    <File RelativePath="..\..\db-4.8.26\txn\txn_region.c"/>
+    <File RelativePath="..\..\db-4.8.26\txn\txn_stat.c"/>
+    <File RelativePath="..\..\db-4.8.26\txn\txn_util.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\os_method.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\util_cache.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\util_log.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\util_sig.c"/>
+    <File RelativePath="..\..\db-4.8.26\common\zerofill.c"/>
+  </Files>
+  <Globals/>
+</VisualStudioProject>

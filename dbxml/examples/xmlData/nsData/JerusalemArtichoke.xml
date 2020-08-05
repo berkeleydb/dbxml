@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Jerusalem Artichoke</product>
+	<inventory>
+		<sku>Jeruvege4aIr6N</sku>
+		<price>0.53</price>
+		<inventory>458</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

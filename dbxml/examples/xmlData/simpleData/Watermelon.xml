@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Watermelon</item>
+	<inventory>
+		<sku>WatevegexeUwhi</sku>
+		<price>0.39</price>
+		<inventory>327</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

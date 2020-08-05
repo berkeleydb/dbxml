@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Chinese Beans</item>
+	<inventory>
+		<sku>ChinvegefBkbCJ</sku>
+		<price>0.38</price>
+		<inventory>365</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

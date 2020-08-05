@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Cauliflower</item>
+	<inventory>
+		<sku>CaulvegePfl6zf</sku>
+		<price>0.25</price>
+		<inventory>51</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

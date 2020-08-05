@@ -1,0 +1,104 @@
+
+use strict ;
+use warnings;
+
+use Cwd ;
+
+
+my %expect = qw(
+    	CC		NOT_PATH
+    
+    	DBXML_LIB_NAME	NAME
+    	DBXML_LIB_PATH	LIB
+    	DBXML_INC_PATH	INC
+    
+    	BDB_LIB_NAME	NAME
+    	BDB_LIB_PATH	LIB
+    	BDB_INC_PATH	INC
+    
+    	XERCES_LIB_NAME	NAME
+    	XERCES_LIB_PATH	LIB
+    
+    	XQILLA_LIB_NAME	NAME
+    	XQILLA_LIB_PATH	LIB
+
+        EXTRA_LIBS      OPT
+        EXTRA_DEFINE    OPT
+        EXTRA_CCFLAGS   OPT
+    	);
+
+my %parsed = ();	
+my @LIBS = ();
+my @INCS = ();
+my @NAMES = ();
+    	
+sub parseConfig
+{
+    my $prefix = shift ;
+    my $cwd = getcwd;
+    
+    my $config_file = "config" ;
+    if (@ARGV == 2 && $ARGV[0] eq '-config' )
+    {
+        $config_file = $ARGV[1] ;
+    }
+    $config_file = "$prefix/$config_file" if $config_file !~ m#^/#;
+
+    open F, "<$config_file" || die "Cannot open $config_file: $!\n" ;
+    while(<F>)
+    {
+        s/^\s+//;
+        s/\s+$//;
+        
+        next if /^$/ || /^#/;
+        
+        my ($name, $value) = split (/\s*=\s*/, $_, 2)
+            or die "Error parsing $config_file, line $.\n";
+        
+        die "Unknown value '$name' in $config_file line $.\n"
+            if ! defined $expect{$name};
+	    
+        if ($expect{$name} eq 'LIB' || $expect{$name} eq 'INC') {
+            $value = "$cwd/$prefix/$value" if $value !~ m#^/# ;
+            die "$config_file, Line $.: path '$value' does not exist\n"
+                if ! -d $value ;
+
+            $parsed{$name} = makeAbsolute($value);
+            if ($expect{$name} eq 'LIB')
+              { push @LIBS, $parsed{$name} }
+            else
+              { push @INCS, $parsed{$name} }
+        }
+        else {
+            $parsed{$name} = $value;
+        }
+    
+    }
+    close F;
+        
+    my %got = ();
+    $parsed{LIBS} = join " ", map { "-L$_" } grep { !$got{$_}++ } @LIBS ;
+    %got = ();
+    $parsed{INCS} = join " ", map { "-I$_" } grep { !$got{$_}++ } @INCS ;
+
+    return %parsed ;
+
+}
+
+sub makeAbsolute
+{
+    my $relative = shift ;
+    my $absolute = $relative;
+
+    if (-d $relative)
+    {
+        my $here = getcwd ;
+	chdir $relative ;
+	$absolute = getcwd ;
+	chdir $here ;
+    }
+
+    return $absolute ;
+}
+
+1;

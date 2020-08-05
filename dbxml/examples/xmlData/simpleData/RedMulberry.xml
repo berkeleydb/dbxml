@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Red Mulberry</item>
+	<inventory>
+		<sku>Red fruiPK4uaO</sku>
+		<price>0.77</price>
+		<inventory>997</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

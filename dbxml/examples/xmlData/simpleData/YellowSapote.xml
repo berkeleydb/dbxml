@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Yellow Sapote</item>
+	<inventory>
+		<sku>Yellfruij1PKvI</sku>
+		<price>0.34</price>
+		<inventory>355</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

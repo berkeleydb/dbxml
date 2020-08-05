@@ -1,0 +1,95 @@
+=head1 NAME
+
+XmlContainerConfig - A Perl interface to the DbXml XmlContainerConfig Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $xcc = new XmlContainerConfig();
+
+    $string = $xcc->getCompressionName();
+    $xcc->setCompressionName($string); # Pass only 'NONE' and 'DEFAULT'
+
+    $int = $xcc->getMode();
+    $xcc->setMode($int);
+
+    $type = $xcc->getContainerType();
+    $xcc->setContainerType($type);
+
+    $int = $xcc->getPageSize();
+    $xcc->setPageSize($int);
+
+    $int = $xcc->getSequenceIncrement();
+    $xcc->setSequenceIncrement($int);
+
+    $type = $xcc->getIndexNodes();
+    $xcc->setIndexNodes($type);
+
+    $bool = $xcc->getChecksum();
+    $xcc->setChecksum($bool);
+
+    $xcc->setEncrypted($bool);
+	$bool = $xcc->getEncrypted();
+
+	$xcc->setAllowValidation($bool);
+	$bool = $xcc->getAllowValidation();
+
+	$xcc->setStatistics($type);
+	$type = $xcc->getStatistics();
+
+	$xcc->setTransactional($bool);
+	$bool = $xcc->getTransactional();
+
+	$xcc->setAllowCreate($bool);
+	$bool = $xcc->getAllowCreate();
+
+	$xcc->setExclusiveCreate($bool);
+	$bool = $xcc->getExclusiveCreate();
+
+	$xcc->setNoMMap($bool);
+	$bool = $xcc->getNoMMap();
+
+	$xcc->setReadOnly($bool);
+	$bool = $xcc->getReadOnly();
+
+	$xcc->setMultiversion($bool);
+	$bool = $xcc->getMultiversion();
+
+	$xcc->setReadUncommitted($bool);
+	$bool = $xcc->getReadUncommitted();
+
+	$xcc->setThreaded($bool);
+	$bool = $xcc->getThreaded();
+
+	$xcc->setTransactionNotDurable($bool);
+	$bool = $xcc->getTransactionNotDurable();
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XmlContainerConfig is identical to the C++ API.
+
+=head1 Constructor
+The constructor for this class can take any of the following forms
+
+    my $xcc = new XmlContainerConfig();
+
+=head1 Methods
+
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Lauren Foutz

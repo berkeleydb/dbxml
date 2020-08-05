@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Celery</item>
+	<inventory>
+		<sku>CelevegeQG00RH</sku>
+		<price>0.74</price>
+		<inventory>471</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

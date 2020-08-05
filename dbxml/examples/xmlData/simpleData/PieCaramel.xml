@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Pie, Caramel</item>
+	<inventory>
+		<sku>Pie,dessyRqIv4</sku>
+		<price>2.49</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

@@ -1,0 +1,23 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="ent">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp0">
+          <StepQP axis="parent-of-child" name="e" nodeType="element">
+            <StepQP axis="parent-of-child" name="hwg" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="hw" value="the"/>
+            </StepQP>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="dictionary" nodeType="element">
+              <VariableQP name="#tmp0"/>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":ent"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

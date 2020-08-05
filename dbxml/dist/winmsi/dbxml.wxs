@@ -1,0 +1,98 @@
+<Wix> 
+  <Product Id='D50EB013-1F44-4BFC-9AB2-F67ADC64B520'
+   Name='Berkeley DB XML @DBXML_WIX_VERSION@' Version='@DBXML_WIX_VERSION@.0'
+   Manufacturer='Oracle' Language='1033'>
+    <!-- Store files as a compressed 'cabinet' embedded in the .MSI file. -->
+    <Package Id='6563C3DE-CE01-44E4-B657-905371FB1B0E'
+     Keywords="Embedded XML Database Datastore"
+     Description='Berkeley DB XML @DBXML_WIX_VERSION@'
+     Comments='includes sources and binaries' InstallerVersion='200'
+     Compressed='yes' Platforms="Intel"
+     Languages="1033" SummaryCodepage="1252" />
+
+    <Media Id='1' Cabinet='dbcore.cab' EmbedCab='yes' />
+    <Property Id="ApplicationUsers"><![CDATA[AnyUser]]></Property>
+    <Property Id="LicenseType"><![CDATA[Open]]></Property>
+
+    <!-- The ARP* properties affect the Add/Remove Programs dialog -->
+    <Property Id="ARPURLINFOABOUT"><![CDATA[http://www.oracle.com]]></Property>
+    <Property Id="ARPCONTACT"><![CDATA[berkeleydb-info_us@oracle.com]]></Property>
+    <Property Id="ARPNOMODIFY"><![CDATA[1]]></Property>
+    <Property Id="ARPNOREPAIR"><![CDATA[1]]></Property>
+    <Property Id="INSTALLLEVEL"><![CDATA[200]]></Property>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="DesktopFolder" Name="." SourceName="." />
+      <Directory Id="FavoritesFolder" Name="." SourceName="." />
+      <Directory Id="ProgramFilesFolder" Name="." SourceName=".">
+        <Directory Id="OracleFolder" Name="Oracle">
+          <Directory Id="INSTALLDIR" Name="dbxml24"
+                   LongName="Berkeley DB XML @DBXML_WIX_VERSION@">
+            <Directory Id="INSTALLUTIL" Name="instutil"
+                   LongName="installutil">
+            </Directory>
+	  </Directory> <!-- installdir -->
+        </Directory> <!-- folder -->
+      </Directory> <!-- ProgramFilesFolder -->
+      <Directory Id="ProgramMenuFolder" Name="." SourceName=".">
+        <Directory Id="BerkeleyDbMenu" Name="dbxml24"
+         LongName="Berkeley DB XML @DBXML_WIX_VERSION@" />
+      </Directory>
+    </Directory>
+    <!-- Features:
+	o required stuff
+	o doc	
+	o runtime
+	o debug runtime (no longer included)
+	o C++ devo
+	o java runtime
+	o python runtime
+	o perl runtime
+	o php runtime (is part of default runtime)
+	o examples
+    -->
+    <Feature Id="Complete" Title="Berkeley DB XML @DBXML_WIX_VERSION@" Description="Complete installation"
+	      Display="expand" Level="1" ConfigurableDirectory="INSTALLDIR">
+
+    <Feature Id="AlwaysInstall" Title="Always Install"
+	 Description="Berkeley DB XML" Display="hidden" Level="1"
+	 AllowAdvertise="no"
+	 Absent="disallow" ConfigurableDirectory="INSTALLDIR">
+	      <ComponentGroupRef Id="dbxml_required"/>
+	      <ComponentGroupRef Id="group_dbxml"/>
+    </Feature>
+    <Feature Id="CoreRuntime" Title="Core Runtime" Description="Release build of C++ runtime libraries and utilities, including .pdb files." AllowAdvertise="no" Display="expand" Level="1" InstallDefault="source" ConfigurableDirectory="INSTALLDIR">
+	<ComponentGroupRef Id="group_runtime"/>
+    </Feature>
+    <!-- <Feature Id="CoreDebugRuntime" Title="Core Debug Runtime" Description="Debug build of C++ runtime libraries and utilities, including .pdb files." AllowAdvertise="no" Display="expand" Level="1" InstallDefault="source" ConfigurableDirectory="INSTALLDIR">
+	<ComponentGroupRef Id="group_debug"/>
+    </Feature>-->
+    <Feature Id="CoreDevo" Title="C++ Development files" Description="C++ header and library files required for development of C++ applications.  This option includes the Core Runtime." AllowAdvertise="no" Display="expand" Level="1" InstallDefault="source" ConfigurableDirectory="INSTALLDIR">
+	<ComponentGroupRef Id="group_devo"/>
+    </Feature>
+    <Feature Id="Documentation" Title="Documentation" Description="Berkeley DB XML Documentation." AllowAdvertise="no" Display="expand" Level="1" InstallDefault="source" ConfigurableDirectory="INSTALLDIR">
+	<ComponentGroupRef Id="group_doc"/>
+    </Feature>
+    <Feature Id="JavaRuntime" Title="Java runtime and development files" Description="Java .jar files required for development and running of Java applications.  This option includes the Core Runtime." AllowAdvertise="no" Display="expand" Level="1" InstallDefault="source" ConfigurableDirectory="INSTALLDIR">
+	<ComponentGroupRef Id="group_java"/>
+    </Feature>
+    <Feature Id="PythonRuntime" Title="Python runtime and development files" Description="This option contains executable files that can be installed and used if Python is installed on the machine.  Some further installation is required after the initial install." AllowAdvertise="no" Display="expand" Level="1" InstallDefault="source" ConfigurableDirectory="INSTALLDIR">
+	<ComponentGroupRef Id="group_python"/>
+    </Feature>
+    <Feature Id="Examples" Title="Examples (all languages)" Description="Berkeley DB XML examples for all language interfaces." AllowAdvertise="no" Display="expand" Level="1" InstallDefault="source" ConfigurableDirectory="INSTALLDIR">
+	<ComponentGroupRef Id="group_examples"/>
+    </Feature>
+    <Feature Id="PerlRuntime" Title="Perl runtime and development files" Description="Perl runtime and development files in an archive format.  Further installation is required after the initial install.  This option includes the Core Runtime." AllowAdvertise="no" Display="expand" Level="1" InstallDefault="source" ConfigurableDirectory="INSTALLDIR">
+	<ComponentGroupRef Id="group_perl"/>
+    </Feature>
+    </Feature> <!-- end of all Features -->
+
+    <!-- UI: reference the Wix library -->
+    <!-- WixUI_FeatureTree is a canned UI that goes directly to
+         a custom install without "typical" and "full" options -->
+    <UIRef Id="WixUI_FeatureTree" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <InstallExecuteSequence>
+    </InstallExecuteSequence>
+  </Product>
+</Wix>

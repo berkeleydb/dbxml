@@ -1,0 +1,51 @@
+=head1 NAME
+
+Dbc - A Perl interface to the Berkeley DB Dbc Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::Db;
+
+    my $cursor = $db->cursor([$txnid,] [$flags])
+
+    $cursor->close;
+    $cursor->del([$flags]);
+    $cursor->get($key, $data [, $flags]);
+    $cursor->pget($key, $pkey, $data [, $flags]);
+    $cursor->put($key, $data [, $flags]);
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to Dbc is identical to the C++ API, apart from
+the following
+
+=over 5
+
+=item 1.
+
+=back
+
+
+=head1 Constructor
+
+
+=head1 Methods
+
+
+=head1 NOTES
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

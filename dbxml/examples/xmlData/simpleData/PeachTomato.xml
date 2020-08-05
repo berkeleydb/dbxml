@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Peach Tomato</item>
+	<inventory>
+		<sku>PeacfruiC6wSE0</sku>
+		<price>0.64</price>
+		<inventory>223</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

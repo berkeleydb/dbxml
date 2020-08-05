@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Brownies, Almond Macaroon</item>
+	<inventory>
+		<sku>BrowdessPuKCxI</sku>
+		<price>5.53</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

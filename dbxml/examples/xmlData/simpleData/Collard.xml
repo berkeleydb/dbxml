@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Collard</item>
+	<inventory>
+		<sku>CollvegeRSdulE</sku>
+		<price>0.09</price>
+		<inventory>711</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

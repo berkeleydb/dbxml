@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Cantaloupe</product>
+	<inventory>
+		<sku>CantvegeNk3cQG</sku>
+		<price>0.18</price>
+		<inventory>58</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

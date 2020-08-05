@@ -1,0 +1,35 @@
+#!/bin/sh -
+#	$Id: s_win32_dsp 470 2007-12-12 21:20:59Z jpcs $
+#
+# Build Windows .dsp (VS6) project files
+
+BUILDDIR=../Win32Projects/VC6
+OUTDIR=../../build/windows/VC6
+TEMPLATEDIR=.
+SRCFILES=srcfiles.in
+# for now, do not parameterize the filter templates
+FILT_START="filter_dsp.start"
+FILT_END="filter_dsp.end"
+# intput templates
+LIB_SRC=$TEMPLATEDIR/xqilla_dsp.src
+DLL_SRC=$TEMPLATEDIR/dll_dsp.src
+APP_SRC=$TEMPLATEDIR/app_dsp.src
+TEST_SRC=$TEMPLATEDIR/test_dsp.src
+FILT_FILE_SRC=$TEMPLATEDIR/srcfile_dsp.src
+FILE_SRC=$FILT_FILE_SRC
+EXT=dsp
+
+# source dependencies
+. ./s_win32_common
+
+generate_projects
+
+# don't do workspace yet
+exit 0
+
+f=$BUILDDIR/BDBXML_all.dsw
+sed -f lib_paths.sed < $f.template | sed 's,/,\\,g' > $TMPA
+cmp $TMPA $f > /dev/null 2>&1 ||
+        (echo "$f" && rm -f $f && cp $TMPA $f && chmod 664 $f)
+
+rm -f $TMPA

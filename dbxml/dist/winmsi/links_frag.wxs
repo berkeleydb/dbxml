@@ -1,0 +1,117 @@
+<Wix xmlns='http://schemas.microsoft.com/wix/2003/01/wi'>
+  <Fragment>
+    <DirectoryRef Id='INSTALLDIR'>
+      <Directory Id='INSTALLURL' Name='links' >
+        <Component Guid='3d5585bff5697ea6ed5051fae0bb7f57'
+          Id='RequiredLinks'
+          Location='either'>
+          <File
+            Compressed='yes'
+            DiskId='1'
+            Id='File.oraclecs'
+            LongName='oraclecs.bat'
+            Name='oraclecs.bat'
+            src='links\oraclecs.bat'
+           />
+          <Shortcut
+            Directory='BerkeleyDbMenu'
+            Id='Short.oraclecs'
+            LongName='Berkeley DB XML Shell'
+            Name='oraclecs'
+            Show='normal'
+            Target='[INSTALLDIR]\links\oraclecs.bat'
+            WorkingDirectory='INSTALLDIR'
+           />
+          <File
+            Compressed='yes'
+            DiskId='1'
+            Id='File.oraclewb'
+            LongName='oraclewb.bdbsc'
+            Name='oraclewb.d1b'
+            src='links\oraclewb.bdbsc'
+           />
+          <Shortcut
+            Directory='BerkeleyDbMenu'
+            Id='Short.oraclewb'
+            LongName='Oracle Website'
+            Name='oraclewb'
+            Show='normal'
+            Target='[INSTALLDIR]\links\oraclewb.bdbsc'
+           />
+          <File
+            Compressed='yes'
+            DiskId='1'
+            Id='File.oracletn'
+            LongName='oracletn.bdbsc'
+            Name='oracletn.d1b'
+            src='links\oracletn.bdbsc'
+           />
+          <Shortcut
+            Directory='BerkeleyDbMenu'
+            Id='Short.oracletn'
+            LongName='Oracle Technology Network'
+            Name='oracletn'
+            Show='normal'
+            Target='[INSTALLDIR]\links\oracletn.bdbsc'
+           />
+          <File
+            Compressed='yes'
+            DiskId='1'
+            Id='File.oracleon'
+            LongName='oracleon.bdbsc'
+            Name='oracleon.d1b'
+            src='links\oracleon.bdbsc'
+           />
+          <Shortcut
+            Directory='BerkeleyDbMenu'
+            Id='Short.oracleon'
+            LongName='Online Documentation'
+            Name='oracleon'
+            Show='normal'
+            Target='[INSTALLDIR]\links\oracleon.bdbsc'
+           />
+          <Shortcut
+            Directory='BerkeleyDbMenu'
+            Id='Short.oracleld'
+            LongName='On Disk Documentation'
+            Name='oracleld'
+            Show='normal'
+            Target='[INSTALLDIR]\dbxml\docs\index.html'
+           />
+          <Shortcut
+            Directory='BerkeleyDbMenu'
+            Id='Short.oraclech'
+            LongName='Change Log for Berkeley DB XML @DBXML_WIX_VERSION@'
+            Name='oraclech'
+            Show='normal'
+            Target='[INSTALLDIR]\dbxml\docs\ref_xml\changelog\@DBXML_WIX_VERSION_SHORT@.html'
+           />
+          <File
+            Compressed='yes'
+            DiskId='1'
+            Id='File.oraclefa'
+            LongName='oraclefa.bdbsc'
+            Name='oraclefa.d1b'
+            src='links\oraclefa.bdbsc'
+           />
+          <Shortcut
+            Directory='BerkeleyDbMenu'
+            Id='Short.oraclefa'
+            LongName='Berkeley DB XML FAQ'
+            Name='oraclefa'
+            Show='normal'
+            Target='[INSTALLDIR]\links\oraclefa.bdbsc'
+           />
+          <File
+            Compressed='yes'
+            DiskId='1'
+            Id='webicon'
+            LongName='webicon.ico'
+            Name='webicon.ico'
+            src='links\webicon.ico'
+           />
+        </Component>
+      </Directory>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

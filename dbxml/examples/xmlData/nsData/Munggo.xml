@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Munggo</product>
+	<inventory>
+		<sku>Mungvegef4UWyu</sku>
+		<price>0.70</price>
+		<inventory>322</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Tart, Raspberry</item>
+	<inventory>
+		<sku>Tartdessq9r0yV</sku>
+		<price>3.15</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

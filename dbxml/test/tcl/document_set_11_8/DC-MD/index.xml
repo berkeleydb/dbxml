@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="11.8.1">
+  <category>xquery</category>
+  <description>DC-MD Benchmark Tests</description>
+  <program name='dbxml_test_driver' />
+
+  <!-- stuff that applies to the entire test -->
+  <indexSpecification>
+    <node>id</node>
+    <index>edge-attribute-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>customer_id</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>total</node>
+    <index>node-element-equality-double</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>discount_rate</node>
+    <index>node-element-equality-double</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>order</node>
+    <index>edge-element-presence</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>items</node>
+    <index>edge-element-presence</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>authors</node>
+    <index>edge-element-presence</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>biography</node>
+    <index>node-element-substring-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>item_id</node>
+    <index>node-element-presence</index>
+  </indexSpecification>
+
+  <document>address.xml</document>
+  <document>author.xml</document>
+  <document>country.xml</document>
+  <document>customer.xml</document>
+  <document>index.xml</document>
+  <document>item.xml</document>
+  <document>order1.xml</document>
+  <document>order2.xml</document>
+  <document>order3.xml</document>
+  <document>order4.xml</document>
+  <document>order5.xml</document>
+  <document>order6.xml</document>
+  <document>order7.xml</document>
+  <document>order8.xml</document>
+  <document>order9.xml</document>
+  <document>order10.xml</document>
+  <document>order11.xml</document>
+  <document>order12.xml</document>
+  <document>order13.xml</document>
+  <document>order14.xml</document>
+  <document>order15.xml</document>
+  <document>order16.xml</document>
+  <document>order17.xml</document>
+  <document>order18.xml</document>
+  <document>order19.xml</document>
+  <document>order20.xml</document>
+
+  <!-- individual tests -->
+  <base>
+    <query>DC-MD-Q1.xquery</query>
+    <query>DC-MD-Q2.xquery</query>
+    <query>DC-MD-Q3.xquery</query>
+    <query>DC-MD-Q4.xquery</query>
+    <query>DC-MD-Q5.xquery</query>
+    <query>DC-MD-Q6.xquery</query>
+    <query>DC-MD-Q7.xquery</query>
+    <query>DC-MD-Q8.xquery</query>
+    <query>DC-MD-Q9.xquery</query>
+    <query>DC-MD-Q10.xquery</query>
+    <query>DC-MD-Q11.xquery</query>
+    <query>DC-MD-Q12.xquery</query>
+    <query>DC-MD-Q13.xquery</query>
+    <query>DC-MD-Q14.xquery</query>
+    <query>DC-MD-Q15.xquery</query>
+  </base>
+</test>
+

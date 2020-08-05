@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Kangkong</item>
+	<inventory>
+		<sku>KangvegenVQXPN</sku>
+		<price>0.52</price>
+		<inventory>417</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

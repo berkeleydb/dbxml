@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Tavola</item>
+	<inventory>
+		<sku>TavofruiErdaiz</sku>
+		<price>0.39</price>
+		<inventory>224</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Spaghetti Squash</product>
+	<inventory>
+		<sku>SpagvegerWT2PX</sku>
+		<price>0.77</price>
+		<inventory>131</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

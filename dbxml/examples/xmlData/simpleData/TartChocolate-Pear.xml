@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Tart, Chocolate-Pear</item>
+	<inventory>
+		<sku>TartdessnCQpZW</sku>
+		<price>12.61</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

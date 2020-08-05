@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Tart, Pear</item>
+	<inventory>
+		<sku>TartdessGL0MJa</sku>
+		<price>10.12</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

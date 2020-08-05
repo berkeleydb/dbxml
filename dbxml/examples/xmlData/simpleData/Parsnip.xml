@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Parsnip</item>
+	<inventory>
+		<sku>Parsvege4bOvCs</sku>
+		<price>0.14</price>
+		<inventory>606</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

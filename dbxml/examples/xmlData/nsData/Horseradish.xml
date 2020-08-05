@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Horseradish</product>
+	<inventory>
+		<sku>HorsvegeNgoCrS</sku>
+		<price>0.29</price>
+		<inventory>494</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

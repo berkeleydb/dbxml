@@ -1,0 +1,26 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="order">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp1">
+          <StepQP axis="child" name="order" nodeType="element">
+            <ValueQP index="edge-attribute-equality-string" operation="eq" parent="order" child="id" value="1"/>
+          </StepQP>
+          <ValueFilterQP comparison="eq" general="true">
+            <StepQP axis="attribute" name="id" nodeType="attribute">
+              <VariableQP name="#tmp1"/>
+            </StepQP>
+            <Sequence>
+              <AnyAtomicTypeConstructor value="1" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+            </Sequence>
+          </ValueFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="customer_id" nodeType="element">
+        <VariableQP name=":order"/>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

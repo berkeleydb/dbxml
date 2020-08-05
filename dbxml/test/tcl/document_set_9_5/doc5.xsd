@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://my-company.com/namespace" xmlns="http://my-company.com/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Company">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Address">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Name" type="xs:string"/>
+							<xs:element name="Street" type="xs:string"/>
+							<xs:element name="City" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Person" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="First" type="xs:string"/>
+							<xs:element name="Last" type="xs:string"/>
+							<xs:element name="Title" type="xs:string" minOccurs="0"/>
+							<xs:element name="PhoneExt">
+								<xs:simpleType>
+									<xs:restriction base="xs:integer">
+										<xs:maxInclusive value="99"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="EMail" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+	                <xs:attribute name="country" type="xs:string" default="USA" />
+
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

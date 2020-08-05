@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Alogbati</product>
+	<inventory>
+		<sku>AlogvegeO5Uc2t</sku>
+		<price>0.49</price>
+		<inventory>111</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

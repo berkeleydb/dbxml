@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Magnolia Vine</item>
+	<inventory>
+		<sku>MagnfruiJadnKa</sku>
+		<price>0.83</price>
+		<inventory>459</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

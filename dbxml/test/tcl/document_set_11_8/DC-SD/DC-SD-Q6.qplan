@@ -1,0 +1,46 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="item">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp2">
+          <StepQP axis="child" name="item" nodeType="element">
+            <StepQP axis="child" name="catalog" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="name_of_country" value="Canada"/>
+            </StepQP>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp3">
+            <StepQP axis="child" name="authors" nodeType="element">
+              <VariableQP name="#tmp2"/>
+            </StepQP>
+            <NodePredicateFilterQP uri="" name="#tmp4">
+              <StepQP axis="child" name="author" nodeType="element">
+                <VariableQP name="#tmp3"/>
+              </StepQP>
+              <NodePredicateFilterQP uri="" name="#tmp5">
+                <StepQP axis="child" name="contact_information" nodeType="element">
+                  <VariableQP name="#tmp4"/>
+                </StepQP>
+                <NodePredicateFilterQP uri="" name="#tmp6">
+                  <StepQP axis="child" name="mailing_address" nodeType="element">
+                    <VariableQP name="#tmp5"/>
+                  </StepQP>
+                  <ValueFilterQP comparison="eq" general="true">
+                    <StepQP axis="child" name="name_of_country" nodeType="element">
+                      <VariableQP name="#tmp6"/>
+                    </StepQP>
+                    <Sequence>
+                      <AnyAtomicTypeConstructor value="Canada" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                    </Sequence>
+                  </ValueFilterQP>
+                </NodePredicateFilterQP>
+              </NodePredicateFilterQP>
+            </NodePredicateFilterQP>
+          </NodePredicateFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":item"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

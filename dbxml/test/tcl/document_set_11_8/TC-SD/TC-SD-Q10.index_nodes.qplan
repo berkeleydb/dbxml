@@ -1,0 +1,51 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="a">
+      <QueryPlanToAST>
+        <ChildJoinQP>
+          <StepQP axis="child" name="dictionary" nodeType="element">
+            <SequentialScanQP nodeType="document"/>
+          </StepQP>
+          <StepQP axis="parent-of-child" name="e" nodeType="element">
+            <StepQP axis="parent-of-child" name="ss" nodeType="element">
+              <StepQP axis="parent-of-child" name="s" nodeType="element">
+                <StepQP axis="parent-of-child" name="qp" nodeType="element">
+                  <StepQP axis="parent-of-child" name="q" nodeType="element">
+                    <ValueQP index="node-element-equality-string" operation="eq" child="qd" value="1900"/>
+                  </StepQP>
+                </StepQP>
+              </StepQP>
+            </StepQP>
+          </StepQP>
+        </ChildJoinQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="hw" nodeType="element">
+              <StepQP axis="child" name="hwg" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="pr" nodeType="element">
+              <StepQP axis="child" name="hwg" nodeType="element">
+                <VariableQP name=":a"/>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

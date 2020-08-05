@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Kohlrabi</product>
+	<inventory>
+		<sku>Kohlvege1BTa94</sku>
+		<price>0.17</price>
+		<inventory>684</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

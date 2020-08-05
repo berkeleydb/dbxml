@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="11.8.2">
+  <category>xquery</category>
+  <description>DC-SD Benchmark Tests</description>
+  <program name='dbxml_test_driver' />
+
+  <!-- stuff that applies to the entire test -->
+  <indexSpecification>
+    <node>id</node>
+    <index>node-attribute-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>first_name</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>date_of_release</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>name</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>name_of_country</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>item_id</node>
+    <index>node-element-equality-string</index>
+  </indexSpecification>
+  <indexSpecification>
+    <node>description</node>
+    <index>node-element-substring-string</index>
+  </indexSpecification>
+
+  <document>catalog.xml</document>
+
+  <!-- individual tests -->
+  <base>
+    <query>DC-SD-Q1.xquery</query>
+    <query>DC-SD-Q2.xquery</query>
+    <query>DC-SD-Q3.xquery</query>
+    <query>DC-SD-Q4.xquery</query>
+    <query>DC-SD-Q5.xquery</query>
+    <query>DC-SD-Q6.xquery</query>
+    <query>DC-SD-Q7.xquery</query>
+    <query>DC-SD-Q8.xquery</query>
+    <query>DC-SD-Q9.xquery</query>
+    <query>DC-SD-Q10.xquery</query>
+    <query>DC-SD-Q11.xquery</query>
+    <query>DC-SD-Q12.xquery</query>
+    <query>DC-SD-Q13.xquery</query>
+    <query>DC-SD-Q14.xquery</query>
+    <query>DC-SD-Q15.xquery</query>
+    <query>DC-SD-Q16.xquery</query>
+  </base>
+</test>

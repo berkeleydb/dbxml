@@ -1,0 +1,61 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# QP tests
+# Skipping of filtering
+
+TEST  11.2
+TITLE Skipping of filtering
+INDEX "" "foo" "node-element-equality-string"
+INDEX "" "foo" "node-attribute-equality-string"
+
+11.2.1
+/
+Root(RS,RA(RS,SS(RS,)))
+
+11.2.2
+/*
+Root(RA(SS()))
+
+11.2.3
+//*
+Root(RA(SS()))
+
+11.2.4
+/foo
+Root(RA(RI(node-element-equality-string,prefix,foo)))
+
+11.2.5
+//foo
+Root(RS,RA(RS,RI(RS,node-element-equality-string,prefix,foo)))
+
+11.2.6
+//*[foo='bar']
+Root(RA(RI(node-element-equality-string,=,foo,bar)))
+
+11.2.7
+//*[@foo='bar']
+Root(RA(RI(node-attribute-equality-string,=,foo,bar)))
+
+11.2.8
+//@foo='bar'
+Root(RS,RA(RS,RI(RS,node-attribute-equality-string,=,foo,bar)))
+
+11.2.9
+//foo[bar and .='bar']
+Root(RA(RI(node-element-equality-string,=,foo,bar)))
+
+11.2.10
+/bar
+Root(RA(SS()))
+
+11.2.11
+//bar
+Root(RA(SS()))
+
+11.2.12
+//*[bar='foo']
+Root(RA(SS()))
+

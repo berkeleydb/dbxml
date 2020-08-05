@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Kamote</item>
+	<inventory>
+		<sku>Kamovege5kyufA</sku>
+		<price>0.60</price>
+		<inventory>724</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Vegetable Brain</product>
+	<inventory>
+		<sku>VegefruiLQRO8P</sku>
+		<price>1.10</price>
+		<inventory>673</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</fruits:item>
+

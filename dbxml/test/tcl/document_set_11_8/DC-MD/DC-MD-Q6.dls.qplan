@@ -1,0 +1,58 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="ord">
+      <QueryPlanToAST>
+        <LevelFilterQP>
+          <StepQP axis="parent-of-child" name="order" nodeType="element">
+            <ExceptQP>
+              <StepQP axis="parent-of-child" name="order_lines" nodeType="element">
+                <StepQP axis="parent-of-child" name="order_line" nodeType="element">
+                  <ValueFilterQP comparison="gt" general="true">
+                    <DescendantOrSelfJoinQP>
+                      <IntersectQP>
+                        <PresenceQP index="edge-element-presence-none" operation="eq" parent="root:http://www.sleepycat.com/2002/dbxml" child="order"/>
+                        <ValueQP index="node-element-equality-double" operation="gt" child="discount_rate" value="0.02"/>
+                      </IntersectQP>
+                      <SequentialScanQP nodeType="element" name="discount_rate"/>
+                    </DescendantOrSelfJoinQP>
+                    <Sequence>
+                      <NumericTypeConstructor value="2.0E-2" typeuri="http://www.w3.org/2001/XMLSchema" typename="decimal"/>
+                    </Sequence>
+                  </ValueFilterQP>
+                </StepQP>
+              </StepQP>
+              <StepQP axis="parent-of-child" name="order_lines" nodeType="element">
+                <ExceptQP>
+                  <DescendantOrSelfJoinQP>
+                    <IntersectQP>
+                      <PresenceQP index="edge-element-presence-none" operation="eq" parent="root:http://www.sleepycat.com/2002/dbxml" child="order"/>
+                      <ValueQP index="node-element-equality-double" operation="gt" child="discount_rate" value="0.02"/>
+                    </IntersectQP>
+                    <SequentialScanQP nodeType="element" name="order_line"/>
+                  </DescendantOrSelfJoinQP>
+                  <StepQP axis="parent-of-child" name="order_line" nodeType="element">
+                    <ValueFilterQP comparison="gt" general="true">
+                      <DescendantOrSelfJoinQP>
+                        <IntersectQP>
+                          <PresenceQP index="edge-element-presence-none" operation="eq" parent="root:http://www.sleepycat.com/2002/dbxml" child="order"/>
+                          <ValueQP index="node-element-equality-double" operation="gt" child="discount_rate" value="0.02"/>
+                        </IntersectQP>
+                        <SequentialScanQP nodeType="element" name="discount_rate"/>
+                      </DescendantOrSelfJoinQP>
+                      <Sequence>
+                        <NumericTypeConstructor value="2.0E-2" typeuri="http://www.w3.org/2001/XMLSchema" typename="decimal"/>
+                      </Sequence>
+                    </ValueFilterQP>
+                  </StepQP>
+                </ExceptQP>
+              </StepQP>
+            </ExceptQP>
+          </StepQP>
+        </LevelFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":ord"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

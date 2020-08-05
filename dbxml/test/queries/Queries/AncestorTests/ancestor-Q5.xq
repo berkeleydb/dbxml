@@ -1,0 +1,1 @@
+<foo>{ collection()//@value }</foo>

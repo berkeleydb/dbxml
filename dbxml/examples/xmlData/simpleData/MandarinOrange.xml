@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Mandarin Orange</item>
+	<inventory>
+		<sku>Mandfrui733nxo</sku>
+		<price>0.97</price>
+		<inventory>482</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

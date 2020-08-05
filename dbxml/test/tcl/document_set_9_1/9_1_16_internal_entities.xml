@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hello [
+<!ELEMENT hello (#PCDATA)>
+<!ENTITY pub "Editions Gallimard">
+<!ENTITY rights "All rights reserved">
+<!ENTITY book "La Peste: Albert Camuse 1947 &pub;. &rights;">
+]>
+<hello>&book;</hello>

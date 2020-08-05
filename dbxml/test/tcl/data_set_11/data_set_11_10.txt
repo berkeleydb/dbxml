@@ -1,0 +1,95 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# QP tests
+# Sequential scan optimizations
+#
+# NB indexes are defined on a per-test basis
+
+TEST 11.10
+TITLE Sequential scan optimizations
+
+# P4R1: n(SS,SS)                       ...reduce... SS
+11.10.1
+/*[foo and bar]
+Root(RA(SS()))
+    
+# P4R1: n(x,SS)                       ...reduce... x
+11.10.2
+INDEX "" "foo" "node-element-presence-none"
+/*[foo and bar]
+Root(RA(RI(node-element-presence-none,=,foo)))
+
+# P4R1: n(SS,x)                       ...reduce... x
+11.10.3
+INDEX "" "foo" "node-element-presence-none"
+/*[bar and foo]
+Root(RA(RI(node-element-presence-none,=,foo)))
+
+11.10.4
+//*
+Root(RA(SS()))
+
+11.10.5
+INDEX "" "foo" "node-element-presence-none"
+//foo
+Root(RS,RA(RS,RI(RS,node-element-presence-none,=,foo)))
+
+# P4R2: u(SS,SS)                       ...reduce... SS
+11.10.6
+/*[foo or bar]
+Root(RA(SS()))
+
+# P4R2: u(x,SS)                       ...reduce... SS
+11.10.7
+INDEX "" "foo" "node-element-presence-none"
+/*[foo or bar]
+Root(RA(SS()))
+
+# P4R2: u(SS,x)                       ...reduce... SS
+11.10.8
+INDEX "" "foo" "node-element-presence-none"
+/*[bar or foo]
+Root(RA(SS()))
+
+# P4R5: n(E,E)                        ...reduce... E
+11.10.9
+/*[/@foo and /@bar ]
+Root(RA(E()))
+
+# P4R5: n(x,E)                        ...reduce... E
+11.10.10
+INDEX "" "foo" "node-element-presence-none"
+/*[foo and /@bar ]
+Root(RA(E()))
+
+# P4R5: n(E,x)                        ...reduce... E	
+11.10.11
+INDEX "" "foo" "node-element-presence-none"
+/*[/@bar and foo]
+Root(RA(E()))
+
+# P4R6: u(E,E)                        ...reduce... E
+11.10.12
+/*[/@foo or /@bar ]
+Root(RA(E()))
+
+# P4R6: u(x,E)                        ...reduce... x
+11.10.13
+INDEX "" "foo" "node-element-presence-none"
+/*[foo or /@bar ]
+Root(RA(RI(node-element-presence-none,=,foo)))
+
+# P4R6: u(E,x)                        ...reduce... x
+11.10.14
+INDEX "" "foo" "node-element-presence-none"
+/*[/@bar or foo]
+Root(RA(RI(node-element-presence-none,=,foo)))
+
+# Can't produce these with current query plan generation, I think - jpcs
+# P4R9: \(E,E)                        ...reduce... E
+# P4R9: \(E,x)                        ...reduce... E
+# P4R10: \(x,E)                       ...reduce... x
+# P4R11: \(x,SS)                      ...reduce... E

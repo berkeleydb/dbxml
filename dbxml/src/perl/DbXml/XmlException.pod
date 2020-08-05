@@ -1,0 +1,95 @@
+=head1 NAME
+
+XmlException - A Perl interface to the DbXml XmlException Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+ 
+    eval { ... };
+    if (my $e = catch XmlException)
+    {
+        my $string = $e->what();
+        my $code   = $e->getExceptionCode();
+        my $err    = $e->getDbErrno;
+        my $message= $e->getMessage;
+        my $int    = $e->getLineNo;
+        my $string = $e->getFilename;
+    }
+
+
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlException is identical to the C++ API, apart
+from the following
+
+=over 5
+
+
+=item 1.
+
+An extra metod, catch, is included in the Perl interface to simulate a
+C++ catch call.
+
+=item 2.
+
+=back
+
+
+=head1 Constructor
+
+No public constructor is provided for this class.
+
+
+=head1 Methods
+
+
+=head2 what
+
+=head2 getExceptionCode
+
+=head2 getDbErrno
+
+
+=head2 catch
+
+=head1 EXAMPLES
+
+
+
+
+
+=head1 NOTES
+
+The exception hierarchy is
+
+std::exception is the base exception class
+
+UnknownException isa std::exception
+
+XmlException isa std::exception
+
+DbException isa std::exception
+
+DbLockNotGrantedExcepion isa DbException
+
+DbRunRecoveryExcepion isa DbException
+
+DbDeadlockExcepion isa DbException
+
+
+
+=head1 EXAMPLES
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

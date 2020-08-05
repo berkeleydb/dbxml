@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this document tests escaping (or not) of various entities -->
+<root>
+<a>&lt;</a>
+<b>&gt;</b>
+<c>&gt;</c>
+<d>&amp;</d>
+<e>]]&gt;</e>
+<f>]]x&gt;]&gt;]x]y]&gt;x]y]]&gt;</f>
+<g>]]]]&gt;</g>
+<h>]]] ]&gt;</h>
+<i>]]<j>></j></i>
+</root>

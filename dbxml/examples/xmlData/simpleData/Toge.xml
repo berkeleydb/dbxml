@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Toge</item>
+	<inventory>
+		<sku>TogevegeQsCXn3</sku>
+		<price>0.21</price>
+		<inventory>75</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</product>
+

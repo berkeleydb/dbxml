@@ -1,0 +1,30 @@
+#!/bin/sh -
+#
+# Build XmlConstants.java.
+
+t=/tmp/__t
+trap 'rm -f $t; exit 0' 0 1 2 3 13 15
+
+msgjava="/* DO NOT EDIT: automatically built by dist/s_java. */"
+. ./RELEASE
+
+JAVA_SRCTOP=../src/java
+JAVA_PKGDIR=com/sleepycat/dbxml
+JAVA_SRCDIR=$JAVA_SRCTOP/$JAVA_PKGDIR
+
+(echo "$msgjava" &&
+    echo &&
+    echo 'package com.sleepycat.dbxml;' &&
+    echo &&
+    echo 'public interface XmlConstants {' &&
+    echo "	int DBXML_VERSION_MAJOR = ${DBXML_VERSION_MAJOR};" &&
+    echo "	int DBXML_VERSION_MINOR = ${DBXML_VERSION_MINOR};" &&
+    echo "	int DBXML_VERSION_PATCH = ${DBXML_VERSION_PATCH};" &&
+    echo &&
+    echo '}' &&
+    echo &&
+    echo '// end of XmlConstants.java') > $t
+
+f=$JAVA_SRCDIR/XmlConstants.java
+cmp $t $f > /dev/null 2>&1 ||
+(echo "Building $f" && rm -f $f && cp $t $f && chmod 444 $f)

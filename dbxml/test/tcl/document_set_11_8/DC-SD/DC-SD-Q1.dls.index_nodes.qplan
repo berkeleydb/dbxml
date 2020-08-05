@@ -1,0 +1,21 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="item">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp0">
+          <StepQP axis="parent-of-attribute" name="item" nodeType="element">
+            <ValueQP index="node-attribute-equality-string" operation="eq" child="id" value="I1"/>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="catalog" nodeType="element">
+              <VariableQP name="#tmp0"/>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":item"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

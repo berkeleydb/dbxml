@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fruits:item xmlns:fruits="http://groceryItem.dbxml/fruits">
+	<product>Oyster Plant</product>
+	<inventory>
+		<sku>OystfruiIUMSue</sku>
+		<price>1.12</price>
+		<inventory>310</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</fruits:item>
+

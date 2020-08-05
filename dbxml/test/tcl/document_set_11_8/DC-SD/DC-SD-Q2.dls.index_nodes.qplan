@@ -1,0 +1,29 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="item">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp0">
+          <StepQP axis="parent-of-child" name="item" nodeType="element">
+            <StepQP axis="parent-of-child" name="authors" nodeType="element">
+              <StepQP axis="parent-of-child" name="author" nodeType="element">
+                <StepQP axis="parent-of-child" name="name" nodeType="element">
+                  <ValueQP index="node-element-equality-string" operation="eq" child="first_name" value="Ben"/>
+                </StepQP>
+              </StepQP>
+            </StepQP>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="catalog" nodeType="element">
+              <VariableQP name="#tmp0"/>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <StepQP axis="child" name="title" nodeType="element">
+        <VariableQP name=":item"/>
+      </StepQP>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

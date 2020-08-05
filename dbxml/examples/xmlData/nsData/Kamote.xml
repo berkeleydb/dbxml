@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Kamote</product>
+	<inventory>
+		<sku>Kamovege5kyufA</sku>
+		<price>0.60</price>
+		<inventory>724</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</vegetables:item>
+

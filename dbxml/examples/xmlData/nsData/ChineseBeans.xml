@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Chinese Beans</product>
+	<inventory>
+		<sku>ChinvegefBkbCJ</sku>
+		<price>0.38</price>
+		<inventory>365</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

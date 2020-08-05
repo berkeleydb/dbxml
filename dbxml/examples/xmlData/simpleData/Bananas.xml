@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Bananas</item>
+	<inventory>
+		<sku>Banafruiqud6Kq</sku>
+		<price>0.55</price>
+		<inventory>220</inventory>
+	</inventory>
+	<vendor>Simply Fresh</vendor>
+</product>
+

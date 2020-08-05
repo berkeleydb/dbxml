@@ -1,0 +1,64 @@
+/*
+ * See the file LICENSE for redistribution information.
+ *
+ * Copyright (c) 1998,2009 Oracle.  All rights reserved.
+ *
+ */
+
+
+This HA test program is intended to be used to test DbXml in different HA
+scenarios. It's also examples for DbXml HA programming.
+
+File list.
+  ha_test.cpp            -- The runner file.
+  RepNode.hpp/cpp        -- Source file of class RepNode and TestCase
+  SimpleTestCase.hpp/cpp -- Source file of simple testcase
+  NormalTestCase.hpp/cpp -- Source file of normal testcase
+
+
+Executing: ./dbxml_test_ha
+  DbXml HA test program would execute all the test cases and verify the result
+  one by one. Each test case corresponding to a specifically scenario:
+
+1. Simple TestCase.
+
+  Simple testCase emulates a simple scenario for HA testing.
+
+  Test steps:
+    1. Start out with just a master. Do putDocument to add some documents into
+       the database.
+
+    2. Add a replica, and connect it to the master.  That should cause it
+       to "sync up" with the master.
+
+    3. Add some number(100) of documents at the master. After putting done,
+       wait for client sync done and kill both master and client.
+
+  Verify:
+    1. Check whether both master and client has 200 documents.
+    2. Compare   are put into container collectly and verify that it
+       appears at the replica.
+
+
+2.  Normal TestCase.
+  NormalTestCase emulates a NormalTestCase Scenario for HA testing.
+
+  Test steps:
+    1. Setup 1 master and 2 replicas.
+
+    2.  Master put some documents and self-destructs. Then the
+       replicas would hold a election and elect the new master.
+
+    3. The new master continue to put documents until reach the defined max
+       document number. After sync all the documents, the replica exit.
+       And the new master wait for the former master comes back.
+
+    4. The former master comes back as a replica, syncs up to current master.
+       After sync all the documents, the former master exit.
+
+    5. The new master wait for a while and exit.
+
+ Verify:
+    1. Check whether all the nodes have 200 documents.
+    2. Compare are put into container collectly and verify that it
+       appears at the replica.

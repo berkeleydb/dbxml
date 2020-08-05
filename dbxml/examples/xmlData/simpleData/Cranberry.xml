@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Cranberry</item>
+	<inventory>
+		<sku>CranfruiYXFVDH</sku>
+		<price>0.81</price>
+		<inventory>750</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Trifle, Scotch Whiskey</item>
+	<inventory>
+		<sku>Trifdessai35Iq</sku>
+		<price>2.38</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>The Baking Pan</vendor>
+</product>
+

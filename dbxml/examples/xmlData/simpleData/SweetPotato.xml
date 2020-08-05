@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Sweet Potato</item>
+	<inventory>
+		<sku>SweevegeLsUOb0</sku>
+		<price>0.67</price>
+		<inventory>751</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

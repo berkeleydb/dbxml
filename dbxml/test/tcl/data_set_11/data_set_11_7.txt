@@ -1,0 +1,23 @@
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2002,2009 Oracle.  All rights reserved.
+#
+#
+# QP tests
+# Node functions
+
+TEST 11.7
+TITLE Node functions
+
+11.7.1
+root()
+Root(RS,RA(RS,SS(RS,)))
+
+11.7.2
+/foo/root()
+Root(RA(SS()))
+
+11.7.3
+/foo/bar/root()
+Root(RA(SS()))
+

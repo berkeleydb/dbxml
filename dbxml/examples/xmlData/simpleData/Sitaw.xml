@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Sitaw</item>
+	<inventory>
+		<sku>SitavegeOirn0Y</sku>
+		<price>0.12</price>
+		<inventory>242</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

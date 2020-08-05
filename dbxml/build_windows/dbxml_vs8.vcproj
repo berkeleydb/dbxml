@@ -1,0 +1,515 @@
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="dbxml" ProjectGUID="{0047EDFC-C26D-49D0-9559-029FA38B3839}">
+  <Platforms>
+    <Platform Name="Win32"/>
+    <Platform Name="x64"/>
+    <Platform Name="IA64"/>
+  </Platforms>
+  <Configurations>
+    <Configuration Name="Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;DBXML_CREATE_DLL;_DBXML_COMPRESSION" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdb48d.lib xqilla22d.lib xerces-c_3d.lib zdll.lib" AdditionalLibraryDirectories="$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win32/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/libdbxml25d.dll" ProgramDatabaseFile="$(OutDir)/libdbxml25d.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/libdbxml25d.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="copyFiles7.bat $(PlatformName)&#xA;installProj.bat libdbxml25 dll $(OutDir) debug copyLib" Description="Copying libraries to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Debug|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Static Debug" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="1" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:x86" OutputFile="$(OutDir)/libdbxml25sd.lib"/></Configuration>
+    <Configuration Name="Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;DBXML_CREATE_DLL;_DBXML_COMPRESSION" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x86" AdditionalDependencies="libdb48.lib xqilla22.lib xerces-c_3.lib zdll.lib" AdditionalLibraryDirectories="$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win32/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/libdbxml25.dll" ProgramDatabaseFile="$(OutDir)/libdbxml25.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/libdbxml25.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="copyFiles7.bat $(PlatformName)&#xA;installProj.bat libdbxml25 dll $(OutDir) release copyLib" Description="Copying libraries to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Release|Win32" OutputDirectory="..\build_windows\$(PlatformName)\Static Release" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="0" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:x86" OutputFile="$(OutDir)/libdbxml25s.lib"/></Configuration>
+    <Configuration Name="Debug|x64" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;DBXML_CREATE_DLL;_DBXML_COMPRESSION" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="libdb48d.lib xqilla22d.lib xerces-c_3d.lib zlibwapi.lib" AdditionalLibraryDirectories="$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win64/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/libdbxml25d.dll" ProgramDatabaseFile="$(OutDir)/libdbxml25d.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/libdbxml25d.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="copyFiles7.bat $(PlatformName)&#xA;installProj.bat libdbxml25 dll $(OutDir) debug copyLib" Description="Copying libraries to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Debug|x64" OutputDirectory="..\build_windows\$(PlatformName)\Static Debug" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="1" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:x64" OutputFile="$(OutDir)/libdbxml25sd.lib"/></Configuration>
+    <Configuration Name="Release|x64" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;DBXML_CREATE_DLL;_DBXML_COMPRESSION" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:x64" AdditionalDependencies="libdb48.lib xqilla22.lib xerces-c_3.lib zlibwapi.lib" AdditionalLibraryDirectories="$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName);../../xerces-c-src/Build/Win64/VC8/$(ConfigurationName)" OutputFile="$(OutDir)/libdbxml25.dll" ProgramDatabaseFile="$(OutDir)/libdbxml25.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/libdbxml25.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="copyFiles7.bat $(PlatformName)&#xA;installProj.bat libdbxml25 dll $(OutDir) release copyLib" Description="Copying libraries to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Release|x64" OutputDirectory="..\build_windows\$(PlatformName)\Static Release" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="0" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:x64" OutputFile="$(OutDir)/libdbxml25s.lib"/></Configuration>
+    <Configuration Name="Debug|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Debug" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;DBXML_CREATE_DLL;_DBXML_COMPRESSION" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="3" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="libdb48d.lib xqilla22d.lib xerces-c_3d.lib zdll.lib" AdditionalLibraryDirectories="$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName)" OutputFile="$(OutDir)/libdbxml25d.dll" ProgramDatabaseFile="$(OutDir)/libdbxml25d.pdb" LinkIncremental="2" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="1" ImportLibrary="$(OutDir)/libdbxml25d.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="copyFiles7.bat $(PlatformName)&#xA;installProj.bat libdbxml25 dll $(OutDir) debug copyLib" Description="Copying libraries to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Debug|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Static Debug" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="0" MinimalRebuild="TRUE" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="1" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" BasicRuntimeChecks="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:IA64" OutputFile="$(OutDir)/libdbxml25sd.lib"/></Configuration>
+    <Configuration Name="Release|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Release" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="2" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;DBXML_CREATE_DLL;_DBXML_COMPRESSION" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLinkerTool" AdditionalOptions="/machine:IA64" AdditionalDependencies="libdb48.lib xqilla22.lib xerces-c_3.lib zdll.lib" AdditionalLibraryDirectories="$(OutDir);../../xqilla/build/windows/VC8/$(PlatformName)/$(ConfigurationName)" OutputFile="$(OutDir)/libdbxml25.dll" ProgramDatabaseFile="$(OutDir)/libdbxml25.pdb" LinkIncremental="1" GenerateDebugInformation="TRUE" SuppressStartupBanner="TRUE" OptimizeReferences="2" ImportLibrary="$(OutDir)/libdbxml25.lib" TargetMachine="0"/>
+      <Tool Name="VCPostBuildEventTool" CommandLine="copyFiles7.bat $(PlatformName)&#xA;installProj.bat libdbxml25 dll $(OutDir) release copyLib" Description="Copying libraries to install directory"/>
+      <Tool Name="VCCustomBuildTool"/></Configuration>
+    <Configuration Name="Static Release|IA64" OutputDirectory="..\build_windows\$(PlatformName)\Static Release" IntermediateDirectory="./$(OutDir)/dbxml" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+      <Tool Name="VCPreBuildEventTool"/>
+      <Tool Name="VCPreLinkEventTool"/>
+      <Tool Name="VCResourceCompilerTool"/>
+      <Tool Name="VCXMLDataGeneratorTool"/>
+      <Tool Name="VCManagedWrapperGeneratorTool"/>
+      <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+      <Tool Name="VCCLCompilerTool" Optimization="2" MinimalRebuild="TRUE" InlineFunctionExpansion="1" AdditionalIncludeDirectories=".,../include,../src/dbxml,../../db-4.8.26/build_windows,../../db-4.8.26/include,../../db-4.8.26/dbinc,../../xerces-c-src/include,../../xerces-c-src/src,../../xqilla/include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_LIB;DBXML_EXPORT=;XQILLA_API=;XERCES_STATIC_LIBRARY" StringPooling="TRUE" RuntimeTypeInfo="TRUE" RuntimeLibrary="0" EnableFunctionLevelLinking="TRUE" UsePrecompiledHeader="0" PrecompiledHeaderThrough="DbXmlInternal.hpp" PrecompiledHeaderFile="./$(IntDir)/dbxml.pch" AssemblerListingLocation="./$(IntDir)/" ObjectFile="./$(IntDir)/" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+      <Tool Name="VCLibrarianTool" AdditionalOptions="/machine:IA64" OutputFile="$(OutDir)/libdbxml25s.lib"/></Configuration>
+  </Configurations>
+  <References/>
+  <Files>
+    <Filter Name="build_windows" Filter="">
+    <File RelativePath="..\build_windows\libdbxml.rc">
+      <FileConfiguration Name="Debug|Win32"><Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;$(NoInherit))"/>
+      </FileConfiguration>
+      <FileConfiguration Name="Release|Win32"><Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;$(NoInherit))"/>
+      </FileConfiguration>
+      <FileConfiguration Name="Debug|x64"><Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;$(NoInherit))"/>
+      </FileConfiguration>
+      <FileConfiguration Name="Release|x64"><Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;$(NoInherit))"/>
+      </FileConfiguration>
+      <FileConfiguration Name="Debug|IA64"><Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;$(NoInherit))"/>
+      </FileConfiguration>
+      <FileConfiguration Name="Release|IA64"><Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;$(NoInherit))"/>
+      </FileConfiguration>
+    </File>
+    </Filter>
+    <Filter Name="include" Filter="">
+      <File RelativePath="..\include\dbxml\DbXml.hpp"/>
+      <File RelativePath="..\include\dbxml\DbXmlFwd.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlCompression.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlContainer.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlContainerConfig.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlData.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlDocument.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlEventReader.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlEventReaderToWriter.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlEventWriter.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlException.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlIndexLookup.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlIndexSpecification.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlInputStream.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlManager.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlMetaDataIterator.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlNamespace.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlPortability.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlQueryContext.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlQueryExpression.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlResolver.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlExternalFunction.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlDebugListener.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlResults.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlStatistics.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlTransaction.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlUpdateContext.hpp"/>
+      <File RelativePath="..\include\dbxml\XmlValue.hpp"/>
+    </Filter>
+    <Filter Name="dbxml" Filter="">
+      <File RelativePath="..\src\dbxml\AtomicNodeValue.cpp"/>
+      <File RelativePath="..\src\dbxml\AtomicNodeValue.hpp"/>
+      <File RelativePath="..\src\dbxml\BaseInputStream.cpp"/>
+      <File RelativePath="..\src\dbxml\BaseInputStream.hpp"/>
+      <File RelativePath="..\src\dbxml\Buffer.cpp"/>
+      <File RelativePath="..\src\dbxml\Buffer.hpp"/>
+      <File RelativePath="..\src\dbxml\BulkPut.cpp"/>
+      <File RelativePath="..\src\dbxml\BulkPut.hpp"/>
+      <File RelativePath="..\src\dbxml\CacheDatabase.cpp"/>
+      <File RelativePath="..\src\dbxml\CacheDatabase.hpp"/>
+      <File RelativePath="..\src\dbxml\CacheDatabaseMinder.cpp"/>
+      <File RelativePath="..\src\dbxml\CacheDatabaseMinder.hpp"/>
+      <File RelativePath="..\src\dbxml\CompressionZlib.cpp"/>
+      <File RelativePath="..\src\dbxml\CompressionZlib.hpp"/>
+      <File RelativePath="..\src\dbxml\ConfigurationDatabase.cpp"/>
+      <File RelativePath="..\src\dbxml\ConfigurationDatabase.hpp"/>
+      <File RelativePath="..\src\dbxml\Container.cpp"/>
+      <File RelativePath="..\src\dbxml\Container.hpp"/>
+      <File RelativePath="..\src\dbxml\ContainerConfig.cpp"/>
+      <File RelativePath="..\src\dbxml\ContainerConfig.hpp"/>
+      <File RelativePath="..\src\dbxml\ContainerBase.cpp"/>
+      <File RelativePath="..\src\dbxml\ContainerBase.hpp"/>
+      <File RelativePath="..\src\dbxml\Counters.cpp"/>
+      <File RelativePath="..\src\dbxml\Counters.hpp"/>
+      <File RelativePath="..\src\dbxml\Cursor.cpp"/>
+      <File RelativePath="..\src\dbxml\Cursor.hpp"/>
+      <File RelativePath="..\src\dbxml\DatabaseNodeValue.cpp"/>
+      <File RelativePath="..\src\dbxml\DatabaseNodeValue.hpp"/>
+      <File RelativePath="..\src\dbxml\DbWrapper.cpp"/>
+      <File RelativePath="..\src\dbxml\DbWrapper.hpp"/>
+      <File RelativePath="..\src\dbxml\DbXmlInternal.cpp"/>
+      <File RelativePath="..\src\dbxml\DbXmlInternal.hpp"/>
+      <File RelativePath="..\src\dbxml\DictionaryCache.cpp"/>
+      <File RelativePath="..\src\dbxml\DictionaryCache.hpp"/>
+      <File RelativePath="..\src\dbxml\DictionaryDatabase.cpp"/>
+      <File RelativePath="..\src\dbxml\DictionaryDatabase.hpp"/>
+      <File RelativePath="..\src\dbxml\DocID.cpp"/>
+      <File RelativePath="..\src\dbxml\DocID.hpp"/>
+      <File RelativePath="..\src\dbxml\Document.cpp"/>
+      <File RelativePath="..\src\dbxml\Document.hpp"/>
+      <File RelativePath="..\src\dbxml\DocumentDatabase.cpp"/>
+      <File RelativePath="..\src\dbxml\DocumentDatabase.hpp"/>
+      <File RelativePath="..\src\dbxml\Globals.cpp"/>
+      <File RelativePath="..\src\dbxml\Globals.hpp"/>
+      <File RelativePath="..\src\dbxml\HighResTimer.cpp"/>
+      <File RelativePath="..\src\dbxml\HighResTimer.hpp"/>
+      <File RelativePath="..\src\dbxml\IndexEntry.cpp"/>
+      <File RelativePath="..\src\dbxml\IndexEntry.hpp"/>
+      <File RelativePath="..\src\dbxml\IndexLookup.cpp"/>
+      <File RelativePath="..\src\dbxml\IndexLookup.hpp"/>
+      <File RelativePath="..\src\dbxml\IndexSpecification.cpp"/>
+      <File RelativePath="..\src\dbxml\IndexSpecification.hpp"/>
+      <File RelativePath="..\src\dbxml\Indexer.cpp"/>
+      <File RelativePath="..\src\dbxml\Indexer.hpp"/>
+      <File RelativePath="..\src\dbxml\Key.cpp"/>
+      <File RelativePath="..\src\dbxml\Key.hpp"/>
+      <File RelativePath="..\src\dbxml\KeyGenerator.cpp"/>
+      <File RelativePath="..\src\dbxml\KeyGenerator.hpp"/>
+      <File RelativePath="..\src\dbxml\KeyStash.cpp"/>
+      <File RelativePath="..\src\dbxml\KeyStash.hpp"/>
+      <File RelativePath="..\src\dbxml\KeyStatistics.cpp"/>
+      <File RelativePath="..\src\dbxml\KeyStatistics.hpp"/>
+      <File RelativePath="..\src\dbxml\LocalFileInputStream.cpp"/>
+      <File RelativePath="..\src\dbxml\LocalFileInputStream.hpp"/>
+      <File RelativePath="..\src\dbxml\LogDbXml.cpp"/>
+      <File RelativePath="..\src\dbxml\Log.hpp"/>
+      <File RelativePath="..\src\dbxml\Manager.cpp"/>
+      <File RelativePath="..\src\dbxml\Manager.hpp"/>
+      <File RelativePath="..\src\dbxml\MemBufInputStream.cpp"/>
+      <File RelativePath="..\src\dbxml\MemBufInputStream.hpp"/>
+      <File RelativePath="..\src\dbxml\MetaDatum.cpp"/>
+      <File RelativePath="..\src\dbxml\MetaDatum.hpp"/>
+      <File RelativePath="..\src\dbxml\MutexLock.cpp"/>
+      <File RelativePath="..\src\dbxml\MutexLock.hpp"/>
+      <File RelativePath="..\src\dbxml\Name.cpp"/>
+      <File RelativePath="..\src\dbxml\Name.hpp"/>
+      <File RelativePath="..\src\dbxml\NameID.cpp"/>
+      <File RelativePath="..\src\dbxml\NameID.hpp"/>
+      <File RelativePath="..\src\dbxml\NamespaceMap.hpp"/>
+      <File RelativePath="..\src\dbxml\OperationContext.hpp"/>
+      <File RelativePath="..\src\dbxml\QueryContext.cpp"/>
+      <File RelativePath="..\src\dbxml\QueryContext.hpp"/>
+      <File RelativePath="..\src\dbxml\QueryExpression.cpp"/>
+      <File RelativePath="..\src\dbxml\QueryExpression.hpp"/>
+      <File RelativePath="..\src\dbxml\RawNodeValue.cpp"/>
+      <File RelativePath="..\src\dbxml\RawNodeValue.hpp"/>
+      <File RelativePath="..\src\dbxml\ReferenceCounted.cpp"/>
+      <File RelativePath="..\src\dbxml\ReferenceCounted.hpp"/>
+      <File RelativePath="..\src\dbxml\ReferenceMinder.cpp"/>
+      <File RelativePath="..\src\dbxml\ReferenceMinder.hpp"/>
+      <File RelativePath="..\src\dbxml\Results.cpp"/>
+      <File RelativePath="..\src\dbxml\Results.hpp"/>
+      <File RelativePath="..\src\dbxml\ResultsEventWriter.cpp"/>
+      <File RelativePath="..\src\dbxml\ResultsEventWriter.hpp"/>
+      <File RelativePath="..\src\dbxml\ScopedDbt.hpp"/>
+      <File RelativePath="..\src\dbxml\ScopedPtr.hpp"/>
+      <File RelativePath="..\src\dbxml\SharedPtr.hpp"/>
+      <File RelativePath="..\src\dbxml\Statistics.cpp"/>
+      <File RelativePath="..\src\dbxml\Statistics.hpp"/>
+      <File RelativePath="..\src\dbxml\StdInInputStream.cpp"/>
+      <File RelativePath="..\src\dbxml\StdInInputStream.hpp"/>
+      <File RelativePath="..\src\dbxml\StructuralStatsDatabase.cpp"/>
+      <File RelativePath="..\src\dbxml\StructuralStatsDatabase.hpp"/>
+      <File RelativePath="..\src\dbxml\Syntax.cpp"/>
+      <File RelativePath="..\src\dbxml\Syntax.hpp"/>
+      <File RelativePath="..\src\dbxml\SyntaxDatabase.cpp"/>
+      <File RelativePath="..\src\dbxml\SyntaxDatabase.hpp"/>
+      <File RelativePath="..\src\dbxml\SyntaxManager.cpp"/>
+      <File RelativePath="..\src\dbxml\SyntaxManager.hpp"/>
+      <File RelativePath="..\src\dbxml\Transaction.cpp"/>
+      <File RelativePath="..\src\dbxml\Transaction.hpp"/>
+      <File RelativePath="..\src\dbxml\TypeConversions.hpp"/>
+      <File RelativePath="..\src\dbxml\URLInputStream.cpp"/>
+      <File RelativePath="..\src\dbxml\URLInputStream.hpp"/>
+      <File RelativePath="..\src\dbxml\UTF8.cpp"/>
+      <File RelativePath="..\src\dbxml\UTF8.hpp"/>
+      <File RelativePath="..\src\dbxml\UpdateContext.cpp"/>
+      <File RelativePath="..\src\dbxml\UpdateContext.hpp"/>
+      <File RelativePath="..\src\dbxml\Value.cpp"/>
+      <File RelativePath="..\src\dbxml\Value.hpp"/>
+      <File RelativePath="..\src\dbxml\VariableBindings.cpp"/>
+      <File RelativePath="..\src\dbxml\VariableBindings.hpp"/>
+      <File RelativePath="..\src\dbxml\XmlCompression.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlContainer.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlContainerConfig.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlData.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlDocument.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlEventReader.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlEventReaderToWriter.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlEventWriter.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlException.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlIndexLookup.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlIndexSpecification.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlInputStream.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlInputStreamWrapper.hpp"/>
+      <File RelativePath="..\src\dbxml\XmlManager.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlMetaDataIterator.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlNamespace.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlQueryContext.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlQueryExpression.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlResolver.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlResults.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlStatistics.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlTransaction.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlUpdateContext.cpp"/>
+      <File RelativePath="..\src\dbxml\XmlValue.cpp"/>
+      <File RelativePath="..\src\dbxml\db_rdbt.c"/>
+      <File RelativePath="..\src\dbxml\db_rdbt.h"/>
+      <File RelativePath="..\src\dbxml\db_utils.h"/>
+      <File RelativePath="..\src\dbxml\tokenizer.hpp"/>
+    </Filter>
+    <Filter Name="dataItem" Filter="">
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlConfiguration.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlConfiguration.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlContains.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlContains.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlDocAvailable.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlDocAvailable.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlDocumentCacheImpl.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlDocumentCacheImpl.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlFactoryImpl.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlFactoryImpl.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlFunction.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlFunction.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlNodeImpl.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlNodeImpl.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlNodeTest.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlNodeTest.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlSequenceBuilder.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlSequenceBuilder.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlUpdateFactory.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlUpdateFactory.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlURIResolver.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlURIResolver.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlUri.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlUri.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\Join.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\Join.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\LookupIndexFunction.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\LookupIndexFunction.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlPredicate.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlPredicate.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\MetaDataFunction.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\MetaDataFunction.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\NodeHandleFunction.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\NodeHandleFunction.hpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlPrintAST.cpp"/>
+      <File RelativePath="..\src\dbxml\dataItem\DbXmlPrintAST.hpp"/>
+    </Filter>
+    <Filter Name="nodeStore" Filter="">
+      <File RelativePath="..\src\dbxml\nodeStore\EventReader.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\EventReader.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\EventReaderToWriter.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\EventReaderToWriter.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\EventWriter.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsConstants.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsDoc.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsDoc.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsDocument.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsDocument.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsDocumentDatabase.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsDocumentDatabase.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsDom.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsDom.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsEvent.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsEvent.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsEventReader.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsEventReader.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsEventWriter.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsEventWriter.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsFormat.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsFormat.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsHandlerBase.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsHandlerBase.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsImpliedSchemaFilter.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsImpliedSchemaFilter.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsNid.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsNid.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsNode.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsNode.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsRawNode.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsRawNode.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsReindexer.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsReindexer.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsSAX2Reader.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsSAX2Reader.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsTypes.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsUpdate.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsUpdate.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsUpgrade.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsUpgrade.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsUtil.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsUtil.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsWriter.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsWriter.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsXercesIndexer.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsXercesIndexer.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsXercesTranscoder.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\NsXercesTranscoder.hpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\PullEventInputStream.cpp"/>
+      <File RelativePath="..\src\dbxml\nodeStore\PullEventInputStream.hpp"/>
+    </Filter>
+    <Filter Name="optimizer" Filter="">
+      <File RelativePath="..\src\dbxml\optimizer\ASTReplaceOptimizer.cpp"/>
+      <File RelativePath="..\src\dbxml\optimizer\ASTReplaceOptimizer.hpp"/>
+      <File RelativePath="..\src\dbxml\optimizer\ImpliedSchemaGenerator.cpp"/>
+      <File RelativePath="..\src\dbxml\optimizer\ImpliedSchemaGenerator.hpp"/>
+      <File RelativePath="..\src\dbxml\optimizer\DbXmlStaticTyper.cpp"/>
+      <File RelativePath="..\src\dbxml\optimizer\DbXmlStaticTyper.hpp"/>
+      <File RelativePath="..\src\dbxml\optimizer\NodeVisitingOptimizer.hpp"/>
+      <File RelativePath="..\src\dbxml\optimizer\QueryPlanGenerator.cpp"/>
+      <File RelativePath="..\src\dbxml\optimizer\QueryPlanGenerator.hpp"/>
+      <File RelativePath="..\src\dbxml\optimizer\QueryPlanOptimizer.cpp"/>
+      <File RelativePath="..\src\dbxml\optimizer\QueryPlanOptimizer.hpp"/>
+    </Filter>
+    <Filter Name="query" Filter="">
+      <File RelativePath="..\src\dbxml\query\AncestorJoinQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\AncestorJoinQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\ASTToQueryPlan.cpp"/>
+      <File RelativePath="..\src\dbxml\query\ASTToQueryPlan.hpp"/>
+      <File RelativePath="..\src\dbxml\query\AttributeJoinQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\AttributeJoinQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\AttributeOrChildJoinQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\AttributeOrChildJoinQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\BufferQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\BufferQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\ChildJoinQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\ChildJoinQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\CollectionQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\CollectionQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\ContextNodeQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\ContextNodeQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\DecisionPointQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\DecisionPointQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\DescendantJoinQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\DescendantJoinQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\DocQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\DocQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\EmptyQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\EmptyQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\ExceptQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\ExceptQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\FilterQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\FilterQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\ImpliedSchemaNode.cpp"/>
+      <File RelativePath="..\src\dbxml\query\ImpliedSchemaNode.hpp"/>
+      <File RelativePath="..\src\dbxml\query\IntersectQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\IntersectQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\LevelFilterQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\LevelFilterQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\NodeInfo.cpp"/>
+      <File RelativePath="..\src\dbxml\query\NodeInfo.hpp"/>
+      <File RelativePath="..\src\dbxml\query\NodeIterator.cpp"/>
+      <File RelativePath="..\src\dbxml\query\NodeIterator.hpp"/>
+      <File RelativePath="..\src\dbxml\query\NodePredicateFilterQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\NodePredicateFilterQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\ParentJoinQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\ParentJoinQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\ParentOfAttributeJoinQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\ParentOfAttributeJoinQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\ParentOfChildJoinQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\ParentOfChildJoinQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\PredicateFilterQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\PredicateFilterQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\QueryExecutionContext.cpp"/>
+      <File RelativePath="..\src\dbxml\query\QueryExecutionContext.hpp"/>
+      <File RelativePath="..\src\dbxml\query\QueryPlan.cpp"/>
+      <File RelativePath="..\src\dbxml\query\QueryPlan.hpp"/>
+      <File RelativePath="..\src\dbxml\query\QueryPlanHolder.cpp"/>
+      <File RelativePath="..\src\dbxml\query\QueryPlanHolder.hpp"/>
+      <File RelativePath="..\src\dbxml\query\QueryPlanToAST.cpp"/>
+      <File RelativePath="..\src\dbxml\query\QueryPlanToAST.hpp"/>
+      <File RelativePath="..\src\dbxml\query\SequentialScanQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\SequentialScanQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\StepQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\StepQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\StructuralJoinQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\StructuralJoinQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\UnionQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\UnionQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\ValueFilterQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\ValueFilterQP.hpp"/>
+      <File RelativePath="..\src\dbxml\query\VariableQP.cpp"/>
+      <File RelativePath="..\src\dbxml\query\VariableQP.hpp"/>
+    </Filter>
+    <Filter Name="debug" Filter="">
+      <File RelativePath="..\src\dbxml\debug\QPDebugHook.cpp"/>
+      <File RelativePath="..\src\dbxml\debug\QPDebugHook.hpp"/>
+      <File RelativePath="..\src\dbxml\debug\DbXmlASTDebugHook.cpp"/>
+      <File RelativePath="..\src\dbxml\debug\DbXmlASTDebugHook.hpp"/>
+      <File RelativePath="..\src\dbxml\debug\DbXmlTupleDebugHook.cpp"/>
+      <File RelativePath="..\src\dbxml\debug\DbXmlTupleDebugHook.hpp"/>
+      <File RelativePath="..\src\dbxml\debug\DbXmlDebugHookDecorator.cpp"/>
+      <File RelativePath="..\src\dbxml\debug\DbXmlDebugHookDecorator.hpp"/>
+    </Filter>
+  </Files>
+  <Globals/>
+</VisualStudioProject>

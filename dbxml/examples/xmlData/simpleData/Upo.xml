@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Upo</item>
+	<inventory>
+		<sku>UpovegebMG82b</sku>
+		<price>0.82</price>
+		<inventory>223</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

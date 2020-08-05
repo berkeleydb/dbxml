@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Talong</product>
+	<inventory>
+		<sku>TalovegeztTCbL</sku>
+		<price>0.73</price>
+		<inventory>673</inventory>
+	</inventory>
+	<vendor>The Pantry</vendor>
+</vegetables:item>
+

@@ -1,0 +1,53 @@
+=head1 NAME
+
+XmlTransaction - A Perl interface to the DbXml XmlTransaction Class
+
+=head1 SYNOPSIS
+
+    use Sleepycat::DbXml;
+
+    my $mgr = new XmlManager;
+
+    $txn = mgr->createTransaction;
+
+    $txn->abort();
+    $txn->commit([$flags]);
+    my $txn2 = $txn->createChild([$flags]);
+    my $dbtxn = $txn->getDbTxn();
+    
+
+=head1 DESCRIPTION
+
+
+
+=head1 CONFORMANCE to C++ API
+
+The Perl interface to XMlValue is identical to the C++ API.
+
+
+=head1 Constructor
+
+An XmlTransaction object is created thus
+
+    my $mgr = new XmlManager;
+    $txn = mgr->createTransaction();
+
+=head1 Methods
+
+=head2 $txn->abort()
+
+=head2 $txn->commit()
+
+
+=head1 EXAMPLES
+
+=head1 NOTES
+
+
+
+=head1 SEE ALSO
+
+
+=head1 AUTHOR
+
+Paul Marquess

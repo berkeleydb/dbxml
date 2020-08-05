@@ -1,0 +1,87 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="size">
+      <QueryPlanToAST>
+        <PredicateFilterQP uri="" name="size">
+          <StepQP axis="child" name="size_of_book" nodeType="element">
+            <StepQP axis="child" name="attributes" nodeType="element">
+              <StepQP axis="child" name="item" nodeType="element">
+                <StepQP axis="child" name="catalog" nodeType="element">
+                  <SequentialScanQP nodeType="document"/>
+                </StepQP>
+              </StepQP>
+            </StepQP>
+          </StepQP>
+          <Operator name="greater_than">
+            <Operator name="mul">
+              <TreatAs>
+                <Operator name="mul">
+                  <PromoteUntyped uri="http://www.w3.org/2001/XMLSchema" name="double">
+                    <TreatAs>
+                      <Atomize>
+                        <QueryPlanToAST>
+                          <StepQP axis="child" name="length" nodeType="element">
+                            <VariableQP name=":size"/>
+                          </StepQP>
+                        </QueryPlanToAST>
+                      </Atomize>
+                      <SequenceType occurrence="zero_or_one" testType="anything"/>
+                    </TreatAs>
+                  </PromoteUntyped>
+                  <PromoteUntyped uri="http://www.w3.org/2001/XMLSchema" name="double">
+                    <TreatAs>
+                      <Atomize>
+                        <QueryPlanToAST>
+                          <StepQP axis="child" name="width" nodeType="element">
+                            <VariableQP name=":size"/>
+                          </StepQP>
+                        </QueryPlanToAST>
+                      </Atomize>
+                      <SequenceType occurrence="zero_or_one" testType="anything"/>
+                    </TreatAs>
+                  </PromoteUntyped>
+                </Operator>
+                <SequenceType occurrence="zero_or_one" testType="anything"/>
+              </TreatAs>
+              <PromoteUntyped uri="http://www.w3.org/2001/XMLSchema" name="double">
+                <TreatAs>
+                  <Atomize>
+                    <QueryPlanToAST>
+                      <StepQP axis="child" name="height" nodeType="element">
+                        <VariableQP name=":size"/>
+                      </StepQP>
+                    </QueryPlanToAST>
+                  </Atomize>
+                  <SequenceType occurrence="zero_or_one" testType="anything"/>
+                </TreatAs>
+              </PromoteUntyped>
+            </Operator>
+            <Sequence>
+              <NumericTypeConstructor value="5.0E5" typeuri="http://www.w3.org/2001/XMLSchema" typename="integer"/>
+            </Sequence>
+          </Operator>
+        </PredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <DOMConstructor type="element">
+      <Name>
+        <Sequence>
+          <ATQNameConstructor uri="" prefix="" localname="Output" typeuri="http://www.w3.org/2001/XMLSchema" typename="QName"/>
+        </Sequence>
+      </Name>
+      <Children>
+        <ContentSequence>
+          <QueryPlanToAST>
+            <StepQP axis="child" name="title" nodeType="element">
+              <StepQP axis="parent-of-child" name="item" nodeType="element">
+                <StepQP axis="parent-of-child" name="attributes" nodeType="element">
+                  <VariableQP name=":size"/>
+                </StepQP>
+              </StepQP>
+            </StepQP>
+          </QueryPlanToAST>
+        </ContentSequence>
+      </Children>
+    </DOMConstructor>
+  </FLWOR>
+</XQuery>

@@ -1,0 +1,46 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="word">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp30">
+          <StepQP axis="child" name="e" nodeType="element">
+            <StepQP axis="child" name="dictionary" nodeType="element">
+              <ValueQP index="node-element-equality-string" operation="eq" child="qd" value="1900"/>
+            </StepQP>
+          </StepQP>
+          <NodePredicateFilterQP uri="" name="#tmp31">
+            <StepQP axis="child" name="ss" nodeType="element">
+              <VariableQP name="#tmp30"/>
+            </StepQP>
+            <NodePredicateFilterQP uri="" name="#tmp32">
+              <StepQP axis="child" name="s" nodeType="element">
+                <VariableQP name="#tmp31"/>
+              </StepQP>
+              <NodePredicateFilterQP uri="" name="#tmp33">
+                <StepQP axis="child" name="qp" nodeType="element">
+                  <VariableQP name="#tmp32"/>
+                </StepQP>
+                <NodePredicateFilterQP uri="" name="#tmp34">
+                  <StepQP axis="child" name="q" nodeType="element">
+                    <VariableQP name="#tmp33"/>
+                  </StepQP>
+                  <ValueFilterQP comparison="eq">
+                    <StepQP axis="child" name="qd" nodeType="element">
+                      <VariableQP name="#tmp34"/>
+                    </StepQP>
+                    <Sequence>
+                      <AnyAtomicTypeConstructor value="1900" typeuri="http://www.w3.org/2001/XMLSchema" typename="string"/>
+                    </Sequence>
+                  </ValueFilterQP>
+                </NodePredicateFilterQP>
+              </NodePredicateFilterQP>
+            </NodePredicateFilterQP>
+          </NodePredicateFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":word"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

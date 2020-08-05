@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>desserts</category>
+	<item>Sherbet, Blueberry</item>
+	<inventory>
+		<sku>Sherdess5v7VnO</sku>
+		<price>10.37</price>
+		<inventory>0</inventory>
+	</inventory>
+	<vendor>Mom's Kitchen</vendor>
+</product>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Hackberry</item>
+	<inventory>
+		<sku>Hackfruio8KfDS</sku>
+		<price>0.29</price>
+		<inventory>783</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

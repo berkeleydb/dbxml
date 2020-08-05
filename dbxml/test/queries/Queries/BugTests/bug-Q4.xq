@@ -1,0 +1,1 @@
+collection()//a[@value!=655 and @value!=660 and @value!=659 and @value!=664 and @value!=663 and @value!=655 and @value!=660 and @value!=663 and @value!=661 and @value!=662 and @value!=657]

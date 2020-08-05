@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<vegetables:item xmlns:vegetables="http://groceryItem.dbxml/vegetables">
+	<product>Coriander</product>
+	<inventory>
+		<sku>CorivegetBIX5u</sku>
+		<price>0.54</price>
+		<inventory>733</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</vegetables:item>
+

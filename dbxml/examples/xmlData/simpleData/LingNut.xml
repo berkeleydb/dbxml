@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Ling Nut</item>
+	<inventory>
+		<sku>LingfruiPOs3BZ</sku>
+		<price>0.95</price>
+		<inventory>951</inventory>
+	</inventory>
+	<vendor>Off the Vine</vendor>
+</product>
+

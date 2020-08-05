@@ -1,0 +1,43 @@
+<XQuery>
+  <FLWOR>
+    <ForBinding name="word">
+      <QueryPlanToAST>
+        <NodePredicateFilterQP uri="" name="#tmp43">
+          <StepQP axis="parent-of-child" name="e" nodeType="element">
+            <NegativeNodePredicateFilterQP uri="" name="#tmp1">
+              <StepQP axis="parent-of-child" name="ss" nodeType="element">
+                <StepQP axis="parent-of-child" name="s" nodeType="element">
+                  <StepQP axis="parent-of-child" name="qp" nodeType="element">
+                    <StepQP axis="parent-of-child" name="q" nodeType="element">
+                      <ValueQP index="node-element-equality-string" operation="eq" child="qd" value="1900"/>
+                    </StepQP>
+                  </StepQP>
+                </StepQP>
+              </StepQP>
+              <ExceptQP>
+                <StepQP axis="child" name="q" nodeType="element">
+                  <StepQP axis="child" name="qp" nodeType="element">
+                    <StepQP axis="child" name="s" nodeType="element">
+                      <VariableQP name="#tmp1"/>
+                    </StepQP>
+                  </StepQP>
+                </StepQP>
+                <StepQP axis="parent-of-child" name="q" nodeType="element">
+                  <ValueQP index="node-element-equality-string" operation="eq" child="qd" value="1900"/>
+                </StepQP>
+              </ExceptQP>
+            </NegativeNodePredicateFilterQP>
+          </StepQP>
+          <LevelFilterQP>
+            <StepQP axis="parent-of-child" name="dictionary" nodeType="element">
+              <VariableQP name="#tmp43"/>
+            </StepQP>
+          </LevelFilterQP>
+        </NodePredicateFilterQP>
+      </QueryPlanToAST>
+    </ForBinding>
+    <QueryPlanToAST>
+      <VariableQP name=":word"/>
+    </QueryPlanToAST>
+  </FLWOR>
+</XQuery>

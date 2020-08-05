@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>fruits</category>
+	<item>Honey Locust</item>
+	<inventory>
+		<sku>HonefruiuSWTE5</sku>
+		<price>0.74</price>
+		<inventory>878</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

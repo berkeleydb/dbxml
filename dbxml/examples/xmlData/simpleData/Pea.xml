@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<product>
+	<category>vegetables</category>
+	<item>Pea</item>
+	<inventory>
+		<sku>PeavegeZ7bm4I</sku>
+		<price>0.50</price>
+		<inventory>338</inventory>
+	</inventory>
+	<vendor>TriCounty Produce</vendor>
+</product>
+

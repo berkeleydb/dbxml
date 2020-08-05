@@ -1,0 +1,1 @@
+substring-after(collection()//id[.=50]/document-uri(root()), "nodeIdentityCollection")
